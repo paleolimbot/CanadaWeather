@@ -1,0 +1,70 @@
+<resources>
+
+    <string name="please_wait">Please Wait...</string>
+    <string name="cancel">Cancel</string>
+    <string name="unknown">Unknown</string>
+    
+    <string name="fi_click_for_more">Click for more details.</string>
+    
+    <string name="cc_field_station">Station</string>
+    <string name="cc_field_date">Date</string>
+    <string name="cc_field_condition">Condition</string>
+    <string name="cc_field_temp">Temperature</string>
+    <string name="cc_field_windchill">Windchill</string>
+    <string name="cc_field_humidex">Humidex</string>
+    <string name="cc_field_feelslike">Feels like</string>
+    <string name="cc_field_windsummary">Wind</string>
+    <string name="cc_field_windspeed">Wind Speed</string>
+    <string name="cc_field_windgust">Wind Gust</string>
+    <string name="cc_field_winddirection">Wind Direction</string>
+    <string name="cc_field_pressure">Pressure</string>
+    <string name="cc_field_pressuretrend">Pressure Trend</string>
+    <string name="cc_field_dewpoint">Dewpoint</string>
+    <string name="cc_field_visibility">Visibility</string>
+    <string name="cc_field_relhumidity">Relative Humidity</string>
+    
+    <string name="cc_summary" formatted="false">Currently %s</string>
+    <string name="cc_summary_feelslike" formatted="false">Currently %s (feels like %s)</string>
+    <string name="cc_summary_unknown">Currently unknown</string>
+    <string name="cc_description_format" formatted="false">%s (click for more details)</string>
+    
+    <string name="menu_refresh">Refresh</string>
+    <string name="menu_about">About</string>
+    <string name="menu_edit">Edit Locations</string>
+    <string name="menu_radar">View Radar</string>
+    <string name="menu_prefs">Preferences</string>
+    <string name="menu_view_online">View Online</string>
+    <string name="menu_add">Add Location</string>
+    
+    <string name="menu_gps">Near Me</string>
+
+    <string name="location_label">Select location...</string>
+    <string name="location_geocoding">Geocoding</string>
+    <string name="location_searching_gps">Acquiring Location</string>
+    <string name="locations_search_hint">type any location</string>
+    <string name="location_my_location">My location</string>
+    <string name="location_error_geocoding">Error geocoding</string>
+    <string name="location_error_none_found">No locations found</string>
+    <string name="location_did_you_mean">Did You Mean?</string>
+    <string name="location_searchheader_format" formatted="false">Search for locations near %s</string>
+    <string name="location_searchheader_region" formatted="false">Showing locations in %s</string>
+    <string name="location_searchheader_showing" formatted="false">Showing locations near %s</string>
+    
+    <string name="forecast_loading_forecast">Loading Forecast</string>
+    <string name="forecast_error_connectivity">Internet connectivity error</string>
+    <string name="forecast_error_xml">XML error</string>
+    <string name="forecast_error_unknown">Unknown error</string>
+    <string name="forecast_error_location_request">Location request error</string>
+    <string name="forecast_error_no_location_selected">No location currently selected</string>
+    <string name="forecast_error_no_browser">No internet browser available</string>
+    <string name="forecast_cc_dialog_title">Current Conditions</string>
+    <string name="forecast_editloc_dialog_title">Edit Locations</string>
+    <string name="forecast_editloc_update">Update</string>
+    <string name="forecast_error_add_location">Error adding location</string>
+    <string name="forecast_no_data">No data to display</string>
+    <string name="forecast_footertext">Data from Environment Canada</string>
+    <string name="forecast_issuedtext" formatted="false">Issued %s</string>
+    
+    <string name="notification_howmany" formatted="false">%s warnings</string>
+    
+</resources>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="pref_theme">Arrière-plan</string>
+    <string name="pref_theme_summary">Choisir un arrière-plan clair ou foncé pour l\'écran prévisions</string>
+    <string name="pref_theme_widget">Arrière-plan (widget)</string>
+    <string name="pref_theme_widget_summary">Choisir un arrière-plan clair ou foncé pour les widgets</string>
+
+    <string-array name="pref_theme_choices">
+        <item>Noir</item>
+        <item>Clair</item>
+    </string-array>
+
+	<string name="pref_lang">Langue</string>
+    <string name="pref_lang_summary">Langue des prévisions</string>
+
+        <string-array name="pref_lang_choices">
+        <item>Décider automatiquement</item>
+        <item>English</item>
+        <item>Français</item>
+    </string-array>
+    
+    <string name="pref_restart_app">Redémarrer l\'application pour activer les réglages</string>
+
+</resources>

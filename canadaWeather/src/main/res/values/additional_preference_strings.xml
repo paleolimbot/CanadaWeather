@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="pref_iconset_summary">Weather icons to be used for forecast screen.</string>
+    <string name="pref_iconset">Icon Set</string>
+
+    <string-array name="pref_iconset_choices">
+        <item>AVMan</item>
+        <item>Environment Canada (old)</item>
+        <item>Environment Canada (new)</item>
+    </string-array>
+    <string-array name="pref_iconset_values">
+        <item>AVMAN</item>
+        <item>ENV_CANADA_OLD</item>
+        <item>ENV_CANADA_NEW</item>
+    </string-array>
+    
+    <string name="pref_theme_widget">Background (widget)</string>
+    <string name="pref_theme_widget_summary">Choose light or dark background for widgets.</string>
+
+    <string-array name="pref_theme_widget_choices">
+        <item>Dark</item>
+        <item>Light</item>
+        <item>Transparent</item>
+    </string-array>
+    <string-array name="pref_theme_widget_values">
+        <item>DARK</item>
+        <item>LIGHT</item>
+        <item>TRANSPARENT</item>
+    </string-array>
+    
+    
+    <string name="pref_radar_length">Loop Length</string>
+    <string name="pref_radar_length_summary">Choose length of time over which to loop radar images.</string>
+
+    <string-array name="pref_radar_length_choices">
+        <item>1 hour</item>
+        <item>3 hours</item>
+    </string-array>
+    <string-array name="pref_radar_length_values">
+        <item>7</item>
+        <item>19</item>
+    </string-array>
+    
+    <string name="pref_radar_preciptype">Precipitation Type</string>
+    <string name="pref_radar_preciptype_summary">Choose precipitation type (rain or snow) for radar images.</string>
+    <string-array name="pref_radar_preciptype_choices">
+        <item>Auto</item>
+        <item>Rain</item>
+        <item>Snow</item>
+    </string-array>
+    <string-array name="pref_radar_preciptype_values">
+        <item>AUTO</item>
+        <item>RAIN</item>
+        <item>SNOW</item>
+    </string-array>
+    
+    <string name="pref_radar_overlays">Overlays</string>
+    <string name="pref_radar_overlays_summary">Select radar overlays to display</string>
+    <string-array name="pref_radar_overlays_choices">
+        <item>Roads</item>
+        <item>Cities</item>
+        <item>More Cities</item>
+        <item>Rivers</item>
+        <item>Road Labels</item>
+    </string-array>
+    
+    <string-array name="pref_radar_overlays_values">
+        <item>ROADS</item>
+        <item>CITIES</item>
+        <item>MORE_CITIES</item>
+        <item>RIVERS</item>
+        <item>ROAD_LABELS</item>
+    </string-array>
+    
+    <string name="pref_edit_notifications">Edit Notifications</string>
+    <string name="pref_edit_notifications_summary">Receive notifications for weather warnings and watches from Environment Canada.</string>
+    
+</resources>

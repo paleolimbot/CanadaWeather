@@ -1,0 +1,6761 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<siteList xmlns:fw="http://apps.fishandwhistle.net/schemas/ecweather">
+	<fw:province code="AB">
+		<nameEn>Alberta</nameEn>
+		<nameFr>Alberta</nameFr>
+	</fw:province>
+	<fw:province code="BC">
+		<nameEn>British Columbia</nameEn>
+		<nameFr>Colombie-Britannique</nameFr>
+	</fw:province>
+	<fw:province code="MB">
+		<nameEn>Manitoba</nameEn>
+		<nameFr>Manitoba</nameFr>
+	</fw:province>
+	<fw:province code="NB">
+		<nameEn>New Brunswick</nameEn>
+		<nameFr>Nouveau-Brunswick</nameFr>
+	</fw:province>
+	<fw:province code="NL">
+		<nameEn>Newfoundland and Labrador</nameEn>
+		<nameFr>Terre-Neuve-et-Labrador</nameFr>
+	</fw:province>
+	<fw:province code="NS">
+		<nameEn>Nova Scotia</nameEn>
+		<nameFr>Nouvelle-Écosse</nameFr>
+	</fw:province>
+	<fw:province code="NT">
+		<nameEn>Northwest Territories</nameEn>
+		<nameFr>Territoires du Nord-Ouest</nameFr>
+	</fw:province>
+	<fw:province code="NU">
+		<nameEn>Nunavut</nameEn>
+		<nameFr>Nunavut</nameFr>
+	</fw:province>
+	<fw:province code="ON">
+		<nameEn>Ontario</nameEn>
+		<nameFr>Ontario</nameFr>
+	</fw:province>
+	<fw:province code="PE">
+		<nameEn>Prince Edward Island</nameEn>
+		<nameFr>Île-du-Prince-Édouard</nameFr>
+	</fw:province>
+	<fw:province code="QC">
+		<nameEn>Quebec</nameEn>
+		<nameFr>Québec</nameFr>
+	</fw:province>
+	<fw:province code="SK">
+		<nameEn>Saskatchewan</nameEn>
+		<nameFr>Saskatchewan</nameFr>
+	</fw:province>
+	<fw:province code="YT">
+		<nameEn>Yukon Territory</nameEn>
+		<nameFr>Yukon</nameFr>
+	</fw:province>
+
+
+	<site code="s0000768">
+		<nameEn>Airdrie</nameEn>
+		<nameFr>Airdrie</nameFr>
+		<provinceCode>AB</provinceCode>
+		<fw:webId>ab-12</fw:webId>
+		<fw:lat>51.29</fw:lat>
+		<fw:lon>-114.01</fw:lon>
+	</site>
+	<site code="s0000001">
+		<nameEn>Athabasca</nameEn>
+		<nameFr>Athabasca</nameFr>
+		<provinceCode>AB</provinceCode>
+		<fw:webId>ab-10</fw:webId>
+		<fw:lat>54.72</fw:lat>
+		<fw:lon>-113.28</fw:lon>
+	</site>
+	<site code="s0000404">
+		<nameEn>Banff</nameEn>
+		<nameFr>Banff</nameFr>
+		<provinceCode>AB</provinceCode>
+		<fw:webId>ab-49</fw:webId>
+		<fw:lat>51.18</fw:lat>
+		<fw:lon>-115.57</fw:lon>
+	</site>
+	<site code="s0000413">
+		<nameEn>Barrhead</nameEn>
+		<nameFr>Barrhead</nameFr>
+		<provinceCode>AB</provinceCode>
+		<fw:webId>ab-2</fw:webId>
+		<fw:lat>54.12</fw:lat>
+		<fw:lon>-114.4</fw:lon>
+	</site>
+	<site code="s0000092">
+		<nameEn>Beaverlodge</nameEn>
+		<nameFr>Beaverlodge</nameFr>
+		<provinceCode>AB</provinceCode>
+		<fw:webId>ab-57</fw:webId>
+		<fw:lat>55.21</fw:lat>
+		<fw:lon>-119.43</fw:lon>
+	</site>
+	<site code="s0000382">
+		<nameEn>Bow Island</nameEn>
+		<nameFr>Ile Bow</nameFr>
+		<provinceCode>AB</provinceCode>
+		<fw:webId>ab-43</fw:webId>
+		<fw:lat>49.87</fw:lat>
+		<fw:lon>-111.38</fw:lon>
+	</site>
+	<site code="s0000379">
+		<nameEn>Bow Valley (Provincial Park)</nameEn>
+		<nameFr>Bow Valley (Parc provincial)</nameFr>
+		<provinceCode>AB</provinceCode>
+		<fw:webId>ab-42</fw:webId>
+		<fw:lat>51.08</fw:lat>
+		<fw:lon>-115.07</fw:lon>
+	</site>
+	<site code="s0000277">
+		<nameEn>Breton</nameEn>
+		<nameFr>Breton</nameFr>
+		<provinceCode>AB</provinceCode>
+		<fw:webId>ab-36</fw:webId>
+		<fw:lat>53.11</fw:lat>
+		<fw:lon>-114.47</fw:lon>
+	</site>
+	<site code="s0000093">
+		<nameEn>Brooks</nameEn>
+		<nameFr>Brooks</nameFr>
+		<provinceCode>AB</provinceCode>
+		<fw:webId>ab-58</fw:webId>
+		<fw:lat>50.57</fw:lat>
+		<fw:lon>-111.9</fw:lon>
+	</site>
+	<site code="s0000047">
+		<nameEn>Calgary</nameEn>
+		<nameFr>Calgary</nameFr>
+		<provinceCode>AB</provinceCode>
+		<fw:webId>ab-52</fw:webId>
+		<fw:lat>51.05</fw:lat>
+		<fw:lon>-114.06</fw:lon>
+	</site>
+	<site code="s0000126">
+		<nameEn>Calgary (Olympic Park)</nameEn>
+		<nameFr>Calgary (Parc Olympique)</nameFr>
+		<provinceCode>AB</provinceCode>
+		<fw:webId>ab-61</fw:webId>
+		<fw:lat>51.09</fw:lat>
+		<fw:lon>-114.23</fw:lon>
+	</site>
+	<site code="s0000311">
+		<nameEn>Camrose</nameEn>
+		<nameFr>Camrose</nameFr>
+		<provinceCode>AB</provinceCode>
+		<fw:webId>ab-18</fw:webId>
+		<fw:lat>53.02</fw:lat>
+		<fw:lon>-112.82</fw:lon>
+	</site>
+	<site code="s0000403">
+		<nameEn>Canmore</nameEn>
+		<nameFr>Canmore</nameFr>
+		<provinceCode>AB</provinceCode>
+		<fw:webId>ab-3</fw:webId>
+		<fw:lat>51.08</fw:lat>
+		<fw:lon>-115.37</fw:lon>
+	</site>
+	<site code="s0000159">
+		<nameEn>Cardston</nameEn>
+		<nameFr>Cardston</nameFr>
+		<provinceCode>AB</provinceCode>
+		<fw:webId>ab-64</fw:webId>
+		<fw:lat>49.2</fw:lat>
+		<fw:lon>-113.3</fw:lon>
+	</site>
+	<site code="s0000120">
+		<nameEn>Claresholm</nameEn>
+		<nameFr>Claresholm</nameFr>
+		<provinceCode>AB</provinceCode>
+		<fw:webId>ab-60</fw:webId>
+		<fw:lat>50.02</fw:lat>
+		<fw:lon>-113.58</fw:lon>
+	</site>
+	<site code="s0000493">
+		<nameEn>Cochrane</nameEn>
+		<nameFr>Cochrane</nameFr>
+		<provinceCode>AB</provinceCode>
+		<fw:webId>ab-1</fw:webId>
+		<fw:lat>51.21</fw:lat>
+		<fw:lon>-114.47</fw:lon>
+	</site>
+	<site code="s0000619">
+		<nameEn>Cold Lake</nameEn>
+		<nameFr>Cold Lake</nameFr>
+		<provinceCode>AB</provinceCode>
+		<fw:webId>ab-23</fw:webId>
+		<fw:lat>54.45</fw:lat>
+		<fw:lon>-110.17</fw:lon>
+	</site>
+	<site code="s0000111">
+		<nameEn>Coronation</nameEn>
+		<nameFr>Coronation</nameFr>
+		<provinceCode>AB</provinceCode>
+		<fw:webId>ab-59</fw:webId>
+		<fw:lat>52.09</fw:lat>
+		<fw:lon>-111.45</fw:lon>
+	</site>
+	<site code="s0000310">
+		<nameEn>Crowsnest</nameEn>
+		<nameFr>Crowsnest</nameFr>
+		<provinceCode>AB</provinceCode>
+		<fw:webId>ab-17</fw:webId>
+		<fw:lat>49.63</fw:lat>
+		<fw:lon>-114.69</fw:lon>
+	</site>
+	<site code="s0000468">
+		<nameEn>Drayton Valley</nameEn>
+		<nameFr>Drayton Valley</nameFr>
+		<provinceCode>AB</provinceCode>
+		<fw:webId>ab-48</fw:webId>
+		<fw:lat>53.22</fw:lat>
+		<fw:lon>-114.98</fw:lon>
+	</site>
+	<site code="s0000129">
+		<nameEn>Drumheller</nameEn>
+		<nameFr>Drumheller</nameFr>
+		<provinceCode>AB</provinceCode>
+		<fw:webId>ab-62</fw:webId>
+		<fw:lat>51.46</fw:lat>
+		<fw:lon>-112.72</fw:lon>
+	</site>
+	<site code="s0000045">
+		<nameEn>Edmonton</nameEn>
+		<nameFr>Edmonton</nameFr>
+		<provinceCode>AB</provinceCode>
+		<fw:webId>ab-50</fw:webId>
+		<fw:lat>53.53</fw:lat>
+		<fw:lon>-113.49</fw:lon>
+	</site>
+	<site code="s0000510">
+		<nameEn>Edmonton (Int'l Aprt)</nameEn>
+		<nameFr>Edmonton (Aprt int.)</nameFr>
+		<provinceCode>AB</provinceCode>
+		<fw:webId>ab-71</fw:webId>
+		<fw:lat>53.34</fw:lat>
+		<fw:lon>-113.54</fw:lon>
+	</site>
+	<site code="s0000518">
+		<nameEn>Edson</nameEn>
+		<nameFr>Edson</nameFr>
+		<provinceCode>AB</provinceCode>
+		<fw:webId>ab-72</fw:webId>
+		<fw:lat>53.58</fw:lat>
+		<fw:lon>-116.43</fw:lon>
+	</site>
+	<site code="s0000156">
+		<nameEn>Elk Island (National Park)</nameEn>
+		<nameFr>Elk Island (Parc national)</nameFr>
+		<provinceCode>AB</provinceCode>
+		<fw:webId>ab-63</fw:webId>
+		<fw:lat>53.61</fw:lat>
+		<fw:lon>-112.87</fw:lon>
+	</site>
+	<site code="s0000176">
+		<nameEn>Esther</nameEn>
+		<nameFr>Esther</nameFr>
+		<provinceCode>AB</provinceCode>
+		<fw:webId>ab-67</fw:webId>
+		<fw:lat>51.68</fw:lat>
+		<fw:lon>-110.26</fw:lon>
+	</site>
+	<site code="s0000636">
+		<nameEn>Fort Chipewyan</nameEn>
+		<nameFr>Fort Chipewyan</nameFr>
+		<provinceCode>AB</provinceCode>
+		<fw:webId>ab-28</fw:webId>
+		<fw:lat>58.71</fw:lat>
+		<fw:lon>-111.16</fw:lon>
+	</site>
+	<site code="s0000595">
+		<nameEn>Fort McMurray</nameEn>
+		<nameFr>Fort McMurray</nameFr>
+		<provinceCode>AB</provinceCode>
+		<fw:webId>ab-20</fw:webId>
+		<fw:lat>56.73</fw:lat>
+		<fw:lon>-111.38</fw:lon>
+	</site>
+	<site code="s0000167">
+		<nameEn>Garden Creek</nameEn>
+		<nameFr>Garden Creek</nameFr>
+		<provinceCode>AB</provinceCode>
+		<fw:webId>ab-65</fw:webId>
+		<fw:lat>58.7</fw:lat>
+		<fw:lon>-113.88</fw:lon>
+	</site>
+	<site code="s0000781">
+		<nameEn>Grande Cache</nameEn>
+		<nameFr>Grande Cache</nameFr>
+		<provinceCode>AB</provinceCode>
+		<fw:webId>ab-45</fw:webId>
+		<fw:lat>53.89</fw:lat>
+		<fw:lon>-119.12</fw:lon>
+	</site>
+	<site code="s0000661">
+		<nameEn>Grande Prairie</nameEn>
+		<nameFr>Grande Prairie</nameFr>
+		<provinceCode>AB</provinceCode>
+		<fw:webId>ab-31</fw:webId>
+		<fw:lat>55.17</fw:lat>
+		<fw:lon>-118.8</fw:lon>
+	</site>
+	<site code="s0000279">
+		<nameEn>Hendrickson Creek</nameEn>
+		<nameFr>Hendrickson Creek</nameFr>
+		<provinceCode>AB</provinceCode>
+		<fw:webId>ab-37</fw:webId>
+		<fw:lat>53.77</fw:lat>
+		<fw:lon>-118.37</fw:lon>
+	</site>
+	<site code="s0000621">
+		<nameEn>High Level</nameEn>
+		<nameFr>High Level</nameFr>
+		<provinceCode>AB</provinceCode>
+		<fw:webId>ab-24</fw:webId>
+		<fw:lat>58.52</fw:lat>
+		<fw:lon>-117.13</fw:lon>
+	</site>
+	<site code="s0000383">
+		<nameEn>High River</nameEn>
+		<nameFr>High River</nameFr>
+		<provinceCode>AB</provinceCode>
+		<fw:webId>ab-4</fw:webId>
+		<fw:lat>50.58</fw:lat>
+		<fw:lon>-113.87</fw:lon>
+	</site>
+	<site code="s0000066">
+		<nameEn>Highvale</nameEn>
+		<nameFr>Highvale</nameFr>
+		<provinceCode>AB</provinceCode>
+		<fw:webId>ab-68</fw:webId>
+		<fw:lat>53.45</fw:lat>
+		<fw:lon>-114.52</fw:lon>
+	</site>
+	<site code="s0000217">
+		<nameEn>Hinton</nameEn>
+		<nameFr>Hinton</nameFr>
+		<provinceCode>AB</provinceCode>
+		<fw:webId>ab-14</fw:webId>
+		<fw:lat>53.41</fw:lat>
+		<fw:lon>-117.56</fw:lon>
+	</site>
+	<site code="s0000218">
+		<nameEn>Jasper</nameEn>
+		<nameFr>Jasper</nameFr>
+		<provinceCode>AB</provinceCode>
+		<fw:webId>ab-70</fw:webId>
+		<fw:lat>52.89</fw:lat>
+		<fw:lon>-118.17</fw:lon>
+	</site>
+	<site code="s0000263">
+		<nameEn>Kananaskis (Nakiska Ridgetop)</nameEn>
+		<nameFr>Kananaskis (Nakiska Ridgetop)</nameFr>
+		<provinceCode>AB</provinceCode>
+		<fw:webId>ab-34</fw:webId>
+		<fw:lat>51.08</fw:lat>
+		<fw:lon>-115.13</fw:lon>
+	</site>
+	<site code="s0000229">
+		<nameEn>Lac La Biche</nameEn>
+		<nameFr>Lac La Biche</nameFr>
+		<provinceCode>AB</provinceCode>
+		<fw:webId>ab-32</fw:webId>
+		<fw:lat>54.77</fw:lat>
+		<fw:lon>-111.98</fw:lon>
+	</site>
+	<site code="s0000297">
+		<nameEn>Lacombe</nameEn>
+		<nameFr>Lacombe</nameFr>
+		<provinceCode>AB</provinceCode>
+		<fw:webId>ab-39</fw:webId>
+		<fw:lat>52.46</fw:lat>
+		<fw:lon>-113.73</fw:lon>
+	</site>
+	<site code="s0000652">
+		<nameEn>Lethbridge</nameEn>
+		<nameFr>Lethbridge</nameFr>
+		<provinceCode>AB</provinceCode>
+		<fw:webId>ab-30</fw:webId>
+		<fw:lat>49.69</fw:lat>
+		<fw:lon>-112.84</fw:lon>
+	</site>
+	<site code="s0000590">
+		<nameEn>Lloydminster</nameEn>
+		<nameFr>Lloydminster</nameFr>
+		<provinceCode>AB</provinceCode>
+		<fw:webId>ab-15</fw:webId>
+		<fw:lat>53.28</fw:lat>
+		<fw:lon>-110.0</fw:lon>
+	</site>
+	<site code="s0000745">
+		<nameEn>Medicine Hat</nameEn>
+		<nameFr>Medicine Hat</nameFr>
+		<provinceCode>AB</provinceCode>
+		<fw:webId>ab-51</fw:webId>
+		<fw:lat>50.04</fw:lat>
+		<fw:lon>-110.68</fw:lon>
+	</site>
+	<site code="s0000523">
+		<nameEn>Mildred Lake</nameEn>
+		<nameFr>Mildred Lake</nameFr>
+		<provinceCode>AB</provinceCode>
+		<fw:webId>ab-33</fw:webId>
+		<fw:lat>57.03</fw:lat>
+		<fw:lon>-111.6</fw:lon>
+	</site>
+	<site code="s0000313">
+		<nameEn>Milk River</nameEn>
+		<nameFr>Milk River</nameFr>
+		<provinceCode>AB</provinceCode>
+		<fw:webId>ab-19</fw:webId>
+		<fw:lat>49.15</fw:lat>
+		<fw:lon>-112.09</fw:lon>
+	</site>
+	<site code="s0000448">
+		<nameEn>Nordegg</nameEn>
+		<nameFr>Nordegg</nameFr>
+		<provinceCode>AB</provinceCode>
+		<fw:webId>ab-38</fw:webId>
+		<fw:lat>52.47</fw:lat>
+		<fw:lon>-116.08</fw:lon>
+	</site>
+	<site code="s0000767">
+		<nameEn>Okotoks</nameEn>
+		<nameFr>Okotoks</nameFr>
+		<provinceCode>AB</provinceCode>
+		<fw:webId>ab-11</fw:webId>
+		<fw:lat>50.73</fw:lat>
+		<fw:lon>-113.98</fw:lon>
+	</site>
+	<site code="s0000272">
+		<nameEn>Onefour</nameEn>
+		<nameFr>Onefour</nameFr>
+		<provinceCode>AB</provinceCode>
+		<fw:webId>ab-35</fw:webId>
+		<fw:lat>49.12</fw:lat>
+		<fw:lon>-110.47</fw:lon>
+	</site>
+	<site code="s0000625">
+		<nameEn>Peace River</nameEn>
+		<nameFr>Peace River</nameFr>
+		<provinceCode>AB</provinceCode>
+		<fw:webId>ab-25</fw:webId>
+		<fw:lat>56.24</fw:lat>
+		<fw:lon>-117.3</fw:lon>
+	</site>
+	<site code="s0000824">
+		<nameEn>Pincher Creek</nameEn>
+		<nameFr>Pincher Creek</nameFr>
+		<provinceCode>AB</provinceCode>
+		<fw:webId>ab-46</fw:webId>
+		<fw:lat>49.49</fw:lat>
+		<fw:lon>-113.95</fw:lon>
+	</site>
+	<site code="s0000643">
+		<nameEn>Rainbow Lake</nameEn>
+		<nameFr>Rainbow Lake</nameFr>
+		<provinceCode>AB</provinceCode>
+		<fw:webId>ab-21</fw:webId>
+		<fw:lat>58.5</fw:lat>
+		<fw:lon>-119.4</fw:lon>
+	</site>
+	<site code="s0000645">
+		<nameEn>Red Deer</nameEn>
+		<nameFr>Red Deer</nameFr>
+		<provinceCode>AB</provinceCode>
+		<fw:webId>ab-29</fw:webId>
+		<fw:lat>52.27</fw:lat>
+		<fw:lon>-113.81</fw:lon>
+	</site>
+	<site code="s0000299">
+		<nameEn>Red Earth Creek</nameEn>
+		<nameFr>Red Earth Creek</nameFr>
+		<provinceCode>AB</provinceCode>
+		<fw:webId>ab-40</fw:webId>
+		<fw:lat>56.54</fw:lat>
+		<fw:lon>-115.29</fw:lon>
+	</site>
+	<site code="s0000306">
+		<nameEn>Rocky Mountain House</nameEn>
+		<nameFr>Rocky Mountain House</nameFr>
+		<provinceCode>AB</provinceCode>
+		<fw:webId>ab-16</fw:webId>
+		<fw:lat>52.37</fw:lat>
+		<fw:lon>-114.92</fw:lon>
+	</site>
+	<site code="s0000794">
+		<nameEn>Slave Lake</nameEn>
+		<nameFr>Slave Lake</nameFr>
+		<provinceCode>AB</provinceCode>
+		<fw:webId>ab-54</fw:webId>
+		<fw:lat>55.28</fw:lat>
+		<fw:lon>-114.77</fw:lon>
+	</site>
+	<site code="s0000384">
+		<nameEn>Stavely</nameEn>
+		<nameFr>Stavely</nameFr>
+		<provinceCode>AB</provinceCode>
+		<fw:webId>ab-44</fw:webId>
+		<fw:lat>50.16</fw:lat>
+		<fw:lon>-113.64</fw:lon>
+	</site>
+	<site code="s0000829">
+		<nameEn>Stettler</nameEn>
+		<nameFr>Stettler</nameFr>
+		<provinceCode>AB</provinceCode>
+		<fw:webId>ab-5</fw:webId>
+		<fw:lat>52.32</fw:lat>
+		<fw:lon>-112.7</fw:lon>
+	</site>
+	<site code="s0000453">
+		<nameEn>Stony Plain</nameEn>
+		<nameFr>Stony Plain</nameFr>
+		<provinceCode>AB</provinceCode>
+		<fw:webId>ab-22</fw:webId>
+		<fw:lat>53.53</fw:lat>
+		<fw:lon>-114.01</fw:lon>
+	</site>
+	<site code="s0000068">
+		<nameEn>Strathmore</nameEn>
+		<nameFr>Strathmore</nameFr>
+		<provinceCode>AB</provinceCode>
+		<fw:webId>ab-6</fw:webId>
+		<fw:lat>51.05</fw:lat>
+		<fw:lon>-113.39</fw:lon>
+	</site>
+	<site code="s0000683">
+		<nameEn>Suffield</nameEn>
+		<nameFr>Suffield</nameFr>
+		<provinceCode>AB</provinceCode>
+		<fw:webId>ab-47</fw:webId>
+		<fw:lat>50.22</fw:lat>
+		<fw:lon>-111.16</fw:lon>
+	</site>
+	<site code="s0000083">
+		<nameEn>Sundre</nameEn>
+		<nameFr>Sundre</nameFr>
+		<provinceCode>AB</provinceCode>
+		<fw:webId>ab-53</fw:webId>
+		<fw:lat>51.8</fw:lat>
+		<fw:lon>-114.64</fw:lon>
+	</site>
+	<site code="s0000359">
+		<nameEn>Taber</nameEn>
+		<nameFr>Taber</nameFr>
+		<provinceCode>AB</provinceCode>
+		<fw:webId>ab-7</fw:webId>
+		<fw:lat>49.78</fw:lat>
+		<fw:lon>-112.15</fw:lon>
+	</site>
+	<site code="s0000179">
+		<nameEn>Three Hills</nameEn>
+		<nameFr>Three Hills</nameFr>
+		<provinceCode>AB</provinceCode>
+		<fw:webId>ab-69</fw:webId>
+		<fw:lat>51.7</fw:lat>
+		<fw:lon>-113.27</fw:lon>
+	</site>
+	<site code="s0000358">
+		<nameEn>Vauxhall</nameEn>
+		<nameFr>Vauxhall</nameFr>
+		<provinceCode>AB</provinceCode>
+		<fw:webId>ab-27</fw:webId>
+		<fw:lat>50.07</fw:lat>
+		<fw:lon>-112.11</fw:lon>
+	</site>
+	<site code="s0000356">
+		<nameEn>Vegreville</nameEn>
+		<nameFr>Vegreville</nameFr>
+		<provinceCode>AB</provinceCode>
+		<fw:webId>ab-26</fw:webId>
+		<fw:lat>53.5</fw:lat>
+		<fw:lon>-112.05</fw:lon>
+	</site>
+	<site code="s0000833">
+		<nameEn>Wainwright</nameEn>
+		<nameFr>Wainwright</nameFr>
+		<provinceCode>AB</provinceCode>
+		<fw:webId>ab-55</fw:webId>
+		<fw:lat>52.83</fw:lat>
+		<fw:lon>-110.86</fw:lon>
+	</site>
+	<site code="s0000170">
+		<nameEn>Waterton Park</nameEn>
+		<nameFr>Parc Waterton</nameFr>
+		<provinceCode>AB</provinceCode>
+		<fw:webId>ab-66</fw:webId>
+		<fw:lat>49.05</fw:lat>
+		<fw:lon>-113.91</fw:lon>
+	</site>
+	<site code="s0000427">
+		<nameEn>Westlock</nameEn>
+		<nameFr>Westlock</nameFr>
+		<provinceCode>AB</provinceCode>
+		<fw:webId>ab-8</fw:webId>
+		<fw:lat>54.16</fw:lat>
+		<fw:lon>-113.86</fw:lon>
+	</site>
+	<site code="s0000312">
+		<nameEn>Wetaskiwin</nameEn>
+		<nameFr>Wetaskiwin</nameFr>
+		<provinceCode>AB</provinceCode>
+		<fw:webId>ab-9</fw:webId>
+		<fw:lat>52.97</fw:lat>
+		<fw:lon>-113.38</fw:lon>
+	</site>
+	<site code="s0000477">
+		<nameEn>Whitecourt</nameEn>
+		<nameFr>Whitecourt</nameFr>
+		<provinceCode>AB</provinceCode>
+		<fw:webId>ab-56</fw:webId>
+		<fw:lat>54.14</fw:lat>
+		<fw:lon>-115.68</fw:lon>
+	</site>
+	<site code="s0000119">
+		<nameEn>Willow Creek (Provincial Park)</nameEn>
+		<nameFr>Willow Creek (Parc provincial)</nameFr>
+		<provinceCode>AB</provinceCode>
+		<fw:webId>ab-41</fw:webId>
+		<fw:lat>50.12</fw:lat>
+		<fw:lon>-113.77</fw:lon>
+	</site>
+	<site code="s0000106">
+		<nameEn>100 Mile House</nameEn>
+		<nameFr>100 Mile House</nameFr>
+		<provinceCode>BC</provinceCode>
+		<fw:webId>bc-7</fw:webId>
+		<fw:lat>51.65</fw:lat>
+		<fw:lon>-121.28</fw:lon>
+	</site>
+	<site code="s0000758">
+		<nameEn>Abbotsford</nameEn>
+		<nameFr>Abbotsford</nameFr>
+		<provinceCode>BC</provinceCode>
+		<fw:webId>bc-81</fw:webId>
+		<fw:lat>49.06</fw:lat>
+		<fw:lon>-122.25</fw:lon>
+	</site>
+	<site code="s0000399">
+		<nameEn>Agassiz</nameEn>
+		<nameFr>Agassiz</nameFr>
+		<provinceCode>BC</provinceCode>
+		<fw:webId>bc-70</fw:webId>
+		<fw:lat>49.23</fw:lat>
+		<fw:lon>-121.77</fw:lon>
+	</site>
+	<site code="s0000409">
+		<nameEn>Atlin</nameEn>
+		<nameFr>Atlin</nameFr>
+		<provinceCode>BC</provinceCode>
+		<fw:webId>bc-67</fw:webId>
+		<fw:lat>59.57</fw:lat>
+		<fw:lon>-133.7</fw:lon>
+	</site>
+	<site code="s0000834">
+		<nameEn>Bella Bella</nameEn>
+		<nameFr>Bella Bella</nameFr>
+		<provinceCode>BC</provinceCode>
+		<fw:webId>bc-94</fw:webId>
+		<fw:lat>52.16</fw:lat>
+		<fw:lon>-128.14</fw:lon>
+	</site>
+	<site code="s0000485">
+		<nameEn>Bella Coola</nameEn>
+		<nameFr>Bella Coola</nameFr>
+		<provinceCode>BC</provinceCode>
+		<fw:webId>bc-18</fw:webId>
+		<fw:lat>52.38</fw:lat>
+		<fw:lon>-126.75</fw:lon>
+	</site>
+	<site code="s0000499">
+		<nameEn>Blue River</nameEn>
+		<nameFr>Blue River</nameFr>
+		<provinceCode>BC</provinceCode>
+		<fw:webId>bc-22</fw:webId>
+		<fw:lat>52.1</fw:lat>
+		<fw:lon>-119.3</fw:lon>
+	</site>
+	<site code="s0000293">
+		<nameEn>Burns Lake</nameEn>
+		<nameFr>Burns Lake</nameFr>
+		<provinceCode>BC</provinceCode>
+		<fw:webId>bc-43</fw:webId>
+		<fw:lat>54.23</fw:lat>
+		<fw:lon>-125.75</fw:lon>
+	</site>
+	<site code="s0000569">
+		<nameEn>Cache Creek</nameEn>
+		<nameFr>Cache Creek</nameFr>
+		<provinceCode>BC</provinceCode>
+		<fw:webId>bc-55</fw:webId>
+		<fw:lat>50.81</fw:lat>
+		<fw:lon>-121.32</fw:lon>
+	</site>
+	<site code="s0000488">
+		<nameEn>Campbell River</nameEn>
+		<nameFr>Campbell River</nameFr>
+		<provinceCode>BC</provinceCode>
+		<fw:webId>bc-19</fw:webId>
+		<fw:lat>50.02</fw:lat>
+		<fw:lon>-125.24</fw:lon>
+	</site>
+	<site code="s0000228">
+		<nameEn>Cassiar</nameEn>
+		<nameFr>Cassiar</nameFr>
+		<provinceCode>BC</provinceCode>
+		<fw:webId>bc-6</fw:webId>
+		<fw:lat>59.29</fw:lat>
+		<fw:lon>-129.85</fw:lon>
+	</site>
+	<site code="s0000497">
+		<nameEn>Castlegar</nameEn>
+		<nameFr>Castlegar</nameFr>
+		<provinceCode>BC</provinceCode>
+		<fw:webId>bc-21</fw:webId>
+		<fw:lat>49.3</fw:lat>
+		<fw:lon>-117.67</fw:lon>
+	</site>
+	<site code="s0000500">
+		<nameEn>Chetwynd</nameEn>
+		<nameFr>Chetwynd</nameFr>
+		<provinceCode>BC</provinceCode>
+		<fw:webId>bc-23</fw:webId>
+		<fw:lat>55.7</fw:lat>
+		<fw:lon>-121.63</fw:lon>
+	</site>
+	<site code="s0000398">
+		<nameEn>Chilliwack</nameEn>
+		<nameFr>Chilliwack</nameFr>
+		<provinceCode>BC</provinceCode>
+		<fw:webId>bc-24</fw:webId>
+		<fw:lat>49.18</fw:lat>
+		<fw:lon>-121.94</fw:lon>
+	</site>
+	<site code="s0000002">
+		<nameEn>Clearwater</nameEn>
+		<nameFr>Clearwater</nameFr>
+		<provinceCode>BC</provinceCode>
+		<fw:webId>bc-12</fw:webId>
+		<fw:lat>51.65</fw:lat>
+		<fw:lon>-120.03</fw:lon>
+	</site>
+	<site code="s0000107">
+		<nameEn>Clinton</nameEn>
+		<nameFr>Clinton</nameFr>
+		<provinceCode>BC</provinceCode>
+		<fw:webId>bc-91</fw:webId>
+		<fw:lat>51.08</fw:lat>
+		<fw:lon>-121.58</fw:lon>
+	</site>
+	<site code="s0000656">
+		<nameEn>Comox</nameEn>
+		<nameFr>Comox</nameFr>
+		<provinceCode>BC</provinceCode>
+		<fw:webId>bc-61</fw:webId>
+		<fw:lat>49.68</fw:lat>
+		<fw:lon>-124.93</fw:lon>
+	</site>
+	<site code="s0000657">
+		<nameEn>Courtenay</nameEn>
+		<nameFr>Courtenay</nameFr>
+		<provinceCode>BC</provinceCode>
+		<fw:webId>bc-92</fw:webId>
+		<fw:lat>49.68</fw:lat>
+		<fw:lon>-124.98</fw:lon>
+	</site>
+	<site code="s0000741">
+		<nameEn>Cranbrook</nameEn>
+		<nameFr>Cranbrook</nameFr>
+		<provinceCode>BC</provinceCode>
+		<fw:webId>bc-77</fw:webId>
+		<fw:lat>49.5</fw:lat>
+		<fw:lon>-115.77</fw:lon>
+	</site>
+	<site code="s0000212">
+		<nameEn>Creston</nameEn>
+		<nameFr>Creston</nameFr>
+		<provinceCode>BC</provinceCode>
+		<fw:webId>bc-26</fw:webId>
+		<fw:lat>49.1</fw:lat>
+		<fw:lon>-116.5</fw:lon>
+	</site>
+	<site code="s0000845">
+		<nameEn>Cummins Lakes (Provincial Park)</nameEn>
+		<nameFr>Cummins Lakes (Parc provincial)</nameFr>
+		<provinceCode>BC</provinceCode>
+		<fw:webId>bc-95</fw:webId>
+		<fw:lat>52.1</fw:lat>
+		<fw:lon>-118.06</fw:lon>
+	</site>
+	<site code="s0000509">
+		<nameEn>Dawson Creek</nameEn>
+		<nameFr>Dawson Creek</nameFr>
+		<provinceCode>BC</provinceCode>
+		<fw:webId>bc-25</fw:webId>
+		<fw:lat>55.77</fw:lat>
+		<fw:lon>-120.23</fw:lon>
+	</site>
+	<site code="s0000227">
+		<nameEn>Dease Lake</nameEn>
+		<nameFr>Dease Lake</nameFr>
+		<provinceCode>BC</provinceCode>
+		<fw:webId>bc-14</fw:webId>
+		<fw:lat>58.43</fw:lat>
+		<fw:lon>-130.02</fw:lon>
+	</site>
+	<site code="s0000009">
+		<nameEn>Dome Creek</nameEn>
+		<nameFr>Dome Creek</nameFr>
+		<provinceCode>BC</provinceCode>
+		<fw:webId>bc-8</fw:webId>
+		<fw:lat>53.75</fw:lat>
+		<fw:lon>-121.03</fw:lon>
+	</site>
+	<site code="s0000286">
+		<nameEn>Esquimalt</nameEn>
+		<nameFr>Esquimalt</nameFr>
+		<provinceCode>BC</provinceCode>
+		<fw:webId>bc-40</fw:webId>
+		<fw:lat>48.45</fw:lat>
+		<fw:lon>-123.42</fw:lon>
+	</site>
+	<site code="s0000132">
+		<nameEn>Estevan Point</nameEn>
+		<nameFr>Estevan Point</nameFr>
+		<provinceCode>BC</provinceCode>
+		<fw:webId>bc-15</fw:webId>
+		<fw:lat>49.38</fw:lat>
+		<fw:lon>-126.55</fw:lon>
+	</site>
+	<site code="s0000771">
+		<nameEn>Fort Nelson</nameEn>
+		<nameFr>Fort Nelson</nameFr>
+		<provinceCode>BC</provinceCode>
+		<fw:webId>bc-83</fw:webId>
+		<fw:lat>58.81</fw:lat>
+		<fw:lon>-122.7</fw:lon>
+	</site>
+	<site code="s0000746">
+		<nameEn>Fort St. John</nameEn>
+		<nameFr>Fort St. John</nameFr>
+		<provinceCode>BC</provinceCode>
+		<fw:webId>bc-78</fw:webId>
+		<fw:lat>56.25</fw:lat>
+		<fw:lon>-120.85</fw:lon>
+	</site>
+	<site code="s0000316">
+		<nameEn>Gibsons</nameEn>
+		<nameFr>Gibsons</nameFr>
+		<provinceCode>BC</provinceCode>
+		<fw:webId>bc-1</fw:webId>
+		<fw:lat>49.4</fw:lat>
+		<fw:lon>-123.5</fw:lon>
+	</site>
+	<site code="s0000527">
+		<nameEn>Golden</nameEn>
+		<nameFr>Golden</nameFr>
+		<provinceCode>BC</provinceCode>
+		<fw:webId>bc-34</fw:webId>
+		<fw:lat>51.3</fw:lat>
+		<fw:lon>-116.97</fw:lon>
+	</site>
+	<site code="s0000234">
+		<nameEn>Gonzales Point</nameEn>
+		<nameFr>Gonzales Point</nameFr>
+		<provinceCode>BC</provinceCode>
+		<fw:webId>bc-32</fw:webId>
+		<fw:lat>48.41</fw:lat>
+		<fw:lon>-123.29</fw:lon>
+	</site>
+	<site code="s0000647">
+		<nameEn>Good Hope Lake</nameEn>
+		<nameFr>Good Hope Lake</nameFr>
+		<provinceCode>BC</provinceCode>
+		<fw:webId>bc-9</fw:webId>
+		<fw:lat>59.28</fw:lat>
+		<fw:lon>-129.3</fw:lon>
+	</site>
+	<site code="s0000004">
+		<nameEn>Grand Forks</nameEn>
+		<nameFr>Grand Forks</nameFr>
+		<provinceCode>BC</provinceCode>
+		<fw:webId>bc-39</fw:webId>
+		<fw:lat>49.03</fw:lat>
+		<fw:lon>-118.43</fw:lon>
+	</site>
+	<site code="s0000155">
+		<nameEn>Gulf Islands (Southern)</nameEn>
+		<nameFr>Gulf Islands (Secteur sud)</nameFr>
+		<provinceCode>BC</provinceCode>
+		<fw:webId>bc-93</fw:webId>
+		<fw:lat>48.95</fw:lat>
+		<fw:lon>-123.53</fw:lon>
+	</site>
+	<site code="s0000547">
+		<nameEn>Hope</nameEn>
+		<nameFr>Hope</nameFr>
+		<provinceCode>BC</provinceCode>
+		<fw:webId>bc-36</fw:webId>
+		<fw:lat>49.38</fw:lat>
+		<fw:lon>-121.44</fw:lon>
+	</site>
+	<site code="s0000226">
+		<nameEn>Hope Slide</nameEn>
+		<nameFr>Hope Slide</nameFr>
+		<provinceCode>BC</provinceCode>
+		<fw:webId>bc-31</fw:webId>
+		<fw:lat>49.3</fw:lat>
+		<fw:lon>-121.27</fw:lon>
+	</site>
+	<site code="s0000008">
+		<nameEn>Invermere</nameEn>
+		<nameFr>Invermere</nameFr>
+		<provinceCode>BC</provinceCode>
+		<fw:webId>bc-72</fw:webId>
+		<fw:lat>50.52</fw:lat>
+		<fw:lon>-116.03</fw:lon>
+	</site>
+	<site code="s0000568">
+		<nameEn>Kamloops</nameEn>
+		<nameFr>Kamloops</nameFr>
+		<provinceCode>BC</provinceCode>
+		<fw:webId>bc-45</fw:webId>
+		<fw:lat>50.67</fw:lat>
+		<fw:lon>-120.33</fw:lon>
+	</site>
+	<site code="s0000592">
+		<nameEn>Kelowna</nameEn>
+		<nameFr>Kelowna</nameFr>
+		<provinceCode>BC</provinceCode>
+		<fw:webId>bc-48</fw:webId>
+		<fw:lat>49.88</fw:lat>
+		<fw:lon>-119.48</fw:lon>
+	</site>
+	<site code="s0000756">
+		<nameEn>Kitimat</nameEn>
+		<nameFr>Kitimat</nameFr>
+		<provinceCode>BC</provinceCode>
+		<fw:webId>bc-30</fw:webId>
+		<fw:lat>54.05</fw:lat>
+		<fw:lon>-128.65</fw:lon>
+	</site>
+	<site code="s0000391">
+		<nameEn>Kootenay (National Park)</nameEn>
+		<nameFr>Kootenay (Parc national)</nameFr>
+		<provinceCode>BC</provinceCode>
+		<fw:webId>bc-11</fw:webId>
+		<fw:lat>50.95</fw:lat>
+		<fw:lon>-116.03</fw:lon>
+	</site>
+	<site code="s0000377">
+		<nameEn>Liard River</nameEn>
+		<nameFr>Liard River</nameFr>
+		<provinceCode>BC</provinceCode>
+		<fw:webId>bc-87</fw:webId>
+		<fw:lat>59.42</fw:lat>
+		<fw:lon>-126.08</fw:lon>
+	</site>
+	<site code="s0000222">
+		<nameEn>Lillooet</nameEn>
+		<nameFr>Lillooet</nameFr>
+		<provinceCode>BC</provinceCode>
+		<fw:webId>bc-28</fw:webId>
+		<fw:lat>50.68</fw:lat>
+		<fw:lon>-121.93</fw:lon>
+	</site>
+	<site code="s0000242">
+		<nameEn>Lytton</nameEn>
+		<nameFr>Lytton</nameFr>
+		<provinceCode>BC</provinceCode>
+		<fw:webId>bc-33</fw:webId>
+		<fw:lat>50.23</fw:lat>
+		<fw:lon>-121.57</fw:lon>
+	</site>
+	<site code="s0000805">
+		<nameEn>Mackenzie</nameEn>
+		<nameFr>Mackenzie</nameFr>
+		<provinceCode>BC</provinceCode>
+		<fw:webId>bc-90</fw:webId>
+		<fw:lat>55.3</fw:lat>
+		<fw:lon>-123.17</fw:lon>
+	</site>
+	<site code="s0000224">
+		<nameEn>Malahat</nameEn>
+		<nameFr>Malahat</nameFr>
+		<provinceCode>BC</provinceCode>
+		<fw:webId>bc-29</fw:webId>
+		<fw:lat>48.55</fw:lat>
+		<fw:lon>-123.57</fw:lon>
+	</site>
+	<site code="s0000007">
+		<nameEn>Masset</nameEn>
+		<nameFr>Masset</nameFr>
+		<provinceCode>BC</provinceCode>
+		<fw:webId>bc-56</fw:webId>
+		<fw:lat>54.02</fw:lat>
+		<fw:lon>-132.1</fw:lon>
+	</site>
+	<site code="s0000005">
+		<nameEn>McBride</nameEn>
+		<nameFr>McBride</nameFr>
+		<provinceCode>BC</provinceCode>
+		<fw:webId>bc-47</fw:webId>
+		<fw:lat>53.3</fw:lat>
+		<fw:lon>-120.17</fw:lon>
+	</site>
+	<site code="s0000006">
+		<nameEn>Merritt</nameEn>
+		<nameFr>Merritt</nameFr>
+		<provinceCode>BC</provinceCode>
+		<fw:webId>bc-49</fw:webId>
+		<fw:lat>50.11</fw:lat>
+		<fw:lon>-120.79</fw:lon>
+	</site>
+	<site code="s0000376">
+		<nameEn>Muncho Lake</nameEn>
+		<nameFr>Muncho Lake</nameFr>
+		<provinceCode>BC</provinceCode>
+		<fw:webId>bc-63</fw:webId>
+		<fw:lat>58.93</fw:lat>
+		<fw:lon>-125.77</fw:lon>
+	</site>
+	<site code="s0000259">
+		<nameEn>Nakusp</nameEn>
+		<nameFr>Nakusp</nameFr>
+		<provinceCode>BC</provinceCode>
+		<fw:webId>bc-38</fw:webId>
+		<fw:lat>50.25</fw:lat>
+		<fw:lon>-117.8</fw:lon>
+	</site>
+	<site code="s0000496">
+		<nameEn>Nanaimo</nameEn>
+		<nameFr>Nanaimo</nameFr>
+		<provinceCode>BC</provinceCode>
+		<fw:webId>bc-20</fw:webId>
+		<fw:lat>49.17</fw:lat>
+		<fw:lon>-123.93</fw:lon>
+	</site>
+	<site code="s0000258">
+		<nameEn>Nelson</nameEn>
+		<nameFr>Nelson</nameFr>
+		<provinceCode>BC</provinceCode>
+		<fw:webId>bc-37</fw:webId>
+		<fw:lat>49.5</fw:lat>
+		<fw:lon>-117.28</fw:lon>
+	</site>
+	<site code="s0000397">
+		<nameEn>Osoyoos</nameEn>
+		<nameFr>Osoyoos</nameFr>
+		<provinceCode>BC</provinceCode>
+		<fw:webId>bc-69</fw:webId>
+		<fw:lat>49.03</fw:lat>
+		<fw:lon>-119.45</fw:lon>
+	</site>
+	<site code="s0000173">
+		<nameEn>Pemberton</nameEn>
+		<nameFr>Pemberton</nameFr>
+		<provinceCode>BC</provinceCode>
+		<fw:webId>bc-16</fw:webId>
+		<fw:lat>50.32</fw:lat>
+		<fw:lon>-122.8</fw:lon>
+	</site>
+	<site code="s0000772">
+		<nameEn>Penticton</nameEn>
+		<nameFr>Penticton</nameFr>
+		<provinceCode>BC</provinceCode>
+		<fw:webId>bc-84</fw:webId>
+		<fw:lat>49.5</fw:lat>
+		<fw:lon>-119.58</fw:lon>
+	</site>
+	<site code="s0000247">
+		<nameEn>Pitt Meadows</nameEn>
+		<nameFr>Pitt Meadows</nameFr>
+		<provinceCode>BC</provinceCode>
+		<fw:webId>bc-35</fw:webId>
+		<fw:lat>49.22</fw:lat>
+		<fw:lon>-122.69</fw:lon>
+	</site>
+	<site code="s0000294">
+		<nameEn>Port Alberni</nameEn>
+		<nameFr>Port Alberni</nameFr>
+		<provinceCode>BC</provinceCode>
+		<fw:webId>bc-46</fw:webId>
+		<fw:lat>49.24</fw:lat>
+		<fw:lon>-124.8</fw:lon>
+	</site>
+	<site code="s0000799">
+		<nameEn>Port Hardy</nameEn>
+		<nameFr>Port Hardy</nameFr>
+		<provinceCode>BC</provinceCode>
+		<fw:webId>bc-89</fw:webId>
+		<fw:lat>50.7</fw:lat>
+		<fw:lon>-127.42</fw:lon>
+	</site>
+	<site code="s0000634">
+		<nameEn>Powell River</nameEn>
+		<nameFr>Powell River</nameFr>
+		<provinceCode>BC</provinceCode>
+		<fw:webId>bc-58</fw:webId>
+		<fw:lat>49.85</fw:lat>
+		<fw:lon>-124.53</fw:lon>
+	</site>
+	<site code="s0000146">
+		<nameEn>Prince George</nameEn>
+		<nameFr>Prince George</nameFr>
+		<provinceCode>BC</provinceCode>
+		<fw:webId>bc-79</fw:webId>
+		<fw:lat>53.92</fw:lat>
+		<fw:lon>-122.75</fw:lon>
+	</site>
+	<site code="s0000633">
+		<nameEn>Prince Rupert</nameEn>
+		<nameFr>Prince Rupert</nameFr>
+		<provinceCode>BC</provinceCode>
+		<fw:webId>bc-57</fw:webId>
+		<fw:lat>54.32</fw:lat>
+		<fw:lon>-130.32</fw:lon>
+	</site>
+	<site code="s0000291">
+		<nameEn>Princeton</nameEn>
+		<nameFr>Princeton</nameFr>
+		<provinceCode>BC</provinceCode>
+		<fw:webId>bc-41</fw:webId>
+		<fw:lat>49.46</fw:lat>
+		<fw:lon>-120.51</fw:lon>
+	</site>
+	<site code="s0000292">
+		<nameEn>Puntzi Mountain</nameEn>
+		<nameFr>Puntzi Mountain</nameFr>
+		<provinceCode>BC</provinceCode>
+		<fw:webId>bc-42</fw:webId>
+		<fw:lat>52.17</fw:lat>
+		<fw:lon>-124.2</fw:lon>
+	</site>
+	<site code="s0000671">
+		<nameEn>Quesnel</nameEn>
+		<nameFr>Quesnel</nameFr>
+		<provinceCode>BC</provinceCode>
+		<fw:webId>bc-64</fw:webId>
+		<fw:lat>53.0</fw:lat>
+		<fw:lon>-122.5</fw:lon>
+	</site>
+	<site code="s0000679">
+		<nameEn>Revelstoke</nameEn>
+		<nameFr>Revelstoke</nameFr>
+		<provinceCode>BC</provinceCode>
+		<fw:webId>bc-65</fw:webId>
+		<fw:lat>50.98</fw:lat>
+		<fw:lon>-118.2</fw:lon>
+	</site>
+	<site code="s0000396">
+		<nameEn>Rock Creek</nameEn>
+		<nameFr>Rock Creek</nameFr>
+		<provinceCode>BC</provinceCode>
+		<fw:webId>bc-10</fw:webId>
+		<fw:lat>49.05</fw:lat>
+		<fw:lon>-119.0</fw:lon>
+	</site>
+	<site code="s0000324">
+		<nameEn>Salmon Arm</nameEn>
+		<nameFr>Salmon Arm</nameFr>
+		<provinceCode>BC</provinceCode>
+		<fw:webId>bc-51</fw:webId>
+		<fw:lat>50.7</fw:lat>
+		<fw:lon>-119.27</fw:lon>
+	</site>
+	<site code="s0000795">
+		<nameEn>Sandspit</nameEn>
+		<nameFr>Sandspit</nameFr>
+		<provinceCode>BC</provinceCode>
+		<fw:webId>bc-88</fw:webId>
+		<fw:lat>53.25</fw:lat>
+		<fw:lon>-131.82</fw:lon>
+	</site>
+	<site code="s0000317">
+		<nameEn>Sechelt</nameEn>
+		<nameFr>Sechelt</nameFr>
+		<provinceCode>BC</provinceCode>
+		<fw:webId>bc-3</fw:webId>
+		<fw:lat>49.47</fw:lat>
+		<fw:lon>-123.77</fw:lon>
+	</site>
+	<site code="s0000770">
+		<nameEn>Smithers</nameEn>
+		<nameFr>Smithers</nameFr>
+		<provinceCode>BC</provinceCode>
+		<fw:webId>bc-82</fw:webId>
+		<fw:lat>54.78</fw:lat>
+		<fw:lon>-127.17</fw:lon>
+	</site>
+	<site code="s0000175">
+		<nameEn>Sparwood</nameEn>
+		<nameFr>Sparwood</nameFr>
+		<provinceCode>BC</provinceCode>
+		<fw:webId>bc-52</fw:webId>
+		<fw:lat>49.72</fw:lat>
+		<fw:lon>-114.9</fw:lon>
+	</site>
+	<site code="s0000323">
+		<nameEn>Squamish</nameEn>
+		<nameFr>Squamish</nameFr>
+		<provinceCode>BC</provinceCode>
+		<fw:webId>bc-50</fw:webId>
+		<fw:lat>49.75</fw:lat>
+		<fw:lon>-123.13</fw:lon>
+	</site>
+	<site code="s0000828">
+		<nameEn>Stewart</nameEn>
+		<nameFr>Stewart</nameFr>
+		<provinceCode>BC</provinceCode>
+		<fw:webId>bc-73</fw:webId>
+		<fw:lat>55.93</fw:lat>
+		<fw:lon>-129.98</fw:lon>
+	</site>
+	<site code="s0000351">
+		<nameEn>Summerland</nameEn>
+		<nameFr>Summerland</nameFr>
+		<provinceCode>BC</provinceCode>
+		<fw:webId>bc-54</fw:webId>
+		<fw:lat>49.6</fw:lat>
+		<fw:lon>-119.67</fw:lon>
+	</site>
+	<site code="s0000465">
+		<nameEn>Tatlayoko Lake</nameEn>
+		<nameFr>Tatlayoko Lake</nameFr>
+		<provinceCode>BC</provinceCode>
+		<fw:webId>bc-60</fw:webId>
+		<fw:lat>51.72</fw:lat>
+		<fw:lon>-124.43</fw:lon>
+	</site>
+	<site code="s0000757">
+		<nameEn>Terrace</nameEn>
+		<nameFr>Terrace</nameFr>
+		<provinceCode>BC</provinceCode>
+		<fw:webId>bc-80</fw:webId>
+		<fw:lat>54.52</fw:lat>
+		<fw:lon>-128.6</fw:lon>
+	</site>
+	<site code="s0000341">
+		<nameEn>Tetsa River (Provincial Park)</nameEn>
+		<nameFr>Tetsa River (Parc provincial)</nameFr>
+		<provinceCode>BC</provinceCode>
+		<fw:webId>bc-53</fw:webId>
+		<fw:lat>58.65</fw:lat>
+		<fw:lon>-123.95</fw:lon>
+	</site>
+	<site code="s0000481">
+		<nameEn>Tofino</nameEn>
+		<nameFr>Tofino</nameFr>
+		<provinceCode>BC</provinceCode>
+		<fw:webId>bc-17</fw:webId>
+		<fw:lat>49.12</fw:lat>
+		<fw:lon>-125.88</fw:lon>
+	</site>
+	<site code="s0000471">
+		<nameEn>Trail</nameEn>
+		<nameFr>Trail</nameFr>
+		<provinceCode>BC</provinceCode>
+		<fw:webId>bc-71</fw:webId>
+		<fw:lat>49.1</fw:lat>
+		<fw:lon>-117.7</fw:lon>
+	</site>
+	<site code="s0000482">
+		<nameEn>Ucluelet</nameEn>
+		<nameFr>Ucluelet</nameFr>
+		<provinceCode>BC</provinceCode>
+		<fw:webId>bc-5</fw:webId>
+		<fw:lat>48.94</fw:lat>
+		<fw:lon>-125.55</fw:lon>
+	</site>
+	<site code="s0000003">
+		<nameEn>Valemount</nameEn>
+		<nameFr>Valemount</nameFr>
+		<provinceCode>BC</provinceCode>
+		<fw:webId>bc-13</fw:webId>
+		<fw:lat>52.83</fw:lat>
+		<fw:lon>-119.25</fw:lon>
+	</site>
+	<site code="s0000141">
+		<nameEn>Vancouver</nameEn>
+		<nameFr>Vancouver</nameFr>
+		<provinceCode>BC</provinceCode>
+		<fw:webId>bc-74</fw:webId>
+		<fw:lat>49.25</fw:lat>
+		<fw:lon>-123.12</fw:lon>
+	</site>
+	<site code="s0000754">
+		<nameEn>Vanderhoof</nameEn>
+		<nameFr>Vanderhoof</nameFr>
+		<provinceCode>BC</provinceCode>
+		<fw:webId>bc-44</fw:webId>
+		<fw:lat>54.02</fw:lat>
+		<fw:lon>-124.02</fw:lon>
+	</site>
+	<site code="s0000216">
+		<nameEn>Vernon</nameEn>
+		<nameFr>Vernon</nameFr>
+		<provinceCode>BC</provinceCode>
+		<fw:webId>bc-27</fw:webId>
+		<fw:lat>50.26</fw:lat>
+		<fw:lon>-119.27</fw:lon>
+	</site>
+	<site code="s0000775">
+		<nameEn>Victoria</nameEn>
+		<nameFr>Victoria</nameFr>
+		<provinceCode>BC</provinceCode>
+		<fw:webId>bc-85</fw:webId>
+		<fw:lat>48.43</fw:lat>
+		<fw:lon>-123.37</fw:lon>
+	</site>
+	<site code="s0000792">
+		<nameEn>Victoria (Hartland)</nameEn>
+		<nameFr>Victoria (Hartland)</nameFr>
+		<provinceCode>BC</provinceCode>
+		<fw:webId>bc-59</fw:webId>
+		<fw:lat>48.52</fw:lat>
+		<fw:lon>-123.43</fw:lon>
+	</site>
+	<site code="s0000390">
+		<nameEn>Victoria (University of)</nameEn>
+		<nameFr>Victoria (Université de)</nameFr>
+		<provinceCode>BC</provinceCode>
+		<fw:webId>bc-66</fw:webId>
+		<fw:lat>48.43</fw:lat>
+		<fw:lon>-123.37</fw:lon>
+	</site>
+	<site code="s0000735">
+		<nameEn>Victoria Harbour</nameEn>
+		<nameFr>Victoria Harbour</nameFr>
+		<provinceCode>BC</provinceCode>
+		<fw:webId>bc-75</fw:webId>
+		<fw:lat>48.42</fw:lat>
+		<fw:lon>-123.39</fw:lon>
+	</site>
+	<site code="s0000078">
+		<nameEn>Whistler</nameEn>
+		<nameFr>Whistler</nameFr>
+		<provinceCode>BC</provinceCode>
+		<fw:webId>bc-86</fw:webId>
+		<fw:lat>50.12</fw:lat>
+		<fw:lon>-122.97</fw:lon>
+	</site>
+	<site code="s0000373">
+		<nameEn>White Rock</nameEn>
+		<nameFr>White Rock</nameFr>
+		<provinceCode>BC</provinceCode>
+		<fw:webId>bc-62</fw:webId>
+		<fw:lat>49.02</fw:lat>
+		<fw:lon>-122.8</fw:lon>
+	</site>
+	<site code="s0000739">
+		<nameEn>Williams Lake</nameEn>
+		<nameFr>Williams Lake</nameFr>
+		<provinceCode>BC</provinceCode>
+		<fw:webId>bc-76</fw:webId>
+		<fw:lat>52.14</fw:lat>
+		<fw:lon>-122.14</fw:lon>
+	</site>
+	<site code="s0000392">
+		<nameEn>Yoho (National Park)</nameEn>
+		<nameFr>Yoho (Parc national)</nameFr>
+		<provinceCode>BC</provinceCode>
+		<fw:webId>bc-68</fw:webId>
+		<fw:lat>51.5</fw:lat>
+		<fw:lon>-116.5</fw:lon>
+	</site>
+	<site code="s0000171">
+		<nameEn>Altona</nameEn>
+		<nameFr>Altona</nameFr>
+		<provinceCode>MB</provinceCode>
+		<fw:webId>mb-3</fw:webId>
+		<fw:lat>49.1</fw:lat>
+		<fw:lon>-97.56</fw:lon>
+	</site>
+	<site code="s0000533">
+		<nameEn>Arnes</nameEn>
+		<nameFr>Arnes</nameFr>
+		<provinceCode>MB</provinceCode>
+		<fw:webId>mb-21</fw:webId>
+		<fw:lat>50.8</fw:lat>
+		<fw:lon>-96.99</fw:lon>
+	</site>
+	<site code="s0000091">
+		<nameEn>Bachelors Island</nameEn>
+		<nameFr>Bachelors Island</nameFr>
+		<provinceCode>MB</provinceCode>
+		<fw:webId>mb-43</fw:webId>
+		<fw:lat>51.75</fw:lat>
+		<fw:lon>-99.9</fw:lon>
+	</site>
+	<site code="s0000102">
+		<nameEn>Berens River</nameEn>
+		<nameFr>Berens River</nameFr>
+		<provinceCode>MB</provinceCode>
+		<fw:webId>mb-54</fw:webId>
+		<fw:lat>52.37</fw:lat>
+		<fw:lon>-97.03</fw:lon>
+	</site>
+	<site code="s0000012">
+		<nameEn>Bissett</nameEn>
+		<nameFr>Bissett</nameFr>
+		<provinceCode>MB</provinceCode>
+		<fw:webId>mb-33</fw:webId>
+		<fw:lat>51.03</fw:lat>
+		<fw:lon>-95.68</fw:lon>
+	</site>
+	<site code="s0000101">
+		<nameEn>Bloodvein</nameEn>
+		<nameFr>Bloodvein</nameFr>
+		<provinceCode>MB</provinceCode>
+		<fw:webId>mb-37</fw:webId>
+		<fw:lat>51.79</fw:lat>
+		<fw:lon>-96.71</fw:lon>
+	</site>
+	<site code="s0000492">
+		<nameEn>Brandon</nameEn>
+		<nameFr>Brandon</nameFr>
+		<provinceCode>MB</provinceCode>
+		<fw:webId>mb-52</fw:webId>
+		<fw:lat>49.85</fw:lat>
+		<fw:lon>-99.95</fw:lon>
+	</site>
+	<site code="s0000778">
+		<nameEn>Brochet</nameEn>
+		<nameFr>Brochet</nameFr>
+		<provinceCode>MB</provinceCode>
+		<fw:webId>mb-53</fw:webId>
+		<fw:lat>57.88</fw:lat>
+		<fw:lon>-101.67</fw:lon>
+	</site>
+	<site code="s0000401">
+		<nameEn>Carberry</nameEn>
+		<nameFr>Carberry</nameFr>
+		<provinceCode>MB</provinceCode>
+		<fw:webId>mb-35</fw:webId>
+		<fw:lat>49.87</fw:lat>
+		<fw:lon>-99.36</fw:lon>
+	</site>
+	<site code="s0000257">
+		<nameEn>Carman</nameEn>
+		<nameFr>Carman</nameFr>
+		<provinceCode>MB</provinceCode>
+		<fw:webId>mb-65</fw:webId>
+		<fw:lat>49.5</fw:lat>
+		<fw:lon>-98.0</fw:lon>
+	</site>
+	<site code="s0000779">
+		<nameEn>Churchill</nameEn>
+		<nameFr>Churchill</nameFr>
+		<provinceCode>MB</provinceCode>
+		<fw:webId>mb-42</fw:webId>
+		<fw:lat>58.73</fw:lat>
+		<fw:lon>-94.12</fw:lon>
+	</site>
+	<site code="s0000508">
+		<nameEn>Dauphin</nameEn>
+		<nameFr>Dauphin</nameFr>
+		<provinceCode>MB</provinceCode>
+		<fw:webId>mb-58</fw:webId>
+		<fw:lat>51.15</fw:lat>
+		<fw:lon>-100.05</fw:lon>
+	</site>
+	<site code="s0000256">
+		<nameEn>Deerwood</nameEn>
+		<nameFr>Deerwood</nameFr>
+		<provinceCode>MB</provinceCode>
+		<fw:webId>mb-49</fw:webId>
+		<fw:lat>49.4</fw:lat>
+		<fw:lon>-98.39</fw:lon>
+	</site>
+	<site code="s0000831">
+		<nameEn>Delta</nameEn>
+		<nameFr>Delta</nameFr>
+		<provinceCode>MB</provinceCode>
+		<fw:webId>mb-40</fw:webId>
+		<fw:lat>50.19</fw:lat>
+		<fw:lon>-98.32</fw:lon>
+	</site>
+	<site code="s0000152">
+		<nameEn>Dominion City</nameEn>
+		<nameFr>Dominion City</nameFr>
+		<provinceCode>MB</provinceCode>
+		<fw:webId>mb-2</fw:webId>
+		<fw:lat>49.14</fw:lat>
+		<fw:lon>-97.16</fw:lon>
+	</site>
+	<site code="s0000153">
+		<nameEn>Emerson</nameEn>
+		<nameFr>Emerson</nameFr>
+		<provinceCode>MB</provinceCode>
+		<fw:webId>mb-47</fw:webId>
+		<fw:lat>49.01</fw:lat>
+		<fw:lon>-97.21</fw:lon>
+	</site>
+	<site code="s0000339">
+		<nameEn>Fisher Branch</nameEn>
+		<nameFr>Fisher Branch</nameFr>
+		<provinceCode>MB</provinceCode>
+		<fw:webId>mb-24</fw:webId>
+		<fw:lat>51.08</fw:lat>
+		<fw:lon>-97.62</fw:lon>
+	</site>
+	<site code="s0000015">
+		<nameEn>Flin Flon</nameEn>
+		<nameFr>Flin Flon</nameFr>
+		<provinceCode>MB</provinceCode>
+		<fw:webId>mb-60</fw:webId>
+		<fw:lat>54.77</fw:lat>
+		<fw:lon>-101.86</fw:lon>
+	</site>
+	<site code="s0000543">
+		<nameEn>Gillam</nameEn>
+		<nameFr>Gillam</nameFr>
+		<provinceCode>MB</provinceCode>
+		<fw:webId>mb-64</fw:webId>
+		<fw:lat>56.35</fw:lat>
+		<fw:lon>-94.71</fw:lon>
+	</site>
+	<site code="s0000534">
+		<nameEn>Gimli</nameEn>
+		<nameFr>Gimli</nameFr>
+		<provinceCode>MB</provinceCode>
+		<fw:webId>mb-62</fw:webId>
+		<fw:lat>50.63</fw:lat>
+		<fw:lon>-96.99</fw:lon>
+	</site>
+	<site code="s0000566">
+		<nameEn>Gods Lake</nameEn>
+		<nameFr>Gods Lake</nameFr>
+		<provinceCode>MB</provinceCode>
+		<fw:webId>mb-63</fw:webId>
+		<fw:lat>54.67</fw:lat>
+		<fw:lon>-94.25</fw:lon>
+	</site>
+	<site code="s0000191">
+		<nameEn>Grand Beach</nameEn>
+		<nameFr>Grand Beach</nameFr>
+		<provinceCode>MB</provinceCode>
+		<fw:webId>mb-9</fw:webId>
+		<fw:lat>50.55</fw:lat>
+		<fw:lon>-96.63</fw:lon>
+	</site>
+	<site code="s0000207">
+		<nameEn>Grand Rapids</nameEn>
+		<nameFr>Grand Rapids</nameFr>
+		<provinceCode>MB</provinceCode>
+		<fw:webId>mb-57</fw:webId>
+		<fw:lat>53.18</fw:lat>
+		<fw:lon>-99.26</fw:lon>
+	</site>
+	<site code="s0000172">
+		<nameEn>Gretna</nameEn>
+		<nameFr>Gretna</nameFr>
+		<provinceCode>MB</provinceCode>
+		<fw:webId>mb-48</fw:webId>
+		<fw:lat>49.01</fw:lat>
+		<fw:lon>-97.56</fw:lon>
+	</site>
+	<site code="s0000178">
+		<nameEn>Hunters Point</nameEn>
+		<nameFr>Hunters Point</nameFr>
+		<provinceCode>MB</provinceCode>
+		<fw:webId>mb-50</fw:webId>
+		<fw:lat>53.03</fw:lat>
+		<fw:lon>-100.94</fw:lon>
+	</site>
+	<site code="s0000565">
+		<nameEn>Island Lake</nameEn>
+		<nameFr>Island Lake</nameFr>
+		<provinceCode>MB</provinceCode>
+		<fw:webId>mb-59</fw:webId>
+		<fw:lat>53.86</fw:lat>
+		<fw:lon>-94.67</fw:lon>
+	</site>
+	<site code="s0000776">
+		<nameEn>Leaf Rapids</nameEn>
+		<nameFr>Leaf Rapids</nameFr>
+		<provinceCode>MB</provinceCode>
+		<fw:webId>mb-22</fw:webId>
+		<fw:lat>56.47</fw:lat>
+		<fw:lon>-99.75</fw:lon>
+	</site>
+	<site code="s0000010">
+		<nameEn>Little Grand Rapids</nameEn>
+		<nameFr>Little Grand Rapids</nameFr>
+		<provinceCode>MB</provinceCode>
+		<fw:webId>mb-18</fw:webId>
+		<fw:lat>52.04</fw:lat>
+		<fw:lon>-95.46</fw:lon>
+	</site>
+	<site code="s0000777">
+		<nameEn>Lynn Lake</nameEn>
+		<nameFr>Lynn Lake</nameFr>
+		<provinceCode>MB</provinceCode>
+		<fw:webId>mb-41</fw:webId>
+		<fw:lat>56.83</fw:lat>
+		<fw:lon>-101.08</fw:lon>
+	</site>
+	<site code="s0000276">
+		<nameEn>McCreary</nameEn>
+		<nameFr>McCreary</nameFr>
+		<provinceCode>MB</provinceCode>
+		<fw:webId>mb-15</fw:webId>
+		<fw:lat>50.77</fw:lat>
+		<fw:lon>-99.49</fw:lon>
+	</site>
+	<site code="s0000136">
+		<nameEn>Melita</nameEn>
+		<nameFr>Melita</nameFr>
+		<provinceCode>MB</provinceCode>
+		<fw:webId>mb-45</fw:webId>
+		<fw:lat>49.27</fw:lat>
+		<fw:lon>-101.0</fw:lon>
+	</site>
+	<site code="s0000490">
+		<nameEn>Minnedosa</nameEn>
+		<nameFr>Minnedosa</nameFr>
+		<provinceCode>MB</provinceCode>
+		<fw:webId>mb-10</fw:webId>
+		<fw:lat>50.25</fw:lat>
+		<fw:lon>-99.84</fw:lon>
+	</site>
+	<site code="s0000444">
+		<nameEn>Morden</nameEn>
+		<nameFr>Morden</nameFr>
+		<provinceCode>MB</provinceCode>
+		<fw:webId>mb-17</fw:webId>
+		<fw:lat>49.19</fw:lat>
+		<fw:lon>-98.1</fw:lon>
+	</site>
+	<site code="s0000150">
+		<nameEn>Morris</nameEn>
+		<nameFr>Morris</nameFr>
+		<provinceCode>MB</provinceCode>
+		<fw:webId>mb-11</fw:webId>
+		<fw:lat>49.36</fw:lat>
+		<fw:lon>-97.37</fw:lon>
+	</site>
+	<site code="s0000616">
+		<nameEn>Norway House</nameEn>
+		<nameFr>Norway House</nameFr>
+		<provinceCode>MB</provinceCode>
+		<fw:webId>mb-25</fw:webId>
+		<fw:lat>53.99</fw:lat>
+		<fw:lon>-97.82</fw:lon>
+	</site>
+	<site code="s0000273">
+		<nameEn>Oak Point</nameEn>
+		<nameFr>Oak Point</nameFr>
+		<provinceCode>MB</provinceCode>
+		<fw:webId>mb-14</fw:webId>
+		<fw:lat>50.51</fw:lat>
+		<fw:lon>-98.03</fw:lon>
+	</site>
+	<site code="s0000011">
+		<nameEn>Oxford House</nameEn>
+		<nameFr>Oxford House</nameFr>
+		<provinceCode>MB</provinceCode>
+		<fw:webId>mb-27</fw:webId>
+		<fw:lat>54.95</fw:lat>
+		<fw:lon>-95.27</fw:lon>
+	</site>
+	<site code="s0000289">
+		<nameEn>Pilot Mound</nameEn>
+		<nameFr>Pilot Mound</nameFr>
+		<provinceCode>MB</provinceCode>
+		<fw:webId>mb-19</fw:webId>
+		<fw:lat>49.2</fw:lat>
+		<fw:lon>-98.89</fw:lon>
+	</site>
+	<site code="s0000130">
+		<nameEn>Pinawa</nameEn>
+		<nameFr>Pinawa</nameFr>
+		<provinceCode>MB</provinceCode>
+		<fw:webId>mb-44</fw:webId>
+		<fw:lat>50.15</fw:lat>
+		<fw:lon>-95.88</fw:lon>
+	</site>
+	<site code="s0000189">
+		<nameEn>Pine Falls</nameEn>
+		<nameFr>Pine Falls</nameFr>
+		<provinceCode>MB</provinceCode>
+		<fw:webId>mb-4</fw:webId>
+		<fw:lat>50.57</fw:lat>
+		<fw:lon>-96.22</fw:lon>
+	</site>
+	<site code="s0000378">
+		<nameEn>Poplar River</nameEn>
+		<nameFr>Poplar River</nameFr>
+		<provinceCode>MB</provinceCode>
+		<fw:webId>mb-5</fw:webId>
+		<fw:lat>52.99</fw:lat>
+		<fw:lon>-97.28</fw:lon>
+	</site>
+	<site code="s0000626">
+		<nameEn>Portage la Prairie</nameEn>
+		<nameFr>Portage la Prairie</nameFr>
+		<provinceCode>MB</provinceCode>
+		<fw:webId>mb-29</fw:webId>
+		<fw:lat>49.97</fw:lat>
+		<fw:lon>-98.29</fw:lon>
+	</site>
+	<site code="s0000161">
+		<nameEn>Pukatawagan</nameEn>
+		<nameFr>Pukatawagan</nameFr>
+		<provinceCode>MB</provinceCode>
+		<fw:webId>mb-67</fw:webId>
+		<fw:lat>55.74</fw:lat>
+		<fw:lon>-101.32</fw:lon>
+	</site>
+	<site code="s0000734">
+		<nameEn>Richer</nameEn>
+		<nameFr>Richer</nameFr>
+		<provinceCode>MB</provinceCode>
+		<fw:webId>mb-6</fw:webId>
+		<fw:lat>49.66</fw:lat>
+		<fw:lon>-96.46</fw:lon>
+	</site>
+	<site code="s0000380">
+		<nameEn>Roblin</nameEn>
+		<nameFr>Roblin</nameFr>
+		<provinceCode>MB</provinceCode>
+		<fw:webId>mb-32</fw:webId>
+		<fw:lat>51.23</fw:lat>
+		<fw:lon>-101.36</fw:lon>
+	</site>
+	<site code="s0000013">
+		<nameEn>Shamattawa</nameEn>
+		<nameFr>Shamattawa</nameFr>
+		<provinceCode>MB</provinceCode>
+		<fw:webId>mb-39</fw:webId>
+		<fw:lat>55.85</fw:lat>
+		<fw:lon>-92.09</fw:lon>
+	</site>
+	<site code="s0000402">
+		<nameEn>Shilo</nameEn>
+		<nameFr>Shilo</nameFr>
+		<provinceCode>MB</provinceCode>
+		<fw:webId>mb-61</fw:webId>
+		<fw:lat>49.81</fw:lat>
+		<fw:lon>-99.64</fw:lon>
+	</site>
+	<site code="s0000352">
+		<nameEn>Shoal Lake</nameEn>
+		<nameFr>Shoal Lake</nameFr>
+		<provinceCode>MB</provinceCode>
+		<fw:webId>mb-28</fw:webId>
+		<fw:lat>50.44</fw:lat>
+		<fw:lon>-100.59</fw:lon>
+	</site>
+	<site code="s0000160">
+		<nameEn>Snow Lake</nameEn>
+		<nameFr>Snow Lake</nameFr>
+		<provinceCode>MB</provinceCode>
+		<fw:webId>mb-12</fw:webId>
+		<fw:lat>54.88</fw:lat>
+		<fw:lon>-100.04</fw:lon>
+	</site>
+	<site code="s0000491">
+		<nameEn>Souris</nameEn>
+		<nameFr>Souris</nameFr>
+		<provinceCode>MB</provinceCode>
+		<fw:webId>mb-16</fw:webId>
+		<fw:lat>49.62</fw:lat>
+		<fw:lon>-100.26</fw:lon>
+	</site>
+	<site code="s0000337">
+		<nameEn>Sprague</nameEn>
+		<nameFr>Sprague</nameFr>
+		<provinceCode>MB</provinceCode>
+		<fw:webId>mb-23</fw:webId>
+		<fw:lat>49.04</fw:lat>
+		<fw:lon>-95.64</fw:lon>
+	</site>
+	<site code="s0000151">
+		<nameEn>Steinbach</nameEn>
+		<nameFr>Steinbach</nameFr>
+		<provinceCode>MB</provinceCode>
+		<fw:webId>mb-13</fw:webId>
+		<fw:lat>49.53</fw:lat>
+		<fw:lon>-96.68</fw:lon>
+	</site>
+	<site code="s0000139">
+		<nameEn>Swan River</nameEn>
+		<nameFr>Swan River</nameFr>
+		<provinceCode>MB</provinceCode>
+		<fw:webId>mb-46</fw:webId>
+		<fw:lat>52.11</fw:lat>
+		<fw:lon>-101.27</fw:lon>
+	</site>
+	<site code="s0000417">
+		<nameEn>Tadoule Lake</nameEn>
+		<nameFr>Tadoule Lake</nameFr>
+		<provinceCode>MB</provinceCode>
+		<fw:webId>mb-51</fw:webId>
+		<fw:lat>58.71</fw:lat>
+		<fw:lon>-98.48</fw:lon>
+	</site>
+	<site code="s0000644">
+		<nameEn>The Pas</nameEn>
+		<nameFr>The Pas</nameFr>
+		<provinceCode>MB</provinceCode>
+		<fw:webId>mb-30</fw:webId>
+		<fw:lat>53.83</fw:lat>
+		<fw:lon>-101.25</fw:lon>
+	</site>
+	<site code="s0000695">
+		<nameEn>Thompson</nameEn>
+		<nameFr>Thompson</nameFr>
+		<provinceCode>MB</provinceCode>
+		<fw:webId>mb-34</fw:webId>
+		<fw:lat>55.74</fw:lat>
+		<fw:lon>-97.86</fw:lon>
+	</site>
+	<site code="s0000137">
+		<nameEn>Turtle Mountain (Provincial Park)</nameEn>
+		<nameFr>Turtle Mountain (Parc provincial)</nameFr>
+		<provinceCode>MB</provinceCode>
+		<fw:webId>mb-66</fw:webId>
+		<fw:lat>49.05</fw:lat>
+		<fw:lon>-100.25</fw:lon>
+	</site>
+	<site code="s0000190">
+		<nameEn>Victoria Beach</nameEn>
+		<nameFr>Victoria Beach</nameFr>
+		<provinceCode>MB</provinceCode>
+		<fw:webId>mb-55</fw:webId>
+		<fw:lat>50.7</fw:lat>
+		<fw:lon>-96.56</fw:lon>
+	</site>
+	<site code="s0000135">
+		<nameEn>Virden</nameEn>
+		<nameFr>Virden</nameFr>
+		<provinceCode>MB</provinceCode>
+		<fw:webId>mb-20</fw:webId>
+		<fw:lat>49.85</fw:lat>
+		<fw:lon>-100.93</fw:lon>
+	</site>
+	<site code="s0000154">
+		<nameEn>Vita</nameEn>
+		<nameFr>Vita</nameFr>
+		<provinceCode>MB</provinceCode>
+		<fw:webId>mb-7</fw:webId>
+		<fw:lat>49.13</fw:lat>
+		<fw:lon>-96.56</fw:lon>
+	</site>
+	<site code="s0000375">
+		<nameEn>Wasagaming</nameEn>
+		<nameFr>Wasagaming</nameFr>
+		<provinceCode>MB</provinceCode>
+		<fw:webId>mb-31</fw:webId>
+		<fw:lat>50.66</fw:lat>
+		<fw:lon>-99.97</fw:lon>
+	</site>
+	<site code="s0000131">
+		<nameEn>Whiteshell</nameEn>
+		<nameFr>Whiteshell</nameFr>
+		<provinceCode>MB</provinceCode>
+		<fw:webId>mb-8</fw:webId>
+		<fw:lat>49.74</fw:lat>
+		<fw:lon>-95.2</fw:lon>
+	</site>
+	<site code="s0000445">
+		<nameEn>Winkler</nameEn>
+		<nameFr>Winkler</nameFr>
+		<provinceCode>MB</provinceCode>
+		<fw:webId>mb-26</fw:webId>
+		<fw:lat>49.18</fw:lat>
+		<fw:lon>-97.94</fw:lon>
+	</site>
+	<site code="s0000193">
+		<nameEn>Winnipeg</nameEn>
+		<nameFr>Winnipeg</nameFr>
+		<provinceCode>MB</provinceCode>
+		<fw:webId>mb-38</fw:webId>
+		<fw:lat>49.88</fw:lat>
+		<fw:lon>-97.15</fw:lon>
+	</site>
+	<site code="s0000472">
+		<nameEn>Winnipeg (The Forks)</nameEn>
+		<nameFr>Winnipeg (La Fourche)</nameFr>
+		<provinceCode>MB</provinceCode>
+		<fw:webId>mb-36</fw:webId>
+		<fw:lat>49.89</fw:lat>
+		<fw:lon>-97.13</fw:lon>
+	</site>
+	<site code="s0000014">
+		<nameEn>York Factory</nameEn>
+		<nameFr>York Factory</nameFr>
+		<provinceCode>MB</provinceCode>
+		<fw:webId>mb-56</fw:webId>
+		<fw:lat>57.0</fw:lat>
+		<fw:lon>-92.31</fw:lon>
+	</site>
+	<site code="s0000386">
+		<nameEn>Bas-Caraquet</nameEn>
+		<nameFr>Bas-Caraquet</nameFr>
+		<provinceCode>NB</provinceCode>
+		<fw:webId>nb-22</fw:webId>
+		<fw:lat>47.8</fw:lat>
+		<fw:lon>-64.83</fw:lon>
+	</site>
+	<site code="s0000806">
+		<nameEn>Bathurst</nameEn>
+		<nameFr>Bathurst</nameFr>
+		<provinceCode>NB</provinceCode>
+		<fw:webId>nb-28</fw:webId>
+		<fw:lat>47.63</fw:lat>
+		<fw:lon>-65.63</fw:lon>
+	</site>
+	<site code="s0000033">
+		<nameEn>Bouctouche</nameEn>
+		<nameFr>Bouctouche</nameFr>
+		<provinceCode>NB</provinceCode>
+		<fw:webId>nb-1</fw:webId>
+		<fw:lat>46.47</fw:lat>
+		<fw:lon>-64.74</fw:lon>
+	</site>
+	<site code="s0000807">
+		<nameEn>Campbellton</nameEn>
+		<nameFr>Campbellton</nameFr>
+		<provinceCode>NB</provinceCode>
+		<fw:webId>nb-2</fw:webId>
+		<fw:lat>47.99</fw:lat>
+		<fw:lon>-66.68</fw:lon>
+	</site>
+	<site code="s0000809">
+		<nameEn>Charlo</nameEn>
+		<nameFr>Charlo</nameFr>
+		<provinceCode>NB</provinceCode>
+		<fw:webId>nb-30</fw:webId>
+		<fw:lat>47.99</fw:lat>
+		<fw:lon>-66.31</fw:lon>
+	</site>
+	<site code="s0000502">
+		<nameEn>Chipman</nameEn>
+		<nameFr>Chipman</nameFr>
+		<provinceCode>NB</provinceCode>
+		<fw:webId>nb-3</fw:webId>
+		<fw:lat>46.17</fw:lat>
+		<fw:lon>-65.89</fw:lon>
+	</site>
+	<site code="s0000808">
+		<nameEn>Dalhousie</nameEn>
+		<nameFr>Dalhousie</nameFr>
+		<provinceCode>NB</provinceCode>
+		<fw:webId>nb-26</fw:webId>
+		<fw:lat>48.05</fw:lat>
+		<fw:lon>-66.39</fw:lon>
+	</site>
+	<site code="s0000503">
+		<nameEn>Doaktown</nameEn>
+		<nameFr>Doaktown</nameFr>
+		<provinceCode>NB</provinceCode>
+		<fw:webId>nb-4</fw:webId>
+		<fw:lat>46.56</fw:lat>
+		<fw:lon>-66.12</fw:lon>
+	</site>
+	<site code="s0000043">
+		<nameEn>Edmundston</nameEn>
+		<nameFr>Edmundston</nameFr>
+		<provinceCode>NB</provinceCode>
+		<fw:webId>nb-32</fw:webId>
+		<fw:lat>47.38</fw:lat>
+		<fw:lon>-68.29</fw:lon>
+	</site>
+	<site code="s0000250">
+		<nameEn>Fredericton</nameEn>
+		<nameFr>Fredericton</nameFr>
+		<provinceCode>NB</provinceCode>
+		<fw:webId>nb-29</fw:webId>
+		<fw:lat>45.95</fw:lat>
+		<fw:lon>-66.67</fw:lon>
+	</site>
+	<site code="s0000688">
+		<nameEn>Fundy (National Park)</nameEn>
+		<nameFr>Fundy (Parc national)</nameFr>
+		<provinceCode>NB</provinceCode>
+		<fw:webId>nb-5</fw:webId>
+		<fw:lat>45.62</fw:lat>
+		<fw:lon>-65.03</fw:lon>
+	</site>
+	<site code="s0000201">
+		<nameEn>Grand Falls</nameEn>
+		<nameFr>Grand-Sault</nameFr>
+		<provinceCode>NB</provinceCode>
+		<fw:webId>nb-6</fw:webId>
+		<fw:lat>47.05</fw:lat>
+		<fw:lon>-67.74</fw:lon>
+	</site>
+	<site code="s0000622">
+		<nameEn>Grand Manan</nameEn>
+		<nameFr>Grand Manan</nameFr>
+		<provinceCode>NB</provinceCode>
+		<fw:webId>nb-27</fw:webId>
+		<fw:lat>44.7</fw:lat>
+		<fw:lon>-66.82</fw:lon>
+	</site>
+	<site code="s0000655">
+		<nameEn>Hopewell</nameEn>
+		<nameFr>Hopewell</nameFr>
+		<provinceCode>NB</provinceCode>
+		<fw:webId>nb-8</fw:webId>
+		<fw:lat>45.83</fw:lat>
+		<fw:lon>-64.72</fw:lon>
+	</site>
+	<site code="s0000038">
+		<nameEn>Kouchibouguac</nameEn>
+		<nameFr>Kouchibouguac</nameFr>
+		<provinceCode>NB</provinceCode>
+		<fw:webId>nb-9</fw:webId>
+		<fw:lat>46.86</fw:lat>
+		<fw:lon>-64.98</fw:lon>
+	</site>
+	<site code="s0000036">
+		<nameEn>Miramichi</nameEn>
+		<nameFr>Miramichi</nameFr>
+		<provinceCode>NB</provinceCode>
+		<fw:webId>nb-25</fw:webId>
+		<fw:lat>47.0</fw:lat>
+		<fw:lon>-65.47</fw:lon>
+	</site>
+	<site code="s0000243">
+		<nameEn>Miscou Island</nameEn>
+		<nameFr>Miscou Island</nameFr>
+		<provinceCode>NB</provinceCode>
+		<fw:webId>nb-31</fw:webId>
+		<fw:lat>47.95</fw:lat>
+		<fw:lon>-64.57</fw:lon>
+	</site>
+	<site code="s0000654">
+		<nameEn>Moncton</nameEn>
+		<nameFr>Moncton</nameFr>
+		<provinceCode>NB</provinceCode>
+		<fw:webId>nb-36</fw:webId>
+		<fw:lat>46.12</fw:lat>
+		<fw:lon>-64.8</fw:lon>
+	</site>
+	<site code="s0000198">
+		<nameEn>Mount Carleton (Provincial Park)</nameEn>
+		<nameFr>Mont Carleton (Parc provincial)</nameFr>
+		<provinceCode>NB</provinceCode>
+		<fw:webId>nb-10</fw:webId>
+		<fw:lat>47.38</fw:lat>
+		<fw:lon>-66.83</fw:lon>
+	</site>
+	<site code="s0000521">
+		<nameEn>Oromocto</nameEn>
+		<nameFr>Oromocto</nameFr>
+		<provinceCode>NB</provinceCode>
+		<fw:webId>nb-11</fw:webId>
+		<fw:lat>45.84</fw:lat>
+		<fw:lon>-66.48</fw:lon>
+	</site>
+	<site code="s0000037">
+		<nameEn>Point Escuminac</nameEn>
+		<nameFr>Point Escuminac</nameFr>
+		<provinceCode>NB</provinceCode>
+		<fw:webId>nb-34</fw:webId>
+		<fw:lat>47.07</fw:lat>
+		<fw:lon>-64.8</fw:lon>
+	</site>
+	<site code="s0000285">
+		<nameEn>Point Lepreau</nameEn>
+		<nameFr>Point Lepreau</nameFr>
+		<provinceCode>NB</provinceCode>
+		<fw:webId>nb-33</fw:webId>
+		<fw:lat>45.07</fw:lat>
+		<fw:lon>-66.45</fw:lon>
+	</site>
+	<site code="s0000685">
+		<nameEn>Quispamsis</nameEn>
+		<nameFr>Quispamsis</nameFr>
+		<provinceCode>NB</provinceCode>
+		<fw:webId>nb-12</fw:webId>
+		<fw:lat>45.44</fw:lat>
+		<fw:lon>-65.94</fw:lon>
+	</site>
+	<site code="s0000034">
+		<nameEn>Richibucto</nameEn>
+		<nameFr>Richibucto</nameFr>
+		<provinceCode>NB</provinceCode>
+		<fw:webId>nb-13</fw:webId>
+		<fw:lat>46.68</fw:lat>
+		<fw:lon>-64.88</fw:lon>
+	</site>
+	<site code="s0000035">
+		<nameEn>Rogersville</nameEn>
+		<nameFr>Rogersville</nameFr>
+		<provinceCode>NB</provinceCode>
+		<fw:webId>nb-14</fw:webId>
+		<fw:lat>46.75</fw:lat>
+		<fw:lon>-65.5</fw:lon>
+	</site>
+	<site code="s0000449">
+		<nameEn>Sackville</nameEn>
+		<nameFr>Sackville</nameFr>
+		<provinceCode>NB</provinceCode>
+		<fw:webId>nb-15</fw:webId>
+		<fw:lat>45.92</fw:lat>
+		<fw:lon>-64.39</fw:lon>
+	</site>
+	<site code="s0000331">
+		<nameEn>Saint Andrews</nameEn>
+		<nameFr>Saint Andrews</nameFr>
+		<provinceCode>NB</provinceCode>
+		<fw:webId>nb-18</fw:webId>
+		<fw:lat>45.08</fw:lat>
+		<fw:lon>-67.06</fw:lon>
+	</site>
+	<site code="s0000687">
+		<nameEn>Saint John</nameEn>
+		<nameFr>Saint John</nameFr>
+		<provinceCode>NB</provinceCode>
+		<fw:webId>nb-23</fw:webId>
+		<fw:lat>45.26</fw:lat>
+		<fw:lon>-66.04</fw:lon>
+	</site>
+	<site code="s0000199">
+		<nameEn>Saint-Quentin</nameEn>
+		<nameFr>Saint-Quentin</nameFr>
+		<provinceCode>NB</provinceCode>
+		<fw:webId>nb-16</fw:webId>
+		<fw:lat>47.51</fw:lat>
+		<fw:lon>-67.39</fw:lon>
+	</site>
+	<site code="s0000653">
+		<nameEn>Shediac</nameEn>
+		<nameFr>Shédiac</nameFr>
+		<provinceCode>NB</provinceCode>
+		<fw:webId>nb-17</fw:webId>
+		<fw:lat>46.22</fw:lat>
+		<fw:lon>-64.53</fw:lon>
+	</site>
+	<site code="s0000200">
+		<nameEn>St. Leonard</nameEn>
+		<nameFr>St. Leonard</nameFr>
+		<provinceCode>NB</provinceCode>
+		<fw:webId>nb-24</fw:webId>
+		<fw:lat>47.17</fw:lat>
+		<fw:lon>-67.92</fw:lon>
+	</site>
+	<site code="s0000332">
+		<nameEn>St. Stephen</nameEn>
+		<nameFr>St. Stephen</nameFr>
+		<provinceCode>NB</provinceCode>
+		<fw:webId>nb-35</fw:webId>
+		<fw:lat>45.22</fw:lat>
+		<fw:lon>-67.33</fw:lon>
+	</site>
+	<site code="s0000686">
+		<nameEn>Sussex</nameEn>
+		<nameFr>Sussex</nameFr>
+		<provinceCode>NB</provinceCode>
+		<fw:webId>nb-19</fw:webId>
+		<fw:lat>45.72</fw:lat>
+		<fw:lon>-65.51</fw:lon>
+	</site>
+	<site code="s0000385">
+		<nameEn>Tracadie-Sheila</nameEn>
+		<nameFr>Tracadie-Sheila</nameFr>
+		<provinceCode>NB</provinceCode>
+		<fw:webId>nb-20</fw:webId>
+		<fw:lat>47.51</fw:lat>
+		<fw:lon>-64.92</fw:lon>
+	</site>
+	<site code="s0000522">
+		<nameEn>Woodstock</nameEn>
+		<nameFr>Woodstock</nameFr>
+		<provinceCode>NB</provinceCode>
+		<fw:webId>nb-21</fw:webId>
+		<fw:lat>46.15</fw:lat>
+		<fw:lon>-67.6</fw:lon>
+	</site>
+	<site code="s0000116">
+		<nameEn>Badger</nameEn>
+		<nameFr>Badger</nameFr>
+		<provinceCode>NL</provinceCode>
+		<fw:webId>nl-34</fw:webId>
+		<fw:lat>48.98</fw:lat>
+		<fw:lon>-56.04</fw:lon>
+	</site>
+	<site code="s0000018">
+		<nameEn>Bay Roberts</nameEn>
+		<nameFr>Bay Roberts</nameFr>
+		<provinceCode>NL</provinceCode>
+		<fw:webId>nl-43</fw:webId>
+		<fw:lat>47.6</fw:lat>
+		<fw:lon>-53.27</fw:lon>
+	</site>
+	<site code="s0000041">
+		<nameEn>Bonavista</nameEn>
+		<nameFr>Bonavista</nameFr>
+		<provinceCode>NL</provinceCode>
+		<fw:webId>nl-14</fw:webId>
+		<fw:lat>48.65</fw:lat>
+		<fw:lon>-53.11</fw:lon>
+	</site>
+	<site code="s0000117">
+		<nameEn>Buchans</nameEn>
+		<nameFr>Buchans</nameFr>
+		<provinceCode>NL</provinceCode>
+		<fw:webId>nl-4</fw:webId>
+		<fw:lat>48.82</fw:lat>
+		<fw:lon>-56.86</fw:lon>
+	</site>
+	<site code="s0000032">
+		<nameEn>Burgeo</nameEn>
+		<nameFr>Burgeo</nameFr>
+		<provinceCode>NL</provinceCode>
+		<fw:webId>nl-31</fw:webId>
+		<fw:lat>47.61</fw:lat>
+		<fw:lon>-57.62</fw:lon>
+	</site>
+	<site code="s0000668">
+		<nameEn>Campbellton</nameEn>
+		<nameFr>Campbellton</nameFr>
+		<provinceCode>NL</provinceCode>
+		<fw:webId>nl-2</fw:webId>
+		<fw:lat>49.29</fw:lat>
+		<fw:lon>-54.94</fw:lon>
+	</site>
+	<site code="s0000298">
+		<nameEn>Cape Race</nameEn>
+		<nameFr>Cape Race</nameFr>
+		<provinceCode>NL</provinceCode>
+		<fw:webId>nl-28</fw:webId>
+		<fw:lat>46.66</fw:lat>
+		<fw:lon>-53.07</fw:lon>
+	</site>
+	<site code="s0000100">
+		<nameEn>Cartwright</nameEn>
+		<nameFr>Cartwright</nameFr>
+		<provinceCode>NL</provinceCode>
+		<fw:webId>nl-32</fw:webId>
+		<fw:lat>53.71</fw:lat>
+		<fw:lon>-57.01</fw:lon>
+	</site>
+	<site code="s0000859">
+		<nameEn>Cartwright Junction (Trans-Labrador Hwy)</nameEn>
+		<nameFr>Cartwright Junction (Rte Trans-Labrador)</nameFr>
+		<provinceCode>NL</provinceCode>
+		<fw:webId>nl-47</fw:webId>
+		<fw:lat>53.07</fw:lat>
+		<fw:lon>-57.51</fw:lon>
+	</site>
+	<site code="s0000400">
+		<nameEn>Channel - Port aux Basques</nameEn>
+		<nameFr>Channel - Port aux Basques</nameFr>
+		<provinceCode>NL</provinceCode>
+		<fw:webId>nl-17</fw:webId>
+		<fw:lat>47.58</fw:lat>
+		<fw:lon>-59.14</fw:lon>
+	</site>
+	<site code="s0000832">
+		<nameEn>Churchill Falls</nameEn>
+		<nameFr>Churchill Falls</nameFr>
+		<provinceCode>NL</provinceCode>
+		<fw:webId>nl-21</fw:webId>
+		<fw:lat>53.55</fw:lat>
+		<fw:lon>-64.02</fw:lon>
+	</site>
+	<site code="s0000466">
+		<nameEn>Clarenville</nameEn>
+		<nameFr>Clarenville</nameFr>
+		<provinceCode>NL</provinceCode>
+		<fw:webId>nl-1</fw:webId>
+		<fw:lat>48.16</fw:lat>
+		<fw:lon>-53.98</fw:lon>
+	</site>
+	<site code="s0000221">
+		<nameEn>Corner Brook</nameEn>
+		<nameFr>Corner Brook</nameFr>
+		<provinceCode>NL</provinceCode>
+		<fw:webId>nl-41</fw:webId>
+		<fw:lat>48.94</fw:lat>
+		<fw:lon>-57.97</fw:lon>
+	</site>
+	<site code="s0000115">
+		<nameEn>Daniel's Harbour</nameEn>
+		<nameFr>Daniel's Harbour</nameFr>
+		<provinceCode>NL</provinceCode>
+		<fw:webId>nl-33</fw:webId>
+		<fw:lat>50.24</fw:lat>
+		<fw:lon>-57.59</fw:lon>
+	</site>
+	<site code="s0000507">
+		<nameEn>Deer Lake</nameEn>
+		<nameFr>Deer Lake</nameFr>
+		<provinceCode>NL</provinceCode>
+		<fw:webId>nl-39</fw:webId>
+		<fw:lat>49.18</fw:lat>
+		<fw:lon>-57.43</fw:lon>
+	</site>
+	<site code="s0000112">
+		<nameEn>Englee</nameEn>
+		<nameFr>Englee</nameFr>
+		<provinceCode>NL</provinceCode>
+		<fw:webId>nl-44</fw:webId>
+		<fw:lat>50.73</fw:lat>
+		<fw:lon>-56.1</fw:lon>
+	</site>
+	<site code="s0000667">
+		<nameEn>Gander</nameEn>
+		<nameFr>Gander</nameFr>
+		<provinceCode>NL</provinceCode>
+		<fw:webId>nl-16</fw:webId>
+		<fw:lat>48.95</fw:lat>
+		<fw:lon>-54.61</fw:lon>
+	</site>
+	<site code="s0000475">
+		<nameEn>Grand Bank</nameEn>
+		<nameFr>Grand Bank</nameFr>
+		<provinceCode>NL</provinceCode>
+		<fw:webId>nl-5</fw:webId>
+		<fw:lat>47.1</fw:lat>
+		<fw:lon>-55.77</fw:lon>
+	</site>
+	<site code="s0000118">
+		<nameEn>Grand Falls-Windsor</nameEn>
+		<nameFr>Grand Falls-Windsor</nameFr>
+		<provinceCode>NL</provinceCode>
+		<fw:webId>nl-6</fw:webId>
+		<fw:lat>48.94</fw:lat>
+		<fw:lon>-55.67</fw:lon>
+	</site>
+	<site code="s0000457">
+		<nameEn>Gros Morne</nameEn>
+		<nameFr>Gros Morne</nameFr>
+		<provinceCode>NL</provinceCode>
+		<fw:webId>nl-7</fw:webId>
+		<fw:lat>49.69</fw:lat>
+		<fw:lon>-57.74</fw:lon>
+	</site>
+	<site code="s0000860">
+		<nameEn>Gull Island Rapids (Trans-Labrador Hwy)</nameEn>
+		<nameFr>Gull Island Rapids (Rte Trans-Labrador)</nameFr>
+		<provinceCode>NL</provinceCode>
+		<fw:webId>nl-48</fw:webId>
+		<fw:lat>52.98</fw:lat>
+		<fw:lon>-61.47</fw:lon>
+	</site>
+	<site code="s0000780">
+		<nameEn>Happy Valley-Goose Bay</nameEn>
+		<nameFr>Happy Valley-Goose Bay</nameFr>
+		<provinceCode>NL</provinceCode>
+		<fw:webId>nl-23</fw:webId>
+		<fw:lat>53.3</fw:lat>
+		<fw:lon>-60.31</fw:lon>
+	</site>
+	<site code="s0000181">
+		<nameEn>Hopedale</nameEn>
+		<nameFr>Hopedale</nameFr>
+		<provinceCode>NL</provinceCode>
+		<fw:webId>nl-38</fw:webId>
+		<fw:lat>55.47</fw:lat>
+		<fw:lon>-60.22</fw:lon>
+	</site>
+	<site code="s0000857">
+		<nameEn>L'Anse-au-Loup</nameEn>
+		<nameFr>L'Anse-au-Loup</nameFr>
+		<provinceCode>NL</provinceCode>
+		<fw:webId>nl-45</fw:webId>
+		<fw:lat>51.52</fw:lat>
+		<fw:lon>-56.84</fw:lon>
+	</site>
+	<site code="s0000079">
+		<nameEn>La Scie</nameEn>
+		<nameFr>La Scie</nameFr>
+		<provinceCode>NL</provinceCode>
+		<fw:webId>nl-22</fw:webId>
+		<fw:lat>49.96</fw:lat>
+		<fw:lon>-55.59</fw:lon>
+	</site>
+	<site code="s0000737">
+		<nameEn>Labrador City</nameEn>
+		<nameFr>Labrador City</nameFr>
+		<provinceCode>NL</provinceCode>
+		<fw:webId>nl-20</fw:webId>
+		<fw:lat>52.94</fw:lat>
+		<fw:lon>-66.92</fw:lon>
+	</site>
+	<site code="s0000669">
+		<nameEn>Lewisporte</nameEn>
+		<nameFr>Lewisporte</nameFr>
+		<provinceCode>NL</provinceCode>
+		<fw:webId>nl-9</fw:webId>
+		<fw:lat>49.25</fw:lat>
+		<fw:lon>-55.06</fw:lon>
+	</site>
+	<site code="s0000526">
+		<nameEn>Makkovik</nameEn>
+		<nameFr>Makkovik</nameFr>
+		<provinceCode>NL</provinceCode>
+		<fw:webId>nl-25</fw:webId>
+		<fw:lat>55.09</fw:lat>
+		<fw:lon>-59.18</fw:lon>
+	</site>
+	<site code="s0000220">
+		<nameEn>Marble Mountain</nameEn>
+		<nameFr>Marble Mountain</nameFr>
+		<provinceCode>NL</provinceCode>
+		<fw:webId>nl-26</fw:webId>
+		<fw:lat>48.94</fw:lat>
+		<fw:lon>-57.84</fw:lon>
+	</site>
+	<site code="s0000594">
+		<nameEn>Mary's Harbour</nameEn>
+		<nameFr>Mary's Harbour</nameFr>
+		<provinceCode>NL</provinceCode>
+		<fw:webId>nl-29</fw:webId>
+		<fw:lat>52.32</fw:lat>
+		<fw:lon>-55.83</fw:lon>
+	</site>
+	<site code="s0000474">
+		<nameEn>Marystown</nameEn>
+		<nameFr>Marystown</nameFr>
+		<provinceCode>NL</provinceCode>
+		<fw:webId>nl-3</fw:webId>
+		<fw:lat>47.17</fw:lat>
+		<fw:lon>-55.17</fw:lon>
+	</site>
+	<site code="s0000016">
+		<nameEn>Musgrave Harbour</nameEn>
+		<nameFr>Musgrave Harbour</nameFr>
+		<provinceCode>NL</provinceCode>
+		<fw:webId>nl-10</fw:webId>
+		<fw:lat>49.45</fw:lat>
+		<fw:lon>-53.97</fw:lon>
+	</site>
+	<site code="s0000162">
+		<nameEn>Nain</nameEn>
+		<nameFr>Nain</nameFr>
+		<provinceCode>NL</provinceCode>
+		<fw:webId>nl-40</fw:webId>
+		<fw:lat>56.55</fw:lat>
+		<fw:lon>-61.69</fw:lon>
+	</site>
+	<site code="s0000017">
+		<nameEn>New-Wes-Valley</nameEn>
+		<nameFr>New-Wes-Valley</nameFr>
+		<provinceCode>NL</provinceCode>
+		<fw:webId>nl-42</fw:webId>
+		<fw:lat>49.17</fw:lat>
+		<fw:lon>-53.57</fw:lon>
+	</site>
+	<site code="s0000082">
+		<nameEn>Placentia</nameEn>
+		<nameFr>Placentia</nameFr>
+		<provinceCode>NL</provinceCode>
+		<fw:webId>nl-30</fw:webId>
+		<fw:lat>47.3</fw:lat>
+		<fw:lon>-53.99</fw:lon>
+	</site>
+	<site code="s0000114">
+		<nameEn>Port au Choix</nameEn>
+		<nameFr>Port-au-Choix</nameFr>
+		<provinceCode>NL</provinceCode>
+		<fw:webId>nl-11</fw:webId>
+		<fw:lat>50.71</fw:lat>
+		<fw:lon>-57.36</fw:lon>
+	</site>
+	<site code="s0000858">
+		<nameEn>Rigolet</nameEn>
+		<nameFr>Rigolet</nameFr>
+		<provinceCode>NL</provinceCode>
+		<fw:webId>nl-46</fw:webId>
+		<fw:lat>54.1792</fw:lat>
+		<fw:lon>-58.43</fw:lon>
+	</site>
+	<site code="s0000456">
+		<nameEn>Rocky Harbour</nameEn>
+		<nameFr>Rocky Harbour</nameFr>
+		<provinceCode>NL</provinceCode>
+		<fw:webId>nl-13</fw:webId>
+		<fw:lat>49.59</fw:lat>
+		<fw:lon>-57.92</fw:lon>
+	</site>
+	<site code="s0000019">
+		<nameEn>St Alban's</nameEn>
+		<nameFr>St Alban's</nameFr>
+		<provinceCode>NL</provinceCode>
+		<fw:webId>nl-8</fw:webId>
+		<fw:lat>47.88</fw:lat>
+		<fw:lon>-55.85</fw:lon>
+	</site>
+	<site code="s0000128">
+		<nameEn>St. Anthony</nameEn>
+		<nameFr>St. Anthony</nameFr>
+		<provinceCode>NL</provinceCode>
+		<fw:webId>nl-37</fw:webId>
+		<fw:lat>51.37</fw:lat>
+		<fw:lon>-55.59</fw:lon>
+	</site>
+	<site code="s0000280">
+		<nameEn>St. John's</nameEn>
+		<nameFr>St. John's</nameFr>
+		<provinceCode>NL</provinceCode>
+		<fw:webId>nl-24</fw:webId>
+		<fw:lat>47.57</fw:lat>
+		<fw:lon>-52.73</fw:lon>
+	</site>
+	<site code="s0000039">
+		<nameEn>St. Lawrence</nameEn>
+		<nameFr>St. Lawrence</nameFr>
+		<provinceCode>NL</provinceCode>
+		<fw:webId>nl-36</fw:webId>
+		<fw:lat>46.92</fw:lat>
+		<fw:lon>-55.4</fw:lon>
+	</site>
+	<site code="s0000567">
+		<nameEn>Stephenville</nameEn>
+		<nameFr>Stephenville</nameFr>
+		<provinceCode>NL</provinceCode>
+		<fw:webId>nl-27</fw:webId>
+		<fw:lat>48.55</fw:lat>
+		<fw:lon>-58.58</fw:lon>
+	</site>
+	<site code="s0000467">
+		<nameEn>Terra Nova (National Park)</nameEn>
+		<nameFr>Terra Nova (Parc national)</nameFr>
+		<provinceCode>NL</provinceCode>
+		<fw:webId>nl-15</fw:webId>
+		<fw:lat>48.53</fw:lat>
+		<fw:lon>-53.93</fw:lon>
+	</site>
+	<site code="s0000122">
+		<nameEn>Twillingate</nameEn>
+		<nameFr>Twillingate</nameFr>
+		<provinceCode>NL</provinceCode>
+		<fw:webId>nl-35</fw:webId>
+		<fw:lat>49.65</fw:lat>
+		<fw:lon>-54.76</fw:lon>
+	</site>
+	<site code="s0000736">
+		<nameEn>Wabush Lake</nameEn>
+		<nameFr>Wabush Lake</nameFr>
+		<provinceCode>NL</provinceCode>
+		<fw:webId>nl-12</fw:webId>
+		<fw:lat>53.08</fw:lat>
+		<fw:lon>-66.87</fw:lon>
+	</site>
+	<site code="s0000473">
+		<nameEn>Winterland</nameEn>
+		<nameFr>Winterland</nameFr>
+		<provinceCode>NL</provinceCode>
+		<fw:webId>nl-19</fw:webId>
+		<fw:lat>47.16</fw:lat>
+		<fw:lon>-55.31</fw:lon>
+	</site>
+	<site code="s0000042">
+		<nameEn>Wreckhouse</nameEn>
+		<nameFr>Wreckhouse</nameFr>
+		<provinceCode>NL</provinceCode>
+		<fw:webId>nl-18</fw:webId>
+		<fw:lat>47.71</fw:lat>
+		<fw:lon>-59.31</fw:lon>
+	</site>
+	<site code="s0000450">
+		<nameEn>Amherst</nameEn>
+		<nameFr>Amherst</nameFr>
+		<provinceCode>NS</provinceCode>
+		<fw:webId>ns-33</fw:webId>
+		<fw:lat>45.83</fw:lat>
+		<fw:lon>-64.21</fw:lon>
+	</site>
+	<site code="s0000802">
+		<nameEn>Annapolis Royal</nameEn>
+		<nameFr>Annapolis Royal</nameFr>
+		<provinceCode>NS</provinceCode>
+		<fw:webId>ns-2</fw:webId>
+		<fw:lat>44.74</fw:lat>
+		<fw:lon>-65.52</fw:lon>
+	</site>
+	<site code="s0000462">
+		<nameEn>Antigonish</nameEn>
+		<nameFr>Antigonish</nameFr>
+		<provinceCode>NS</provinceCode>
+		<fw:webId>ns-3</fw:webId>
+		<fw:lat>45.62</fw:lat>
+		<fw:lon>-61.99</fw:lon>
+	</site>
+	<site code="s0000110">
+		<nameEn>Baccaro Point</nameEn>
+		<nameFr>Cap Baccaro</nameFr>
+		<provinceCode>NS</provinceCode>
+		<fw:webId>ns-37</fw:webId>
+		<fw:lat>43.45</fw:lat>
+		<fw:lon>-65.47</fw:lon>
+	</site>
+	<site code="s0000265">
+		<nameEn>Baddeck</nameEn>
+		<nameFr>Baddeck</nameFr>
+		<provinceCode>NS</provinceCode>
+		<fw:webId>ns-4</fw:webId>
+		<fw:lat>46.1</fw:lat>
+		<fw:lon>-60.75</fw:lon>
+	</site>
+	<site code="s0000096">
+		<nameEn>Beaver Island</nameEn>
+		<nameFr>Beaver Island</nameFr>
+		<provinceCode>NS</provinceCode>
+		<fw:webId>ns-36</fw:webId>
+		<fw:lat>44.75</fw:lat>
+		<fw:lon>-62.8</fw:lon>
+	</site>
+	<site code="s0000804">
+		<nameEn>Bridgetown</nameEn>
+		<nameFr>Bridgetown</nameFr>
+		<provinceCode>NS</provinceCode>
+		<fw:webId>ns-5</fw:webId>
+		<fw:lat>44.84</fw:lat>
+		<fw:lon>-65.29</fw:lon>
+	</site>
+	<site code="s0000441">
+		<nameEn>Bridgewater</nameEn>
+		<nameFr>Bridgewater</nameFr>
+		<provinceCode>NS</provinceCode>
+		<fw:webId>ns-6</fw:webId>
+		<fw:lat>44.38</fw:lat>
+		<fw:lon>-64.52</fw:lon>
+	</site>
+	<site code="s0000365">
+		<nameEn>Brier Island</nameEn>
+		<nameFr>Brier Island</nameFr>
+		<provinceCode>NS</provinceCode>
+		<fw:webId>ns-27</fw:webId>
+		<fw:lat>44.27</fw:lat>
+		<fw:lon>-66.37</fw:lon>
+	</site>
+	<site code="s0000463">
+		<nameEn>Cape George</nameEn>
+		<nameFr>Cape George</nameFr>
+		<provinceCode>NS</provinceCode>
+		<fw:webId>ns-41</fw:webId>
+		<fw:lat>45.85</fw:lat>
+		<fw:lon>-61.93</fw:lon>
+	</site>
+	<site code="s0000090">
+		<nameEn>Caribou</nameEn>
+		<nameFr>Caribou</nameFr>
+		<provinceCode>NS</provinceCode>
+		<fw:webId>ns-34</fw:webId>
+		<fw:lat>45.73</fw:lat>
+		<fw:lon>-62.72</fw:lon>
+	</site>
+	<site code="s0000420">
+		<nameEn>Chéticamp</nameEn>
+		<nameFr>Chéticamp</nameFr>
+		<provinceCode>NS</provinceCode>
+		<fw:webId>ns-38</fw:webId>
+		<fw:lat>46.63</fw:lat>
+		<fw:lon>-61.01</fw:lon>
+	</site>
+	<site code="s0000364">
+		<nameEn>Digby</nameEn>
+		<nameFr>Digby</nameFr>
+		<provinceCode>NS</provinceCode>
+		<fw:webId>ns-20</fw:webId>
+		<fw:lat>44.62</fw:lat>
+		<fw:lon>-65.76</fw:lon>
+	</site>
+	<site code="s0000814">
+		<nameEn>Economy</nameEn>
+		<nameFr>Economy</nameFr>
+		<provinceCode>NS</provinceCode>
+		<fw:webId>ns-7</fw:webId>
+		<fw:lat>45.38</fw:lat>
+		<fw:lon>-63.91</fw:lon>
+	</site>
+	<site code="s0000020">
+		<nameEn>Fourchu Head</nameEn>
+		<nameFr>Cap Fourchu</nameFr>
+		<provinceCode>NS</provinceCode>
+		<fw:webId>ns-24</fw:webId>
+		<fw:lat>45.72</fw:lat>
+		<fw:lon>-60.23</fw:lon>
+	</site>
+	<site code="s0000405">
+		<nameEn>Grand Étang</nameEn>
+		<nameFr>Grand Étang</nameFr>
+		<provinceCode>NS</provinceCode>
+		<fw:webId>ns-32</fw:webId>
+		<fw:lat>46.55</fw:lat>
+		<fw:lon>-61.05</fw:lon>
+	</site>
+	<site code="s0000803">
+		<nameEn>Greenwood</nameEn>
+		<nameFr>Greenwood</nameFr>
+		<provinceCode>NS</provinceCode>
+		<fw:webId>ns-35</fw:webId>
+		<fw:lat>44.97</fw:lat>
+		<fw:lon>-64.93</fw:lon>
+	</site>
+	<site code="s0000464">
+		<nameEn>Guysborough</nameEn>
+		<nameFr>Guysborough</nameFr>
+		<provinceCode>NS</provinceCode>
+		<fw:webId>ns-8</fw:webId>
+		<fw:lat>45.39</fw:lat>
+		<fw:lon>-61.5</fw:lon>
+	</site>
+	<site code="s0000318">
+		<nameEn>Halifax</nameEn>
+		<nameFr>Halifax</nameFr>
+		<provinceCode>NS</provinceCode>
+		<fw:webId>ns-19</fw:webId>
+		<fw:lat>44.87</fw:lat>
+		<fw:lon>-63.72</fw:lon>
+	</site>
+	<site code="s0000084">
+		<nameEn>Halifax (Shearwater)</nameEn>
+		<nameFr>Halifax (Shearwater)</nameFr>
+		<provinceCode>NS</provinceCode>
+		<fw:webId>ns-40</fw:webId>
+		<fw:lat>44.66</fw:lat>
+		<fw:lon>-63.59</fw:lon>
+	</site>
+	<site code="s0000308">
+		<nameEn>Hart Island</nameEn>
+		<nameFr>Hart Island</nameFr>
+		<provinceCode>NS</provinceCode>
+		<fw:webId>ns-23</fw:webId>
+		<fw:lat>45.35</fw:lat>
+		<fw:lon>-60.98</fw:lon>
+	</site>
+	<site code="s0000433">
+		<nameEn>Ingonish</nameEn>
+		<nameFr>Ingonish</nameFr>
+		<provinceCode>NS</provinceCode>
+		<fw:webId>ns-16</fw:webId>
+		<fw:lat>46.69</fw:lat>
+		<fw:lon>-60.37</fw:lon>
+	</site>
+	<site code="s0000223">
+		<nameEn>Kejimkujik (National Park)</nameEn>
+		<nameFr>Kejimkujik (Parc national)</nameFr>
+		<provinceCode>NS</provinceCode>
+		<fw:webId>ns-42</fw:webId>
+		<fw:lat>44.39</fw:lat>
+		<fw:lon>-65.29</fw:lon>
+	</site>
+	<site code="s0000439">
+		<nameEn>Kentville</nameEn>
+		<nameFr>Kentville</nameFr>
+		<provinceCode>NS</provinceCode>
+		<fw:webId>ns-17</fw:webId>
+		<fw:lat>45.08</fw:lat>
+		<fw:lon>-64.5</fw:lon>
+	</site>
+	<site code="s0000371">
+		<nameEn>Liverpool</nameEn>
+		<nameFr>Liverpool</nameFr>
+		<provinceCode>NS</provinceCode>
+		<fw:webId>ns-39</fw:webId>
+		<fw:lat>44.04</fw:lat>
+		<fw:lon>-64.72</fw:lon>
+	</site>
+	<site code="s0000440">
+		<nameEn>Lunenburg</nameEn>
+		<nameFr>Lunenburg</nameFr>
+		<provinceCode>NS</provinceCode>
+		<fw:webId>ns-21</fw:webId>
+		<fw:lat>44.38</fw:lat>
+		<fw:lon>-64.31</fw:lon>
+	</site>
+	<site code="s0000447">
+		<nameEn>Malay Falls</nameEn>
+		<nameFr>Malay Falls</nameFr>
+		<provinceCode>NS</provinceCode>
+		<fw:webId>ns-22</fw:webId>
+		<fw:lat>44.99</fw:lat>
+		<fw:lon>-62.48</fw:lon>
+	</site>
+	<site code="s0000089">
+		<nameEn>New Glasgow</nameEn>
+		<nameFr>New Glasgow</nameFr>
+		<provinceCode>NS</provinceCode>
+		<fw:webId>ns-1</fw:webId>
+		<fw:lat>45.59</fw:lat>
+		<fw:lon>-62.64</fw:lon>
+	</site>
+	<site code="s0000264">
+		<nameEn>North East Margaree</nameEn>
+		<nameFr>North East Margaree</nameFr>
+		<provinceCode>NS</provinceCode>
+		<fw:webId>ns-18</fw:webId>
+		<fw:lat>46.33</fw:lat>
+		<fw:lon>-61.01</fw:lon>
+	</site>
+	<site code="s0000021">
+		<nameEn>North Mountain (Cape Breton)</nameEn>
+		<nameFr>North Mountain (Cap-Breton)</nameFr>
+		<provinceCode>NS</provinceCode>
+		<fw:webId>ns-43</fw:webId>
+		<fw:lat>46.88</fw:lat>
+		<fw:lon>-60.58</fw:lon>
+	</site>
+	<site code="s0000040">
+		<nameEn>Parrsboro</nameEn>
+		<nameFr>Parrsboro</nameFr>
+		<provinceCode>NS</provinceCode>
+		<fw:webId>ns-13</fw:webId>
+		<fw:lat>45.41</fw:lat>
+		<fw:lon>-64.33</fw:lon>
+	</site>
+	<site code="s0000460">
+		<nameEn>Port Hawkesbury</nameEn>
+		<nameFr>Port Hawkesbury</nameFr>
+		<provinceCode>NS</provinceCode>
+		<fw:webId>ns-26</fw:webId>
+		<fw:lat>45.62</fw:lat>
+		<fw:lon>-61.36</fw:lon>
+	</site>
+	<site code="s0000446">
+		<nameEn>Sheet Harbour</nameEn>
+		<nameFr>Sheet Harbour</nameFr>
+		<provinceCode>NS</provinceCode>
+		<fw:webId>ns-10</fw:webId>
+		<fw:lat>44.92</fw:lat>
+		<fw:lon>-62.54</fw:lon>
+	</site>
+	<site code="s0000109">
+		<nameEn>Shelburne</nameEn>
+		<nameFr>Shelburne</nameFr>
+		<provinceCode>NS</provinceCode>
+		<fw:webId>ns-11</fw:webId>
+		<fw:lat>43.76</fw:lat>
+		<fw:lon>-65.32</fw:lon>
+	</site>
+	<site code="s0000307">
+		<nameEn>St. Peter's</nameEn>
+		<nameFr>St. Peter's</nameFr>
+		<provinceCode>NS</provinceCode>
+		<fw:webId>ns-12</fw:webId>
+		<fw:lat>45.66</fw:lat>
+		<fw:lon>-60.88</fw:lon>
+	</site>
+	<site code="s0000670">
+		<nameEn>Sydney</nameEn>
+		<nameFr>Sydney</nameFr>
+		<provinceCode>NS</provinceCode>
+		<fw:webId>ns-31</fw:webId>
+		<fw:lat>46.14</fw:lat>
+		<fw:lon>-60.2</fw:lon>
+	</site>
+	<site code="s0000812">
+		<nameEn>Tatamagouche</nameEn>
+		<nameFr>Tatamagouche</nameFr>
+		<provinceCode>NS</provinceCode>
+		<fw:webId>ns-14</fw:webId>
+		<fw:lat>45.71</fw:lat>
+		<fw:lon>-63.29</fw:lon>
+	</site>
+	<site code="s0000461">
+		<nameEn>Tracadie</nameEn>
+		<nameFr>Tracadie</nameFr>
+		<provinceCode>NS</provinceCode>
+		<fw:webId>ns-28</fw:webId>
+		<fw:lat>45.62</fw:lat>
+		<fw:lon>-61.67</fw:lon>
+	</site>
+	<site code="s0000813">
+		<nameEn>Truro</nameEn>
+		<nameFr>Truro</nameFr>
+		<provinceCode>NS</provinceCode>
+		<fw:webId>ns-25</fw:webId>
+		<fw:lat>45.37</fw:lat>
+		<fw:lon>-63.28</fw:lon>
+	</site>
+	<site code="s0000370">
+		<nameEn>Western Head</nameEn>
+		<nameFr>Western Head</nameFr>
+		<provinceCode>NS</provinceCode>
+		<fw:webId>ns-30</fw:webId>
+		<fw:lat>43.99</fw:lat>
+		<fw:lon>-64.67</fw:lon>
+	</site>
+	<site code="s0000438">
+		<nameEn>Windsor</nameEn>
+		<nameFr>Windsor</nameFr>
+		<provinceCode>NS</provinceCode>
+		<fw:webId>ns-15</fw:webId>
+		<fw:lat>44.99</fw:lat>
+		<fw:lon>-64.14</fw:lon>
+	</site>
+	<site code="s0000649">
+		<nameEn>Yarmouth</nameEn>
+		<nameFr>Yarmouth</nameFr>
+		<provinceCode>NS</provinceCode>
+		<fw:webId>ns-29</fw:webId>
+		<fw:lat>43.84</fw:lat>
+		<fw:lon>-66.12</fw:lon>
+	</site>
+	<site code="s0000570">
+		<nameEn>Aklavik</nameEn>
+		<nameFr>Aklavik</nameFr>
+		<provinceCode>NT</provinceCode>
+		<fw:webId>nt-13</fw:webId>
+		<fw:lat>68.22</fw:lat>
+		<fw:lon>-135.01</fw:lon>
+	</site>
+	<site code="s0000164">
+		<nameEn>Colville Lake</nameEn>
+		<nameFr>Colville Lake</nameFr>
+		<provinceCode>NT</provinceCode>
+		<fw:webId>nt-26</fw:webId>
+		<fw:lat>67.03</fw:lat>
+		<fw:lon>-126.12</fw:lon>
+	</site>
+	<site code="s0000423">
+		<nameEn>Deline</nameEn>
+		<nameFr>Deline</nameFr>
+		<provinceCode>NT</provinceCode>
+		<fw:webId>nt-22</fw:webId>
+		<fw:lat>65.19</fw:lat>
+		<fw:lon>-123.42</fw:lon>
+	</site>
+	<site code="s0000791">
+		<nameEn>Detah</nameEn>
+		<nameFr>Detah</nameFr>
+		<provinceCode>NT</provinceCode>
+		<fw:webId>nt-1</fw:webId>
+		<fw:lat>62.41</fw:lat>
+		<fw:lon>-114.31</fw:lon>
+	</site>
+	<site code="s0000618">
+		<nameEn>Ekati (Lac de Gras)</nameEn>
+		<nameFr>Ekati (Lac de Gras)</nameFr>
+		<provinceCode>NT</provinceCode>
+		<fw:webId>nt-14</fw:webId>
+		<fw:lat>64.5</fw:lat>
+		<fw:lon>-110.5</fw:lon>
+	</site>
+	<site code="s0000560">
+		<nameEn>Enterprise</nameEn>
+		<nameFr>Enterprise</nameFr>
+		<provinceCode>NT</provinceCode>
+		<fw:webId>nt-2</fw:webId>
+		<fw:lat>60.55</fw:lat>
+		<fw:lon>-116.13</fw:lon>
+	</site>
+	<site code="s0000818">
+		<nameEn>Fort Good Hope</nameEn>
+		<nameFr>Fort Good Hope</nameFr>
+		<provinceCode>NT</provinceCode>
+		<fw:webId>nt-5</fw:webId>
+		<fw:lat>66.26</fw:lat>
+		<fw:lon>-128.64</fw:lon>
+	</site>
+	<site code="s0000210">
+		<nameEn>Fort Liard</nameEn>
+		<nameFr>Fort Liard</nameFr>
+		<provinceCode>NT</provinceCode>
+		<fw:webId>nt-29</fw:webId>
+		<fw:lat>60.23</fw:lat>
+		<fw:lon>-123.47</fw:lon>
+	</site>
+	<site code="s0000816">
+		<nameEn>Fort McPherson</nameEn>
+		<nameFr>Fort McPherson</nameFr>
+		<provinceCode>NT</provinceCode>
+		<fw:webId>nt-10</fw:webId>
+		<fw:lat>67.44</fw:lat>
+		<fw:lon>-134.88</fw:lon>
+	</site>
+	<site code="s0000188">
+		<nameEn>Fort Providence</nameEn>
+		<nameFr>Fort Providence</nameFr>
+		<provinceCode>NT</provinceCode>
+		<fw:webId>nt-27</fw:webId>
+		<fw:lat>61.35</fw:lat>
+		<fw:lon>-117.65</fw:lon>
+	</site>
+	<site code="s0000524">
+		<nameEn>Fort Resolution</nameEn>
+		<nameFr>Fort Resolution</nameFr>
+		<provinceCode>NT</provinceCode>
+		<fw:webId>nt-3</fw:webId>
+		<fw:lat>61.17</fw:lat>
+		<fw:lon>-113.67</fw:lon>
+	</site>
+	<site code="s0000525">
+		<nameEn>Fort Simpson</nameEn>
+		<nameFr>Fort Simpson</nameFr>
+		<provinceCode>NT</provinceCode>
+		<fw:webId>nt-4</fw:webId>
+		<fw:lat>61.86</fw:lat>
+		<fw:lon>-121.35</fw:lon>
+	</site>
+	<site code="s0000690">
+		<nameEn>Fort Smith</nameEn>
+		<nameFr>Fort Smith</nameFr>
+		<provinceCode>NT</provinceCode>
+		<fw:webId>nt-17</fw:webId>
+		<fw:lat>60.0</fw:lat>
+		<fw:lon>-111.88</fw:lon>
+	</site>
+	<site code="s0000388">
+		<nameEn>Gameti</nameEn>
+		<nameFr>Gameti</nameFr>
+		<provinceCode>NT</provinceCode>
+		<fw:webId>nt-18</fw:webId>
+		<fw:lat>64.12</fw:lat>
+		<fw:lon>-117.35</fw:lon>
+	</site>
+	<site code="s0000561">
+		<nameEn>Hay River</nameEn>
+		<nameFr>Hay River</nameFr>
+		<provinceCode>NT</provinceCode>
+		<fw:webId>nt-8</fw:webId>
+		<fw:lat>60.82</fw:lat>
+		<fw:lon>-115.8</fw:lon>
+	</site>
+	<site code="s0000389">
+		<nameEn>Indin River</nameEn>
+		<nameFr>Indin River</nameFr>
+		<provinceCode>NT</provinceCode>
+		<fw:webId>nt-28</fw:webId>
+		<fw:lat>64.28</fw:lat>
+		<fw:lon>-115.07</fw:lon>
+	</site>
+	<site code="s0000519">
+		<nameEn>Inuvik</nameEn>
+		<nameFr>Inuvik</nameFr>
+		<provinceCode>NT</provinceCode>
+		<fw:webId>nt-30</fw:webId>
+		<fw:lat>68.36</fw:lat>
+		<fw:lon>-133.72</fw:lon>
+	</site>
+	<site code="s0000443">
+		<nameEn>Lutselke</nameEn>
+		<nameFr>Lutselke</nameFr>
+		<provinceCode>NT</provinceCode>
+		<fw:webId>nt-31</fw:webId>
+		<fw:lat>62.41</fw:lat>
+		<fw:lon>-110.74</fw:lon>
+	</site>
+	<site code="s0000476">
+		<nameEn>Nahanni Butte</nameEn>
+		<nameFr>Nahanni Butte</nameFr>
+		<provinceCode>NT</provinceCode>
+		<fw:webId>nt-12</fw:webId>
+		<fw:lat>61.03</fw:lat>
+		<fw:lon>-123.39</fw:lon>
+	</site>
+	<site code="s0000720">
+		<nameEn>Norman Wells</nameEn>
+		<nameFr>Norman Wells</nameFr>
+		<provinceCode>NT</provinceCode>
+		<fw:webId>nt-21</fw:webId>
+		<fw:lat>65.28</fw:lat>
+		<fw:lon>-126.83</fw:lon>
+	</site>
+	<site code="s0000759">
+		<nameEn>Paulatuk</nameEn>
+		<nameFr>Paulatuk</nameFr>
+		<provinceCode>NT</provinceCode>
+		<fw:webId>nt-16</fw:webId>
+		<fw:lat>69.35</fw:lat>
+		<fw:lon>-124.07</fw:lon>
+	</site>
+	<site code="s0000338">
+		<nameEn>Sachs Harbour</nameEn>
+		<nameFr>Sachs Harbour</nameFr>
+		<provinceCode>NT</provinceCode>
+		<fw:webId>nt-19</fw:webId>
+		<fw:lat>71.98</fw:lat>
+		<fw:lon>-125.24</fw:lon>
+	</site>
+	<site code="s0000340">
+		<nameEn>Trout Lake</nameEn>
+		<nameFr>Trout Lake</nameFr>
+		<provinceCode>NT</provinceCode>
+		<fw:webId>nt-15</fw:webId>
+		<fw:lat>60.43</fw:lat>
+		<fw:lon>-121.25</fw:lon>
+	</site>
+	<site code="s0000830">
+		<nameEn>Tuktoyaktuk</nameEn>
+		<nameFr>Tuktoyaktuk</nameFr>
+		<provinceCode>NT</provinceCode>
+		<fw:webId>nt-20</fw:webId>
+		<fw:lat>69.45</fw:lat>
+		<fw:lon>-133.03</fw:lon>
+	</site>
+	<site code="s0000817">
+		<nameEn>Tulita</nameEn>
+		<nameFr>Tulita</nameFr>
+		<provinceCode>NT</provinceCode>
+		<fw:webId>nt-11</fw:webId>
+		<fw:lat>64.9</fw:lat>
+		<fw:lon>-125.57</fw:lon>
+	</site>
+	<site code="s0000432">
+		<nameEn>Ulukhaktok</nameEn>
+		<nameFr>Ulukhaktok</nameFr>
+		<provinceCode>NT</provinceCode>
+		<fw:webId>nt-7</fw:webId>
+		<fw:lat>70.73</fw:lat>
+		<fw:lon>-117.75</fw:lon>
+	</site>
+	<site code="s0000442">
+		<nameEn>Wekweeti</nameEn>
+		<nameFr>Wekweeti</nameFr>
+		<provinceCode>NT</provinceCode>
+		<fw:webId>nt-9</fw:webId>
+		<fw:lat>64.19</fw:lat>
+		<fw:lon>-114.18</fw:lon>
+	</site>
+	<site code="s0000249">
+		<nameEn>Whati</nameEn>
+		<nameFr>Whati</nameFr>
+		<provinceCode>NT</provinceCode>
+		<fw:webId>nt-6</fw:webId>
+		<fw:lat>63.14</fw:lat>
+		<fw:lon>-117.27</fw:lon>
+	</site>
+	<site code="s0000740">
+		<nameEn>Wrigley</nameEn>
+		<nameFr>Wrigley</nameFr>
+		<provinceCode>NT</provinceCode>
+		<fw:webId>nt-23</fw:webId>
+		<fw:lat>63.27</fw:lat>
+		<fw:lon>-123.61</fw:lon>
+	</site>
+	<site code="s0000366">
+		<nameEn>Yellowknife</nameEn>
+		<nameFr>Yellowknife</nameFr>
+		<provinceCode>NT</provinceCode>
+		<fw:webId>nt-24</fw:webId>
+		<fw:lat>62.46</fw:lat>
+		<fw:lon>-114.35</fw:lon>
+	</site>
+	<site code="s0000821">
+		<nameEn>Alert</nameEn>
+		<nameFr>Alert</nameFr>
+		<provinceCode>NU</provinceCode>
+		<fw:webId>nu-22</fw:webId>
+		<fw:lat>82.5</fw:lat>
+		<fw:lon>-62.37</fw:lon>
+	</site>
+	<site code="s0000412">
+		<nameEn>Arctic Bay</nameEn>
+		<nameFr>Arctic Bay</nameFr>
+		<provinceCode>NU</provinceCode>
+		<fw:webId>nu-10</fw:webId>
+		<fw:lat>73.03</fw:lat>
+		<fw:lon>-85.17</fw:lon>
+	</site>
+	<site code="s0000511">
+		<nameEn>Arviat</nameEn>
+		<nameFr>Arviat</nameFr>
+		<provinceCode>NU</provinceCode>
+		<fw:webId>nu-20</fw:webId>
+		<fw:lat>61.11</fw:lat>
+		<fw:lon>-94.06</fw:lon>
+	</site>
+	<site code="s0000487">
+		<nameEn>Baker Lake</nameEn>
+		<nameFr>Baker Lake</nameFr>
+		<provinceCode>NU</provinceCode>
+		<fw:webId>nu-14</fw:webId>
+		<fw:lat>64.32</fw:lat>
+		<fw:lon>-96.02</fw:lon>
+	</site>
+	<site code="s0000495">
+		<nameEn>Cambridge Bay</nameEn>
+		<nameFr>Cambridge Bay</nameFr>
+		<provinceCode>NU</provinceCode>
+		<fw:webId>nu-15</fw:webId>
+		<fw:lat>69.11</fw:lat>
+		<fw:lon>-105.05</fw:lon>
+	</site>
+	<site code="s0000694">
+		<nameEn>Cape Dorset</nameEn>
+		<nameFr>Cape Dorset</nameFr>
+		<provinceCode>NU</provinceCode>
+		<fw:webId>nu-2</fw:webId>
+		<fw:lat>64.23</fw:lat>
+		<fw:lon>-76.54</fw:lon>
+	</site>
+	<site code="s0000501">
+		<nameEn>Chesterfield</nameEn>
+		<nameFr>Chesterfield</nameFr>
+		<provinceCode>NU</provinceCode>
+		<fw:webId>nu-17</fw:webId>
+		<fw:lat>63.34</fw:lat>
+		<fw:lon>-90.7</fw:lon>
+	</site>
+	<site code="s0000504">
+		<nameEn>Clyde River</nameEn>
+		<nameFr>Clyde River</nameFr>
+		<provinceCode>NU</provinceCode>
+		<fw:webId>nu-18</fw:webId>
+		<fw:lat>70.47</fw:lat>
+		<fw:lon>-68.59</fw:lon>
+	</site>
+	<site code="s0000798">
+		<nameEn>Coral Harbour</nameEn>
+		<nameFr>Coral Harbour</nameFr>
+		<provinceCode>NU</provinceCode>
+		<fw:webId>nu-9</fw:webId>
+		<fw:lat>64.13</fw:lat>
+		<fw:lon>-83.17</fw:lon>
+	</site>
+	<site code="s0000206">
+		<nameEn>Ennadai</nameEn>
+		<nameFr>Ennadai</nameFr>
+		<provinceCode>NU</provinceCode>
+		<fw:webId>nu-19</fw:webId>
+		<fw:lat>61.13</fw:lat>
+		<fw:lon>-100.88</fw:lon>
+	</site>
+	<site code="s0000140">
+		<nameEn>Eureka</nameEn>
+		<nameFr>Eureka</nameFr>
+		<provinceCode>NU</provinceCode>
+		<fw:webId>nu-11</fw:webId>
+		<fw:lat>79.98</fw:lat>
+		<fw:lon>-85.95</fw:lon>
+	</site>
+	<site code="s0000820">
+		<nameEn>Gjoa Haven</nameEn>
+		<nameFr>Gjoa Haven</nameFr>
+		<provinceCode>NU</provinceCode>
+		<fw:webId>nu-24</fw:webId>
+		<fw:lat>68.63</fw:lat>
+		<fw:lon>-95.88</fw:lon>
+	</site>
+	<site code="s0000177">
+		<nameEn>Grise Fiord</nameEn>
+		<nameFr>Grise Fiord</nameFr>
+		<provinceCode>NU</provinceCode>
+		<fw:webId>nu-12</fw:webId>
+		<fw:lat>76.42</fw:lat>
+		<fw:lon>-82.9</fw:lon>
+	</site>
+	<site code="s0000714">
+		<nameEn>Hall Beach</nameEn>
+		<nameFr>Hall Beach</nameFr>
+		<provinceCode>NU</provinceCode>
+		<fw:webId>nu-4</fw:webId>
+		<fw:lat>68.79</fw:lat>
+		<fw:lon>-81.24</fw:lon>
+	</site>
+	<site code="s0000540">
+		<nameEn>Igloolik</nameEn>
+		<nameFr>Igloolik</nameFr>
+		<provinceCode>NU</provinceCode>
+		<fw:webId>nu-23</fw:webId>
+		<fw:lat>69.38</fw:lat>
+		<fw:lon>-81.8</fw:lon>
+	</site>
+	<site code="s0000394">
+		<nameEn>Iqaluit</nameEn>
+		<nameFr>Iqaluit</nameFr>
+		<provinceCode>NU</provinceCode>
+		<fw:webId>nu-21</fw:webId>
+		<fw:lat>63.75</fw:lat>
+		<fw:lon>-68.52</fw:lon>
+	</site>
+	<site code="s0000587">
+		<nameEn>Kimmirut</nameEn>
+		<nameFr>Kimmirut</nameFr>
+		<provinceCode>NU</provinceCode>
+		<fw:webId>nu-26</fw:webId>
+		<fw:lat>62.85</fw:lat>
+		<fw:lon>-69.87</fw:lon>
+	</site>
+	<site code="s0000065">
+		<nameEn>Kugaaruk</nameEn>
+		<nameFr>Kugaaruk</nameFr>
+		<provinceCode>NU</provinceCode>
+		<fw:webId>nu-13</fw:webId>
+		<fw:lat>68.53</fw:lat>
+		<fw:lon>-89.83</fw:lon>
+	</site>
+	<site code="s0000498">
+		<nameEn>Kugluktuk</nameEn>
+		<nameFr>Kugluktuk</nameFr>
+		<provinceCode>NU</provinceCode>
+		<fw:webId>nu-16</fw:webId>
+		<fw:lat>67.83</fw:lat>
+		<fw:lon>-115.09</fw:lon>
+	</site>
+	<site code="s0000693">
+		<nameEn>Nanisivik</nameEn>
+		<nameFr>Nanisivik</nameFr>
+		<provinceCode>NU</provinceCode>
+		<fw:webId>nu-1</fw:webId>
+		<fw:lat>73.03</fw:lat>
+		<fw:lon>-84.55</fw:lon>
+	</site>
+	<site code="s0000750">
+		<nameEn>Pangnirtung</nameEn>
+		<nameFr>Pangnirtung</nameFr>
+		<provinceCode>NU</provinceCode>
+		<fw:webId>nu-7</fw:webId>
+		<fw:lat>66.14</fw:lat>
+		<fw:lon>-65.72</fw:lon>
+	</site>
+	<site code="s0000564">
+		<nameEn>Pond Inlet</nameEn>
+		<nameFr>Pond Inlet</nameFr>
+		<provinceCode>NU</provinceCode>
+		<fw:webId>nu-25</fw:webId>
+		<fw:lat>72.7</fw:lat>
+		<fw:lon>-77.96</fw:lon>
+	</site>
+	<site code="s0000716">
+		<nameEn>Qikiqtarjuaq</nameEn>
+		<nameFr>Qikiqtarjuaqq</nameFr>
+		<provinceCode>NU</provinceCode>
+		<fw:webId>nu-5</fw:webId>
+		<fw:lat>67.55</fw:lat>
+		<fw:lon>-64.03</fw:lon>
+	</site>
+	<site code="s0000678">
+		<nameEn>Rankin Inlet</nameEn>
+		<nameFr>Rankin Inlet</nameFr>
+		<provinceCode>NU</provinceCode>
+		<fw:webId>nu-28</fw:webId>
+		<fw:lat>62.82</fw:lat>
+		<fw:lon>-92.08</fw:lon>
+	</site>
+	<site code="s0000713">
+		<nameEn>Repulse Bay</nameEn>
+		<nameFr>Repulse Bay</nameFr>
+		<provinceCode>NU</provinceCode>
+		<fw:webId>nu-3</fw:webId>
+		<fw:lat>66.53</fw:lat>
+		<fw:lon>-86.25</fw:lon>
+	</site>
+	<site code="s0000672">
+		<nameEn>Resolute</nameEn>
+		<nameFr>Resolute</nameFr>
+		<provinceCode>NU</provinceCode>
+		<fw:webId>nu-27</fw:webId>
+		<fw:lat>74.7</fw:lat>
+		<fw:lon>-94.83</fw:lon>
+	</site>
+	<site code="s0000689">
+		<nameEn>Sanikiluaq</nameEn>
+		<nameFr>Sanikiluaq</nameFr>
+		<provinceCode>NU</provinceCode>
+		<fw:webId>nu-29</fw:webId>
+		<fw:lat>56.53</fw:lat>
+		<fw:lon>-79.23</fw:lon>
+	</site>
+	<site code="s0000774">
+		<nameEn>Taloyoak</nameEn>
+		<nameFr>Taloyoak</nameFr>
+		<provinceCode>NU</provinceCode>
+		<fw:webId>nu-8</fw:webId>
+		<fw:lat>69.54</fw:lat>
+		<fw:lon>-93.52</fw:lon>
+	</site>
+	<site code="s0000749">
+		<nameEn>Whale Cove</nameEn>
+		<nameFr>Whale Cove</nameFr>
+		<provinceCode>NU</provinceCode>
+		<fw:webId>nu-6</fw:webId>
+		<fw:lat>62.16</fw:lat>
+		<fw:lon>-92.57</fw:lon>
+	</site>
+	<site code="s0000070">
+		<nameEn>Alexandria</nameEn>
+		<nameFr>Alexandria</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-122</fw:webId>
+		<fw:lat>45.31</fw:lat>
+		<fw:lon>-74.63</fw:lon>
+	</site>
+	<site code="s0000073">
+		<nameEn>Algonquin Park (Brent)</nameEn>
+		<nameFr>Parc Algonquin (Brent)</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-1</fw:webId>
+		<fw:lat>46.03</fw:lat>
+		<fw:lon>-78.48</fw:lon>
+	</site>
+	<site code="s0000074">
+		<nameEn>Algonquin Park (Lake of Two Rivers)</nameEn>
+		<nameFr>Parc Algonquin (Lake of Two Rivers)</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-29</fw:webId>
+		<fw:lat>45.58</fw:lat>
+		<fw:lon>-78.48</fw:lon>
+	</site>
+	<site code="s0000489">
+		<nameEn>Alliston</nameEn>
+		<nameFr>Alliston</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-114</fw:webId>
+		<fw:lat>44.15</fw:lat>
+		<fw:lon>-79.86</fw:lon>
+	</site>
+	<site code="s0000304">
+		<nameEn>Apsley</nameEn>
+		<nameFr>Apsley</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-30</fw:webId>
+		<fw:lat>44.76</fw:lat>
+		<fw:lon>-78.09</fw:lon>
+	</site>
+	<site code="s0000520">
+		<nameEn>Armstrong</nameEn>
+		<nameFr>Armstrong</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-111</fw:webId>
+		<fw:lat>50.3</fw:lat>
+		<fw:lon>-89.04</fw:lon>
+	</site>
+	<site code="s0000103">
+		<nameEn>Atikokan</nameEn>
+		<nameFr>Atikokan</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-148</fw:webId>
+		<fw:lat>48.76</fw:lat>
+		<fw:lon>-91.61</fw:lon>
+	</site>
+	<site code="s0000024">
+		<nameEn>Attawapiskat</nameEn>
+		<nameFr>Attawapiskat</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-164</fw:webId>
+		<fw:lat>52.92</fw:lat>
+		<fw:lon>-82.43</fw:lon>
+	</site>
+	<site code="s0000301">
+		<nameEn>Bancroft</nameEn>
+		<nameFr>Bancroft</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-102</fw:webId>
+		<fw:lat>45.06</fw:lat>
+		<fw:lon>-77.76</fw:lon>
+	</site>
+	<site code="s0000415">
+		<nameEn>Barrie</nameEn>
+		<nameFr>Barrie</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-151</fw:webId>
+		<fw:lat>44.37</fw:lat>
+		<fw:lon>-79.68</fw:lon>
+	</site>
+	<site code="s0000302">
+		<nameEn>Barry's Bay</nameEn>
+		<nameFr>Barry's Bay</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-133</fw:webId>
+		<fw:lat>45.49</fw:lat>
+		<fw:lon>-77.68</fw:lon>
+	</site>
+	<site code="s0000703">
+		<nameEn>Belleville</nameEn>
+		<nameFr>Belleville</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-3</fw:webId>
+		<fw:lat>44.26</fw:lat>
+		<fw:lon>-77.37</fw:lon>
+	</site>
+	<site code="s0000697">
+		<nameEn>Big Trout Lake</nameEn>
+		<nameFr>Big Trout Lake</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-124</fw:webId>
+		<fw:lat>53.75</fw:lat>
+		<fw:lon>-90.0</fw:lon>
+	</site>
+	<site code="s0000513">
+		<nameEn>Blind River</nameEn>
+		<nameFr>Blind River</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-21</fw:webId>
+		<fw:lat>46.19</fw:lat>
+		<fw:lon>-82.96</fw:lon>
+	</site>
+	<site code="s0000641">
+		<nameEn>Bracebridge</nameEn>
+		<nameFr>Bracebridge</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-9</fw:webId>
+		<fw:lat>45.03</fw:lat>
+		<fw:lon>-79.19</fw:lon>
+	</site>
+	<site code="s0000658">
+		<nameEn>Brampton</nameEn>
+		<nameFr>Brampton</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-4</fw:webId>
+		<fw:lat>43.69</fw:lat>
+		<fw:lon>-79.76</fw:lon>
+	</site>
+	<site code="s0000550">
+		<nameEn>Brantford</nameEn>
+		<nameFr>Brantford</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-86</fw:webId>
+		<fw:lat>43.16</fw:lat>
+		<fw:lon>-80.26</fw:lon>
+	</site>
+	<site code="s0000168">
+		<nameEn>Brockville</nameEn>
+		<nameFr>Brockville</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-8</fw:webId>
+		<fw:lat>44.6</fw:lat>
+		<fw:lon>-75.69</fw:lon>
+	</site>
+	<site code="s0000637">
+		<nameEn>Burk's Falls</nameEn>
+		<nameFr>Burk's Falls</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-31</fw:webId>
+		<fw:lat>45.63</fw:lat>
+		<fw:lon>-79.4</fw:lon>
+	</site>
+	<site code="s0000368">
+		<nameEn>Burlington</nameEn>
+		<nameFr>Burlington</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-95</fw:webId>
+		<fw:lat>43.37</fw:lat>
+		<fw:lon>-79.81</fw:lon>
+	</site>
+	<site code="s0000787">
+		<nameEn>Caledon</nameEn>
+		<nameFr>Caledon</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-32</fw:webId>
+		<fw:lat>43.87</fw:lat>
+		<fw:lon>-79.86</fw:lon>
+	</site>
+	<site code="s0000572">
+		<nameEn>Cambridge</nameEn>
+		<nameFr>Cambridge</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-81</fw:webId>
+		<fw:lat>43.4</fw:lat>
+		<fw:lon>-80.31</fw:lon>
+	</site>
+	<site code="s0000588">
+		<nameEn>Chapleau</nameEn>
+		<nameFr>Chapleau</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-91</fw:webId>
+		<fw:lat>47.84</fw:lat>
+		<fw:lon>-83.4</fw:lon>
+	</site>
+	<site code="s0000454">
+		<nameEn>Chatham-Kent</nameEn>
+		<nameFr>Chatham-Kent</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-11</fw:webId>
+		<fw:lat>42.43</fw:lat>
+		<fw:lon>-82.13</fw:lon>
+	</site>
+	<site code="s0000251">
+		<nameEn>Cobourg</nameEn>
+		<nameFr>Cobourg</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-75</fw:webId>
+		<fw:lat>43.96</fw:lat>
+		<fw:lon>-78.16</fw:lon>
+	</site>
+	<site code="s0000706">
+		<nameEn>Cochrane</nameEn>
+		<nameFr>Cochrane</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-33</fw:webId>
+		<fw:lat>49.17</fw:lat>
+		<fw:lon>-81.06</fw:lon>
+	</site>
+	<site code="s0000108">
+		<nameEn>Collingwood</nameEn>
+		<nameFr>Collingwood</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-150</fw:webId>
+		<fw:lat>44.5</fw:lat>
+		<fw:lon>-80.24</fw:lon>
+	</site>
+	<site code="s0000071">
+		<nameEn>Cornwall</nameEn>
+		<nameFr>Cornwall</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-152</fw:webId>
+		<fw:lat>45.03</fw:lat>
+		<fw:lon>-74.73</fw:lon>
+	</site>
+	<site code="s0000732">
+		<nameEn>Deep River</nameEn>
+		<nameFr>Deep River</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-83</fw:webId>
+		<fw:lat>46.05</fw:lat>
+		<fw:lon>-77.42</fw:lon>
+	</site>
+	<site code="s0000660">
+		<nameEn>Dorion</nameEn>
+		<nameFr>Dorion</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-34</fw:webId>
+		<fw:lat>48.79</fw:lat>
+		<fw:lon>-88.65</fw:lon>
+	</site>
+	<site code="s0000546">
+		<nameEn>Dryden</nameEn>
+		<nameFr>Dryden</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-72</fw:webId>
+		<fw:lat>49.78</fw:lat>
+		<fw:lon>-92.77</fw:lon>
+	</site>
+	<site code="s0000452">
+		<nameEn>Dunchurch</nameEn>
+		<nameFr>Dunchurch</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-35</fw:webId>
+		<fw:lat>45.65</fw:lat>
+		<fw:lon>-79.85</fw:lon>
+	</site>
+	<site code="s0000237">
+		<nameEn>Dundalk</nameEn>
+		<nameFr>Dundalk</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-36</fw:webId>
+		<fw:lat>44.17</fw:lat>
+		<fw:lon>-80.39</fw:lon>
+	</site>
+	<site code="s0000428">
+		<nameEn>Ear Falls</nameEn>
+		<nameFr>Ear Falls</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-167</fw:webId>
+		<fw:lat>50.64</fw:lat>
+		<fw:lon>-93.24</fw:lon>
+	</site>
+	<site code="s0000752">
+		<nameEn>Earlton</nameEn>
+		<nameFr>Earlton</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-136</fw:webId>
+		<fw:lat>47.71</fw:lat>
+		<fw:lon>-79.82</fw:lon>
+	</site>
+	<site code="s0000512">
+		<nameEn>Elliot Lake</nameEn>
+		<nameFr>Elliot Lake</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-170</fw:webId>
+		<fw:lat>46.38</fw:lat>
+		<fw:lon>-82.66</fw:lon>
+	</site>
+	<site code="s0000597">
+		<nameEn>Fort Albany</nameEn>
+		<nameFr>Fort Albany</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-173</fw:webId>
+		<fw:lat>52.21</fw:lat>
+		<fw:lon>-81.68</fw:lon>
+	</site>
+	<site code="s0000282">
+		<nameEn>Fort Erie</nameEn>
+		<nameFr>Fort Erie</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-12</fw:webId>
+		<fw:lat>42.92</fw:lat>
+		<fw:lon>-79.02</fw:lon>
+	</site>
+	<site code="s0000104">
+		<nameEn>Fort Frances</nameEn>
+		<nameFr>Fort Frances</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-159</fw:webId>
+		<fw:lat>48.61</fw:lat>
+		<fw:lon>-93.39</fw:lon>
+	</site>
+	<site code="s0000517">
+		<nameEn>Fort Severn</nameEn>
+		<nameFr>Fort Severn</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-171</fw:webId>
+		<fw:lat>56.0</fw:lat>
+		<fw:lon>-87.62</fw:lon>
+	</site>
+	<site code="s0000169">
+		<nameEn>Gananoque</nameEn>
+		<nameFr>Gananoque</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-90</fw:webId>
+		<fw:lat>44.33</fw:lat>
+		<fw:lon>-76.16</fw:lon>
+	</site>
+	<site code="s0000165">
+		<nameEn>Goderich</nameEn>
+		<nameFr>Goderich</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-160</fw:webId>
+		<fw:lat>43.74</fw:lat>
+		<fw:lon>-81.7</fw:lon>
+	</site>
+	<site code="s0000025">
+		<nameEn>Gogama</nameEn>
+		<nameFr>Gogama</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-37</fw:webId>
+		<fw:lat>47.67</fw:lat>
+		<fw:lon>-81.73</fw:lon>
+	</site>
+	<site code="s0000790">
+		<nameEn>Gore Bay</nameEn>
+		<nameFr>Gore Bay</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-144</fw:webId>
+		<fw:lat>45.92</fw:lat>
+		<fw:lon>-82.46</fw:lon>
+	</site>
+	<site code="s0000638">
+		<nameEn>Gravenhurst</nameEn>
+		<nameFr>Gravenhurst</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-38</fw:webId>
+		<fw:lat>44.87</fw:lat>
+		<fw:lon>-79.34</fw:lon>
+	</site>
+	<site code="s0000528">
+		<nameEn>Greater Napanee</nameEn>
+		<nameFr>Greater Napanee</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-39</fw:webId>
+		<fw:lat>44.24</fw:lat>
+		<fw:lon>-76.97</fw:lon>
+	</site>
+	<site code="s0000680">
+		<nameEn>Greater Sudbury</nameEn>
+		<nameFr>Grand Sudbury</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-40</fw:webId>
+		<fw:lat>46.58</fw:lat>
+		<fw:lon>-81.07</fw:lon>
+	</site>
+	<site code="s0000418">
+		<nameEn>Greenstone (Beardmore)</nameEn>
+		<nameFr>Greenstone (Beardmore)</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-153</fw:webId>
+		<fw:lat>49.6</fw:lat>
+		<fw:lon>-87.96</fw:lon>
+	</site>
+	<site code="s0000538">
+		<nameEn>Greenstone (Geraldton)</nameEn>
+		<nameFr>Greenstone (Geraldton)</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-70</fw:webId>
+		<fw:lat>49.72</fw:lat>
+		<fw:lon>-86.95</fw:lon>
+	</site>
+	<site code="s0000539">
+		<nameEn>Greenstone (Nakina)</nameEn>
+		<nameFr>Greenstone (Nakina)</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-97</fw:webId>
+		<fw:lat>50.18</fw:lat>
+		<fw:lon>-86.71</fw:lon>
+	</site>
+	<site code="s0000571">
+		<nameEn>Guelph</nameEn>
+		<nameFr>Guelph</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-5</fw:webId>
+		<fw:lat>43.54</fw:lat>
+		<fw:lon>-80.23</fw:lon>
+	</site>
+	<site code="s0000395">
+		<nameEn>Gull Bay</nameEn>
+		<nameFr>Gull Bay</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-41</fw:webId>
+		<fw:lat>49.8</fw:lat>
+		<fw:lon>-89.11</fw:lon>
+	</site>
+	<site code="s0000548">
+		<nameEn>Haldimand County</nameEn>
+		<nameFr>Haldimand County</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-42</fw:webId>
+		<fw:lat>42.99</fw:lat>
+		<fw:lon>-79.85</fw:lon>
+	</site>
+	<site code="s0000303">
+		<nameEn>Haliburton</nameEn>
+		<nameFr>Haliburton</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-165</fw:webId>
+		<fw:lat>45.05</fw:lat>
+		<fw:lon>-78.51</fw:lon>
+	</site>
+	<site code="s0000789">
+		<nameEn>Halton Hills</nameEn>
+		<nameFr>Halton Hills</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-68</fw:webId>
+		<fw:lat>43.63</fw:lat>
+		<fw:lon>-79.95</fw:lon>
+	</site>
+	<site code="s0000549">
+		<nameEn>Hamilton</nameEn>
+		<nameFr>Hamilton</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-77</fw:webId>
+		<fw:lat>43.24</fw:lat>
+		<fw:lon>-79.99</fw:lon>
+	</site>
+	<site code="s0000069">
+		<nameEn>Hawkesbury</nameEn>
+		<nameFr>Hawkesbury</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-71</fw:webId>
+		<fw:lat>45.61</fw:lat>
+		<fw:lon>-74.6</fw:lon>
+	</site>
+	<site code="s0000266">
+		<nameEn>Hearst</nameEn>
+		<nameFr>Hearst</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-73</fw:webId>
+		<fw:lat>49.69</fw:lat>
+		<fw:lon>-83.65</fw:lon>
+	</site>
+	<site code="s0000267">
+		<nameEn>Hornepayne</nameEn>
+		<nameFr>Hornepayne</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-78</fw:webId>
+		<fw:lat>49.25</fw:lat>
+		<fw:lon>-84.78</fw:lon>
+	</site>
+	<site code="s0000640">
+		<nameEn>Huntsville</nameEn>
+		<nameFr>Huntsville</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-88</fw:webId>
+		<fw:lat>45.31</fw:lat>
+		<fw:lon>-79.28</fw:lon>
+	</site>
+	<site code="s0000819">
+		<nameEn>Ignace</nameEn>
+		<nameFr>Ignace</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-156</fw:webId>
+		<fw:lat>49.41</fw:lat>
+		<fw:lon>-91.68</fw:lon>
+	</site>
+	<site code="s0000659">
+		<nameEn>Kakabeka Falls</nameEn>
+		<nameFr>Kakabeka Falls</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-145</fw:webId>
+		<fw:lat>48.41</fw:lat>
+		<fw:lon>-89.62</fw:lon>
+	</site>
+	<site code="s0000305">
+		<nameEn>Kaladar</nameEn>
+		<nameFr>Kaladar</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-43</fw:webId>
+		<fw:lat>44.65</fw:lat>
+		<fw:lon>-77.12</fw:lon>
+	</site>
+	<site code="s0000782">
+		<nameEn>Kapuskasing</nameEn>
+		<nameFr>Kapuskasing</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-142</fw:webId>
+		<fw:lat>49.42</fw:lat>
+		<fw:lon>-82.42</fw:lon>
+	</site>
+	<site code="s0000632">
+		<nameEn>Kawartha Lakes (Fenelon Falls)</nameEn>
+		<nameFr>Kawartha Lakes (Fenelon Falls)</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-44</fw:webId>
+		<fw:lat>44.54</fw:lat>
+		<fw:lon>-78.74</fw:lon>
+	</site>
+	<site code="s0000631">
+		<nameEn>Kawartha Lakes (Lindsay)</nameEn>
+		<nameFr>Kawartha Lakes (Lindsay)</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-168</fw:webId>
+		<fw:lat>44.36</fw:lat>
+		<fw:lon>-78.74</fw:lon>
+	</site>
+	<site code="s0000436">
+		<nameEn>Kemptville</nameEn>
+		<nameFr>Kemptville</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-74</fw:webId>
+		<fw:lat>45.02</fw:lat>
+		<fw:lon>-75.64</fw:lon>
+	</site>
+	<site code="s0000651">
+		<nameEn>Kenora</nameEn>
+		<nameFr>Kenora</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-96</fw:webId>
+		<fw:lat>49.82</fw:lat>
+		<fw:lon>-94.44</fw:lon>
+	</site>
+	<site code="s0000088">
+		<nameEn>Killarney</nameEn>
+		<nameFr>Killarney</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-146</fw:webId>
+		<fw:lat>46.06</fw:lat>
+		<fw:lon>-80.98</fw:lon>
+	</site>
+	<site code="s0000166">
+		<nameEn>Kincardine</nameEn>
+		<nameFr>Kincardine</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-28</fw:webId>
+		<fw:lat>44.17</fw:lat>
+		<fw:lon>-81.63</fw:lon>
+	</site>
+	<site code="s0000531">
+		<nameEn>Kingston</nameEn>
+		<nameFr>Kingston</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-69</fw:webId>
+		<fw:lat>44.31</fw:lat>
+		<fw:lon>-76.42</fw:lon>
+	</site>
+	<site code="s0000437">
+		<nameEn>Kirkland Lake</nameEn>
+		<nameFr>Kirkland Lake</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-76</fw:webId>
+		<fw:lat>48.15</fw:lat>
+		<fw:lon>-80.03</fw:lon>
+	</site>
+	<site code="s0000573">
+		<nameEn>Kitchener-Waterloo</nameEn>
+		<nameFr>Kitchener-Waterloo</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-82</fw:webId>
+		<fw:lat>43.42</fw:lat>
+		<fw:lon>-80.47</fw:lon>
+	</site>
+	<site code="s0000763">
+		<nameEn>Lake Superior (Provincial Park)</nameEn>
+		<nameFr>Lac Supérieur (Parc provincial)</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-45</fw:webId>
+		<fw:lat>47.6</fw:lat>
+		<fw:lon>-84.74</fw:lon>
+	</site>
+	<site code="s0000744">
+		<nameEn>Lambton Shores</nameEn>
+		<nameFr>Lambton Shores</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-46</fw:webId>
+		<fw:lat>43.18</fw:lat>
+		<fw:lon>-81.9</fw:lon>
+	</site>
+	<site code="s0000233">
+		<nameEn>Lansdowne House</nameEn>
+		<nameFr>Lansdowne House</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-87</fw:webId>
+		<fw:lat>52.22</fw:lat>
+		<fw:lon>-87.89</fw:lon>
+	</site>
+	<site code="s0000431">
+		<nameEn>Leamington</nameEn>
+		<nameFr>Leamington</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-23</fw:webId>
+		<fw:lat>42.1</fw:lat>
+		<fw:lon>-82.56</fw:lon>
+	</site>
+	<site code="s0000470">
+		<nameEn>Lincoln</nameEn>
+		<nameFr>Lincoln</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-47</fw:webId>
+		<fw:lat>43.15</fw:lat>
+		<fw:lon>-79.42</fw:lon>
+	</site>
+	<site code="s0000326">
+		<nameEn>London</nameEn>
+		<nameFr>London</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-137</fw:webId>
+		<fw:lat>42.97</fw:lat>
+		<fw:lon>-81.23</fw:lon>
+	</site>
+	<site code="s0000022">
+		<nameEn>Marathon</nameEn>
+		<nameFr>Marathon</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-108</fw:webId>
+		<fw:lat>48.72</fw:lat>
+		<fw:lon>-86.38</fw:lon>
+	</site>
+	<site code="s0000585">
+		<nameEn>Markham</nameEn>
+		<nameFr>Markham</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-85</fw:webId>
+		<fw:lat>43.88</fw:lat>
+		<fw:lon>-79.26</fw:lon>
+	</site>
+	<site code="s0000281">
+		<nameEn>Midland</nameEn>
+		<nameFr>Midland</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-169</fw:webId>
+		<fw:lat>44.75</fw:lat>
+		<fw:lon>-79.88</fw:lon>
+	</site>
+	<site code="s0000105">
+		<nameEn>Mine Centre</nameEn>
+		<nameFr>Mine Centre</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-48</fw:webId>
+		<fw:lat>48.77</fw:lat>
+		<fw:lon>-92.62</fw:lon>
+	</site>
+	<site code="s0000786">
+		<nameEn>Mississauga</nameEn>
+		<nameFr>Mississauga</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-24</fw:webId>
+		<fw:lat>43.59</fw:lat>
+		<fw:lon>-79.66</fw:lon>
+	</site>
+	<site code="s0000762">
+		<nameEn>Montreal River Harbour</nameEn>
+		<nameFr>Montreal River Harbour</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-163</fw:webId>
+		<fw:lat>47.24</fw:lat>
+		<fw:lon>-84.65</fw:lon>
+	</site>
+	<site code="s0000596">
+		<nameEn>Moosonee</nameEn>
+		<nameFr>Moosonee</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-113</fw:webId>
+		<fw:lat>51.33</fw:lat>
+		<fw:lon>-80.72</fw:lon>
+	</site>
+	<site code="s0000072">
+		<nameEn>Morrisburg</nameEn>
+		<nameFr>Morrisburg</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-92</fw:webId>
+		<fw:lat>44.9</fw:lat>
+		<fw:lon>-75.18</fw:lon>
+	</site>
+	<site code="s0000240">
+		<nameEn>Mount Forest</nameEn>
+		<nameFr>Mount Forest</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-89</fw:webId>
+		<fw:lat>43.98</fw:lat>
+		<fw:lon>-80.74</fw:lon>
+	</site>
+	<site code="s0000642">
+		<nameEn>Muskoka</nameEn>
+		<nameFr>Muskoka</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-93</fw:webId>
+		<fw:lat>44.91</fw:lat>
+		<fw:lon>-79.37</fw:lon>
+	</site>
+	<site code="s0000429">
+		<nameEn>New Tecumseth</nameEn>
+		<nameFr>New Tecumseth</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-49</fw:webId>
+		<fw:lat>44.08</fw:lat>
+		<fw:lon>-79.77</fw:lon>
+	</site>
+	<site code="s0000582">
+		<nameEn>Newmarket</nameEn>
+		<nameFr>Newmarket</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-25</fw:webId>
+		<fw:lat>44.06</fw:lat>
+		<fw:lon>-79.46</fw:lon>
+	</site>
+	<site code="s0000692">
+		<nameEn>Niagara Falls</nameEn>
+		<nameFr>Niagara Falls</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-125</fw:webId>
+		<fw:lat>43.06</fw:lat>
+		<fw:lon>-79.11</fw:lon>
+	</site>
+	<site code="s0000419">
+		<nameEn>Nipigon</nameEn>
+		<nameFr>Nipigon</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-26</fw:webId>
+		<fw:lat>48.98</fw:lat>
+		<fw:lon>-88.33</fw:lon>
+	</site>
+	<site code="s0000426">
+		<nameEn>Norfolk</nameEn>
+		<nameFr>Norfolk</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-50</fw:webId>
+		<fw:lat>42.8</fw:lat>
+		<fw:lon>-80.41</fw:lon>
+	</site>
+	<site code="s0000765">
+		<nameEn>North Bay</nameEn>
+		<nameFr>North Bay</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-139</fw:webId>
+		<fw:lat>46.31</fw:lat>
+		<fw:lon>-79.46</fw:lon>
+	</site>
+	<site code="s0000238">
+		<nameEn>North Perth</nameEn>
+		<nameFr>North Perth</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-51</fw:webId>
+		<fw:lat>43.73</fw:lat>
+		<fw:lon>-80.97</fw:lon>
+	</site>
+	<site code="s0000367">
+		<nameEn>Oakville</nameEn>
+		<nameFr>Oakville</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-79</fw:webId>
+		<fw:lat>43.46</fw:lat>
+		<fw:lon>-79.71</fw:lon>
+	</site>
+	<site code="s0000231">
+		<nameEn>Ogoki</nameEn>
+		<nameFr>Ogoki</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-101</fw:webId>
+		<fw:lat>51.63</fw:lat>
+		<fw:lon>-85.95</fw:lon>
+	</site>
+	<site code="s0000815">
+		<nameEn>Orangeville</nameEn>
+		<nameFr>Orangeville</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-140</fw:webId>
+		<fw:lat>43.92</fw:lat>
+		<fw:lon>-80.11</fw:lon>
+	</site>
+	<site code="s0000414">
+		<nameEn>Orillia</nameEn>
+		<nameFr>Orillia</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-13</fw:webId>
+		<fw:lat>44.6</fw:lat>
+		<fw:lon>-79.42</fw:lon>
+	</site>
+	<site code="s0000707">
+		<nameEn>Oshawa</nameEn>
+		<nameFr>Oshawa</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-117</fw:webId>
+		<fw:lat>43.9</fw:lat>
+		<fw:lon>-78.86</fw:lon>
+	</site>
+	<site code="s0000430">
+		<nameEn>Ottawa (Kanata - Orléans)</nameEn>
+		<nameFr>Ottawa (Kanata - Orléans)</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-118</fw:webId>
+		<fw:lat>45.33</fw:lat>
+		<fw:lon>-75.58</fw:lon>
+	</site>
+	<site code="s0000623">
+		<nameEn>Ottawa (Richmond - Metcalfe)</nameEn>
+		<nameFr>Ottawa (Richmond - Metcalfe)</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-52</fw:webId>
+		<fw:lat>45.24</fw:lat>
+		<fw:lon>-75.47</fw:lon>
+	</site>
+	<site code="s0000728">
+		<nameEn>Owen Sound</nameEn>
+		<nameFr>Owen Sound</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-7</fw:webId>
+		<fw:lat>44.57</fw:lat>
+		<fw:lon>-80.93</fw:lon>
+	</site>
+	<site code="s0000075">
+		<nameEn>Oxtongue Lake</nameEn>
+		<nameFr>Oxtongue Lake</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-53</fw:webId>
+		<fw:lat>45.36</fw:lat>
+		<fw:lon>-78.92</fw:lon>
+	</site>
+	<site code="s0000451">
+		<nameEn>Parry Sound</nameEn>
+		<nameFr>Parry Sound</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-103</fw:webId>
+		<fw:lat>45.35</fw:lat>
+		<fw:lon>-80.04</fw:lon>
+	</site>
+	<site code="s0000374">
+		<nameEn>Peawanuck</nameEn>
+		<nameFr>Peawanuck</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-99</fw:webId>
+		<fw:lat>55.02</fw:lat>
+		<fw:lon>-85.42</fw:lon>
+	</site>
+	<site code="s0000730">
+		<nameEn>Pembroke</nameEn>
+		<nameFr>Pembroke</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-131</fw:webId>
+		<fw:lat>45.82</fw:lat>
+		<fw:lon>-77.11</fw:lon>
+	</site>
+	<site code="s0000729">
+		<nameEn>Petawawa</nameEn>
+		<nameFr>Petawawa</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-112</fw:webId>
+		<fw:lat>45.91</fw:lat>
+		<fw:lon>-77.27</fw:lon>
+	</site>
+	<site code="s0000629">
+		<nameEn>Peterborough</nameEn>
+		<nameFr>Peterborough</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-121</fw:webId>
+		<fw:lat>44.3</fw:lat>
+		<fw:lon>-78.33</fw:lon>
+	</site>
+	<site code="s0000710">
+		<nameEn>Pickering</nameEn>
+		<nameFr>Pickering</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-54</fw:webId>
+		<fw:lat>43.91</fw:lat>
+		<fw:lon>-79.13</fw:lon>
+	</site>
+	<site code="s0000628">
+		<nameEn>Pickle Lake</nameEn>
+		<nameFr>Pickle Lake</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-120</fw:webId>
+		<fw:lat>51.47</fw:lat>
+		<fw:lon>-90.2</fw:lon>
+	</site>
+	<site code="s0000677">
+		<nameEn>Pikangikum</nameEn>
+		<nameFr>Pikangikum</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-55</fw:webId>
+		<fw:lat>51.81</fw:lat>
+		<fw:lon>-93.99</fw:lon>
+	</site>
+	<site code="s0000639">
+		<nameEn>Port Carling</nameEn>
+		<nameFr>Port Carling</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-56</fw:webId>
+		<fw:lat>45.12</fw:lat>
+		<fw:lon>-79.58</fw:lon>
+	</site>
+	<site code="s0000283">
+		<nameEn>Port Colborne</nameEn>
+		<nameFr>Port Colborne</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-80</fw:webId>
+		<fw:lat>42.92</fw:lat>
+		<fw:lon>-79.19</fw:lon>
+	</site>
+	<site code="s0000725">
+		<nameEn>Port Elgin</nameEn>
+		<nameFr>Port Elgin</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-19</fw:webId>
+		<fw:lat>44.44</fw:lat>
+		<fw:lon>-81.39</fw:lon>
+	</site>
+	<site code="s0000630">
+		<nameEn>Port Perry</nameEn>
+		<nameFr>Port Perry</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-149</fw:webId>
+		<fw:lat>44.1</fw:lat>
+		<fw:lon>-78.95</fw:lon>
+	</site>
+	<site code="s0000702">
+		<nameEn>Prince Edward (Picton)</nameEn>
+		<nameFr>Prince Edward (Picton)</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-27</fw:webId>
+		<fw:lat>44.02</fw:lat>
+		<fw:lon>-77.26</fw:lon>
+	</site>
+	<site code="s0000704">
+		<nameEn>Quinte West</nameEn>
+		<nameFr>Quinte Ouest</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-57</fw:webId>
+		<fw:lat>44.2</fw:lat>
+		<fw:lon>-77.58</fw:lon>
+	</site>
+	<site code="s0000676">
+		<nameEn>Red Lake</nameEn>
+		<nameFr>Red Lake</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-104</fw:webId>
+		<fw:lat>51.1</fw:lat>
+		<fw:lon>-93.72</fw:lon>
+	</site>
+	<site code="s0000731">
+		<nameEn>Renfrew</nameEn>
+		<nameFr>Renfrew</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-58</fw:webId>
+		<fw:lat>45.47</fw:lat>
+		<fw:lon>-76.68</fw:lon>
+	</site>
+	<site code="s0000773">
+		<nameEn>Richmond Hill</nameEn>
+		<nameFr>Richmond Hill</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-59</fw:webId>
+		<fw:lat>43.87</fw:lat>
+		<fw:lon>-79.44</fw:lon>
+	</site>
+	<site code="s0000455">
+		<nameEn>Rodney</nameEn>
+		<nameFr>Rodney</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-172</fw:webId>
+		<fw:lat>42.57</fw:lat>
+		<fw:lon>-81.68</fw:lon>
+	</site>
+	<site code="s0000080">
+		<nameEn>Rondeau (Provincial Park)</nameEn>
+		<nameFr>Rondeau (Parc provincial)</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-141</fw:webId>
+		<fw:lat>42.3</fw:lat>
+		<fw:lon>-81.89</fw:lon>
+	</site>
+	<site code="s0000696">
+		<nameEn>Sachigo Lake</nameEn>
+		<nameFr>Sachigo Lake</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-105</fw:webId>
+		<fw:lat>53.87</fw:lat>
+		<fw:lon>-92.17</fw:lon>
+	</site>
+	<site code="s0000826">
+		<nameEn>Sandy Lake</nameEn>
+		<nameFr>Sandy Lake</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-129</fw:webId>
+		<fw:lat>53.06</fw:lat>
+		<fw:lon>-93.32</fw:lon>
+	</site>
+	<site code="s0000796">
+		<nameEn>Sarnia</nameEn>
+		<nameFr>Sarnia</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-147</fw:webId>
+		<fw:lat>42.98</fw:lat>
+		<fw:lon>-82.32</fw:lon>
+	</site>
+	<site code="s0000726">
+		<nameEn>Saugeen Shores</nameEn>
+		<nameFr>Saugeen Shores</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-60</fw:webId>
+		<fw:lat>44.41</fw:lat>
+		<fw:lon>-81.37</fw:lon>
+	</site>
+	<site code="s0000479">
+		<nameEn>Sault Ste. Marie</nameEn>
+		<nameFr>Sault Ste. Marie</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-162</fw:webId>
+		<fw:lat>46.56</fw:lat>
+		<fw:lon>-84.35</fw:lon>
+	</site>
+	<site code="s0000747">
+		<nameEn>Savant Lake</nameEn>
+		<nameFr>Savant Lake</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-134</fw:webId>
+		<fw:lat>50.24</fw:lat>
+		<fw:lon>-90.71</fw:lon>
+	</site>
+	<site code="s0000435">
+		<nameEn>Sharbot Lake</nameEn>
+		<nameFr>Sharbot Lake</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-61</fw:webId>
+		<fw:lat>44.77</fw:lat>
+		<fw:lon>-76.69</fw:lon>
+	</site>
+	<site code="s0000239">
+		<nameEn>Shelburne</nameEn>
+		<nameFr>Shelburne</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-84</fw:webId>
+		<fw:lat>44.08</fw:lat>
+		<fw:lon>-80.2</fw:lon>
+	</site>
+	<site code="s0000424">
+		<nameEn>Simcoe</nameEn>
+		<nameFr>Simcoe</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-161</fw:webId>
+		<fw:lat>42.84</fw:lat>
+		<fw:lon>-80.31</fw:lon>
+	</site>
+	<site code="s0000748">
+		<nameEn>Sioux Lookout</nameEn>
+		<nameFr>Sioux Lookout</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-135</fw:webId>
+		<fw:lat>50.09</fw:lat>
+		<fw:lon>-92.0</fw:lon>
+	</site>
+	<site code="s0000650">
+		<nameEn>Sioux Narrows</nameEn>
+		<nameFr>Sioux Narrows</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-166</fw:webId>
+		<fw:lat>49.41</fw:lat>
+		<fw:lon>-94.1</fw:lon>
+	</site>
+	<site code="s0000434">
+		<nameEn>Smiths Falls</nameEn>
+		<nameFr>Smiths Falls</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-106</fw:webId>
+		<fw:lat>44.9</fw:lat>
+		<fw:lon>-76.02</fw:lon>
+	</site>
+	<site code="s0000727">
+		<nameEn>South Bruce Peninsula</nameEn>
+		<nameFr>South Bruce Peninsula</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-62</fw:webId>
+		<fw:lat>44.71</fw:lat>
+		<fw:lon>-81.22</fw:lon>
+	</site>
+	<site code="s0000691">
+		<nameEn>St. Catharines</nameEn>
+		<nameFr>St. Catharines</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-107</fw:webId>
+		<fw:lat>43.17</fw:lat>
+		<fw:lon>-79.25</fw:lon>
+	</site>
+	<site code="s0000329">
+		<nameEn>St. Thomas</nameEn>
+		<nameFr>St. Thomas</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-98</fw:webId>
+		<fw:lat>42.78</fw:lat>
+		<fw:lon>-81.19</fw:lon>
+	</site>
+	<site code="s0000700">
+		<nameEn>Stirling</nameEn>
+		<nameFr>Stirling</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-115</fw:webId>
+		<fw:lat>44.3</fw:lat>
+		<fw:lon>-77.55</fw:lon>
+	</site>
+	<site code="s0000325">
+		<nameEn>Stratford</nameEn>
+		<nameFr>Stratford</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-116</fw:webId>
+		<fw:lat>43.37</fw:lat>
+		<fw:lon>-80.98</fw:lon>
+	</site>
+	<site code="s0000328">
+		<nameEn>Strathroy</nameEn>
+		<nameFr>Strathroy</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-18</fw:webId>
+		<fw:lat>42.96</fw:lat>
+		<fw:lon>-81.62</fw:lon>
+	</site>
+	<site code="s0000843">
+		<nameEn>Sudbury (Greater)</nameEn>
+		<nameFr>Sudbury (Grand)</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-174</fw:webId>
+		<fw:lat>46.58</fw:lat>
+		<fw:lon>-81.07</fw:lon>
+	</site>
+	<site code="s0000529">
+		<nameEn>Sydenham</nameEn>
+		<nameFr>Sydenham</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-63</fw:webId>
+		<fw:lat>44.41</fw:lat>
+		<fw:lon>-76.6</fw:lon>
+	</site>
+	<site code="s0000753">
+		<nameEn>Temiskaming Shores</nameEn>
+		<nameFr>Temiskaming Shores</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-22</fw:webId>
+		<fw:lat>47.49</fw:lat>
+		<fw:lon>-79.72</fw:lon>
+	</site>
+	<site code="s0000023">
+		<nameEn>Terrace Bay</nameEn>
+		<nameFr>Terrace Bay</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-123</fw:webId>
+		<fw:lat>48.8</fw:lat>
+		<fw:lon>-87.1</fw:lon>
+	</site>
+	<site code="s0000411">
+		<nameEn>Thunder Bay</nameEn>
+		<nameFr>Thunder Bay</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-100</fw:webId>
+		<fw:lat>48.4</fw:lat>
+		<fw:lon>-89.27</fw:lon>
+	</site>
+	<site code="s0000425">
+		<nameEn>Tillsonburg</nameEn>
+		<nameFr>Tillsonburg</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-17</fw:webId>
+		<fw:lat>42.87</fw:lat>
+		<fw:lon>-80.73</fw:lon>
+	</site>
+	<site code="s0000705">
+		<nameEn>Timmins</nameEn>
+		<nameFr>Timmins</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-127</fw:webId>
+		<fw:lat>48.47</fw:lat>
+		<fw:lon>-81.33</fw:lon>
+	</site>
+	<site code="s0000422">
+		<nameEn>Tobermory</nameEn>
+		<nameFr>Tobermory</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-157</fw:webId>
+		<fw:lat>45.25</fw:lat>
+		<fw:lon>-81.66</fw:lon>
+	</site>
+	<site code="s0000458">
+		<nameEn>Toronto</nameEn>
+		<nameFr>Toronto</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-143</fw:webId>
+		<fw:lat>43.74</fw:lat>
+		<fw:lon>-79.37</fw:lon>
+	</site>
+	<site code="s0000785">
+		<nameEn>Toronto Island</nameEn>
+		<nameFr>Toronto Island</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-128</fw:webId>
+		<fw:lat>43.63</fw:lat>
+		<fw:lon>-79.37</fw:lon>
+	</site>
+	<site code="s0000701">
+		<nameEn>Trenton</nameEn>
+		<nameFr>Trenton</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-126</fw:webId>
+		<fw:lat>44.11</fw:lat>
+		<fw:lon>-77.58</fw:lon>
+	</site>
+	<site code="s0000127">
+		<nameEn>Upsala</nameEn>
+		<nameFr>Upsala</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-154</fw:webId>
+		<fw:lat>49.06</fw:lat>
+		<fw:lon>-90.5</fw:lon>
+	</site>
+	<site code="s0000584">
+		<nameEn>Vaughan</nameEn>
+		<nameFr>Vaughan</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-64</fw:webId>
+		<fw:lat>43.85</fw:lat>
+		<fw:lon>-79.54</fw:lon>
+	</site>
+	<site code="s0000469">
+		<nameEn>Vineland</nameEn>
+		<nameFr>Vineland</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-109</fw:webId>
+		<fw:lat>43.15</fw:lat>
+		<fw:lon>-79.39</fw:lon>
+	</site>
+	<site code="s0000236">
+		<nameEn>Walkerton</nameEn>
+		<nameFr>Walkerton</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-16</fw:webId>
+		<fw:lat>44.13</fw:lat>
+		<fw:lon>-81.15</fw:lon>
+	</site>
+	<site code="s0000761">
+		<nameEn>Wawa</nameEn>
+		<nameFr>Wawa</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-138</fw:webId>
+		<fw:lat>47.99</fw:lat>
+		<fw:lon>-84.77</fw:lon>
+	</site>
+	<site code="s0000232">
+		<nameEn>Webequie</nameEn>
+		<nameFr>Webequie</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-132</fw:webId>
+		<fw:lat>52.99</fw:lat>
+		<fw:lon>-87.36</fw:lon>
+	</site>
+	<site code="s0000076">
+		<nameEn>Welland</nameEn>
+		<nameFr>Welland</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-14</fw:webId>
+		<fw:lat>43.0</fw:lat>
+		<fw:lon>-79.23</fw:lon>
+	</site>
+	<site code="s0000766">
+		<nameEn>West Nipissing</nameEn>
+		<nameFr>Nipissing Ouest</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-65</fw:webId>
+		<fw:lat>46.45</fw:lat>
+		<fw:lon>-80.04</fw:lon>
+	</site>
+	<site code="s0000530">
+		<nameEn>Westport</nameEn>
+		<nameFr>Westport</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-66</fw:webId>
+		<fw:lat>44.68</fw:lat>
+		<fw:lon>-76.4</fw:lon>
+	</site>
+	<site code="s0000708">
+		<nameEn>Whitby</nameEn>
+		<nameFr>Whitby</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-119</fw:webId>
+		<fw:lat>43.93</fw:lat>
+		<fw:lon>-78.95</fw:lon>
+	</site>
+	<site code="s0000764">
+		<nameEn>White River</nameEn>
+		<nameFr>White River</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-67</fw:webId>
+		<fw:lat>48.58</fw:lat>
+		<fw:lon>-85.26</fw:lon>
+	</site>
+	<site code="s0000724">
+		<nameEn>Wiarton</nameEn>
+		<nameFr>Wiarton</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-130</fw:webId>
+		<fw:lat>44.74</fw:lat>
+		<fw:lon>-81.14</fw:lon>
+	</site>
+	<site code="s0000077">
+		<nameEn>Winchester</nameEn>
+		<nameFr>Winchester</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-155</fw:webId>
+		<fw:lat>45.09</fw:lat>
+		<fw:lon>-75.35</fw:lon>
+	</site>
+	<site code="s0000646">
+		<nameEn>Windsor</nameEn>
+		<nameFr>Windsor</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-94</fw:webId>
+		<fw:lat>42.3</fw:lat>
+		<fw:lon>-82.99</fw:lon>
+	</site>
+	<site code="s0000235">
+		<nameEn>Wingham</nameEn>
+		<nameFr>Wingham</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-110</fw:webId>
+		<fw:lat>43.89</fw:lat>
+		<fw:lon>-81.31</fw:lon>
+	</site>
+	<site code="s0000327">
+		<nameEn>Woodstock</nameEn>
+		<nameFr>Woodstock</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-15</fw:webId>
+		<fw:lat>43.14</fw:lat>
+		<fw:lon>-80.74</fw:lon>
+	</site>
+	<site code="s0000698">
+		<nameEn>Wunnummin Lake</nameEn>
+		<nameFr>Wunnummin Lake</nameFr>
+		<provinceCode>ON</provinceCode>
+		<fw:webId>on-158</fw:webId>
+		<fw:lat>52.94</fw:lat>
+		<fw:lon>-89.3</fw:lon>
+	</site>
+	<site code="s0000583">
+		<nameEn>Charlottetown</nameEn>
+		<nameFr>Charlottetown</nameFr>
+		<provinceCode>PE</provinceCode>
+		<fw:webId>pe-5</fw:webId>
+		<fw:lat>46.24</fw:lat>
+		<fw:lon>-63.13</fw:lon>
+	</site>
+	<site code="s0000138">
+		<nameEn>East Point</nameEn>
+		<nameFr>East Point</nameFr>
+		<provinceCode>PE</provinceCode>
+		<fw:webId>pe-6</fw:webId>
+		<fw:lat>46.45</fw:lat>
+		<fw:lon>-62.0</fw:lon>
+	</site>
+	<site code="s0000026">
+		<nameEn>Maple Plains</nameEn>
+		<nameFr>Maple Plains</nameFr>
+		<provinceCode>PE</provinceCode>
+		<fw:webId>pe-2</fw:webId>
+		<fw:lat>46.28</fw:lat>
+		<fw:lon>-63.57</fw:lon>
+	</site>
+	<site code="s0000252">
+		<nameEn>North Cape</nameEn>
+		<nameFr>North Cape</nameFr>
+		<provinceCode>PE</provinceCode>
+		<fw:webId>pe-1</fw:webId>
+		<fw:lat>47.07</fw:lat>
+		<fw:lon>-64.0</fw:lon>
+	</site>
+	<site code="s0000827">
+		<nameEn>St. Peters Bay</nameEn>
+		<nameFr>St. Peters Bay</nameFr>
+		<provinceCode>PE</provinceCode>
+		<fw:webId>pe-4</fw:webId>
+		<fw:lat>46.42</fw:lat>
+		<fw:lon>-62.58</fw:lon>
+	</site>
+	<site code="s0000562">
+		<nameEn>Summerside</nameEn>
+		<nameFr>Summerside</nameFr>
+		<provinceCode>PE</provinceCode>
+		<fw:webId>pe-3</fw:webId>
+		<fw:lat>46.4</fw:lat>
+		<fw:lon>-63.79</fw:lon>
+	</site>
+	<site code="s0000578">
+		<nameEn>Akulivik</nameEn>
+		<nameFr>Akulivik</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-36</fw:webId>
+		<fw:lat>60.8</fw:lat>
+		<fw:lon>-78.2</fw:lon>
+	</site>
+	<site code="s0000197">
+		<nameEn>Alma</nameEn>
+		<nameFr>Alma</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-144</fw:webId>
+		<fw:lat>48.55</fw:lat>
+		<fw:lon>-71.65</fw:lon>
+	</site>
+	<site code="s0000718">
+		<nameEn>Amos</nameEn>
+		<nameFr>Amos</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-168</fw:webId>
+		<fw:lat>48.57</fw:lat>
+		<fw:lon>-78.12</fw:lon>
+	</site>
+	<site code="s0000406">
+		<nameEn>Amqui</nameEn>
+		<nameFr>Amqui</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-146</fw:webId>
+		<fw:lat>48.47</fw:lat>
+		<fw:lon>-67.43</fw:lon>
+	</site>
+	<site code="s0000682">
+		<nameEn>Asbestos</nameEn>
+		<nameFr>Asbestos</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-38</fw:webId>
+		<fw:lat>45.77</fw:lat>
+		<fw:lon>-71.93</fw:lon>
+	</site>
+	<site code="s0000586">
+		<nameEn>Aupaluk</nameEn>
+		<nameFr>Aupaluk</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-117</fw:webId>
+		<fw:lat>59.3</fw:lat>
+		<fw:lon>-69.6</fw:lon>
+	</site>
+	<site code="s0000486">
+		<nameEn>Bagotville</nameEn>
+		<nameFr>Bagotville</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-161</fw:webId>
+		<fw:lat>48.35</fw:lat>
+		<fw:lon>-70.88</fw:lon>
+	</site>
+	<site code="s0000483">
+		<nameEn>Baie-Comeau</nameEn>
+		<nameFr>Baie-Comeau</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-160</fw:webId>
+		<fw:lat>49.22</fw:lat>
+		<fw:lon>-68.15</fw:lon>
+	</site>
+	<site code="s0000580">
+		<nameEn>Baie-James</nameEn>
+		<nameFr>Baie-James</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-69</fw:webId>
+		<fw:lat>52.0</fw:lat>
+		<fw:lon>-76.0</fw:lon>
+	</site>
+	<site code="s0000342">
+		<nameEn>Baie-Saint-Paul</nameEn>
+		<nameFr>Baie-Saint-Paul</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-165</fw:webId>
+		<fw:lat>47.45</fw:lat>
+		<fw:lon>-70.5</fw:lon>
+	</site>
+	<site code="s0000185">
+		<nameEn>Beauceville</nameEn>
+		<nameFr>Beauceville</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-48</fw:webId>
+		<fw:lat>46.2</fw:lat>
+		<fw:lon>-70.78</fw:lon>
+	</site>
+	<site code="s0000044">
+		<nameEn>Beauharnois</nameEn>
+		<nameFr>Beauharnois</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-49</fw:webId>
+		<fw:lat>45.32</fw:lat>
+		<fw:lon>-73.87</fw:lon>
+	</site>
+	<site code="s0000347">
+		<nameEn>Bécancour</nameEn>
+		<nameFr>Bécancour</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-50</fw:webId>
+		<fw:lat>46.33</fw:lat>
+		<fw:lon>-72.43</fw:lon>
+	</site>
+	<site code="s0000205">
+		<nameEn>Bernières</nameEn>
+		<nameFr>Bernières</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-51</fw:webId>
+		<fw:lat>46.69</fw:lat>
+		<fw:lon>-71.36</fw:lon>
+	</site>
+	<site code="s0000143">
+		<nameEn>Berthierville</nameEn>
+		<nameFr>Berthierville</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-25</fw:webId>
+		<fw:lat>46.08</fw:lat>
+		<fw:lon>-73.18</fw:lon>
+	</site>
+	<site code="s0000603">
+		<nameEn>Blainville</nameEn>
+		<nameFr>Blainville</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-52</fw:webId>
+		<fw:lat>45.67</fw:lat>
+		<fw:lon>-73.88</fw:lon>
+	</site>
+	<site code="s0000494">
+		<nameEn>Blanc-Sablon</nameEn>
+		<nameFr>Blanc-Sablon</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-163</fw:webId>
+		<fw:lat>51.42</fw:lat>
+		<fw:lon>-57.13</fw:lon>
+	</site>
+	<site code="s0000604">
+		<nameEn>Boisbriand</nameEn>
+		<nameFr>Boisbriand</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-53</fw:webId>
+		<fw:lat>45.62</fw:lat>
+		<fw:lon>-73.83</fw:lon>
+	</site>
+	<site code="s0000269">
+		<nameEn>Bonaventure</nameEn>
+		<nameFr>Bonaventure</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-54</fw:webId>
+		<fw:lat>48.05</fw:lat>
+		<fw:lon>-65.48</fw:lon>
+	</site>
+	<site code="s0000046">
+		<nameEn>Candiac</nameEn>
+		<nameFr>Candiac</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-55</fw:webId>
+		<fw:lat>45.38</fw:lat>
+		<fw:lon>-73.52</fw:lon>
+	</site>
+	<site code="s0000320">
+		<nameEn>Cap Chat</nameEn>
+		<nameFr>Cap Chat</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-120</fw:webId>
+		<fw:lat>49.1</fw:lat>
+		<fw:lon>-66.68</fw:lon>
+	</site>
+	<site code="s0000553">
+		<nameEn>Carignan</nameEn>
+		<nameFr>Carignan</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-56</fw:webId>
+		<fw:lat>45.45</fw:lat>
+		<fw:lon>-73.3</fw:lon>
+	</site>
+	<site code="s0000811">
+		<nameEn>Carleton-sur-Mer</nameEn>
+		<nameFr>Carleton-sur-Mer</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-57</fw:webId>
+		<fw:lat>48.1</fw:lat>
+		<fw:lon>-66.13</fw:lon>
+	</site>
+	<site code="s0000554">
+		<nameEn>Chambly</nameEn>
+		<nameFr>Chambly</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-58</fw:webId>
+		<fw:lat>45.45</fw:lat>
+		<fw:lon>-73.28</fw:lon>
+	</site>
+	<site code="s0000315">
+		<nameEn>Chandler</nameEn>
+		<nameFr>Chandler</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-d4</fw:webId>
+		<fw:lat>48.35</fw:lat>
+		<fw:lon>-64.68</fw:lon>
+	</site>
+	<site code="s0000194">
+		<nameEn>Charlevoix</nameEn>
+		<nameFr>Charlevoix</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-119</fw:webId>
+		<fw:lat>47.48</fw:lat>
+		<fw:lon>-70.48</fw:lon>
+	</site>
+	<site code="s0000615">
+		<nameEn>Chelsea</nameEn>
+		<nameFr>Chelsea</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-59</fw:webId>
+		<fw:lat>45.5</fw:lat>
+		<fw:lon>-75.78</fw:lon>
+	</site>
+	<site code="s0000121">
+		<nameEn>Chevery</nameEn>
+		<nameFr>Chevery</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-152</fw:webId>
+		<fw:lat>50.47</fw:lat>
+		<fw:lon>-59.6</fw:lon>
+	</site>
+	<site code="s0000598">
+		<nameEn>Chibougamau</nameEn>
+		<nameFr>Chibougamau</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-121</fw:webId>
+		<fw:lat>49.92</fw:lat>
+		<fw:lon>-74.37</fw:lon>
+	</site>
+	<site code="s0000296">
+		<nameEn>Coaticook</nameEn>
+		<nameFr>Coaticook</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-60</fw:webId>
+		<fw:lat>45.13</fw:lat>
+		<fw:lon>-71.8</fw:lon>
+	</site>
+	<site code="s0000144">
+		<nameEn>Contrecoeur</nameEn>
+		<nameFr>Contrecoeur</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-46</fw:webId>
+		<fw:lat>45.85</fw:lat>
+		<fw:lon>-73.23</fw:lon>
+	</site>
+	<site code="s0000053">
+		<nameEn>Cowansville</nameEn>
+		<nameFr>Cowansville</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-61</fw:webId>
+		<fw:lat>45.2</fw:lat>
+		<fw:lon>-72.75</fw:lon>
+	</site>
+	<site code="s0000769">
+		<nameEn>Delson</nameEn>
+		<nameFr>Delson</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-62</fw:webId>
+		<fw:lat>45.37</fw:lat>
+		<fw:lon>-73.55</fw:lon>
+	</site>
+	<site code="s0000361">
+		<nameEn>Deux-Montagnes</nameEn>
+		<nameFr>Deux-Montagnes</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-63</fw:webId>
+		<fw:lat>45.53</fw:lat>
+		<fw:lon>-73.88</fw:lon>
+	</site>
+	<site code="s0000270">
+		<nameEn>Dolbeau-Mistassini</nameEn>
+		<nameFr>Dolbeau-Mistassini</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-64</fw:webId>
+		<fw:lat>48.88</fw:lat>
+		<fw:lon>-72.23</fw:lon>
+	</site>
+	<site code="s0000182">
+		<nameEn>Donnacona</nameEn>
+		<nameFr>Donnacona</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-65</fw:webId>
+		<fw:lat>46.67</fw:lat>
+		<fw:lon>-71.75</fw:lon>
+	</site>
+	<site code="s0000261">
+		<nameEn>Drummondville</nameEn>
+		<nameFr>Drummondville</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-2</fw:webId>
+		<fw:lat>45.88</fw:lat>
+		<fw:lon>-72.48</fw:lon>
+	</site>
+	<site code="s0000028">
+		<nameEn>Escoumins</nameEn>
+		<nameFr>Escoumins</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-26</fw:webId>
+		<fw:lat>48.42</fw:lat>
+		<fw:lon>-69.42</fw:lon>
+	</site>
+	<site code="s0000063">
+		<nameEn>Farnham</nameEn>
+		<nameFr>Farnham</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-140</fw:webId>
+		<fw:lat>45.28</fw:lat>
+		<fw:lon>-72.98</fw:lon>
+	</site>
+	<site code="s0000738">
+		<nameEn>Fermont</nameEn>
+		<nameFr>Fermont</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-29</fw:webId>
+		<fw:lat>52.78</fw:lat>
+		<fw:lon>-67.08</fw:lon>
+	</site>
+	<site code="s0000484">
+		<nameEn>Forestville</nameEn>
+		<nameFr>Forestville</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-27</fw:webId>
+		<fw:lat>48.73</fw:lat>
+		<fw:lon>-69.08</fw:lon>
+	</site>
+	<site code="s0000536">
+		<nameEn>Forillon</nameEn>
+		<nameFr>Forillon</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-67</fw:webId>
+		<fw:lat>48.84</fw:lat>
+		<fw:lon>-64.34</fw:lon>
+	</site>
+	<site code="s0000537">
+		<nameEn>Forillon (National Park)</nameEn>
+		<nameFr>Forillon ( Parc national)</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-95</fw:webId>
+		<fw:lat>48.9</fw:lat>
+		<fw:lon>-64.35</fw:lon>
+	</site>
+	<site code="s0000535">
+		<nameEn>Gaspé</nameEn>
+		<nameFr>Gaspé</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-101</fw:webId>
+		<fw:lat>48.83</fw:lat>
+		<fw:lon>-64.48</fw:lon>
+	</site>
+	<site code="s0000321">
+		<nameEn>Gaspésie (Parc national)</nameEn>
+		<nameFr>Gaspésie (Parc national)</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-94</fw:webId>
+		<fw:lat>48.93</fw:lat>
+		<fw:lon>-66.28</fw:lon>
+	</site>
+	<site code="s0000611">
+		<nameEn>Gatineau</nameEn>
+		<nameFr>Gatineau</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-126</fw:webId>
+		<fw:lat>45.48</fw:lat>
+		<fw:lon>-75.65</fw:lon>
+	</site>
+	<site code="s0000288">
+		<nameEn>Gouin (Réservoir)</nameEn>
+		<nameFr>Gouin (Réservoir)</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-a1</fw:webId>
+		<fw:lat>48.63</fw:lat>
+		<fw:lon>-74.9</fw:lon>
+	</site>
+	<site code="s0000052">
+		<nameEn>Granby</nameEn>
+		<nameFr>Granby</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-5</fw:webId>
+		<fw:lat>45.4</fw:lat>
+		<fw:lon>-72.73</fw:lon>
+	</site>
+	<site code="s0000319">
+		<nameEn>Grande-Vallée</nameEn>
+		<nameFr>Grande-Vallée</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-169</fw:webId>
+		<fw:lat>49.22</fw:lat>
+		<fw:lon>-65.13</fw:lon>
+	</site>
+	<site code="s0000541">
+		<nameEn>Havre St-Pierre</nameEn>
+		<nameFr>Havre St-Pierre</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-104</fw:webId>
+		<fw:lat>50.23</fw:lat>
+		<fw:lon>-63.6</fw:lon>
+	</site>
+	<site code="s0000099">
+		<nameEn>Huntingdon</nameEn>
+		<nameFr>Huntingdon</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-68</fw:webId>
+		<fw:lat>45.08</fw:lat>
+		<fw:lon>-74.17</fw:lon>
+	</site>
+	<site code="s0000174">
+		<nameEn>Îles-de-la-Madeleine</nameEn>
+		<nameFr>Îles-de-la-Madeleine</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-103</fw:webId>
+		<fw:lat>47.4</fw:lat>
+		<fw:lon>-61.78</fw:lon>
+	</site>
+	<site code="s0000627">
+		<nameEn>Inukjuak</nameEn>
+		<nameFr>Inukjuak</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-131</fw:webId>
+		<fw:lat>58.45</fw:lat>
+		<fw:lon>-78.1</fw:lon>
+	</site>
+	<site code="s0000563">
+		<nameEn>Ivujivik</nameEn>
+		<nameFr>Ivujivik</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-112</fw:webId>
+		<fw:lat>62.42</fw:lat>
+		<fw:lon>-77.92</fw:lon>
+	</site>
+	<site code="s0000721">
+		<nameEn>Joliette</nameEn>
+		<nameFr>Joliette</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-137</fw:webId>
+		<fw:lat>46.02</fw:lat>
+		<fw:lon>-73.45</fw:lon>
+	</site>
+	<site code="s0000335">
+		<nameEn>Kamouraska</nameEn>
+		<nameFr>Kamouraska</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-70</fw:webId>
+		<fw:lat>47.57</fw:lat>
+		<fw:lon>-69.87</fw:lon>
+	</site>
+	<site code="s0000591">
+		<nameEn>Kangiqsualujjuaq</nameEn>
+		<nameFr>Kangiqsualujjuaq</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-118</fw:webId>
+		<fw:lat>58.69</fw:lat>
+		<fw:lon>-65.95</fw:lon>
+	</site>
+	<site code="s0000574">
+		<nameEn>Kangiqsujuaq</nameEn>
+		<nameFr>Kangiqsujuaq</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-155</fw:webId>
+		<fw:lat>61.6</fw:lat>
+		<fw:lon>-71.96</fw:lon>
+	</site>
+	<site code="s0000480">
+		<nameEn>Kangirsuk</nameEn>
+		<nameFr>Kangirsuk</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-159</fw:webId>
+		<fw:lat>60.02</fw:lat>
+		<fw:lon>-70.03</fw:lon>
+	</site>
+	<site code="s0000719">
+		<nameEn>Kuujjuaq</nameEn>
+		<nameFr>Kuujjuaq</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-150</fw:webId>
+		<fw:lat>58.1</fw:lat>
+		<fw:lon>-68.4</fw:lon>
+	</site>
+	<site code="s0000542">
+		<nameEn>Kuujjuarapik</nameEn>
+		<nameFr>Kuujjuarapik</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-105</fw:webId>
+		<fw:lat>55.28</fw:lat>
+		<fw:lon>-77.75</fw:lon>
+	</site>
+	<site code="s0000142">
+		<nameEn>L'Assomption</nameEn>
+		<nameFr>L'Assomption</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-156</fw:webId>
+		<fw:lat>45.83</fw:lat>
+		<fw:lon>-73.42</fw:lon>
+	</site>
+	<site code="s0000336">
+		<nameEn>L'Islet</nameEn>
+		<nameFr>L'Islet</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-77</fw:webId>
+		<fw:lat>47.1</fw:lat>
+		<fw:lon>-70.35</fw:lon>
+	</site>
+	<site code="s0000532">
+		<nameEn>La Grande Rivière</nameEn>
+		<nameFr>La Grande Rivière</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-158</fw:webId>
+		<fw:lat>53.63</fw:lat>
+		<fw:lon>-77.7</fw:lon>
+	</site>
+	<site code="s0000478">
+		<nameEn>La Grande-Quatre</nameEn>
+		<nameFr>La Grande-Quatre</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-100</fw:webId>
+		<fw:lat>53.83</fw:lat>
+		<fw:lon>-73.53</fw:lon>
+	</site>
+	<site code="s0000333">
+		<nameEn>La Malbaie</nameEn>
+		<nameFr>La Malbaie</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-11</fw:webId>
+		<fw:lat>47.65</fw:lat>
+		<fw:lon>-70.15</fw:lon>
+	</site>
+	<site code="s0000048">
+		<nameEn>La Prairie</nameEn>
+		<nameFr>La Prairie</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-71</fw:webId>
+		<fw:lat>45.42</fw:lat>
+		<fw:lon>-73.5</fw:lon>
+	</site>
+	<site code="s0000354">
+		<nameEn>La Sarre</nameEn>
+		<nameFr>La Sarre</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-45</fw:webId>
+		<fw:lat>48.8</fw:lat>
+		<fw:lon>-79.2</fw:lon>
+	</site>
+	<site code="s0000124">
+		<nameEn>La Tuque</nameEn>
+		<nameFr>La Tuque</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-154</fw:webId>
+		<fw:lat>47.43</fw:lat>
+		<fw:lon>-72.78</fw:lon>
+	</site>
+	<site code="s0000245">
+		<nameEn>La Vérendrye (Réserve faunique)</nameEn>
+		<nameFr>La Vérendrye (Réserve faunique)</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-30</fw:webId>
+		<fw:lat>47.33</fw:lat>
+		<fw:lon>-77.0</fw:lon>
+	</site>
+	<site code="s0000575">
+		<nameEn>Lac Raglan</nameEn>
+		<nameFr>Lac Raglan</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-99</fw:webId>
+		<fw:lat>61.66</fw:lat>
+		<fw:lon>-73.26</fw:lon>
+	</site>
+	<site code="s0000674">
+		<nameEn>Lac Saint-Jean</nameEn>
+		<nameFr>Lac-Saint-Jean</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-73</fw:webId>
+		<fw:lat>48.57</fw:lat>
+		<fw:lon>-72.23</fw:lon>
+	</site>
+	<site code="s0000186">
+		<nameEn>Lac-Mégantic</nameEn>
+		<nameFr>Lac-Mégantic</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-72</fw:webId>
+		<fw:lat>45.58</fw:lat>
+		<fw:lon>-70.88</fw:lon>
+	</site>
+	<site code="s0000602">
+		<nameEn>Lachute</nameEn>
+		<nameFr>Lachute</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-14</fw:webId>
+		<fw:lat>45.65</fw:lat>
+		<fw:lon>-74.33</fw:lon>
+	</site>
+	<site code="s0000459">
+		<nameEn>Lanaudière</nameEn>
+		<nameFr>Lanaudière</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-74</fw:webId>
+		<fw:lat>46.3</fw:lat>
+		<fw:lon>-73.2</fw:lon>
+	</site>
+	<site code="s0000284">
+		<nameEn>Laurentides (Réserve faunique)</nameEn>
+		<nameFr>Laurentides (Réserve faunique)</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-113</fw:webId>
+		<fw:lat>47.75</fw:lat>
+		<fw:lon>-71.25</fw:lon>
+	</site>
+	<site code="s0000712">
+		<nameEn>Laval</nameEn>
+		<nameFr>Laval</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-76</fw:webId>
+		<fw:lat>45.58</fw:lat>
+		<fw:lon>-73.75</fw:lon>
+	</site>
+	<site code="s0000149">
+		<nameEn>Le Gardeur</nameEn>
+		<nameFr>Le Gardeur</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-d3</fw:webId>
+		<fw:lat>45.75</fw:lat>
+		<fw:lon>-73.47</fw:lon>
+	</site>
+	<site code="s0000416">
+		<nameEn>Lévis</nameEn>
+		<nameFr>Lévis</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-78</fw:webId>
+		<fw:lat>46.8</fw:lat>
+		<fw:lon>-71.18</fw:lon>
+	</site>
+	<site code="s0000551">
+		<nameEn>Longueuil</nameEn>
+		<nameFr>Longueuil</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-109</fw:webId>
+		<fw:lat>45.53</fw:lat>
+		<fw:lon>-73.52</fw:lon>
+	</site>
+	<site code="s0000605">
+		<nameEn>Lorraine</nameEn>
+		<nameFr>Lorraine</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-81</fw:webId>
+		<fw:lat>45.68</fw:lat>
+		<fw:lon>-73.78</fw:lon>
+	</site>
+	<site code="s0000348">
+		<nameEn>Louiseville</nameEn>
+		<nameFr>Louiseville</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-d2</fw:webId>
+		<fw:lat>46.25</fw:lat>
+		<fw:lon>-72.95</fw:lon>
+	</site>
+	<site code="s0000345">
+		<nameEn>Magog</nameEn>
+		<nameFr>Magog</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-83</fw:webId>
+		<fw:lat>45.27</fw:lat>
+		<fw:lon>-72.15</fw:lon>
+	</site>
+	<site code="s0000123">
+		<nameEn>Manicouagan</nameEn>
+		<nameFr>Manicouagan</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-153</fw:webId>
+		<fw:lat>50.64</fw:lat>
+		<fw:lon>-68.74</fw:lon>
+	</site>
+	<site code="s0000244">
+		<nameEn>Maniwaki</nameEn>
+		<nameFr>Maniwaki</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-102</fw:webId>
+		<fw:lat>46.38</fw:lat>
+		<fw:lon>-75.97</fw:lon>
+	</site>
+	<site code="s0000060">
+		<nameEn>Marieville</nameEn>
+		<nameFr>Marieville</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-84</fw:webId>
+		<fw:lat>45.43</fw:lat>
+		<fw:lon>-73.17</fw:lon>
+	</site>
+	<site code="s0000145">
+		<nameEn>Mascouche</nameEn>
+		<nameFr>Mascouche</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-85</fw:webId>
+		<fw:lat>45.75</fw:lat>
+		<fw:lon>-73.6</fw:lon>
+	</site>
+	<site code="s0000617">
+		<nameEn>Matagami</nameEn>
+		<nameFr>Matagami</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-129</fw:webId>
+		<fw:lat>49.75</fw:lat>
+		<fw:lon>-77.63</fw:lon>
+	</site>
+	<site code="s0000784">
+		<nameEn>Matane</nameEn>
+		<nameFr>Matane</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-15</fw:webId>
+		<fw:lat>48.85</fw:lat>
+		<fw:lon>-67.53</fw:lon>
+	</site>
+	<site code="s0000407">
+		<nameEn>Matapedia</nameEn>
+		<nameFr>Matapédia</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-151</fw:webId>
+		<fw:lat>47.97</fw:lat>
+		<fw:lon>-66.95</fw:lon>
+	</site>
+	<site code="s0000125">
+		<nameEn>Mauricie</nameEn>
+		<nameFr>Mauricie</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-89</fw:webId>
+		<fw:lat>46.8</fw:lat>
+		<fw:lon>-72.97</fw:lon>
+	</site>
+	<site code="s0000094">
+		<nameEn>Mingan</nameEn>
+		<nameFr>Mingan</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-90</fw:webId>
+		<fw:lat>50.3</fw:lat>
+		<fw:lon>-64.03</fw:lon>
+	</site>
+	<site code="s0000600">
+		<nameEn>Mirabel</nameEn>
+		<nameFr>Mirabel</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-123</fw:webId>
+		<fw:lat>45.65</fw:lat>
+		<fw:lon>-74.08</fw:lon>
+	</site>
+	<site code="s0000555">
+		<nameEn>Mont Saint-Hilaire</nameEn>
+		<nameFr>Mont Saint-Hilaire</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-92</fw:webId>
+		<fw:lat>45.57</fw:lat>
+		<fw:lon>-73.2</fw:lon>
+	</site>
+	<site code="s0000783">
+		<nameEn>Mont-Joli</nameEn>
+		<nameFr>Mont-Joli</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-127</fw:webId>
+		<fw:lat>48.58</fw:lat>
+		<fw:lon>-68.18</fw:lon>
+	</site>
+	<site code="s0000246">
+		<nameEn>Mont-Laurier</nameEn>
+		<nameFr>Mont-Laurier</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-47</fw:webId>
+		<fw:lat>46.55</fw:lat>
+		<fw:lon>-75.5</fw:lon>
+	</site>
+	<site code="s0000213">
+		<nameEn>Mont-Tremblant</nameEn>
+		<nameFr>Mont-Tremblant</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-167</fw:webId>
+		<fw:lat>46.12</fw:lat>
+		<fw:lon>-74.6</fw:lon>
+	</site>
+	<site code="s0000334">
+		<nameEn>Montmagny</nameEn>
+		<nameFr>Montmagny</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-124</fw:webId>
+		<fw:lat>46.98</fw:lat>
+		<fw:lon>-70.55</fw:lon>
+	</site>
+	<site code="s0000635">
+		<nameEn>Montréal</nameEn>
+		<nameFr>Montréal</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-147</fw:webId>
+		<fw:lat>45.52</fw:lat>
+		<fw:lon>-73.65</fw:lon>
+	</site>
+	<site code="s0000027">
+		<nameEn>Murdochville</nameEn>
+		<nameFr>Murdochville</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-16</fw:webId>
+		<fw:lat>48.97</fw:lat>
+		<fw:lon>-65.5</fw:lon>
+	</site>
+	<site code="s0000610">
+		<nameEn>Natashquan</nameEn>
+		<nameFr>Natashquan</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-125</fw:webId>
+		<fw:lat>50.19</fw:lat>
+		<fw:lon>-61.82</fw:lon>
+	</site>
+	<site code="s0000268">
+		<nameEn>New Carlisle</nameEn>
+		<nameFr>New Carlisle</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-111</fw:webId>
+		<fw:lat>48.02</fw:lat>
+		<fw:lon>-65.33</fw:lon>
+	</site>
+	<site code="s0000260">
+		<nameEn>Nicolet</nameEn>
+		<nameFr>Nicolet</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-110</fw:webId>
+		<fw:lat>46.22</fw:lat>
+		<fw:lon>-72.62</fw:lon>
+	</site>
+	<site code="s0000556">
+		<nameEn>Otterburn Park</nameEn>
+		<nameFr>Otterburn Park</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-93</fw:webId>
+		<fw:lat>45.53</fw:lat>
+		<fw:lon>-73.22</fw:lon>
+	</site>
+	<site code="s0000612">
+		<nameEn>Papineau</nameEn>
+		<nameFr>Papineau</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-17</fw:webId>
+		<fw:lat>45.88</fw:lat>
+		<fw:lon>-75.05</fw:lon>
+	</site>
+	<site code="s0000287">
+		<nameEn>Parent</nameEn>
+		<nameFr>Parent</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-114</fw:webId>
+		<fw:lat>47.92</fw:lat>
+		<fw:lon>-74.62</fw:lon>
+	</site>
+	<site code="s0000314">
+		<nameEn>Percé</nameEn>
+		<nameFr>Percé</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-18</fw:webId>
+		<fw:lat>48.53</fw:lat>
+		<fw:lon>-64.22</fw:lon>
+	</site>
+	<site code="s0000363">
+		<nameEn>Pincourt</nameEn>
+		<nameFr>Pincourt</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-96</fw:webId>
+		<fw:lat>45.38</fw:lat>
+		<fw:lon>-73.98</fw:lon>
+	</site>
+	<site code="s0000810">
+		<nameEn>Pointe-à-la-Croix</nameEn>
+		<nameFr>Pointe-à-la-Croix</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-20</fw:webId>
+		<fw:lat>48.02</fw:lat>
+		<fw:lon>-66.68</fw:lon>
+	</site>
+	<site code="s0000613">
+		<nameEn>Pontiac</nameEn>
+		<nameFr>Pontiac</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-19</fw:webId>
+		<fw:lat>46.05</fw:lat>
+		<fw:lon>-76.92</fw:lon>
+	</site>
+	<site code="s0000801">
+		<nameEn>Port-Cartier</nameEn>
+		<nameFr>Port-Cartier</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-97</fw:webId>
+		<fw:lat>50.03</fw:lat>
+		<fw:lon>-66.87</fw:lon>
+	</site>
+	<site code="s0000097">
+		<nameEn>Port-Menier</nameEn>
+		<nameFr>Port-Menier</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-142</fw:webId>
+		<fw:lat>49.82</fw:lat>
+		<fw:lon>-64.35</fw:lon>
+	</site>
+	<site code="s0000055">
+		<nameEn>Prévost</nameEn>
+		<nameFr>Prévost</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-98</fw:webId>
+		<fw:lat>45.87</fw:lat>
+		<fw:lon>-74.08</fw:lon>
+	</site>
+	<site code="s0000711">
+		<nameEn>Puvirnituq</nameEn>
+		<nameFr>Puvirnituq</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-40</fw:webId>
+		<fw:lat>60.03</fw:lat>
+		<fw:lon>-77.28</fw:lon>
+	</site>
+	<site code="s0000544">
+		<nameEn>Quaqtaq</nameEn>
+		<nameFr>Quaqtaq</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-106</fw:webId>
+		<fw:lat>61.05</fw:lat>
+		<fw:lon>-69.63</fw:lon>
+	</site>
+	<site code="s0000620">
+		<nameEn>Québec</nameEn>
+		<nameFr>Québec</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-133</fw:webId>
+		<fw:lat>46.82</fw:lat>
+		<fw:lon>-71.22</fw:lon>
+	</site>
+	<site code="s0000755">
+		<nameEn>Repentigny</nameEn>
+		<nameFr>Repentigny</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-a0</fw:webId>
+		<fw:lat>45.73</fw:lat>
+		<fw:lon>-73.47</fw:lon>
+	</site>
+	<site code="s0000552">
+		<nameEn>Richelieu</nameEn>
+		<nameFr>Richelieu</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-21</fw:webId>
+		<fw:lat>45.45</fw:lat>
+		<fw:lon>-73.25</fw:lon>
+	</site>
+	<site code="s0000061">
+		<nameEn>Rigaud</nameEn>
+		<nameFr>Rigaud</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-a2</fw:webId>
+		<fw:lat>45.48</fw:lat>
+		<fw:lon>-74.3</fw:lon>
+	</site>
+	<site code="s0000393">
+		<nameEn>Rimouski</nameEn>
+		<nameFr>Rimouski</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-138</fw:webId>
+		<fw:lat>48.45</fw:lat>
+		<fw:lon>-68.53</fw:lon>
+	</site>
+	<site code="s0000253">
+		<nameEn>Rivière-du-Loup</nameEn>
+		<nameFr>Rivière-du-Loup</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-108</fw:webId>
+		<fw:lat>47.83</fw:lat>
+		<fw:lon>-69.53</fw:lon>
+	</site>
+	<site code="s0000673">
+		<nameEn>Roberval</nameEn>
+		<nameFr>Roberval</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-134</fw:webId>
+		<fw:lat>48.52</fw:lat>
+		<fw:lon>-72.27</fw:lon>
+	</site>
+	<site code="s0000606">
+		<nameEn>Rosemère</nameEn>
+		<nameFr>Rosemère</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-a3</fw:webId>
+		<fw:lat>45.63</fw:lat>
+		<fw:lon>-73.8</fw:lon>
+	</site>
+	<site code="s0000353">
+		<nameEn>Rouyn-Noranda</nameEn>
+		<nameFr>Rouyn-Noranda</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-148</fw:webId>
+		<fw:lat>48.23</fw:lat>
+		<fw:lon>-79.02</fw:lon>
+	</site>
+	<site code="s0000211">
+		<nameEn>Saguenay</nameEn>
+		<nameFr>Saguenay</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-166</fw:webId>
+		<fw:lat>48.42</fw:lat>
+		<fw:lon>-71.07</fw:lon>
+	</site>
+	<site code="s0000557">
+		<nameEn>Saint-Amable</nameEn>
+		<nameFr>Saint-Amable</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-a5</fw:webId>
+		<fw:lat>45.65</fw:lat>
+		<fw:lon>-73.3</fw:lon>
+	</site>
+	<site code="s0000558">
+		<nameEn>Saint-Basile Le Grand</nameEn>
+		<nameFr>Saint-Basile Le Grand</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-a6</fw:webId>
+		<fw:lat>45.53</fw:lat>
+		<fw:lon>-73.28</fw:lon>
+	</site>
+	<site code="s0000049">
+		<nameEn>Saint-Constant</nameEn>
+		<nameFr>Saint-Constant</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-a7</fw:webId>
+		<fw:lat>45.37</fw:lat>
+		<fw:lon>-73.57</fw:lon>
+	</site>
+	<site code="s0000609">
+		<nameEn>Saint-Eustache</nameEn>
+		<nameFr>Saint-Eustache</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-b4</fw:webId>
+		<fw:lat>45.57</fw:lat>
+		<fw:lon>-73.9</fw:lon>
+	</site>
+	<site code="s0000675">
+		<nameEn>Saint-Félicien</nameEn>
+		<nameFr>Saint-Félicien</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-b5</fw:webId>
+		<fw:lat>48.65</fw:lat>
+		<fw:lon>-72.45</fw:lon>
+	</site>
+	<site code="s0000187">
+		<nameEn>Saint-Georges</nameEn>
+		<nameFr>Saint-Georges</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-b6</fw:webId>
+		<fw:lat>46.12</fw:lat>
+		<fw:lon>-70.67</fw:lon>
+	</site>
+	<site code="s0000059">
+		<nameEn>Saint-Hyacinthe</nameEn>
+		<nameFr>Saint-Hyacinthe</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-22</fw:webId>
+		<fw:lat>45.62</fw:lat>
+		<fw:lon>-72.95</fw:lon>
+	</site>
+	<site code="s0000202">
+		<nameEn>Saint-Jean-sur-Richelieu</nameEn>
+		<nameFr>Saint-Jean-sur-Richelieu</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-28</fw:webId>
+		<fw:lat>45.32</fw:lat>
+		<fw:lon>-73.27</fw:lon>
+	</site>
+	<site code="s0000601">
+		<nameEn>Saint-Jérôme</nameEn>
+		<nameFr>Saint-Jérôme</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-13</fw:webId>
+		<fw:lat>45.78</fw:lat>
+		<fw:lon>-74.0</fw:lon>
+	</site>
+	<site code="s0000062">
+		<nameEn>Saint-Lazare</nameEn>
+		<nameFr>Saint-Lazare</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-b7</fw:webId>
+		<fw:lat>45.4</fw:lat>
+		<fw:lon>-74.13</fw:lon>
+	</site>
+	<site code="s0000057">
+		<nameEn>Saint-Lin-Laurentides</nameEn>
+		<nameFr>Saint-Lin-Laurentides</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-b8</fw:webId>
+		<fw:lat>45.85</fw:lat>
+		<fw:lon>-73.77</fw:lon>
+	</site>
+	<site code="s0000203">
+		<nameEn>Saint-Luc</nameEn>
+		<nameFr>Saint-Luc</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-b9</fw:webId>
+		<fw:lat>45.35</fw:lat>
+		<fw:lon>-73.3</fw:lon>
+	</site>
+	<site code="s0000029">
+		<nameEn>Saint-Michel-des-Saints</nameEn>
+		<nameFr>Saint-Michel-des-Saints</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-c0</fw:webId>
+		<fw:lat>46.68</fw:lat>
+		<fw:lon>-73.92</fw:lon>
+	</site>
+	<site code="s0000262">
+		<nameEn>Saint-Nicéphore</nameEn>
+		<nameFr>Saint-Nicéphore</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-c1</fw:webId>
+		<fw:lat>45.83</fw:lat>
+		<fw:lon>-72.42</fw:lon>
+	</site>
+	<site code="s0000051">
+		<nameEn>Saint-Rémi</nameEn>
+		<nameFr>Saint-Rémi</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-c2</fw:webId>
+		<fw:lat>45.27</fw:lat>
+		<fw:lon>-73.62</fw:lon>
+	</site>
+	<site code="s0000058">
+		<nameEn>Saint-Sauveur</nameEn>
+		<nameFr>Saint-Sauveur</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-c3</fw:webId>
+		<fw:lat>45.9</fw:lat>
+		<fw:lon>-74.17</fw:lon>
+	</site>
+	<site code="s0000742">
+		<nameEn>Saint-Timothée</nameEn>
+		<nameFr>Saint-Timothée</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-c4</fw:webId>
+		<fw:lat>45.29</fw:lat>
+		<fw:lon>-74.04</fw:lon>
+	</site>
+	<site code="s0000214">
+		<nameEn>Sainte-Agathe</nameEn>
+		<nameFr>Sainte-Agathe</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-33</fw:webId>
+		<fw:lat>46.05</fw:lat>
+		<fw:lon>-74.28</fw:lon>
+	</site>
+	<site code="s0000322">
+		<nameEn>Sainte-Anne-Des-Monts</nameEn>
+		<nameFr>Sainte-Anne-Des-Monts</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-a8</fw:webId>
+		<fw:lat>49.13</fw:lat>
+		<fw:lon>-66.5</fw:lon>
+	</site>
+	<site code="s0000607">
+		<nameEn>Sainte-Anne-Des-Plaines</nameEn>
+		<nameFr>Sainte-Anne-Des-Plaines</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-a9</fw:webId>
+		<fw:lat>45.77</fw:lat>
+		<fw:lon>-73.82</fw:lon>
+	</site>
+	<site code="s0000050">
+		<nameEn>Sainte-Catherine</nameEn>
+		<nameFr>Sainte-Catherine</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-b0</fw:webId>
+		<fw:lat>45.4</fw:lat>
+		<fw:lon>-73.58</fw:lon>
+	</site>
+	<site code="s0000559">
+		<nameEn>Sainte-Julie</nameEn>
+		<nameFr>Sainte-Julie</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-b1</fw:webId>
+		<fw:lat>45.58</fw:lat>
+		<fw:lon>-73.33</fw:lon>
+	</site>
+	<site code="s0000056">
+		<nameEn>Sainte-Sophie</nameEn>
+		<nameFr>Sainte-Sophie</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-b2</fw:webId>
+		<fw:lat>45.82</fw:lat>
+		<fw:lon>-73.9</fw:lon>
+	</site>
+	<site code="s0000608">
+		<nameEn>Sainte-Thérèse</nameEn>
+		<nameFr>Sainte-Thérèse</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-b3</fw:webId>
+		<fw:lat>45.63</fw:lat>
+		<fw:lon>-73.85</fw:lon>
+	</site>
+	<site code="s0000098">
+		<nameEn>Salaberry-de-Valleyfield</nameEn>
+		<nameFr>Salaberry-de-Valleyfield</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-143</fw:webId>
+		<fw:lat>45.25</fw:lat>
+		<fw:lon>-74.13</fw:lon>
+	</site>
+	<site code="s0000793">
+		<nameEn>Salluit</nameEn>
+		<nameFr>Salluit</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-128</fw:webId>
+		<fw:lat>62.2</fw:lat>
+		<fw:lon>-75.63</fw:lon>
+	</site>
+	<site code="s0000577">
+		<nameEn>Schefferville</nameEn>
+		<nameFr>Schefferville</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-115</fw:webId>
+		<fw:lat>54.8</fw:lat>
+		<fw:lon>-66.83</fw:lon>
+	</site>
+	<site code="s0000800">
+		<nameEn>Sept-Îles</nameEn>
+		<nameFr>Sept-Îles</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-141</fw:webId>
+		<fw:lat>50.2</fw:lat>
+		<fw:lon>-66.38</fw:lon>
+	</site>
+	<site code="s0000709">
+		<nameEn>Shawinigan</nameEn>
+		<nameFr>Shawinigan</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-132</fw:webId>
+		<fw:lat>46.57</fw:lat>
+		<fw:lon>-72.75</fw:lon>
+	</site>
+	<site code="s0000681">
+		<nameEn>Sherbrooke</nameEn>
+		<nameFr>Sherbrooke</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-136</fw:webId>
+		<fw:lat>45.4</fw:lat>
+		<fw:lon>-71.9</fw:lon>
+	</site>
+	<site code="s0000147">
+		<nameEn>Sorel-Tracy</nameEn>
+		<nameFr>Sorel-Tracy</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-c6</fw:webId>
+		<fw:lat>46.03</fw:lat>
+		<fw:lon>-73.12</fw:lon>
+	</site>
+	<site code="s0000163">
+		<nameEn>Sutton</nameEn>
+		<nameFr>Sutton</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-135</fw:webId>
+		<fw:lat>45.1</fw:lat>
+		<fw:lon>-72.62</fw:lon>
+	</site>
+	<site code="s0000295">
+		<nameEn>Tadoussac</nameEn>
+		<nameFr>Tadoussac</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-107</fw:webId>
+		<fw:lat>48.15</fw:lat>
+		<fw:lon>-69.72</fw:lon>
+	</site>
+	<site code="s0000699">
+		<nameEn>Tasiujaq</nameEn>
+		<nameFr>Tasiujaq</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-145</fw:webId>
+		<fw:lat>58.7</fw:lat>
+		<fw:lon>-69.93</fw:lon>
+	</site>
+	<site code="s0000085">
+		<nameEn>Témiscamingue</nameEn>
+		<nameFr>Témiscamingue</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-139</fw:webId>
+		<fw:lat>47.55</fw:lat>
+		<fw:lon>-79.23</fw:lon>
+	</site>
+	<site code="s0000255">
+		<nameEn>Temiscouata</nameEn>
+		<nameFr>Témiscouata</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-35</fw:webId>
+		<fw:lat>47.68</fw:lat>
+		<fw:lon>-68.88</fw:lon>
+	</site>
+	<site code="s0000290">
+		<nameEn>Terrebonne</nameEn>
+		<nameFr>Terrebonne</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-c7</fw:webId>
+		<fw:lat>45.7</fw:lat>
+		<fw:lon>-73.63</fw:lon>
+	</site>
+	<site code="s0000064">
+		<nameEn>Thetford Mines</nameEn>
+		<nameFr>Thetford Mines</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-c8</fw:webId>
+		<fw:lat>46.1</fw:lat>
+		<fw:lon>-71.3</fw:lon>
+	</site>
+	<site code="s0000148">
+		<nameEn>Tracy</nameEn>
+		<nameFr>Tracy</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-c9</fw:webId>
+		<fw:lat>46.03</fw:lat>
+		<fw:lon>-73.14</fw:lon>
+	</site>
+	<site code="s0000254">
+		<nameEn>Trois-Pistoles</nameEn>
+		<nameFr>Trois-Pistoles</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-24</fw:webId>
+		<fw:lat>48.12</fw:lat>
+		<fw:lon>-69.18</fw:lon>
+	</site>
+	<site code="s0000346">
+		<nameEn>Trois-Rivières</nameEn>
+		<nameFr>Trois-Rivières</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-130</fw:webId>
+		<fw:lat>46.35</fw:lat>
+		<fw:lon>-72.58</fw:lon>
+	</site>
+	<site code="s0000599">
+		<nameEn>Umiujaq</nameEn>
+		<nameFr>Umiujaq</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-122</fw:webId>
+		<fw:lat>56.56</fw:lat>
+		<fw:lon>-76.55</fw:lon>
+	</site>
+	<site code="s0000717">
+		<nameEn>Val-d'Or</nameEn>
+		<nameFr>Val-d'Or</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-149</fw:webId>
+		<fw:lat>48.1</fw:lat>
+		<fw:lon>-77.78</fw:lon>
+	</site>
+	<site code="s0000614">
+		<nameEn>Val-des-Monts</nameEn>
+		<nameFr>Val-des-Monts</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-42</fw:webId>
+		<fw:lat>45.65</fw:lat>
+		<fw:lon>-75.67</fw:lon>
+	</site>
+	<site code="s0000408">
+		<nameEn>Vallée de la Matapédia</nameEn>
+		<nameFr>Vallée de la Matapédia</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-d0</fw:webId>
+		<fw:lat>48.17</fw:lat>
+		<fw:lon>-67.14</fw:lon>
+	</site>
+	<site code="s0000204">
+		<nameEn>Vanier</nameEn>
+		<nameFr>Vanier</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-41</fw:webId>
+		<fw:lat>46.82</fw:lat>
+		<fw:lon>-71.26</fw:lon>
+	</site>
+	<site code="s0000180">
+		<nameEn>Varennes</nameEn>
+		<nameFr>Varennes</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-162</fw:webId>
+		<fw:lat>45.68</fw:lat>
+		<fw:lon>-73.43</fw:lon>
+	</site>
+	<site code="s0000362">
+		<nameEn>Vaudreuil-Dorion</nameEn>
+		<nameFr>Vaudreuil-Dorion</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-66</fw:webId>
+		<fw:lat>45.4</fw:lat>
+		<fw:lon>-74.03</fw:lon>
+	</site>
+	<site code="s0000054">
+		<nameEn>Victoriaville</nameEn>
+		<nameFr>Victoriaville</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-157</fw:webId>
+		<fw:lat>46.05</fw:lat>
+		<fw:lon>-71.97</fw:lon>
+	</site>
+	<site code="s0000579">
+		<nameEn>Waskaganish</nameEn>
+		<nameFr>Waskaganish</nameFr>
+		<provinceCode>QC</provinceCode>
+		<fw:webId>qc-116</fw:webId>
+		<fw:lat>51.2</fw:lat>
+		<fw:lon>-78.77</fw:lon>
+	</site>
+	<site code="s0000209">
+		<nameEn>Assiniboia</nameEn>
+		<nameFr>Assiniboia</nameFr>
+		<provinceCode>SK</provinceCode>
+		<fw:webId>sk-51</fw:webId>
+		<fw:lat>49.63</fw:lat>
+		<fw:lon>-105.99</fw:lon>
+	</site>
+	<site code="s0000343">
+		<nameEn>Biggar</nameEn>
+		<nameFr>Biggar</nameFr>
+		<provinceCode>SK</provinceCode>
+		<fw:webId>sk-2</fw:webId>
+		<fw:lat>52.06</fw:lat>
+		<fw:lon>-107.98</fw:lon>
+	</site>
+	<site code="s0000192">
+		<nameEn>Broadview</nameEn>
+		<nameFr>Broadview</nameFr>
+		<provinceCode>SK</provinceCode>
+		<fw:webId>sk-48</fw:webId>
+		<fw:lat>50.38</fw:lat>
+		<fw:lon>-102.58</fw:lon>
+	</site>
+	<site code="s0000723">
+		<nameEn>Buffalo Narrows</nameEn>
+		<nameFr>Buffalo Narrows</nameFr>
+		<provinceCode>SK</provinceCode>
+		<fw:webId>sk-39</fw:webId>
+		<fw:lat>55.88</fw:lat>
+		<fw:lon>-108.52</fw:lon>
+	</site>
+	<site code="s0000662">
+		<nameEn>Canora</nameEn>
+		<nameFr>Canora</nameFr>
+		<provinceCode>SK</provinceCode>
+		<fw:webId>sk-3</fw:webId>
+		<fw:lat>51.64</fw:lat>
+		<fw:lon>-102.43</fw:lon>
+	</site>
+	<site code="s0000515">
+		<nameEn>Carlyle</nameEn>
+		<nameFr>Carlyle</nameFr>
+		<provinceCode>SK</provinceCode>
+		<fw:webId>sk-4</fw:webId>
+		<fw:lat>49.64</fw:lat>
+		<fw:lon>-102.27</fw:lon>
+	</site>
+	<site code="s0000369">
+		<nameEn>Collins Bay</nameEn>
+		<nameFr>Collins Bay</nameFr>
+		<provinceCode>SK</provinceCode>
+		<fw:webId>sk-30</fw:webId>
+		<fw:lat>58.28</fw:lat>
+		<fw:lon>-103.63</fw:lon>
+	</site>
+	<site code="s0000081">
+		<nameEn>Coronach</nameEn>
+		<nameFr>Coronach</nameFr>
+		<provinceCode>SK</provinceCode>
+		<fw:webId>sk-42</fw:webId>
+		<fw:lat>49.11</fw:lat>
+		<fw:lon>-105.51</fw:lon>
+	</site>
+	<site code="s0000360">
+		<nameEn>Cypress Hills (Provincial Park)</nameEn>
+		<nameFr>Cypress Hills (Parc provincial)</nameFr>
+		<provinceCode>SK</provinceCode>
+		<fw:webId>sk-29</fw:webId>
+		<fw:lat>49.63</fw:lat>
+		<fw:lon>-109.75</fw:lon>
+	</site>
+	<site code="s0000134">
+		<nameEn>Eastend</nameEn>
+		<nameFr>Eastend</nameFr>
+		<provinceCode>SK</provinceCode>
+		<fw:webId>sk-45</fw:webId>
+		<fw:lat>49.52</fw:lat>
+		<fw:lon>-108.82</fw:lon>
+	</site>
+	<site code="s0000274">
+		<nameEn>Elbow</nameEn>
+		<nameFr>Elbow</nameFr>
+		<provinceCode>SK</provinceCode>
+		<fw:webId>sk-18</fw:webId>
+		<fw:lat>51.12</fw:lat>
+		<fw:lon>-106.6</fw:lon>
+	</site>
+	<site code="s0000516">
+		<nameEn>Estevan</nameEn>
+		<nameFr>Estevan</nameFr>
+		<provinceCode>SK</provinceCode>
+		<fw:webId>sk-53</fw:webId>
+		<fw:lat>49.14</fw:lat>
+		<fw:lon>-102.99</fw:lon>
+	</site>
+	<site code="s0000087">
+		<nameEn>Fort Qu'Appelle</nameEn>
+		<nameFr>Fort Qu'Appelle</nameFr>
+		<provinceCode>SK</provinceCode>
+		<fw:webId>sk-5</fw:webId>
+		<fw:lat>50.77</fw:lat>
+		<fw:lon>-103.79</fw:lon>
+	</site>
+	<site code="s0000545">
+		<nameEn>Hudson Bay</nameEn>
+		<nameFr>Hudson Bay</nameFr>
+		<provinceCode>SK</provinceCode>
+		<fw:webId>sk-17</fw:webId>
+		<fw:lat>52.84</fw:lat>
+		<fw:lon>-102.38</fw:lon>
+	</site>
+	<site code="s0000196">
+		<nameEn>Humboldt</nameEn>
+		<nameFr>Humboldt</nameFr>
+		<provinceCode>SK</provinceCode>
+		<fw:webId>sk-6</fw:webId>
+		<fw:lat>52.2</fw:lat>
+		<fw:lon>-105.12</fw:lon>
+	</site>
+	<site code="s0000086">
+		<nameEn>Indian Head</nameEn>
+		<nameFr>Indian Head</nameFr>
+		<provinceCode>SK</provinceCode>
+		<fw:webId>sk-43</fw:webId>
+		<fw:lat>50.53</fw:lat>
+		<fw:lon>-103.67</fw:lon>
+	</site>
+	<site code="s0000664">
+		<nameEn>Kamsack</nameEn>
+		<nameFr>Kamsack</nameFr>
+		<provinceCode>SK</provinceCode>
+		<fw:webId>sk-7</fw:webId>
+		<fw:lat>51.56</fw:lat>
+		<fw:lon>-101.9</fw:lon>
+	</site>
+	<site code="s0000576">
+		<nameEn>Key Lake</nameEn>
+		<nameFr>Key Lake</nameFr>
+		<provinceCode>SK</provinceCode>
+		<fw:webId>sk-20</fw:webId>
+		<fw:lat>57.22</fw:lat>
+		<fw:lon>-105.63</fw:lon>
+	</site>
+	<site code="s0000581">
+		<nameEn>Kindersley</nameEn>
+		<nameFr>Kindersley</nameFr>
+		<provinceCode>SK</provinceCode>
+		<fw:webId>sk-21</fw:webId>
+		<fw:lat>51.47</fw:lat>
+		<fw:lon>-109.16</fw:lon>
+	</site>
+	<site code="s0000722">
+		<nameEn>La Loche</nameEn>
+		<nameFr>La Loche</nameFr>
+		<provinceCode>SK</provinceCode>
+		<fw:webId>sk-13</fw:webId>
+		<fw:lat>56.49</fw:lat>
+		<fw:lon>-109.4</fw:lon>
+	</site>
+	<site code="s0000715">
+		<nameEn>La Ronge</nameEn>
+		<nameFr>La Ronge</nameFr>
+		<provinceCode>SK</provinceCode>
+		<fw:webId>sk-38</fw:webId>
+		<fw:lat>55.12</fw:lat>
+		<fw:lon>-105.29</fw:lon>
+	</site>
+	<site code="s0000381">
+		<nameEn>Last Mountain Lake (Sanctuary)</nameEn>
+		<nameFr>Last Mountain Lake (Sanctuaire)</nameFr>
+		<provinceCode>SK</provinceCode>
+		<fw:webId>sk-35</fw:webId>
+		<fw:lat>51.37</fw:lat>
+		<fw:lon>-105.23</fw:lon>
+	</site>
+	<site code="s0000219">
+		<nameEn>Leader</nameEn>
+		<nameFr>Leader</nameFr>
+		<provinceCode>SK</provinceCode>
+		<fw:webId>sk-52</fw:webId>
+		<fw:lat>50.89</fw:lat>
+		<fw:lon>-109.55</fw:lon>
+	</site>
+	<site code="s0000835">
+		<nameEn>Lloydminster</nameEn>
+		<nameFr>Lloydminster</nameFr>
+		<provinceCode>SK</provinceCode>
+		<fw:webId>sk-56</fw:webId>
+		<fw:lat>53.28</fw:lat>
+		<fw:lon>-109.98</fw:lon>
+	</site>
+	<site code="s0000230">
+		<nameEn>Lucky Lake</nameEn>
+		<nameFr>Lucky Lake</nameFr>
+		<provinceCode>SK</provinceCode>
+		<fw:webId>sk-14</fw:webId>
+		<fw:lat>50.99</fw:lat>
+		<fw:lon>-107.13</fw:lon>
+	</site>
+	<site code="s0000248">
+		<nameEn>Maple Creek</nameEn>
+		<nameFr>Maple Creek</nameFr>
+		<provinceCode>SK</provinceCode>
+		<fw:webId>sk-16</fw:webId>
+		<fw:lat>49.91</fw:lat>
+		<fw:lon>-109.48</fw:lon>
+	</site>
+	<site code="s0000589">
+		<nameEn>Meadow Lake</nameEn>
+		<nameFr>Meadow Lake</nameFr>
+		<provinceCode>SK</provinceCode>
+		<fw:webId>sk-22</fw:webId>
+		<fw:lat>54.12</fw:lat>
+		<fw:lon>-108.44</fw:lon>
+	</site>
+	<site code="s0000158">
+		<nameEn>Melfort</nameEn>
+		<nameFr>Melfort</nameFr>
+		<provinceCode>SK</provinceCode>
+		<fw:webId>sk-46</fw:webId>
+		<fw:lat>52.86</fw:lat>
+		<fw:lon>-104.61</fw:lon>
+	</site>
+	<site code="s0000665">
+		<nameEn>Melville</nameEn>
+		<nameFr>Melville</nameFr>
+		<provinceCode>SK</provinceCode>
+		<fw:webId>sk-8</fw:webId>
+		<fw:lat>50.93</fw:lat>
+		<fw:lon>-102.81</fw:lon>
+	</site>
+	<site code="s0000822">
+		<nameEn>Moose Jaw</nameEn>
+		<nameFr>Moose Jaw</nameFr>
+		<provinceCode>SK</provinceCode>
+		<fw:webId>sk-24</fw:webId>
+		<fw:lat>50.39</fw:lat>
+		<fw:lon>-105.55</fw:lon>
+	</site>
+	<site code="s0000733">
+		<nameEn>Moosomin</nameEn>
+		<nameFr>Moosomin</nameFr>
+		<provinceCode>SK</provinceCode>
+		<fw:webId>sk-9</fw:webId>
+		<fw:lat>50.14</fw:lat>
+		<fw:lon>-101.67</fw:lon>
+	</site>
+	<site code="s0000095">
+		<nameEn>Nipawin</nameEn>
+		<nameFr>Nipawin</nameFr>
+		<provinceCode>SK</provinceCode>
+		<fw:webId>sk-47</fw:webId>
+		<fw:lat>53.36</fw:lat>
+		<fw:lon>-104.02</fw:lon>
+	</site>
+	<site code="s0000666">
+		<nameEn>North Battleford</nameEn>
+		<nameFr>North Battleford</nameFr>
+		<provinceCode>SK</provinceCode>
+		<fw:webId>sk-34</fw:webId>
+		<fw:lat>52.76</fw:lat>
+		<fw:lon>-108.29</fw:lon>
+	</site>
+	<site code="s0000387">
+		<nameEn>Outlook</nameEn>
+		<nameFr>Outlook</nameFr>
+		<provinceCode>SK</provinceCode>
+		<fw:webId>sk-37</fw:webId>
+		<fw:lat>51.49</fw:lat>
+		<fw:lon>-107.05</fw:lon>
+	</site>
+	<site code="s0000514">
+		<nameEn>Oxbow</nameEn>
+		<nameFr>Oxbow</nameFr>
+		<provinceCode>SK</provinceCode>
+		<fw:webId>sk-10</fw:webId>
+		<fw:lat>49.23</fw:lat>
+		<fw:lon>-102.17</fw:lon>
+	</site>
+	<site code="s0000067">
+		<nameEn>Pelican Narrows</nameEn>
+		<nameFr>Pelican Narrows</nameFr>
+		<provinceCode>SK</provinceCode>
+		<fw:webId>sk-55</fw:webId>
+		<fw:lat>55.19</fw:lat>
+		<fw:lon>-102.93</fw:lon>
+	</site>
+	<site code="s0000624">
+		<nameEn>Prince Albert</nameEn>
+		<nameFr>Prince Albert</nameFr>
+		<provinceCode>SK</provinceCode>
+		<fw:webId>sk-27</fw:webId>
+		<fw:lat>53.22</fw:lat>
+		<fw:lon>-105.71</fw:lon>
+	</site>
+	<site code="s0000788">
+		<nameEn>Regina</nameEn>
+		<nameFr>Regina</nameFr>
+		<provinceCode>SK</provinceCode>
+		<fw:webId>sk-32</fw:webId>
+		<fw:lat>50.45</fw:lat>
+		<fw:lon>-104.61</fw:lon>
+	</site>
+	<site code="s0000225">
+		<nameEn>Rockglen</nameEn>
+		<nameFr>Rockglen</nameFr>
+		<provinceCode>SK</provinceCode>
+		<fw:webId>sk-54</fw:webId>
+		<fw:lat>49.18</fw:lat>
+		<fw:lon>-105.95</fw:lon>
+	</site>
+	<site code="s0000300">
+		<nameEn>Rosetown</nameEn>
+		<nameFr>Rosetown</nameFr>
+		<provinceCode>SK</provinceCode>
+		<fw:webId>sk-23</fw:webId>
+		<fw:lat>51.55</fw:lat>
+		<fw:lon>-107.99</fw:lon>
+	</site>
+	<site code="s0000743">
+		<nameEn>Rosthern</nameEn>
+		<nameFr>Rosthern</nameFr>
+		<provinceCode>SK</provinceCode>
+		<fw:webId>sk-1</fw:webId>
+		<fw:lat>52.66</fw:lat>
+		<fw:lon>-106.33</fw:lon>
+	</site>
+	<site code="s0000797">
+		<nameEn>Saskatoon</nameEn>
+		<nameFr>Saskatoon</nameFr>
+		<provinceCode>SK</provinceCode>
+		<fw:webId>sk-40</fw:webId>
+		<fw:lat>52.14</fw:lat>
+		<fw:lon>-106.69</fw:lon>
+	</site>
+	<site code="s0000344">
+		<nameEn>Scott</nameEn>
+		<nameFr>Scott</nameFr>
+		<provinceCode>SK</provinceCode>
+		<fw:webId>sk-26</fw:webId>
+		<fw:lat>52.37</fw:lat>
+		<fw:lon>-108.83</fw:lon>
+	</site>
+	<site code="s0000133">
+		<nameEn>Shaunavon</nameEn>
+		<nameFr>Shaunavon</nameFr>
+		<provinceCode>SK</provinceCode>
+		<fw:webId>sk-11</fw:webId>
+		<fw:lat>49.65</fw:lat>
+		<fw:lon>-108.42</fw:lon>
+	</site>
+	<site code="s0000208">
+		<nameEn>Southend Reindeer</nameEn>
+		<nameFr>Southend Reindeer</nameFr>
+		<provinceCode>SK</provinceCode>
+		<fw:webId>sk-50</fw:webId>
+		<fw:lat>56.32</fw:lat>
+		<fw:lon>-103.27</fw:lon>
+	</site>
+	<site code="s0000330">
+		<nameEn>Spiritwood</nameEn>
+		<nameFr>Spiritwood</nameFr>
+		<provinceCode>SK</provinceCode>
+		<fw:webId>sk-25</fw:webId>
+		<fw:lat>53.37</fw:lat>
+		<fw:lon>-107.52</fw:lon>
+	</site>
+	<site code="s0000684">
+		<nameEn>Stony Rapids</nameEn>
+		<nameFr>Stony Rapids</nameFr>
+		<provinceCode>SK</provinceCode>
+		<fw:webId>sk-36</fw:webId>
+		<fw:lat>59.25</fw:lat>
+		<fw:lon>-105.84</fw:lon>
+	</site>
+	<site code="s0000355">
+		<nameEn>Swift Current</nameEn>
+		<nameFr>Swift Current</nameFr>
+		<provinceCode>SK</provinceCode>
+		<fw:webId>sk-41</fw:webId>
+		<fw:lat>50.29</fw:lat>
+		<fw:lon>-107.79</fw:lon>
+	</site>
+	<site code="s0000157">
+		<nameEn>Tisdale</nameEn>
+		<nameFr>Tisdale</nameFr>
+		<provinceCode>SK</provinceCode>
+		<fw:webId>sk-12</fw:webId>
+		<fw:lat>52.85</fw:lat>
+		<fw:lon>-104.05</fw:lon>
+	</site>
+	<site code="s0000113">
+		<nameEn>Uranium City</nameEn>
+		<nameFr>Uranium City</nameFr>
+		<provinceCode>SK</provinceCode>
+		<fw:webId>sk-44</fw:webId>
+		<fw:lat>59.57</fw:lat>
+		<fw:lon>-108.61</fw:lon>
+	</site>
+	<site code="s0000357">
+		<nameEn>Val Marie</nameEn>
+		<nameFr>Val Marie</nameFr>
+		<provinceCode>SK</provinceCode>
+		<fw:webId>sk-28</fw:webId>
+		<fw:lat>49.25</fw:lat>
+		<fw:lon>-107.73</fw:lon>
+	</site>
+	<site code="s0000241">
+		<nameEn>Waskesiu Lake</nameEn>
+		<nameFr>Waskesiu Lake</nameFr>
+		<provinceCode>SK</provinceCode>
+		<fw:webId>sk-15</fw:webId>
+		<fw:lat>53.92</fw:lat>
+		<fw:lon>-106.08</fw:lon>
+	</site>
+	<site code="s0000195">
+		<nameEn>Watrous</nameEn>
+		<nameFr>Watrous</nameFr>
+		<provinceCode>SK</provinceCode>
+		<fw:webId>sk-49</fw:webId>
+		<fw:lat>51.69</fw:lat>
+		<fw:lon>-105.46</fw:lon>
+	</site>
+	<site code="s0000372">
+		<nameEn>Weyburn</nameEn>
+		<nameFr>Weyburn</nameFr>
+		<provinceCode>SK</provinceCode>
+		<fw:webId>sk-31</fw:webId>
+		<fw:lat>49.66</fw:lat>
+		<fw:lon>-103.85</fw:lon>
+	</site>
+	<site code="s0000278">
+		<nameEn>Wynyard</nameEn>
+		<nameFr>Wynyard</nameFr>
+		<provinceCode>SK</provinceCode>
+		<fw:webId>sk-19</fw:webId>
+		<fw:lat>51.77</fw:lat>
+		<fw:lon>-104.18</fw:lon>
+	</site>
+	<site code="s0000663">
+		<nameEn>Yorkton</nameEn>
+		<nameFr>Yorkton</nameFr>
+		<provinceCode>SK</provinceCode>
+		<fw:webId>sk-33</fw:webId>
+		<fw:lat>51.21</fw:lat>
+		<fw:lon>-102.46</fw:lon>
+	</site>
+	<site code="s0000751">
+		<nameEn>Beaver Creek</nameEn>
+		<nameFr>Beaver Creek</nameFr>
+		<provinceCode>YT</provinceCode>
+		<fw:webId>yt-15</fw:webId>
+		<fw:lat>62.38</fw:lat>
+		<fw:lon>-140.88</fw:lon>
+	</site>
+	<site code="s0000506">
+		<nameEn>Burwash Landing</nameEn>
+		<nameFr>Burwash Landing</nameFr>
+		<provinceCode>YT</provinceCode>
+		<fw:webId>yt-7</fw:webId>
+		<fw:lat>61.36</fw:lat>
+		<fw:lon>-138.99</fw:lon>
+	</site>
+	<site code="s0000760">
+		<nameEn>Carcross</nameEn>
+		<nameFr>Carcross</nameFr>
+		<provinceCode>YT</provinceCode>
+		<fw:webId>yt-2</fw:webId>
+		<fw:lat>60.17</fw:lat>
+		<fw:lon>-134.71</fw:lon>
+	</site>
+	<site code="s0000421">
+		<nameEn>Carmacks</nameEn>
+		<nameFr>Carmacks</nameFr>
+		<provinceCode>YT</provinceCode>
+		<fw:webId>yt-17</fw:webId>
+		<fw:lat>62.09</fw:lat>
+		<fw:lon>-136.3</fw:lon>
+	</site>
+	<site code="s0000275">
+		<nameEn>Dawson</nameEn>
+		<nameFr>Dawson</nameFr>
+		<provinceCode>YT</provinceCode>
+		<fw:webId>yt-6</fw:webId>
+		<fw:lat>64.06</fw:lat>
+		<fw:lon>-139.43</fw:lon>
+	</site>
+	<site code="s0000031">
+		<nameEn>Dempster (Highway)</nameEn>
+		<nameFr>Dempster (Route)</nameFr>
+		<provinceCode>YT</provinceCode>
+		<fw:webId>yt-4</fw:webId>
+		<fw:lat>66.16</fw:lat>
+		<fw:lon>-137.15</fw:lon>
+	</site>
+	<site code="s0000349">
+		<nameEn>Faro</nameEn>
+		<nameFr>Faro</nameFr>
+		<provinceCode>YT</provinceCode>
+		<fw:webId>yt-12</fw:webId>
+		<fw:lat>62.23</fw:lat>
+		<fw:lon>-133.36</fw:lon>
+	</site>
+	<site code="s0000183">
+		<nameEn>Haines Junction</nameEn>
+		<nameFr>Haines Junction</nameFr>
+		<provinceCode>YT</provinceCode>
+		<fw:webId>yt-5</fw:webId>
+		<fw:lat>60.75</fw:lat>
+		<fw:lon>-137.51</fw:lon>
+	</site>
+	<site code="s0000505">
+		<nameEn>Kluane Lake</nameEn>
+		<nameFr>Lac Kluane</nameFr>
+		<provinceCode>YT</provinceCode>
+		<fw:webId>yt-1</fw:webId>
+		<fw:lat>61.26</fw:lat>
+		<fw:lon>-138.77</fw:lon>
+	</site>
+	<site code="s0000593">
+		<nameEn>Mayo</nameEn>
+		<nameFr>Mayo</nameFr>
+		<provinceCode>YT</provinceCode>
+		<fw:webId>yt-10</fw:webId>
+		<fw:lat>63.59</fw:lat>
+		<fw:lon>-135.9</fw:lon>
+	</site>
+	<site code="s0000823">
+		<nameEn>Old Crow</nameEn>
+		<nameFr>Old Crow</nameFr>
+		<provinceCode>YT</provinceCode>
+		<fw:webId>yt-11</fw:webId>
+		<fw:lat>67.57</fw:lat>
+		<fw:lon>-139.84</fw:lon>
+	</site>
+	<site code="s0000030">
+		<nameEn>Rancheria</nameEn>
+		<nameFr>Rancheria</nameFr>
+		<provinceCode>YT</provinceCode>
+		<fw:webId>yt-3</fw:webId>
+		<fw:lat>60.09</fw:lat>
+		<fw:lon>-130.6</fw:lon>
+	</site>
+	<site code="s0000309">
+		<nameEn>Rock River</nameEn>
+		<nameFr>Rock River</nameFr>
+		<provinceCode>YT</provinceCode>
+		<fw:webId>yt-9</fw:webId>
+		<fw:lat>66.98</fw:lat>
+		<fw:lon>-136.22</fw:lon>
+	</site>
+	<site code="s0000350">
+		<nameEn>Ross River</nameEn>
+		<nameFr>Ross River</nameFr>
+		<provinceCode>YT</provinceCode>
+		<fw:webId>yt-8</fw:webId>
+		<fw:lat>61.98</fw:lat>
+		<fw:lon>-132.43</fw:lon>
+	</site>
+	<site code="s0000410">
+		<nameEn>Teslin</nameEn>
+		<nameFr>Teslin</nameFr>
+		<provinceCode>YT</provinceCode>
+		<fw:webId>yt-14</fw:webId>
+		<fw:lat>60.17</fw:lat>
+		<fw:lon>-132.72</fw:lon>
+	</site>
+	<site code="s0000648">
+		<nameEn>Watson Lake</nameEn>
+		<nameFr>Watson Lake</nameFr>
+		<provinceCode>YT</provinceCode>
+		<fw:webId>yt-13</fw:webId>
+		<fw:lat>60.06</fw:lat>
+		<fw:lon>-128.7</fw:lon>
+	</site>
+	<site code="s0000825">
+		<nameEn>Whitehorse</nameEn>
+		<nameFr>Whitehorse</nameFr>
+		<provinceCode>YT</provinceCode>
+		<fw:webId>yt-16</fw:webId>
+		<fw:lat>60.7</fw:lat>
+		<fw:lon>-135.08</fw:lon>
+	</site>
+</siteList>

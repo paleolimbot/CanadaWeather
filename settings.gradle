@@ -1,0 +1,2 @@
+include ':androidWeather'
+include ':canadaWeather'

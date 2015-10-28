@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="pref_iconset_summary">Icônes météo utilisées pour l\'écran des prévisions</string>
+    <string name="pref_iconset">Ensemble d\'icônes</string>
+
+    <string-array name="pref_iconset_choices">
+        <item>AVMan</item>
+        <item>Environment Canada (vieux)</item>
+        <item>Environment Canada (nouveau)</item>
+    </string-array>
+    
+    <string name="pref_radar_length">Durée de l\'animation radar</string>
+    <string name="pref_radar_length_summary">Choisir la durée de l\'animation des images radar</string>
+
+    <string-array name="pref_radar_length_choices">
+        <item>1 heure</item>
+        <item>3 heures</item>
+    </string-array>
+    
+    <string name="pref_radar_preciptype">Type de précipitations</string>
+    <string name="pref_radar_preciptype_summary">Type de précipitations pour les images radar.</string>
+    <string-array name="pref_radar_preciptype_choices">
+        <item>Decider automatiquement</item>
+        <item>Pluie</item>
+        <item>Neige</item>
+    </string-array>
+    
+    <string name="pref_radar_overlays">Superpositions</string>
+    <string name="pref_radar_overlays_summary">Choisir les superpositions du radar</string>
+    <string-array name="pref_radar_overlays_choices">
+        <item>Routes</item>
+        <item>Villes</item>
+        <item>Villes additionnelles</item>
+        <item>Rivières</item>
+        <item>Numéros de route</item>
+    </string-array>
+    
+    <string name="pref_edit_notifications">Éditez les alertes</string>
+    <string name="pref_edit_notifications_summary">Éditez les localités pour lesquels on reçoit des alertes.</string>
+    
+    <string name="pref_theme_widget">Arrière-plan (widget)</string>
+    <string name="pref_theme_widget_summary">Choisir un arrière-plan clair ou foncé pour les widgets.</string>
+
+    <string-array name="pref_theme_widget_choices">
+        <item>Noir</item>
+        <item>Clair</item>
+        <item>Transparent</item>
+    </string-array>
+    
+</resources>

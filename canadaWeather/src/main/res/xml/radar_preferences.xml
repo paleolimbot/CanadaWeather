@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+    
+    <ListPreference android:title="@string/pref_radar_length" android:entries="@array/pref_radar_length_choices" android:summary="@string/pref_radar_length_summary" android:key="xml_radar_length" android:entryValues="@array/pref_radar_length_values"/>
+	<ListPreference android:title="@string/pref_radar_preciptype" android:entries="@array/pref_radar_preciptype_choices" android:summary="@string/pref_radar_preciptype_summary" android:key="xml_radar_preciptype" android:entryValues="@array/pref_radar_preciptype_values"/>    
+	<MultiSelectListPreference android:title="@string/pref_radar_overlays" android:key="xml_radar_overlays" android:entries="@array/pref_radar_overlays_choices" android:entryValues="@array/pref_radar_overlays_values" android:summary="@string/pref_radar_overlays_summary" />
+</PreferenceScreen>

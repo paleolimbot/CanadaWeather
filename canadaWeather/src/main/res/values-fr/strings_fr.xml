@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Météo Canada</string>
+    <string name="widget_label">Météo Canada Widget</string>
+    <string name="widget_na">N/A</string>
+
+    <string name="menu_radar">Visionner le radar</string>
+    <string name="menu_about">À notre propos</string>
+    
+    <string name="main_about_message">Bienvennue a Météo Canada! Je suis désolé que je finissais l\'application lentment, mais j\'avais beaucoup de travail a l\'université ce semestre! Je suis désolé aussi pour quelques phrases que j\'ai traduit faiblement - je ne parle pas beaucoup de français! Envoyez-moi un couriel avec les corrections! apps@fishandwhistle.net\n\nJe sues désolé aussi pour les pages cassées d\'Environnement Canada la semaine dernière! Je ne peut pas m\'excuser bien en français, done je vais essayer en anglais!\n\nSo, really, honestly, and truly sorry for the broken link problem, unless you\'re the guy who wrote the rating entitled \"new update sucks\" and gave me a one star rating, that guy can suck it. Also not sorry if you\'re one of the people from Environment Canada that changed the links without letting me know, the next time you do that give me a heads up so the 80,000 or so people who use this app don\'t all get mad at me when I\'m trying to write my thesis proposal and definitely don\'t have time to properly fix it. In case you\'re wondering, my thesis proposal is done, and I now have time to do things like call my mom and clean my bathroom and update this app so the next time a hurricane hits the east coast nobody has to panic. You guys are the best, I\'ll try not to let you down again.</string>
+    <string name="main_about_rate">Évaluez!</string>
+    <string name="main_about_donate">Faites un don!</string>
+    <string name="main_about_gotit">J’ai compris</string>
+    <string name="main_about_title">À notre propos</string>
+    <string name="main_error_noradar">Il n\'y a pas d\'application radar!</string>
+    
+    <string name="main_prefs_label">Preférénces</string>
+    
+    <string name="radar_label">Radar Météo Canada</string>
+    <string name="radar_description">Dernière image radar</string>
+    <string name="radar_no_image">Pas d\'image</string>
+    <string name="radar_fetch_list">Recherche de la liste des images radar</string>
+    <string name="radar_fetch_image">Recherche de l\'image radar</string>
+    <string name="radar_error_no_stations">Pas de station radar à proximité de cette localité</string>
+    <string name="radar_invalid_image">Format d\'image non valide. Impossible de décoder</string>
+    <string name="radar_image_date">Date de l\'image:</string>
+    <string name="radar_title">Radar météo prés de</string>
+    <string name="radar_loading_images">Chargement des images</string>
+    <string name="radar_location">Localité</string>
+    <string name="radar_error_io">Aucune connexion internet</string>
+    <string name="radar_error_uri">Pas assez d\'informations pour démarrer l\'application</string>
+    
+    <string name="radar_prefs_label">Preférénces Radar</string>
+    
+    <string name="notifications_label">Notifications</string>
+    <string name="notifications_introtext">Utilizer le bouton "+" pour ajouter une localité pour lesquels on reçoit des alertes. Pour enlever une localité, cliquer sur l\'élément dans la liste.</string>
+    <string name="notifications_remove_title">Enlever la localité?</string>
+    <string name="notifications_remove_message" formatted="false">Enlever la localité %s?</string>
+    <string name="notifications_nodata_message">Aucune localité dans la liste</string>
+    <string name="notifications_remove">Enlever</string>
+    
+</resources>

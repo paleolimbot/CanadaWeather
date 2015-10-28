@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Canada Weather</string>
+    <string name="widget_label">Canada Weather Widget</string>
+    <string name="widget_na">N/A</string>
+
+    <string name="menu_radar">Radar</string>
+    <string name="menu_about">About</string>
+    
+    <string name="main_about_message">(this minor update just fixes the radar images issue...if you haven\'t upgraded recently, keep reading!)\n\nWelcome to Canada Weather! If you\'re updating, I\'ve got a nice apology message for you below about the broken Environment Canada web links. If you\'re new, welcome to Canada Weather! Ignore that last bit, I promise never goes wrong with this app. Ever. Like, really. But if it does, you can always email me (apps@fishandwhistle.net) and I promise I\'ll be less sarcastic and help you out the best I can.\n\nSo, really, honestly, and truly sorry for the broken link problem, unless you\'re the guy who wrote the rating entitled \"new update sucks\" and gave me a one star rating, that guy can suck it. Also not sorry if you\'re one of the people from Environment Canada that changed the links without letting me know, the next time you do that give me a heads up so the 80,000 or so people who use this app don\'t all get mad at me when I\'m trying to write my thesis proposal and definitely don\'t have time to properly fix it. In case you\'re wondering, my thesis proposal is done, and I now have time to do things like call my mom and clean my bathroom and update this app so the next time a hurricane hits the east coast nobody has to panic. You guys are the best, I\'ll try not to let you down again.</string>
+    <string name="main_about_rate">Rate this app!</string>
+    <string name="main_about_donate">Donate!</string>
+    <string name="main_about_gotit">Got it!</string>
+    <string name="main_about_title">About</string>
+    <string name="main_error_noradar">Radar not properly installed!</string>
+    
+    <string name="main_prefs_label">Preferences</string>
+    
+    <string name="radar_label">Canada Radar</string>
+    <string name="radar_no_image">No Image</string>
+    <string name="radar_description">Latest radar image</string>
+    <string name="radar_fetch_list">Fetching radar image list</string>
+    <string name="radar_fetch_image">Fetching radar image</string>
+    <string name="radar_error_no_stations">No radar stations near this location</string>
+    <string name="radar_invalid_image">Invalid image format, could not decode</string>
+    <string name="radar_image_date">Image Date:</string>
+    <string name="radar_title">Radar near</string>
+    <string name="radar_loading_images">Loading images</string>
+    <string name="radar_location">location</string>
+    <string name="radar_error_io">Connectivity error</string>
+    <string name="radar_error_uri">Invalid data provided to start application</string>
+    
+    <string name="radar_prefs_label">Radar Preferences</string>
+    
+    <string name="notifications_label">Notifications</string>
+    <string name="notifications_introtext">You\'ll be notified when locations in this list have weather warnings/watches issued by Environment Canada. Click the plus sign to add a location, click the city name to remove!</string>
+    <string name="notifications_shpeel">Click the plus sign to add a location to the notifications list. When Environment Canada issues a weather watch, advisory, or warning, for any of the locations on this list, this app will put a notification in your status bar for as long as the watch/warning is in effect. Still in the process of trying this out, so bear with me and give feedback if things don\'t work properly!</string>
+    <string name="notifications_remove_title">Remove Location?</string>
+    <string name="notifications_remove_message" formatted="false">You will no longer receive notifications of watches or warnings for %s.</string>
+    <string name="notifications_nodata_message">No locations in list</string>
+    <string name="notifications_remove">Remove</string>
+    
+</resources>

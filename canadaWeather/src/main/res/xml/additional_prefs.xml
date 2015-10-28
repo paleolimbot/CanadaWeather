@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+    
+    <ListPreference android:entryValues="@array/pref_theme_widget_values" android:key="xml_theme_widget" android:title="@string/pref_theme_widget" android:entries="@array/pref_theme_widget_choices" android:summary="@string/pref_theme_widget_summary" android:defaultValue="LIGHT"/>
+    <ListPreference android:entryValues="@array/pref_iconset_values" android:key="xml_iconset" android:title="@string/pref_iconset" android:entries="@array/pref_iconset_choices" android:summary="@string/pref_iconset_summary" android:defaultValue="AVMAN"/>
+	<Preference android:title="@string/pref_edit_notifications" android:key="xml_edit_notifications" android:summary="@string/pref_edit_notifications_summary" />
+    
+</PreferenceScreen>

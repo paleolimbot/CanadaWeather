@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="ca.fwe.caweather"
+    android:versionCode="28"
+    android:versionName="1.0.7" >
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="23" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:name=".CanadaWeatherApp"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:theme="@style/AppTheme"
+        android:label="@string/app_name" >
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:icon="@drawable/ic_launcher">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="ca.fwe.weather.LocationPickerActivity" 
+            android:label="@string/location_label" />
+		<activity android:name="ca.fwe.caweather.CanadaWeatherPreferences"
+		    android:parentActivityName="ca.fwe.caweather.MainActivity"
+		    android:label="@string/main_prefs_label" />
+        <activity android:name="ca.fwe.caweather.NotificationsEditor"
+            android:label="@string/notifications_label"
+            android:parentActivityName="ca.fwe.caweather.CanadaWeatherPreferences" />
+		
+		
+		<activity android:name="ca.fwe.caweather.radar.RadarActivity" 
+		    android:icon="@drawable/ic_launcher_radar"
+		    android:label="@string/radar_label"
+		    android:taskAffinity="ca.fwe.caweather.radar.RadarTask" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:scheme="radar" android:pathPrefix="/ca" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:scheme="pweather" android:host="radar" android:pathPrefix="/ca/" />
+            </intent-filter>
+        </activity>
+		<activity android:name="ca.fwe.caweather.radar.RadarPrefs"
+		    android:parentActivityName="ca.fwe.caweather.radar.RadarActivity"
+		    android:icon="@drawable/ic_launcher_radar" 
+		    android:label="@string/radar_prefs_label"
+		    android:taskAffinity="ca.fwe.caweather.radar.RadarTask" />
+		
+        <activity android:name=".CityPageWeatherWidgetSettings">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />
+            </intent-filter>
+        </activity>
+        <receiver android:name=".backend.CityPageUpdatesReceiver">
+            <intent-filter>
+                <action android:name="ca.fwe.weather.ENSURE_UPDATED" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="ca.fwe.weather.FORCE_UPDATE_ALL" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name=".CityPageWeatherWidget"
+            android:icon="@drawable/ic_launcher"
+            android:label="@string/widget_label" >
+            <intent-filter>
+                <action android:name="ca.fwe.weather.FORECAST_DOWNLOADED" />
+
+                <data android:scheme="citypage" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_current_conditions" />
+        </receiver>
+        <receiver
+            android:name=".backend.CityPageNotificationsReceiver">
+            <intent-filter>
+                <action android:name="ca.fwe.weather.FORECAST_DOWNLOADED"/>
+                <data android:scheme="citypage" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="ca.fwe.weather.NOTIFICATION_REMOVED" />
+                <data android:scheme="citypage" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </receiver>
+    </application>
+
+</manifest>

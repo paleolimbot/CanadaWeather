@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="please_wait">Prière de patienter</string>
+    <string name="cancel">Annuler</string>
+    <string name="unknown">Inconnue</string>
+    
+    <string name="fi_click_for_more">Cliquez pour plus de détails</string>
+    
+    <string name="cc_field_station">Station</string>
+    <string name="cc_field_date">Date</string>
+    <string name="cc_field_condition">Condition</string>
+    <string name="cc_field_temp">Température</string>
+    <string name="cc_field_windchill">Facteur vent</string>
+    <string name="cc_field_humidex">Humidex</string>
+    <string name="cc_field_feelslike">Qui resemble à</string>
+    <string name="cc_field_windsummary">Vent</string>
+    <string name="cc_field_windspeed">La vitesse du vent</string>
+    <string name="cc_field_windgust">La vitesse du rafale</string>
+    <string name="cc_field_winddirection">Direction du vent</string>
+    <string name="cc_field_pressure">Pression</string>
+    <string name="cc_field_pressuretrend">Tendance de la pression</string>
+    <string name="cc_field_dewpoint">Point de rosée</string>
+    <string name="cc_field_visibility">Visibilité</string>
+    <string name="cc_field_relhumidity">Humidité</string>
+    
+    <string name="cc_summary" formatted="false">Actuellement %s</string>
+    <string name="cc_summary_feelslike" formatted="false">Actuellement %s (ressenti %s)</string>
+    <string name="cc_summary_unknown">Actuellement inconnue</string>
+    <string name="cc_description_format" formatted="false">%s (cliquer pour plus de détails)</string>
+    
+    <string name="menu_refresh">Rafraîchir</string>
+    <string name="menu_about">À notre propos</string>
+    <string name="menu_edit">Cocher les localités</string>
+    <string name="menu_radar">Visionner le radar</string>
+    <string name="menu_prefs">Préférences</string>
+    <string name="menu_view_online">Visionner en ligne</string>
+    <string name="menu_add">Ajouter une localité</string>
+    
+    <string name="menu_gps">Prés de moi</string>
+
+    <string name="location_label">Choisir la localité</string>
+    <string name="location_geocoding">Géocodage l\'endroit</string>
+    <string name="location_searching_gps">Recherche de votre emplacement</string>
+    <string name="locations_search_hint">inscrire la localité désirée</string>
+    <string name="location_my_location">Mon emplacement</string>
+    <string name="location_error_geocoding">Erreur de géocodage l\'endroit</string>
+    <string name="location_error_none_found">Aucune localité prés de l\'emplacement</string>
+    <string name="location_did_you_mean">Vouliez-vous dire?</string>
+    <string name="location_searchheader_format" formatted="false">Rechere localités prés de %s</string>
+    <string name="location_searchheader_region" formatted="false">Les localités en %s</string>
+    <string name="location_searchheader_showing" formatted="false">Les localités prés de %s</string>
+    
+    <string name="forecast_loading_forecast">Recherche des prévisions mises à jour</string>
+    <string name="forecast_error_connectivity">Aucune connexion Internet trouvé</string>
+    <string name="forecast_error_xml">Erreur de parsage XML ou pas de données en dossier</string>
+    <string name="forecast_error_unknown">Erreur inconnue</string>
+    <string name="forecast_error_location_request">Ne pouvait pas ajouter la localité</string>
+    <string name="forecast_error_no_location_selected">Pas de localité pour lancer le site</string>
+    <string name="forecast_error_no_browser">Aucun navigateur d\'Internet trouvé</string>
+    <string name="forecast_cc_dialog_title">Conditions actuelles</string>
+    <string name="forecast_editloc_dialog_title">Éditez les localités</string>
+    <string name="forecast_editloc_update">Mettre à jour</string>
+    <string name="forecast_error_add_location">Ne pouvait pas ajouter la localité</string>
+    <string name="forecast_no_data">Pas de données à afficher</string>
+    <string name="forecast_footertext">Données fournies par Environnement Canada</string>
+    <string name="forecast_issuedtext" formatted="false">Date d\'émission %s</string>
+    
+    <string name="notification_howmany" formatted="false">%s avertissements</string>
+</resources>

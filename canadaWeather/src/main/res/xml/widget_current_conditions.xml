@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android" 
+    android:updatePeriodMillis="0"
+    android:initialLayout="@layout/widget_updating"
+    android:configure="ca.fwe.caweather.CityPageWeatherWidgetSettings"
+    android:minWidth="288dp"
+    android:minHeight="60dp"
+    android:minResizeWidth="215dp"
+    android:minResizeHeight="60dp"
+    android:resizeMode="horizontal">
+
+</appwidget-provider>

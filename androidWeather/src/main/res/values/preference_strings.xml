@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="pref_iconset_summary">Weather icons to be used for forecast screen.</string>
+    <string name="pref_iconset">Icon Set</string>
+    <string name="pref_iconset_widget_summary">Weather icons to be used for widgets.</string>
+    <string name="pref_iconset_widget">Icon Set (Widget)</string>
+
+    <string-array name="pref_iconset_choices">
+        <item>AVMan</item>
+        <item>Environment Canada (old)</item>
+        <item>Environment Canada (new)</item>
+    </string-array>
+    <string-array name="pref_iconset_values">
+        <item>AVMAN</item>
+        <item>ENV_CANADA_OLD</item>
+        <item>ENV_CANADA_NEW</item>
+    </string-array>
+
+    <string name="pref_theme">Background</string>
+    <string name="pref_theme_summary">Choose light or dark background for forecast screen.</string>
+    <string name="pref_theme_widget">Background (Widget)</string>
+    <string name="pref_theme_widget_summary">Choose light or dark background for widgets.</string>
+
+    <string-array name="pref_theme_choices">
+        <item>Dark</item>
+        <item>Light</item>
+    </string-array>
+    <string-array name="pref_theme_values">
+        <item>DARK</item>
+        <item>LIGHT</item>
+    </string-array>
+
+    <string name="pref_lang">Language</string>
+    <string name="pref_lang_summary">Language for app and forecasts</string>
+
+    <string-array name="pref_lang_choices">
+        <item>Auto</item>
+        <item>English</item>
+        <item>Français</item>
+    </string-array>
+    
+    <string-array name="pref_lang_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
+    <string name="pref_restart_app">Restart application to apply settings</string>
+
+</resources>
