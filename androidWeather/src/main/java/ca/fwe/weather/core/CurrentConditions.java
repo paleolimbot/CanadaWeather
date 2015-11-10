@@ -20,7 +20,9 @@ public class CurrentConditions extends ForecastItem {
 	
 	private static Map<Fields, Units.Categories> categories = new HashMap<>() ;
 	private static Map<Fields, Integer> labelIds = new HashMap<>() ;
-	
+
+	//TODO need to make "-0" be just "0"
+
 	static {
 		categories.put(Fields.TEMP, Units.Categories.TEMPERATURE) ;
 		categories.put(Fields.WINDCHILL, Units.Categories.TEMPERATURE) ;

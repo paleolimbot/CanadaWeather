@@ -15,6 +15,9 @@ import ca.fwe.weather.core.ForecastLocation;
 
 public class MainActivity extends ForecastActivity {
 
+    //TODO hourly forecast link
+    //TODO location auto set to near you
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		Log.e("MainActivity", "error log to start logging") ;
@@ -70,7 +73,8 @@ public class MainActivity extends ForecastActivity {
 			return super.onOptionsItemSelected(item);
 		}
 	}
-	
+
+    //TODO edit new version dialog; french translation
 	private void showAboutDialog() {
 		AlertDialog.Builder topo = new AlertDialog.Builder(this) ;
 		topo.setTitle("New From Fish & Whistle!") ;

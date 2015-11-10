@@ -24,7 +24,7 @@ import ca.fwe.weather.core.ForecastRegion;
 
 public class CityPageLocationDatabase extends LocationDatabase {
 
-	private static final String TAG = "CityPageLocationDatabase" ;
+	private static final String TAG = "CityPageLocationDatabas" ;
 	
 	private static final String DB_NAME = "citypage_locations" ;
 	private static final int DB_VERSION = 1 ;
@@ -98,7 +98,7 @@ public class CityPageLocationDatabase extends LocationDatabase {
 		}
 		
 		public List<CityPageLocation> getByLocation(LatLon l, int numResults) {
-			List<CityPageLocation> out = new ArrayList<CityPageLocation>() ;
+			List<CityPageLocation> out = new ArrayList<>() ;
 			SQLiteDatabase db = this.getReadableDatabase() ;
 			Cursor c = db.query("locations", null, "1", new String[]{}, null, null, 
 					String.format("(%s-`lat`)*(%s-`lat`)+(%s-`lon`)*(%s-`lon`)", l.getLat(), l.getLat(), l.getLon(), l.getLon() ), 
@@ -118,7 +118,7 @@ public class CityPageLocationDatabase extends LocationDatabase {
 		}
 		
 		public List<CityPageLocation> getByFilterText(String filter, int numResults) {
-			List<CityPageLocation> out = new ArrayList<CityPageLocation>() ;
+			List<CityPageLocation> out = new ArrayList<>() ;
 			SQLiteDatabase db = this.getReadableDatabase() ;
 			
 			String likeClause = "%" + filter.trim() + "%" ;
@@ -141,7 +141,7 @@ public class CityPageLocationDatabase extends LocationDatabase {
 		}
 		
 		public List<CityPageLocation> getByProvinceCode(String code) {
-			List<CityPageLocation> out = new ArrayList<CityPageLocation>() ;
+			List<CityPageLocation> out = new ArrayList<>() ;
 			SQLiteDatabase db = this.getReadableDatabase() ;
 			
 			Cursor c = db.query("locations", null, 
@@ -162,7 +162,7 @@ public class CityPageLocationDatabase extends LocationDatabase {
 		}
 		
 		public List<Province> getProvinces() {
-			List<Province> out = new ArrayList<Province>() ;
+			List<Province> out = new ArrayList<>() ;
 			SQLiteDatabase db = this.getReadableDatabase() ;
 			
 			Cursor c = db.query("provinces", null, 
@@ -200,6 +200,7 @@ public class CityPageLocationDatabase extends LocationDatabase {
 				mergeInputStream(s, db) ;
 				s.close() ;
 			} catch (IOException e) {
+				//TODO need to edit the sitelist-base-v1.xml asset to possibly include new locations
 				Log.e(TAG, "unable to open asset sitelist-base-v1.xml while creating database", e) ;
 			} catch (SAXException e) {
 				Log.e(TAG, "parse error while parsing sitelist-base-v1.xml from assets while creating database", e) ;

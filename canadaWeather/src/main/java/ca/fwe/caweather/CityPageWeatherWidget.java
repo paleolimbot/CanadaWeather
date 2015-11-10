@@ -23,6 +23,9 @@ import ca.fwe.weather.core.WeatherWarning;
 public class CityPageWeatherWidget extends ForecastWidgetProvider {
 
 	public static final String PREF_WIDGET_THEME = "xml_theme_widget" ;
+
+    //TODO widget customization
+    //TODO light/dark text regardless of background
 	
 	@Override
 	protected LocationDatabase getLocationDatabase(Context context) {

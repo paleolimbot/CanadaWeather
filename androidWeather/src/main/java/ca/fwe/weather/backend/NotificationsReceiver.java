@@ -24,6 +24,7 @@ import ca.fwe.weather.util.ForecastDownloader.ReturnTypes;
 public abstract class NotificationsReceiver extends BroadcastReceiver implements ForecastDownloader.OnForecastDownloadListener {
 
 	public static final String ACTION_NOTIFICATION_REMOVED = "ca.fwe.weather.NOTIFICATION_REMOVED" ;
+	//TODO need to make notifications cancellable!
 
 	@Override
 	public void onReceive(Context context, Intent intent) {

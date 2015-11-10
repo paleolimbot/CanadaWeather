@@ -12,7 +12,9 @@ import ca.fwe.weather.WeatherApp;
 import ca.fwe.weather.backend.UpdatesReceiver;
 
 public class CanadaWeatherPreferences extends Activity {
-	
+
+	//TODO add preference for showing night weather or not
+
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		this.setTheme(WeatherApp.getThemeId(this)) ;

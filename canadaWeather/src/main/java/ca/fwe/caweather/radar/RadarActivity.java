@@ -85,6 +85,12 @@ public class RadarActivity extends Activity implements OnClickListener {
 
 	private LayerDrawable blankImageList ;
 
+    //TODO make obvious that images that blank are unavailable
+    //TODO possibly update to the A11 images?
+    // the app is force closing every time when i click on the radar view seemingly because
+    // of no link to radar map for (baccaro point ns) and it often force
+    // closes when I rotate the screen. Thl t11 android 4.2.2
+
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		this.setTheme(WeatherApp.getThemeId(this)) ;

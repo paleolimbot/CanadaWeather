@@ -16,6 +16,8 @@ import ca.fwe.weather.core.Units.UnitSet;
 
 public class Forecast {
 
+	//TODO change default date format to have day of week
+
 	public static final UnitSet DEFAULT_UNITS = UnitSet.METRIC ;
 	public static final DateFormat DEFAULT_TIMEDATE = new SimpleDateFormat("d MMM h:mm a", Locale.CANADA) ;
 	public static final DateFormat DEFAULT_TIME = new SimpleDateFormat("h:mm", Locale.CANADA) ;
