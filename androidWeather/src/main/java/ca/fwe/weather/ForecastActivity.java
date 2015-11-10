@@ -183,8 +183,10 @@ public abstract class ForecastActivity extends ListActivity implements ForecastD
 	@Override
 	public void onForecastDownload(Forecast forecast, Modes mode, ReturnTypes result) {
 		log("onForecastDownload returned with result " + result + " from mode " + mode) ;
-		if(!mode.equals(Modes.LOAD_CACHED))
+		if(!mode.equals(Modes.LOAD_CACHED)) {
+			//TODO crash report says this causes error
 			onDownloadDialog.dismiss();
+		}
 		switch(result) {
 		case IO_ERROR:
 			toast(R.string.forecast_error_connectivity) ;
@@ -379,7 +381,7 @@ public abstract class ForecastActivity extends ListActivity implements ForecastD
 				}
 				Editor e = prefs.edit() ;
 				e.putInt(PREF_KEY_LAST_LOC_POS, savedPosition) ;
-				e.commit() ;
+				e.apply() ;
 				locationsAdapter.refreshLocations();
 				setSpinnerPositionFromPref();
 			}

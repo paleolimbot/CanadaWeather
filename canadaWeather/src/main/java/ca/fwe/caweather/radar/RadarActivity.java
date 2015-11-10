@@ -58,7 +58,7 @@ public class RadarActivity extends Activity implements OnClickListener {
 	private static final String PREF_SAVED_STATION = "radar_saved_station" ;
 	private static final String PREF_OVERLAYS = "xml_radar_overlays" ;
 	
-	private static Set<String> PREF_OVERLAYS_DEFAULT = new HashSet<String>() ;
+	private static Set<String> PREF_OVERLAYS_DEFAULT = new HashSet<>() ;
 	static {
 		PREF_OVERLAYS_DEFAULT.add("ROADS") ;
 		PREF_OVERLAYS_DEFAULT.add("CITIES") ;
@@ -85,8 +85,6 @@ public class RadarActivity extends Activity implements OnClickListener {
 
 	private LayerDrawable blankImageList ;
 
-	private ProgressDialog progress ;
-
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		this.setTheme(WeatherApp.getThemeId(this)) ;
@@ -98,7 +96,7 @@ public class RadarActivity extends Activity implements OnClickListener {
 		if(!prefs.contains(PREF_OVERLAYS)) {
 			SharedPreferences.Editor edit = prefs.edit() ;
 			edit.putStringSet(PREF_OVERLAYS, PREF_OVERLAYS_DEFAULT) ;
-			edit.commit() ;
+			edit.apply();
 		}
 		
 		cache = new RadarCacheManager(this) ;
@@ -126,12 +124,12 @@ public class RadarActivity extends Activity implements OnClickListener {
 				setLocation(l, false) ;
 				SharedPreferences.Editor editor = getPreferences(MODE_PRIVATE).edit() ;
 				editor.putString(PREF_SAVED_STATION, l.getSiteId()) ;
-				editor.commit() ;
+				editor.apply() ;
 			}
 			public void onNothingSelected(AdapterView<?> arg0) {}
 		}) ;
 
-		progress = new ProgressDialog(this) ;
+		ProgressDialog progress = new ProgressDialog(this);
 		progress.setMessage(getString(R.string.please_wait)) ;
 		progress.setCancelable(true) ;
 		progress.setTitle(getString(R.string.radar_fetch_list)) ;
@@ -273,7 +271,7 @@ public class RadarActivity extends Activity implements OnClickListener {
 	private Bitmap[] loadOverlays(final RadarLocation l) {
 		SharedPreferences prefs = WeatherApp.prefs(this) ;
 		Set<String> overlayNames = prefs.getStringSet(PREF_OVERLAYS, PREF_OVERLAYS_DEFAULT) ;
-		List<RadarLocation.Overlays> overlays = new ArrayList<RadarLocation.Overlays>() ;
+		List<RadarLocation.Overlays> overlays = new ArrayList<>() ;
 		for(String s: overlayNames) {
 			try {
 				overlays.add(RadarLocation.Overlays.valueOf(s)) ;
@@ -348,7 +346,7 @@ public class RadarActivity extends Activity implements OnClickListener {
 			}
 		} else {
 			locationsSpinner.setOnItemSelectedListener(null) ;
-			locationsSpinner.setAdapter( new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, new String[] {getString(R.string.radar_error_no_stations)})) ;
+			locationsSpinner.setAdapter( new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, new String[] {getString(R.string.radar_error_no_stations)})) ;
 		}
 	}
 
@@ -375,7 +373,7 @@ public class RadarActivity extends Activity implements OnClickListener {
 	@Override
 	public void onClick(View v) {
 		if (v.getId() == R.id.radar_play_pause) {
-			if(animator.downloader.isDownloading && animator.downloader != null) { //TODO getting null pointer exception on this line
+			if(animator.downloader.isDownloading) { //TODO getting null pointer exception on this line
 				animator.downloader.cancel(false) ;
 			} else if(animator.playing) {
 				animator.pause() ;
@@ -403,8 +401,9 @@ public class RadarActivity extends Activity implements OnClickListener {
 			RadarLocation l = this.getItem(position) ;
 			if(latLon != null) {
 				double distance = latLon.distanceTo(l.getLocation()) ;
-				String distString = Long.valueOf(Math.round(distance)).toString() + "km" ;
-				v.setText(l.toString() + " - " + distString) ;
+				String distString = l.toString() + " - " +
+                        Long.valueOf(Math.round(distance)).toString() + "km" ;
+				v.setText(distString) ;
 			} else {
 				v.setText(l.toString()) ;
 			}
@@ -419,8 +418,9 @@ public class RadarActivity extends Activity implements OnClickListener {
 			RadarLocation l = this.getItem(position) ;
 			if(latLon != null) {
 				double distance = latLon.distanceTo(l.getLocation()) ;
-				String distString = Long.valueOf(Math.round(distance)).toString() + "km" ;
-				v.setText(l.toString() + " - " + distString) ;
+				String distString = l.toString() + " - " +
+                        Long.valueOf(Math.round(distance)).toString() + "km" ;
+				v.setText(distString) ;
 			} else {
 				v.setText(l.toString()) ;
 			}
@@ -436,6 +436,7 @@ public class RadarActivity extends Activity implements OnClickListener {
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
+		//TODO null pointer exception (adapter may be null?)
 		if (item.getItemId() == R.id.menu_refresh) {
 			this.setLocation(adapter.current(), true) ;
 			return true ;
@@ -519,7 +520,7 @@ public class RadarActivity extends Activity implements OnClickListener {
 				public void run() {
 					runOnUiThread(new Runnable() {
 						public void run() {
-							if(!isLast() || (isLast() && pausedForRepeat)) {
+							if(!isLast() || (pausedForRepeat)) {
 								Log.i("Radar", "animation advancing") ;
 								pausedForRepeat = false ;
 								forward(false) ;
@@ -564,17 +565,11 @@ public class RadarActivity extends Activity implements OnClickListener {
 		}
 
 		public boolean isFirst() {
-			if(currentIndex == 0)
-				return true ;
-			else
-				return false ;
+            return currentIndex == 0;
 		}
 
 		public boolean isLast() {
-			if(currentIndex == (size-1))
-				return true ;
-			else
-				return false ;
+            return currentIndex == (size - 1);
 		}
 
 		public void setTo(int index, boolean fromUI, boolean updateProgress) {
@@ -609,7 +604,7 @@ public class RadarActivity extends Activity implements OnClickListener {
 				downloader.cancel(false) ;
 			pause() ;
 
-			currentList = new ArrayList<RadarImage>() ;
+			currentList = new ArrayList<>() ;
 
 			drawables = null ;
 			currentIndex = 0 ;
@@ -700,8 +695,8 @@ public class RadarActivity extends Activity implements OnClickListener {
 				List<RadarImage> list = arg0[0] ;
 
 				RadarImage mostRecent = list.get(list.size() - 1) ;
-				if(download(mostRecent)) ;
-				this.publishProgress(-1) ;
+				if(download(mostRecent))
+				    this.publishProgress(-1) ;
 
 				for(int i=0; i<list.size(); i++) {
 					if(this.isCancelled())
@@ -723,7 +718,7 @@ public class RadarActivity extends Activity implements OnClickListener {
 					try {
 						d.download() ;
 					} catch (IOException e) {
-						tmpFile.delete() ;
+						if(!tmpFile.delete()) Log.i("Radar", "Could not delete file " + tmpFile);
 						Log.e("Radar", "Error downloading image " + link.getFilename()) ;
 					}
 				}

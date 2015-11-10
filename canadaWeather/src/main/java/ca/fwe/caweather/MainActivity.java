@@ -47,7 +47,7 @@ public class MainActivity extends ForecastActivity {
 		// as you specify a parent activity in AndroidManifest.xml.
 		int id = item.getItemId();
 		if (id == R.id.menu_radar) {
-			ForecastLocation l = this.getCurrentLocation() ;
+			ForecastLocation l = this.getCurrentLocation() ; //TODO current location may be null?
 			Intent i = new Intent(Intent.ACTION_VIEW) ;
 			String lat = String.valueOf(l.getLatLon().getLat()) ;
 			String lon = String.valueOf(l.getLatLon().getLon()) ;
