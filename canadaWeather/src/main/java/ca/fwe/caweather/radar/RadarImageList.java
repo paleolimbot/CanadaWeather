@@ -12,7 +12,7 @@ public class RadarImageList {
 	private ArrayList<RadarImage> list ;
 	
 	public RadarImageList() {
-		list = new ArrayList<RadarImage>() ;
+		list = new ArrayList<>() ;
 	}
 	
 	public int size() {
@@ -28,7 +28,7 @@ public class RadarImageList {
 	}
 	
 	public static RadarImageList getMostRecent(RadarLocation l, RadarImageType type, int animationLength) {
-		//FIXME there's a problem with timezones here. (UTC shouldn't matter beause the date is 
+		//there's a problem with timezones here. (UTC shouldn't matter beause the date is
 		//passed to the radarImage as a Date instance.
 		Calendar date = Calendar.getInstance(TimeZone.getTimeZone("UTC")) ;		
 		//typical radar image is about 8 minutes behind the last 10-minute interval

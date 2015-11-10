@@ -78,20 +78,25 @@ public class RadarImage implements Comparable<RadarImage> {
 		String filename = parseURLForFilename(url) ;
 		
 		// 201301211830_WBI_PRECIPET_RAIN.gif
-		String[] filenameSplit = filename.split("_") ;
-		if(filenameSplit.length >= 4) {
-			Date d = parseDate(filenameSplit[0]) ;
-			RadarLocation l = RadarLocations.get(filenameSplit[1], WeatherApp.LANG_EN) ;
-			RadarImageType type = RadarImageType.from(filename) ;
-			
-			if(d != null && l != null && type != null) {
-				return new RadarImage(l, url, d, type) ;
-			} else {
-				return null ;
-			}
-		} else {
-			return null ;
-		}		
+        if (filename != null) {
+
+            String[] filenameSplit = filename.split("_");
+            if (filenameSplit.length >= 4) {
+                Date d = parseDate(filenameSplit[0]);
+                RadarLocation l = RadarLocations.get(filenameSplit[1], WeatherApp.LANG_EN);
+                RadarImageType type = RadarImageType.from(filename);
+
+                if (d != null && l != null && type != null) {
+                    return new RadarImage(l, url, d, type);
+                } else {
+                    return null;
+                }
+            } else {
+                return null;
+            }
+        } else {
+            return null ;
+        }
 	}
 	
 	private static Date parseDate(String dateString) {
@@ -104,7 +109,7 @@ public class RadarImage implements Comparable<RadarImage> {
 	
 	private static String parseURLForFilename(String url) {
 		String[] split = url.split("/") ;
-		if(split != null && split.length > 0) {
+		if(split.length > 0) {
 			return split[split.length - 1] ;
 		} else {
 			return null ;

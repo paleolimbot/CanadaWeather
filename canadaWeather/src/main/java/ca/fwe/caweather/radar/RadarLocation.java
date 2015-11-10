@@ -18,7 +18,7 @@ public class RadarLocation {
 	
 	private static final String URI_PATTERN = "radar:///ca/%s" ;
 	
-	public enum Overlays {RIVERS, ROADS, ROAD_LABELS, CITIES, MORE_CITIES} ;
+	public enum Overlays {RIVERS, ROADS, ROAD_LABELS, CITIES, MORE_CITIES}
 	//this is the preferred order, so have a method for determining this
 	public static int getOverlayPosition(Overlays overlay) {
 		switch(overlay) {

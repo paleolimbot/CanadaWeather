@@ -30,8 +30,8 @@ public class RadarLocations {
 
 	public static RadarLocation[] filter(LatLon point, int numEntries, int lang) {
 		double radius = 500 ; //km to search
-		ArrayList<RadarLocation> list = new ArrayList<RadarLocation>() ;
-		ArrayList<Long> distanceList = new ArrayList<Long>() ;
+		ArrayList<RadarLocation> list = new ArrayList<>() ;
+		ArrayList<Long> distanceList = new ArrayList<>() ;
 		
 		RadarLocation[] all = ALL_EN ;
 		if(lang == WeatherApp.LANG_FR)

@@ -14,7 +14,8 @@ public class RadarCacheManager {
 
 	public RadarCacheManager(Context context) {
 		this.context = context ;
-		this.getRadarCacheDir().mkdirs() ;
+		if(!this.getRadarCacheDir().mkdirs())
+		    Log.i("RadarCacheManager", "RadarCacheManager: mkdirs returned false");
 	}
 
 	private File getRadarCacheDir() {
