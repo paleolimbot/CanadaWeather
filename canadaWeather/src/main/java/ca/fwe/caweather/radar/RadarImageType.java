@@ -56,7 +56,7 @@ public class RadarImageType {
 	}
 	
 	public boolean equals(Object otherObject) {
-		if(otherObject instanceof RadarImageType && otherObject != null) {
+		if(otherObject instanceof RadarImageType) {
 			RadarImageType rit = (RadarImageType)otherObject ;
 			if(product != null && product.equals(rit.product)) {
 				if(precipType != null && extra != null) {
@@ -65,7 +65,7 @@ public class RadarImageType {
 				} else if(precipType != null) {
 					if(precipType.equals(rit.getPrecipType()) && rit.getExtra() == null)
 						return true ;
-				} else if(precipType == null && extra != null) {
+				} else if(extra != null) { //precip type is null
 					if(rit.getPrecipType() == null &&  extra.equals(rit.getExtra()))
 						return true ;
 				}

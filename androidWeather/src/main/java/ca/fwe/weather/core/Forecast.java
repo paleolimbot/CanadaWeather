@@ -35,7 +35,7 @@ public class Forecast {
 		this.context = context;
 		this.location = location;
 		this.lang = lang;
-		items = new ArrayList<ForecastItem>() ;
+		items = new ArrayList<>() ;
 	}
 	
 	public Units.UnitSet getUnitSet() {

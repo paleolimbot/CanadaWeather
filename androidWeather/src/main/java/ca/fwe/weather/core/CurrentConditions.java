@@ -18,8 +18,8 @@ public class CurrentConditions extends ForecastItem {
 						WINDSUMMARY, WINDSPEED, WINDGUST, 
 						WINDDIRECTION, PRESSURE, PRESSURETREND, DEWPOINT, VISIBILITY, RELHUMIDITY}
 	
-	private static Map<Fields, Units.Categories> categories = new HashMap<Fields, Units.Categories>() ;
-	private static Map<Fields, Integer> labelIds = new HashMap<Fields, Integer>() ;
+	private static Map<Fields, Units.Categories> categories = new HashMap<>() ;
+	private static Map<Fields, Integer> labelIds = new HashMap<>() ;
 	
 	static {
 		categories.put(Fields.TEMP, Units.Categories.TEMPERATURE) ;
@@ -52,10 +52,10 @@ public class CurrentConditions extends ForecastItem {
 		labelIds.put(Fields.RELHUMIDITY, R.string.cc_field_relhumidity) ;
 	}
 	
-	private Map<Fields, String> values = new HashMap<Fields, String>() ;
-	private Map<Fields, Units.Unit> units = new HashMap<Fields, Units.Unit>() ;
-	private List<Fields> fields = new ArrayList<Fields>() ;
-	private Map<Fields, Integer> precisionValues = new HashMap<Fields, Integer>() ;
+	private Map<Fields, String> values = new HashMap<>() ;
+	private Map<Fields, Units.Unit> units = new HashMap<>() ;
+	private List<Fields> fields = new ArrayList<>() ;
+	private Map<Fields, Integer> precisionValues = new HashMap<>() ;
 	private Date observedDate ;
 	
 	public CurrentConditions(Forecast forecast) {

@@ -48,7 +48,7 @@ GPSLocationListener, OnGeocodeListener {
 	private static final String PREF_KEY_SAVED_REGION = "locations_saved_region" ;
 
 	private LocationDatabase locationDb ;
-	private WeatherApp app ;
+	protected WeatherApp app ;
 	private int lang ;
 	private Spinner regionSpinner ;
 	private RegionAdapter regionAdapter ;
@@ -97,7 +97,7 @@ GPSLocationListener, OnGeocodeListener {
 					setByRegion(regionAdapter.getItem(position)) ;
 					Editor edit = prefs.edit() ;
 					edit.putInt(PREF_KEY_SAVED_REGION, position) ;
-					edit.commit() ;
+					edit.apply() ;
 					if(!creating)
 						hideKeyboard() ;
 				}
@@ -252,7 +252,8 @@ GPSLocationListener, OnGeocodeListener {
 				String distString = new DecimalFormat("0").format(dist) ;
 				distText = " (" + distString + " km)" ;
 			}
-			v.setText(object.toString(lang) + distText);
+			String text = object.toString(lang) + distText;
+			v.setText(text);
 		}
 
 	}
@@ -355,14 +356,9 @@ GPSLocationListener, OnGeocodeListener {
 
 	private void setByAddress(Address address) {
 		LatLon ll = latLonFrom(address) ;
-		if(ll != null) {
-			this.setByLatLon(ll);
-			searchOnClickHeader = false ;
-			this.setSearchHeader(String.format(getString(R.string.location_searchheader_showing), labelFrom(address)));
-		} else {
-			log("no latlon info in address!", null) ;
-			toast(R.string.location_error_geocoding) ;
-		}
+        this.setByLatLon(ll);
+        searchOnClickHeader = false ;
+        this.setSearchHeader(String.format(getString(R.string.location_searchheader_showing), labelFrom(address)));
 	}
 
 	@Override

@@ -66,11 +66,7 @@ public abstract class WeatherApp extends Application {
 	}
 	
 	private static boolean isFrench(Locale locale) {
-		if(locale.getLanguage().equals("fr")) {
-			return true ;
-		} else {
-			return false ;
-		}
+		return locale.getLanguage().equals("fr");
 	}
 	
 	private static int getLangPref(Context context) {
@@ -118,7 +114,7 @@ public abstract class WeatherApp extends Application {
 
 				SharedPreferences.Editor e = prefs(this).edit() ;
 				e.putInt(PREF_KEY_VERSION, thisVersion) ;
-				e.commit() ;
+				e.apply() ;
 				return true ;
 			} else {
 				//upgrading has already happened.
@@ -133,12 +129,14 @@ public abstract class WeatherApp extends Application {
 	public static int getThemeId(Context context) {
 		SharedPreferences prefs = prefs(context) ;
 		String theme = prefs.getString(PREF_KEY_THEME, "LIGHT") ;
-		if(theme.equals("DARK"))
-			return android.R.style.Theme_Holo ;
-		else if(theme.equals("LIGHT"))
-			return android.R.style.Theme_Holo_Light_DarkActionBar ;
-		else
-			return android.R.style.Theme_Holo_Light_DarkActionBar ;		
+		switch (theme) {
+			case "DARK":
+				return android.R.style.Theme_Holo;
+			case "LIGHT":
+				return android.R.style.Theme_Holo_Light_DarkActionBar;
+			default:
+				return android.R.style.Theme_Holo_Light_DarkActionBar;
+		}
 	}
 
 	public abstract void onUpgrade(int version1, int version2) ;

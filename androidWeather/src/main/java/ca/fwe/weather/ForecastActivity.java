@@ -43,9 +43,9 @@ public abstract class ForecastActivity extends ListActivity implements ForecastD
 	private static final String TAG = "ForecastActivity" ;
 	
 	private Spinner locationSpinner ;
-	private LocationsAdapter locationsAdapter ;
-	private UserLocationsList userLocations ;
-	private LocationDatabase locationDatabase ;
+	protected LocationsAdapter locationsAdapter ;
+	protected UserLocationsList userLocations ;
+	protected LocationDatabase locationDatabase ;
 
 	private static final String PREF_KEY_LAST_LOC_POS = "last_location_position" ;
 	
@@ -104,7 +104,7 @@ public abstract class ForecastActivity extends ListActivity implements ForecastD
 				setLocation(l, false) ;
 				Editor e = prefs.edit() ;
 				e.putInt(PREF_KEY_LAST_LOC_POS, position) ;
-				e.commit() ;
+				e.apply() ;
 			}
 
 			@Override
@@ -211,7 +211,6 @@ public abstract class ForecastActivity extends ListActivity implements ForecastD
 				dateText = getString(R.string.unknown) ;
 			this.fIssuedView.setText(
 					String.format(getString(R.string.forecast_issuedtext), dateText));
-			return ;
 		}
 	}
 	
@@ -246,7 +245,7 @@ public abstract class ForecastActivity extends ListActivity implements ForecastD
 		if(forecastAdapter.getCount() > (position-1) && position >= 1) {
 			this.onItemClick(forecastAdapter.getItem(position-1)) ;
 		} else if(position == 0 || position == forecastAdapter.getCount()) {
-			//clicked on header or footer view, do nothing
+			log("first or last item click (ignoring)");
 		} else {
 			log("non-forecast adapter") ;
 		}

@@ -59,8 +59,8 @@ public class LocationListParser {
 	
 	
 	public interface OnNewLocationListener {
-		public boolean locationFound(CityPageLocation location) ;
-		public boolean provinceFound(Province province) ;
+		boolean locationFound(CityPageLocation location) ;
+		boolean provinceFound(Province province) ;
 	}
 	
 	private class StopParsingException extends SAXException {
@@ -108,37 +108,46 @@ public class LocationListParser {
 		@Override
 		public void endElement(String uri, String localName, String qName)
 				throws SAXException {
-			if(qName.equals("nameEn")) {
-				nameEn = currentString ;
-			} else if(qName.equals("nameFr")) {
-				nameFr = currentString ;
-			} else if(qName.equals("provinceCode")) {
-				provinceCode = currentString ;
-			} else if(qName.equals("fw:lat")) {
-				lat = currentString ;
-			} else if(qName.equals("fw:lon")) {
-				lon = currentString ;
-			} else if(qName.equals("fw:webId")) {
-				webId = currentString ;
-			} else if(qName.equals("fw:province")) {
-				if(code != null) {
-					if(!listener.provinceFound(new Province(code, nameEn, nameFr)))
-						throw new StopParsingException() ;
-				}
-			} else if(qName.equals("site")) {
-				if(code != null) {
-					LatLon latLon = null ;
-					if(lat != null && lon != null) {
-						try {
-							latLon = new LatLon(Double.valueOf(lat), Double.valueOf(lon)) ;
-						} catch(NumberFormatException e) {
-							//do nothing
-						}
-					}
-					if(!listener.locationFound(new CityPageLocation(code, provinceCode, nameEn, nameFr, webId, latLon)))
-						throw new StopParsingException() ;
-				}
-			}
+            switch (qName) {
+                case "nameEn":
+                    nameEn = currentString;
+                    break;
+                case "nameFr":
+                    nameFr = currentString;
+                    break;
+                case "provinceCode":
+                    provinceCode = currentString;
+                    break;
+                case "fw:lat":
+                    lat = currentString;
+                    break;
+                case "fw:lon":
+                    lon = currentString;
+                    break;
+                case "fw:webId":
+                    webId = currentString;
+                    break;
+                case "fw:province":
+                    if (code != null) {
+                        if (!listener.provinceFound(new Province(code, nameEn, nameFr)))
+                            throw new StopParsingException();
+                    }
+                    break;
+                case "site":
+                    if (code != null) {
+                        LatLon latLon = null;
+                        if (lat != null && lon != null) {
+                            try {
+                                latLon = new LatLon(Double.valueOf(lat), Double.valueOf(lon));
+                            } catch (NumberFormatException e) {
+                                //do nothing
+                            }
+                        }
+                        if (!listener.locationFound(new CityPageLocation(code, provinceCode, nameEn, nameFr, webId, latLon)))
+                            throw new StopParsingException();
+                    }
+                    break;
+            }
 		}
 		
 		

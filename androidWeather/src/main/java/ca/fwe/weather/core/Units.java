@@ -15,8 +15,8 @@ public class Units {
 	public static final String UNITS_SI = "si" ;
 	public static final String UNITS_DEFAULT = UNITS_METRIC ;
 	
-	private static Map<Unit, Double> values = new HashMap<Unit, Double>() ;
-	private static Map<Unit, String> labels = new HashMap<Unit, String>() ;
+	private static Map<Unit, Double> values = new HashMap<>() ;
+	private static Map<Unit, String> labels = new HashMap<>() ;
 	
 	static {
 		values.put(Unit.DEG_K, 1.0) ;
@@ -116,7 +116,7 @@ public class Units {
 			NAUTICAL.setUnit(Categories.WIND_SPEED, Unit.KNOTS);
 		}
 		
-		private Map<Categories, Unit> units = new HashMap<Categories, Unit>() ;
+		private Map<Categories, Unit> units = new HashMap<>() ;
 		
 		public void setUnit(Categories category, Unit unit) {
 			if(unit != null)

@@ -32,12 +32,14 @@ public class CityPageWeatherWidget extends ForecastWidgetProvider {
 	private int getLayoutId(Context context) {
 		SharedPreferences prefs = WeatherApp.prefs(context) ;
 		String theme = prefs.getString(PREF_WIDGET_THEME, "DARK") ;
-		if(theme.equals("LIGHT"))
-			return R.layout.widget_current_light ;
-		else if(theme.equals("TRANSPARENT"))
-			return R.layout.widget_current_transparent ;
-		else
-			return R.layout.widget_current ;
+		switch (theme) {
+			case "LIGHT":
+				return R.layout.widget_current_light;
+			case "TRANSPARENT":
+				return R.layout.widget_current_transparent;
+			default:
+				return R.layout.widget_current;
+		}
 	}
 	
 	@Override

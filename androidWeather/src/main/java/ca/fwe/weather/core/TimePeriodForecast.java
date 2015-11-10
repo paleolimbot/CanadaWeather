@@ -16,8 +16,8 @@ public class TimePeriodForecast extends ForecastItem {
 
 	public TimePeriodForecast(Forecast forecast) {
 		super(forecast);
-		extraInfoLabels = new ArrayList<String>() ;
-		extraInfoValues = new ArrayList<String>() ;
+		extraInfoLabels = new ArrayList<>() ;
+		extraInfoValues = new ArrayList<>() ;
 		high = Double.NaN ;
 		low = Double.NaN ;
 		pop = 0 ;
@@ -45,7 +45,7 @@ public class TimePeriodForecast extends ForecastItem {
 	}
 
 	public List<String[]> getExtraInfo() {
-		List<String[]> out = new ArrayList<String[]>() ;
+		List<String[]> out = new ArrayList<>() ;
 		for(int i=0; i<extraInfoLabels.size(); i++) {
 			out.add(new String[] {extraInfoLabels.get(i), extraInfoValues.get(i)}) ;
 		}

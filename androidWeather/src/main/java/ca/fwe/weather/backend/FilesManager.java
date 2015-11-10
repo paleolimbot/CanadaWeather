@@ -20,7 +20,7 @@ import ca.fwe.weather.util.RandomString;
 
 public class FilesManager {
 
-	private static SparseArray<String> langExts = new SparseArray<String>() ;
+	private static SparseArray<String> langExts = new SparseArray<>() ;
 
 	static {
 		langExts.put(WeatherApp.LANG_EN, "_en.xml") ;
@@ -35,7 +35,7 @@ public class FilesManager {
 	public static final String PREF_CACHEFILE_EXPIRES = "cachefile_expires" ;
 	public static final String PREF_CACHEFILE_DELETE = "cachefile_delete" ;
 
-	private static List<File> fileLocks = new ArrayList<File>() ;
+	private static List<File> fileLocks = new ArrayList<>() ;
 
 	private Context context ;
 	private SharedPreferences prefs ;
@@ -49,7 +49,7 @@ public class FilesManager {
 			edit.putInt(PREF_CACHEFILE_EXPIRES, DEFAULT_CACHEFILE_EXPIRES) ;
 		if(!prefs.contains(PREF_CACHEFILE_DELETE))
 			edit.putInt(PREF_CACHEFILE_DELETE, DEFAULT_CACHEFILE_DELETE) ;
-		edit.commit() ;
+		edit.apply() ;
 	}
 
 	public File getCacheDirectory() {
@@ -82,8 +82,9 @@ public class FilesManager {
 				if(f.delete())
 					deleted++ ;
 			}
+			log("Deleted " + deleted + "of" + cacheFiles.length + " files") ;
 		}
-		log("Deleted " + deleted + "of" + cacheFiles.length + " files") ;
+
 	}
 
 	public long getForecastValidAge() {
@@ -97,7 +98,7 @@ public class FilesManager {
 	public File getTempFile() {
 		File dir = context.getCacheDir() ;
 		String base = "temp_" ;
-		File tmpfile = null ;
+		File tmpfile;
 		do {
 			tmpfile = new File(dir, base + RandomString.generate(5)) ;
 		} while(tmpfile.exists()) ;
@@ -128,12 +129,11 @@ public class FilesManager {
 	}
 
 	public boolean copyToCache(File xmlFile, ForecastLocation location, int lang) {
-		File from = xmlFile ;
-		File to = cachefile(location, lang) ;
-		log("Copying file " + from + " to " + to) ;
+        File to = cachefile(location, lang) ;
+		log("Copying file " + xmlFile + " to " + to) ;
 		registerFileLock(to) ;
 		try {
-			InputStream is = new FileInputStream(from) ;
+			InputStream is = new FileInputStream(xmlFile) ;
 			OutputStream os = new FileOutputStream(to) ;
 			byte[] buffer = new byte[1024] ;
 			int length ;

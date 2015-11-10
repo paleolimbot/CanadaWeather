@@ -33,7 +33,7 @@ public class EnvironmentCanadaIcons {
 	private static Map<Icons, Integer> avmanMap ;
 	private static SparseArray<Icons> intMap ;
 	static {
-		avmanMap = new HashMap<Icons, Integer>() ;
+		avmanMap = new HashMap<>() ;
 
 		avmanMap.put(Icons.STORM, R.drawable.iconsets_avman_tstorms) ;
 		avmanMap.put(Icons.WIND_RAIN, R.drawable.iconsets_avman_rain) ;
@@ -90,7 +90,7 @@ public class EnvironmentCanadaIcons {
 		avmanMap.put(Icons.NIGHT_INCREASING_CLOUD, R.drawable.iconsets_avman_partlycloudypm) ;
 		avmanMap.put(Icons.FREEZING_RAIN, R.drawable.iconsets_avman_ice) ;
 
-		intMap = new SparseArray<Icons>();
+		intMap = new SparseArray<>();
 		intMap.put(0, Icons.SUNNY);
 		intMap.put(1, Icons.MAINLY_SUNNY);
 		intMap.put(2, Icons.PARTIALLY_CLOUDY);
@@ -144,6 +144,7 @@ public class EnvironmentCanadaIcons {
 		this.context = context ;
 	}
 
+	@SuppressWarnings("deprecation")
 	public Drawable getIcon(IconSet set, String iconCode) {
 		try {
 			int codeInt = Integer.valueOf(iconCode) ;
@@ -227,7 +228,7 @@ public class EnvironmentCanadaIcons {
 			case 47: return R.drawable.iconsets_envcanada_icon47 ;
 			default: return R.drawable.icon_na ;
 			}
-		default:
+			case ENV_CANADA_NEW:
 			switch(iconCode) {
 			case 0: return R.drawable.iconsets_envcanadanew_icon00 ;
 			case 1: return R.drawable.iconsets_envcanadanew_icon01 ;
@@ -277,6 +278,7 @@ public class EnvironmentCanadaIcons {
 			case 45: return R.drawable.iconsets_envcanadanew_icon45 ;
 			default: return R.drawable.icon_na ;
 			}
+                default: return getIconId(IconSet.ENV_CANADA_NEW, iconCode);
 		}
 	}
 }

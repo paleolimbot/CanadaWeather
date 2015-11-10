@@ -64,20 +64,26 @@ public class CityPageForecastParser extends ForecastXMLParser {
 		while(parser.next() != XmlPullParser.END_TAG) {
 			if(parser.getEventType() == XmlPullParser.START_TAG) {
 				String tagName = parser.getName() ;
-				if(tagName.equals("warnings")) {
-					this.parseWarnings(parser) ;
-				} else if(tagName.equals("currentConditions")) {
-					CurrentConditions c = this.parseCurrentConditions(parser) ;
-					if(c != null)
-						getForecast().items.add(c) ;
-				} else if(tagName.equals("forecastGroup")) {
-					this.parseForecastGroup(parser) ;
-				} else if(tagName.equals("dateTime")) {
-					Date d = this.parseDateTime(parser) ;
-					if(d != null)
-						getForecast().setCreationDate(d) ;
-				} else {
-					skip(parser) ;
+				switch (tagName) {
+					case "warnings":
+						this.parseWarnings(parser);
+						break;
+					case "currentConditions":
+						CurrentConditions c = this.parseCurrentConditions(parser);
+						if (c != null)
+							getForecast().items.add(c);
+						break;
+					case "forecastGroup":
+						this.parseForecastGroup(parser);
+						break;
+					case "dateTime":
+						Date d = this.parseDateTime(parser);
+						if (d != null)
+							getForecast().setCreationDate(d);
+						break;
+					default:
+						skip(parser);
+						break;
 				}
 			}
 		}
@@ -88,16 +94,20 @@ public class CityPageForecastParser extends ForecastXMLParser {
 
 			if (parser.getEventType() == XmlPullParser.START_TAG) {
 				String tagName = parser.getName();
-				if (tagName.equals("forecast")) {
-					TimePeriodForecast f = parseForecast(parser) ;
-					if(f != null)
-						getForecast().items.add(f) ;
-				} else if(tagName.equals("dateTime")) {
-					Date date = this.parseDateTime(parser) ;
-					if(date != null)
-						getForecast().setIssuedDate(date) ;
-				} else {
-					skip(parser);
+				switch (tagName) {
+					case "forecast":
+						TimePeriodForecast f = parseForecast(parser);
+						if (f != null)
+							getForecast().items.add(f);
+						break;
+					case "dateTime":
+						Date date = this.parseDateTime(parser);
+						if (date != null)
+							getForecast().setIssuedDate(date);
+						break;
+					default:
+						skip(parser);
+						break;
 				}
 			}
 		}
@@ -108,20 +118,27 @@ public class CityPageForecastParser extends ForecastXMLParser {
 		while (parser.next() != XmlPullParser.END_TAG) {
 			if (parser.getEventType() == XmlPullParser.START_TAG) {
 				String tagName = parser.getName();
-				if (tagName.equals("period")) {
-					dailyFc.setTitle(parser.getAttributeValue(null, "textForecastName")) ;
-					readTag(parser) ;
-				} else if(tagName.equals("textSummary")) {
-					//TODO may have to do some converting of temperatures if units are different
-					dailyFc.setDescription(readTag(parser)) ;
-				} else if(tagName.equals("abbreviatedForecast")) {
-					parseAbbreviatedForecast(parser, dailyFc) ;
-				} else if(tagName.equals("temperatures")) {
-					parseTemperatures(parser, dailyFc) ;
-				} else if(tagName.equals("relativeHumidity")) {
-					dailyFc.addExtraInfo(getForecast().getContext().getString(R.string.cc_field_relhumidity), readTag(parser)) ;
-				} else {
-					skip(parser);
+				switch (tagName) {
+					case "period":
+						dailyFc.setTitle(parser.getAttributeValue(null, "textForecastName"));
+						readTag(parser);
+						break;
+					case "textSummary":
+						//TODO may have to do some converting of temperatures if units are different
+						dailyFc.setDescription(readTag(parser));
+						break;
+					case "abbreviatedForecast":
+						parseAbbreviatedForecast(parser, dailyFc);
+						break;
+					case "temperatures":
+						parseTemperatures(parser, dailyFc);
+						break;
+					case "relativeHumidity":
+						dailyFc.addExtraInfo(getForecast().getContext().getString(R.string.cc_field_relhumidity), readTag(parser));
+						break;
+					default:
+						skip(parser);
+						break;
 				}
 			}
 		}
@@ -132,18 +149,22 @@ public class CityPageForecastParser extends ForecastXMLParser {
 		while (parser.next() != XmlPullParser.END_TAG) {
 			if (parser.getEventType() == XmlPullParser.START_TAG) {
 				String tagName = parser.getName();
-				if (tagName.equals("iconCode")) {
-					dailyFc.setIconId(EnvironmentCanadaIcons.getIconId(iconSet, readTag(parser))); 
-				} else if (tagName.equals("pop")) {
-					try {
-						String value = readTag(parser) ;
-						if(value != null)
-							dailyFc.setPop(Double.valueOf(value)) ;
-					} catch(NumberFormatException e) {
-						Log.e(TAG, "error converting POP to type double", e) ;
-					}
-				} else {
-					skip(parser);
+				switch (tagName) {
+					case "iconCode":
+						dailyFc.setIconId(EnvironmentCanadaIcons.getIconId(iconSet, readTag(parser)));
+						break;
+					case "pop":
+						try {
+							String value = readTag(parser);
+							if (value != null)
+								dailyFc.setPop(Double.valueOf(value));
+						} catch (NumberFormatException e) {
+							Log.e(TAG, "error converting POP to type double", e);
+						}
+						break;
+					default:
+						skip(parser);
+						break;
 				}
 			}
 		}
@@ -199,14 +220,20 @@ public class CityPageForecastParser extends ForecastXMLParser {
 		warning.setUrl(warningUrl);
 		String type = parser.getAttributeValue(null, "type") ;
 		String description = parser.getAttributeValue(null, "description") ;
-		if(type.equals("warning"))
-			warning.setType(WeatherWarning.Types.WARNING);
-		else if(type.equals("ended"))
-			warning.setType(WeatherWarning.Types.ENDED_NOTIFICATION);
-		else if(type.equals("advisory"))
-			warning.setType(WeatherWarning.Types.ADVISORY) ;
-		else
-			warning.setType(WeatherWarning.Types.WATCH);
+		switch (type) {
+			case "warning":
+				warning.setType(WeatherWarning.Types.WARNING);
+				break;
+			case "ended":
+				warning.setType(WeatherWarning.Types.ENDED_NOTIFICATION);
+				break;
+			case "advisory":
+				warning.setType(WeatherWarning.Types.ADVISORY);
+				break;
+			default:
+				warning.setType(WeatherWarning.Types.WATCH);
+				break;
+		}
 		
 		warning.setTitle(description);
 
@@ -243,18 +270,25 @@ public class CityPageForecastParser extends ForecastXMLParser {
 					if (parser.getEventType() == XmlPullParser.START_TAG) {
 						String tagName = parser.getName();	
 						try {
-							if (tagName.equals("year")) {
-								year = Integer.valueOf(readTag(parser)) ;
-							} else if(tagName.equals("month")) {
-								month = Integer.valueOf(readTag(parser)) ;
-							} else if(tagName.equals("day")) {
-								day = Integer.valueOf(readTag(parser)) ;
-							} else if(tagName.equals("hour")) {
-								hour = Integer.valueOf(readTag(parser)) ;
-							} else if(tagName.equals("minute")) {
-								minute = Integer.valueOf(readTag(parser)) ;
-							} else {
-								skip(parser);
+							switch (tagName) {
+								case "year":
+									year = Integer.valueOf(readTag(parser));
+									break;
+								case "month":
+									month = Integer.valueOf(readTag(parser));
+									break;
+								case "day":
+									day = Integer.valueOf(readTag(parser));
+									break;
+								case "hour":
+									hour = Integer.valueOf(readTag(parser));
+									break;
+								case "minute":
+									minute = Integer.valueOf(readTag(parser));
+									break;
+								default:
+									skip(parser);
+									break;
 							}
 						} catch(NumberFormatException e) {
 							//do nothing
@@ -291,37 +325,52 @@ public class CityPageForecastParser extends ForecastXMLParser {
 
 			if (parser.getEventType() == XmlPullParser.START_TAG) {
 				String tagName = parser.getName();
-				if (tagName.equals("station")) {
-					c.setField(Fields.STATION, readTag(parser));
-				} else if(tagName.equals("condition")) {
-					c.setField(Fields.CONDITION, readTag(parser)) ;
-				} else if(tagName.equals("iconCode")) {
-					int iconId = EnvironmentCanadaIcons.getIconId(iconSet, readTag(parser)) ;
-					c.setIconId(iconId);
-				} else if(tagName.equals("temperature")) {
-					c.setField(Fields.TEMP, readTag(parser), Unit.DEG_C, 0); //probably has more precision
-																			//this is better for display
-				} else if(tagName.equals("windChill")) {
-					c.setField(Fields.WINDCHILL, readTag(parser), Unit.DEG_C, 0);
-				} else if(tagName.equals("humidex")) {
-					c.setField(Fields.HUMIDEX, readTag(parser), Unit.DEG_C, 0) ;
-				} else if(tagName.equals("pressure")) {
-					c.setField(Fields.PRESSURETREND, parser.getAttributeValue(null, "tendency"));
-					c.setField(Fields.PRESSURE, readTag(parser), Unit.KILOPASCALS, 1);
-				} else if(tagName.equals("dewpoint")) {
-					c.setField(Fields.DEWPOINT, readTag(parser), Unit.DEG_C, 0);
-				} else if(tagName.equals("visibility")) {
-					c.setField(Fields.VISIBILITY, readTag(parser), Unit.KILOMETRES, 0);
-				} else if(tagName.equals("relativeHumidity")) {
-					c.setField(Fields.RELHUMIDITY, readTag(parser));
-				} else if(tagName.equals("wind")) {
-					parseWind(parser, c) ;
-				} else if(tagName.equals("dateTime")) {
-					Date date = this.parseDateTime(parser) ;
-					if(date != null)
-						c.setObservedDate(date);
-				} else {
-					skip(parser);
+				switch (tagName) {
+					case "station":
+						c.setField(Fields.STATION, readTag(parser));
+						break;
+					case "condition":
+						c.setField(Fields.CONDITION, readTag(parser));
+						break;
+					case "iconCode":
+						int iconId = EnvironmentCanadaIcons.getIconId(iconSet, readTag(parser));
+						c.setIconId(iconId);
+						break;
+					case "temperature":
+						c.setField(Fields.TEMP, readTag(parser), Unit.DEG_C, 0); //probably has more precision
+
+						//this is better for display
+						break;
+					case "windChill":
+						c.setField(Fields.WINDCHILL, readTag(parser), Unit.DEG_C, 0);
+						break;
+					case "humidex":
+						c.setField(Fields.HUMIDEX, readTag(parser), Unit.DEG_C, 0);
+						break;
+					case "pressure":
+						c.setField(Fields.PRESSURETREND, parser.getAttributeValue(null, "tendency"));
+						c.setField(Fields.PRESSURE, readTag(parser), Unit.KILOPASCALS, 1);
+						break;
+					case "dewpoint":
+						c.setField(Fields.DEWPOINT, readTag(parser), Unit.DEG_C, 0);
+						break;
+					case "visibility":
+						c.setField(Fields.VISIBILITY, readTag(parser), Unit.KILOMETRES, 0);
+						break;
+					case "relativeHumidity":
+						c.setField(Fields.RELHUMIDITY, readTag(parser));
+						break;
+					case "wind":
+						parseWind(parser, c);
+						break;
+					case "dateTime":
+						Date date = this.parseDateTime(parser);
+						if (date != null)
+							c.setObservedDate(date);
+						break;
+					default:
+						skip(parser);
+						break;
 				}
 			}
 		}
@@ -332,14 +381,19 @@ public class CityPageForecastParser extends ForecastXMLParser {
 		while (parser.next() != XmlPullParser.END_TAG) {
 			if (parser.getEventType() == XmlPullParser.START_TAG) {
 				String tagName = parser.getName();
-				if (tagName.equals("speed")) {
-					c.setField(Fields.WINDSPEED, readTag(parser), Unit.KILOMETRES_PER_HOUR, 0) ;
-				} else if (tagName.equals("gust")) {
-					c.setField(Fields.WINDGUST, readTag(parser), Unit.KILOMETRES_PER_HOUR, 0);
-				} else if (tagName.equals("direction")) {
-					c.setField(Fields.WINDDIRECTION, readTag(parser));
-				} else {
-					skip(parser);
+				switch (tagName) {
+					case "speed":
+						c.setField(Fields.WINDSPEED, readTag(parser), Unit.KILOMETRES_PER_HOUR, 0);
+						break;
+					case "gust":
+						c.setField(Fields.WINDGUST, readTag(parser), Unit.KILOMETRES_PER_HOUR, 0);
+						break;
+					case "direction":
+						c.setField(Fields.WINDDIRECTION, readTag(parser));
+						break;
+					default:
+						skip(parser);
+						break;
 				}
 			}
 		}

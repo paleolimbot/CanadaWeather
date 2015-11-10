@@ -13,10 +13,10 @@ public abstract class WeatherWidgetSettings extends Activity {
 
 	protected static final int REQUEST_LOCATION = 11 ;
 	
-	private WeatherApp app ;
-	private LocationDatabase locDb ;
+	protected WeatherApp app ;
+	protected LocationDatabase locDb ;
 	
-	private ForecastLocation location ;
+	protected ForecastLocation location ;
 	protected int lang ;
 	private int widgetId ;
 	

@@ -38,7 +38,7 @@ public abstract class ForecastWidgetProvider extends AppWidgetProvider {
 					log("no widgets in database with uri " + data) ;
 				}
 			} else {
-				//do nothing
+				log("null data, do nothing");
 			}
 		} else {
 			super.onReceive(context, intent);
@@ -78,7 +78,7 @@ public abstract class ForecastWidgetProvider extends AppWidgetProvider {
 					@Override
 					public void onForecastDownload(Forecast forecast, Modes mode, ReturnTypes result) {
 						log("forecast downloaded with return type: " + result) ;
-						boolean error = false ;
+						boolean error ;
 						switch(result) {
 						case IO_ERROR:
 							error = true ;

@@ -67,7 +67,7 @@ public abstract class NotificationsReceiver extends BroadcastReceiver implements
 	@Override
 	public void onForecastDownload(Forecast forecast, Modes mode, ReturnTypes result) {
 		log("forecast downloaded with return type: " + result) ;
-		boolean error = false ;
+		boolean error ;
 		switch(result) {
 		case IO_ERROR:
 			error = true ;
@@ -87,7 +87,7 @@ public abstract class NotificationsReceiver extends BroadcastReceiver implements
 		}
 		if(!error) {
 			NotificationManager manager = (NotificationManager) forecast.getContext().getSystemService(Context.NOTIFICATION_SERVICE) ;
-			List<WeatherWarning> warnings = new ArrayList<WeatherWarning>() ;
+			List<WeatherWarning> warnings = new ArrayList<>() ;
 			for(ForecastItem i: forecast.items) {
 				if(i instanceof WeatherWarning)
 					warnings.add((WeatherWarning)i) ;
@@ -99,7 +99,7 @@ public abstract class NotificationsReceiver extends BroadcastReceiver implements
 				manager.cancel(this.getUniqueNotificationId(forecast.getLocation().getUri()));
 			}
 		} else {
-			//do nothing, there was an error.
+			log("error, doing nothing");
 		}
 	}
 

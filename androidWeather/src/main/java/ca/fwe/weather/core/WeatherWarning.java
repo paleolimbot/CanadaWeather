@@ -6,7 +6,7 @@ import ca.fwe.weather.R;
 
 public abstract class WeatherWarning extends ForecastItem {
 
-	public enum Types {WATCH, WARNING, ADVISORY, STATEMENT, ENDED_NOTIFICATION} ;
+	public enum Types {WATCH, WARNING, ADVISORY, STATEMENT, ENDED_NOTIFICATION}
 	
 	private Types type ;
 	private Date date ;
@@ -35,6 +35,7 @@ public abstract class WeatherWarning extends ForecastItem {
 			break;
 		case STATEMENT:
 			id = R.drawable.ic_advisory ;
+			break;
 		case WATCH:
 			id = R.drawable.ic_watch ;
 			break;

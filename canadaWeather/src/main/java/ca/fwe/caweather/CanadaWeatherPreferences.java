@@ -17,7 +17,7 @@ public class CanadaWeatherPreferences extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 		this.setTheme(WeatherApp.getThemeId(this)) ;
 		super.onCreate(savedInstanceState);
-		this.getActionBar().setDisplayHomeAsUpEnabled(true);
+		if(getActionBar() != null) this.getActionBar().setDisplayHomeAsUpEnabled(true);
 		// Display the fragment as the main content.
 		getFragmentManager().beginTransaction()
 		.replace(android.R.id.content, new PFrag())

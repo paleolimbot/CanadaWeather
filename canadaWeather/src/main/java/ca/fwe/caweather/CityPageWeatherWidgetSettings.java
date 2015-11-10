@@ -49,7 +49,7 @@ public class CityPageWeatherWidgetSettings extends WeatherWidgetSettings {
 	}
 
 	private static void log(String message) {
-		Log.i("CityPageWeatherWidgetSettings", message) ;
+		Log.i("CityPageWeatherWidgetSe", message) ;
 	}
 	
 }

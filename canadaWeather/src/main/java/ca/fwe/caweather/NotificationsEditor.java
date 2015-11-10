@@ -49,7 +49,7 @@ public class NotificationsEditor extends ListActivity implements OnItemClickList
 		noDataAdapter = new NoDataAdapter() ;
 		getListView().setOnItemClickListener(this);
 
-		getActionBar().setDisplayHomeAsUpEnabled(true);
+		if(getActionBar() != null) getActionBar().setDisplayHomeAsUpEnabled(true);
 
 		this.reloadList();
 	}
@@ -57,7 +57,7 @@ public class NotificationsEditor extends ListActivity implements OnItemClickList
 	private void reloadList() {
 		List<Uri> uris = uManager.getNotificationUpdateUris() ;
 		if(uris.size() > 0) {
-			List<ForecastLocation> locations = new ArrayList<ForecastLocation>() ;
+			List<ForecastLocation> locations = new ArrayList<>() ;
 			for(Uri u: uris) {
 				ForecastLocation l = locDb.getLocation(u) ;
 				if(l != null) {
@@ -141,7 +141,7 @@ public class NotificationsEditor extends ListActivity implements OnItemClickList
 
 
 	private void toast(int messageId) {
-		Toast.makeText(this, messageId, Toast.LENGTH_SHORT).show(); ;
+		Toast.makeText(this, messageId, Toast.LENGTH_SHORT).show();
 	}
 
 	private static void log(String message) {
@@ -185,10 +185,11 @@ public class NotificationsEditor extends ListActivity implements OnItemClickList
 	@Override
 	public void onItemClick(AdapterView<?> parent, View view, int position,
 			long id) {
-		if(adapter instanceof LocationsAdapter && position < adapter.getCount()) {
+		if(adapter != null && position < adapter.getCount()) {
 			this.confirmRemove(adapter.getItem(position));
 		} else {
 			// no data adapter
+            Log.i("NotificationsEditor", "no data adapter item click");
 		}
 	}
 

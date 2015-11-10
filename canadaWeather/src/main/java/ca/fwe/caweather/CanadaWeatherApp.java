@@ -45,7 +45,7 @@ public class CanadaWeatherApp extends WeatherApp {
 			if(prefs.contains("locations")) {
 				CityPageLocationDatabase db = new CityPageLocationDatabase(this) ;
 				UserLocationsList list = new UserLocationsList(getLocationDatabase(this)) ;
-				String[] parts = prefs.getString("locations", null).split(";") ;
+				String[] parts = prefs.getString("locations", "").split(";") ;
 				Log.i("CanadaWeatherApp", "found locations list") ;
 				for(String part:parts) {
 					Log.i("CanadaWeatherApp", "finding sitecode for " + part) ;
@@ -61,7 +61,7 @@ public class CanadaWeatherApp extends WeatherApp {
 				list.close();
 				SharedPreferences.Editor edit = prefs.edit() ;
 				edit.remove("locations") ;
-				edit.commit() ;
+				edit.apply() ;
 			}
 
 			//clear all cache files
@@ -71,8 +71,10 @@ public class CanadaWeatherApp extends WeatherApp {
 				File[] files = cache.listFiles() ;
 				if(files != null) {
 					for(File f: files) {
-						f.delete() ;
-						Log.i("CanadaWeatherApp", "deleted " + f) ;
+                        if(f.delete())
+                            Log.i("CanadaWeatherApp", "deleted " + f) ;
+                        else
+                            Log.i("CanadaWeatherApp", "error deleting " + f);
 					}
 				}
 			}
@@ -83,8 +85,10 @@ public class CanadaWeatherApp extends WeatherApp {
 				File[] files = radarCache.listFiles() ;
 				if(files != null) {
 					for(File f: files) {
-						f.delete() ;
-						Log.i("CanadaWeatherApp", "deleted " + f) ;
+						if(f.delete())
+						    Log.i("CanadaWeatherApp", "deleted " + f) ;
+                        else
+                            Log.i("CanadaWeatherApp", "error deleting " + f);
 					}
 				}
 			}
