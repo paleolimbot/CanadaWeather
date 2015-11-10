@@ -68,7 +68,7 @@ public class ForecastDownloader {
 		protected ReturnTypes doInBackground(Forecast... params) {
 			Forecast forecast = params[0] ;
 			ForecastLocation  l = forecast.getLocation() ;
-			ReturnTypes result = ReturnTypes.UNKNOWN_ERROR ;
+			ReturnTypes result;
 			try {
 				File parseFile = fmanage.cachefile(l, forecast.getLang()) ;
 				boolean validCacheFile = fmanage.cachefileValid(parseFile) ;
@@ -118,7 +118,7 @@ public class ForecastDownloader {
 					if(downloadedFile != null) {
 						//copy file to cache
 						fmanage.copyToCache(downloadedFile, forecast.getLocation(), forecast.getLang()) ;
-						downloadedFile.delete() ;
+						if(!downloadedFile.delete()) Log.i("ForecastDownloader", "downloaded file not deleted: " + downloadedFile);
 						result = ReturnTypes.DOWNLOADED ;
 					} else {
 						result = ReturnTypes.CACHED ;
@@ -148,7 +148,7 @@ public class ForecastDownloader {
 	}
 
 	public interface OnForecastDownloadListener {
-		public void onForecastDownload(Forecast forecast, Modes downloadMode, ReturnTypes returnType) ;
+		void onForecastDownload(Forecast forecast, Modes downloadMode, ReturnTypes returnType) ;
 	}
 
 	private void log(String message) {

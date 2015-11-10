@@ -68,7 +68,7 @@ public class LocationFetcher {
 		lastUpdate = System.currentTimeMillis() ;
 		lastFix = location ;
 		if(listener != null)
-			listener.onLocationChange(from(location), (int)Math.round(location.getAltitude()), (int)Math.round(location.getAccuracy())) ; ;
+			listener.onLocationChange(from(location), (int) Math.round(location.getAltitude()), Math.round(location.getAccuracy()));
 	}
 	
 	private static LatLon from(Location position) {
@@ -76,7 +76,7 @@ public class LocationFetcher {
 	}
 	
 	public interface GPSLocationListener {
-		public void onLocationChange(LatLon position, int altitudeMetres, int accuracyMetres) ;
+		void onLocationChange(LatLon position, int altitudeMetres, int accuracyMetres) ;
 	}
 
 	

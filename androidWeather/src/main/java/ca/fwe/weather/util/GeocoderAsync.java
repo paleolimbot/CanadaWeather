@@ -60,7 +60,7 @@ public class GeocoderAsync {
 	}
 	
 	public interface OnGeocodeListener {
-		public void onGeocode(List<Address> address) ;
-		public void onGeocodeError(Exception error) ;
+		void onGeocode(List<Address> address) ;
+		void onGeocodeError(Exception error) ;
 	}
 }

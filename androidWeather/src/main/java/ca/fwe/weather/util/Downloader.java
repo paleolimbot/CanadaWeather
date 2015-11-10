@@ -1,5 +1,7 @@
 package ca.fwe.weather.util;
 
+import android.util.Log;
+
 import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -34,15 +36,16 @@ public class Downloader {
 
 		byte data[] = new byte[1024];
 		int count;
-		while (((count = input.read(data)) != -1) && !cancelled) {
+		while (((count = input.read(data)) != -1) && !this.isCancelled()) {
 			output.write(data, 0, count);
 		}
 
 		output.flush();
 		output.close();
 		input.close();
-		if(cancelled)
-			tempFile.delete() ;
+		if(this.isCancelled()) {
+			if(!tempFile.delete()) Log.i("Downloader", "unable to delete " + tempFile);
+		}
 		return tempFile ;
 	}
 	
