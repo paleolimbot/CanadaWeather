@@ -140,11 +140,13 @@ public abstract class NotificationsReceiver extends BroadcastReceiver implements
 			} else {
                 //cancellable notifications: remove "uniquenotificationid_type" and
                 // "uniquenotificationid_cancelled preference
-                log("Removing pref keys: " + typeKey + ", " + cancelledKey);
-                SharedPreferences.Editor edit = prefs.edit();
-                edit.remove(typeKey);
-                edit.remove(cancelledKey);
-                edit.apply();
+                if(prefs.contains(typeKey) || prefs.contains(cancelledKey)) {
+                    log("Removing pref keys: " + typeKey + ", " + cancelledKey);
+                    SharedPreferences.Editor edit = prefs.edit();
+                    edit.remove(typeKey);
+                    edit.remove(cancelledKey);
+                    edit.apply();
+                }
 
                 //cancel notification if still in notification bar
 				manager.cancel(notificationId);
