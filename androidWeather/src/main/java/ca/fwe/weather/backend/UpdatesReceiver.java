@@ -71,8 +71,10 @@ public abstract class UpdatesReceiver extends BroadcastReceiver {
 		NetworkInfo ni= cm.getActiveNetworkInfo() ;
 		if(ni!=null && ni.getState()==NetworkInfo.State.CONNECTED && list.size() > 0) {
 			log("Network " + ni.getTypeName() + " connected, setting alarm.");
-			am.setRepeating(AlarmManager.RTC_WAKEUP, 0, updateFrequency, 
-					getPendingIntent(context));		} else if(list.size() == 0){
+            //TODO this is where alarm gets set...ensure change still produces acceptable update frequency
+			am.setInexactRepeating(AlarmManager.RTC_WAKEUP, 0, updateFrequency,
+					getPendingIntent(context));
+		} else if(list.size() == 0){
 			log("nothing to set alarm for, cancelling") ;
 			am.cancel(this.getPendingIntent(context));
 		} else {

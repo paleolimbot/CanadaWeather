@@ -13,8 +13,6 @@ import android.util.Log;
 
 public class UpdatesManager {
 
-	//TODO evaluate battery usage for polling (use inexact repeating alarm?)
-
 	private static final String DB_NAME = "androidweather_updates" ;
 	private static final int DB_VERSION = 1 ;
 
