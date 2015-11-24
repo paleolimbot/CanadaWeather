@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <siteList xmlns:fw="http://apps.fishandwhistle.net/schemas/ecweather">
+	<!--TODO update sitelist to include new sites -->
 	<fw:province code="AB">
 		<nameEn>Alberta</nameEn>
 		<nameFr>Alberta</nameFr>
