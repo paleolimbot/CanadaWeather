@@ -118,7 +118,7 @@ public abstract class NotificationsReceiver extends BroadcastReceiver implements
 			if(warnings.size() > 0) {
                 String title = warnings.get(0).getTitle();
                 String previousTitle = prefs.getString(typeKey, null);
-                if(title.equals(previousTitle) && prefs.getBoolean(cancelledKey, false)) {
+                if(this.warningTitleIdentical(title, previousTitle) && prefs.getBoolean(cancelledKey, false)) {
                     //user has already cancelled this notification...don't notify again!
                     log("User has already cancelled " +
                             title + " for location " +
@@ -127,6 +127,7 @@ public abstract class NotificationsReceiver extends BroadcastReceiver implements
                 } else {
                     if(!title.equals(previousTitle)) {
                         //title has changed, update in prefs
+                        log("Updating pref keys: " + typeKey + "=" + title + ", " + cancelledKey + "=false");
                         SharedPreferences.Editor edit = prefs.edit();
                         edit.putString(typeKey, title);
                         edit.putBoolean(cancelledKey, false);
@@ -139,6 +140,7 @@ public abstract class NotificationsReceiver extends BroadcastReceiver implements
 			} else {
                 //cancellable notifications: remove "uniquenotificationid_type" and
                 // "uniquenotificationid_cancelled preference
+                log("Removing pref keys: " + typeKey + ", " + cancelledKey);
                 SharedPreferences.Editor edit = prefs.edit();
                 edit.remove(typeKey);
                 edit.remove(cancelledKey);
@@ -174,6 +176,14 @@ public abstract class NotificationsReceiver extends BroadcastReceiver implements
         builder.setDeleteIntent(PendingIntent.getBroadcast(forecast.getContext(), 0, userCancel, PendingIntent.FLAG_UPDATE_CURRENT));
 		return builder.getNotification() ; //apparently .build() requires a higher API level (16)
 	}
+
+    protected boolean warningTitleIdentical(String currentTitle, String cachedTitle) {
+        if(currentTitle != null) {
+            return currentTitle.equals(cachedTitle);
+        } else {
+            return (null == cachedTitle) ;
+        }
+    }
 
 	private int getUniqueNotificationId(Uri locationUri) {
 		return locationUri.hashCode() ;
