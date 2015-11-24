@@ -9,6 +9,7 @@ import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.util.Log;
 import ca.fwe.weather.R;
@@ -24,7 +25,9 @@ import ca.fwe.weather.util.ForecastDownloader.ReturnTypes;
 public abstract class NotificationsReceiver extends BroadcastReceiver implements ForecastDownloader.OnForecastDownloadListener {
 
 	public static final String ACTION_NOTIFICATION_REMOVED = "ca.fwe.weather.NOTIFICATION_REMOVED" ;
-	//TODO need to make notifications cancellable!
+    private static final String ACTION_NOTIFICATION_USER_CANCEL = "ca.fwe.weather.ACTION_NOTIFICATION_USER_CANCEL" ;
+
+    private static final String PREF_NAME  = "prefs_NOTIFICATIONS" ;
 
 	@Override
 	public void onReceive(Context context, Intent intent) {
@@ -60,7 +63,20 @@ public abstract class NotificationsReceiver extends BroadcastReceiver implements
 			} else {
 				log("intent has no data!", null) ;
 			}
-		}
+		} else if(intent.getAction().equals(ACTION_NOTIFICATION_USER_CANCEL)) {
+            //user has cancelled notification: set cancelled key to true
+            Uri data = intent.getData() ;
+            if(data != null) {
+                int notificationId = this.getUniqueNotificationId(data);
+                SharedPreferences prefs = context.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
+                String cancelledKey = String.valueOf(notificationId) + "_cancelled";
+                SharedPreferences.Editor edit = prefs.edit();
+                edit.putBoolean(cancelledKey, true);
+                edit.apply();
+            } else {
+                log("intent has no data!", null) ;
+            }
+        }
 	}
 
 	protected abstract LocationDatabase getLocationDatabase(Context context) ;
@@ -93,11 +109,43 @@ public abstract class NotificationsReceiver extends BroadcastReceiver implements
 				if(i instanceof WeatherWarning)
 					warnings.add((WeatherWarning)i) ;
 			}
-
+            //TODO don't display "ended" notifications
+            int notificationId = this.getUniqueNotificationId(forecast.getLocation().getUri());
+            SharedPreferences prefs = forecast.getContext()
+                    .getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
+            String typeKey = String.valueOf(notificationId) + "_type";
+            String cancelledKey = String.valueOf(notificationId) + "_cancelled";
 			if(warnings.size() > 0) {
-				manager.notify(this.getUniqueNotificationId(forecast.getLocation().getUri()), buildNotification(forecast, warnings));
+                String title = warnings.get(0).getTitle();
+                String previousTitle = prefs.getString(typeKey, null);
+                if(title.equals(previousTitle) && prefs.getBoolean(cancelledKey, false)) {
+                    //user has already cancelled this notification...don't notify again!
+                    log("User has already cancelled " +
+                            title + " for location " +
+                            forecast.getLocation().getUri());
+
+                } else {
+                    if(!title.equals(previousTitle)) {
+                        //title has changed, update in prefs
+                        SharedPreferences.Editor edit = prefs.edit();
+                        edit.putString(typeKey, title);
+                        edit.putBoolean(cancelledKey, false);
+                        edit.apply();
+                    }
+                    //user has not cancelled this notification
+                    manager.notify(notificationId, buildNotification(forecast, warnings));
+                }
+
 			} else {
-				manager.cancel(this.getUniqueNotificationId(forecast.getLocation().getUri()));
+                //cancellable notifications: remove "uniquenotificationid_type" and
+                // "uniquenotificationid_cancelled preference
+                SharedPreferences.Editor edit = prefs.edit();
+                edit.remove(typeKey);
+                edit.remove(cancelledKey);
+                edit.apply();
+
+                //cancel notification if still in notification bar
+				manager.cancel(notificationId);
 			}
 		} else {
 			log("error, doing nothing");
@@ -115,11 +163,15 @@ public abstract class NotificationsReceiver extends BroadcastReceiver implements
 		String url = warnings.get(0).getMobileUrl() ;
 		i.setData(Uri.parse(url)) ;
 
+        Intent userCancel = new Intent(ACTION_NOTIFICATION_USER_CANCEL);
+        userCancel.setData(forecast.getLocation().getUri());
+
 		builder.setContentTitle(title) ;
 		builder.setContentText(subtitle) ;
 		builder.setSmallIcon(R.drawable.ic_stat_warning) ;
-		builder.setOngoing(true) ;
+		builder.setOngoing(false) ;
 		builder.setContentIntent(PendingIntent.getActivity(forecast.getContext(), 0, i, PendingIntent.FLAG_UPDATE_CURRENT)) ;
+        builder.setDeleteIntent(PendingIntent.getBroadcast(forecast.getContext(), 0, userCancel, PendingIntent.FLAG_UPDATE_CURRENT));
 		return builder.getNotification() ; //apparently .build() requires a higher API level (16)
 	}
 

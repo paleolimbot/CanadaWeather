@@ -119,6 +119,11 @@
                 <data android:scheme="citypage" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
+            <intent-filter>
+                <action android:name="ca.fwe.weather.ACTION_NOTIFICATION_USER_CANCEL" />
+                <data android:scheme="citypage" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
         </receiver>
     </application>
 
