@@ -17,6 +17,7 @@ public class MainActivity extends ForecastActivity {
 
     //TODO hourly forecast link
     //TODO location auto set to near you
+	//TODO split action bar to avoid cutting off "Canada Weather", use area for location name
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
