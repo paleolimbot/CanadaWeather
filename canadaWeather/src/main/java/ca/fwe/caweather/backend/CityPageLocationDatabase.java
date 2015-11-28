@@ -27,7 +27,7 @@ public class CityPageLocationDatabase extends LocationDatabase {
 	private static final String TAG = "CityPageLocationDatabas" ;
 	
 	private static final String DB_NAME = "citypage_locations" ;
-	private static final int DB_VERSION = 1 ;
+	private static final int DB_VERSION = 2 ;
 	
 	private LocDbHelper db ;
 	private int lang ;
@@ -144,9 +144,9 @@ public class CityPageLocationDatabase extends LocationDatabase {
 			List<CityPageLocation> out = new ArrayList<>() ;
 			SQLiteDatabase db = this.getReadableDatabase() ;
 			
-			Cursor c = db.query("locations", null, 
-					"province_code=?", new String[]{code}, 
-					null, null, getOrderBy(lang), null) ;
+			Cursor c = db.query("locations", null,
+                    "province_code=?", new String[]{code},
+                    null, null, getOrderBy(lang), null) ;
 			if(c!= null) {
 				if(c.getCount() > 0) {
 					for(int i=0; i<c.getCount(); i++) {
@@ -165,9 +165,9 @@ public class CityPageLocationDatabase extends LocationDatabase {
 			List<Province> out = new ArrayList<>() ;
 			SQLiteDatabase db = this.getReadableDatabase() ;
 			
-			Cursor c = db.query("provinces", null, 
-					"1", new String[]{}, 
-					null, null, getOrderBy(lang), null) ;
+			Cursor c = db.query("provinces", null,
+                    "1", new String[]{},
+                    null, null, getOrderBy(lang), null) ;
 			if(c!= null) {
 				if(c.getCount() > 0) {
 					for(int i=0; i<c.getCount(); i++) {
@@ -186,31 +186,41 @@ public class CityPageLocationDatabase extends LocationDatabase {
 		public void onCreate(final SQLiteDatabase db) {
 			//Create tables
 			db.execSQL("CREATE TABLE provinces (province_code TEXT PRIMARY KEY, "
-					+ "name_en TEXT, "
-					+ "name_fr TEXT)");
+                    + "name_en TEXT, "
+                    + "name_fr TEXT)");
 			db.execSQL("CREATE TABLE locations (sitecode TEXT PRIMARY KEY, "
-					+ "province_code TEXT, "
-					+ "name_en TEXT, "
-					+ "name_fr TEXT, "
-					+ "lat NUMERIC, "
-					+ "lon NUMERIC, web_id TEXT)");	
-			//Populate tables with locations from the sitelist-base-v1.xml asset.
+                    + "province_code TEXT, "
+                    + "name_en TEXT, "
+                    + "name_fr TEXT, "
+                    + "lat NUMERIC, "
+                    + "lon NUMERIC, web_id TEXT)");
+			//Populate tables with locations from the sitelist-base-v2.xml asset.
 			try {
-				InputStream s = context.getAssets().open("sitelist-base-v1.xml") ;
+				InputStream s = context.getAssets().open("sitelist-base-v2.xml") ;
 				mergeInputStream(s, db) ;
 				s.close() ;
 			} catch (IOException e) {
-				//TODO need to edit the sitelist-base-v1.xml asset to possibly include new locations
-				Log.e(TAG, "unable to open asset sitelist-base-v1.xml while creating database", e) ;
+				Log.e(TAG, "unable to open asset sitelist-base-v2.xml while creating database", e) ;
 			} catch (SAXException e) {
-				Log.e(TAG, "parse error while parsing sitelist-base-v1.xml from assets while creating database", e) ;
+				Log.e(TAG, "parse error while parsing sitelist-base-v2.xml from assets while creating database", e) ;
 			}
 			
 		}
 
 		@Override
 		public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-			//only one version so far
+            Log.i(TAG, "ugrading database from " + oldVersion + " to " + newVersion);
+            try {
+                if (newVersion == 2 && oldVersion == 1) { //currently the only version is 1
+                    InputStream s = context.getAssets().open("sitelist-base-v2.xml");
+                    mergeInputStream(s, db);
+                    s.close();
+                }
+            } catch (IOException e) {
+                Log.e(TAG, "unable to open asset sitelist-base-v2.xml while upgrading database", e) ;
+            } catch (SAXException e) {
+                Log.e(TAG, "parse error while parsing sitelist-base-v2.xml from assets while upgrading database", e) ;
+            }
 		}
 		
 	}
