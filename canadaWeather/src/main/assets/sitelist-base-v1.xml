@@ -52,6 +52,10 @@
 		<nameEn>Yukon Territory</nameEn>
 		<nameFr>Yukon</nameFr>
 	</fw:province>
+	<fw:province code="HEF">
+		<nameEn>BC Highway</nameEn>
+		<nameFr>Autoroute BC</nameFr>
+	</fw:province>
 	<site code="s0000768">
 		<nameEn>Airdrie</nameEn>
 		<nameFr>Airdrie</nameFr>
