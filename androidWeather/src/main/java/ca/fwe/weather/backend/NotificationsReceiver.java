@@ -106,10 +106,14 @@ public abstract class NotificationsReceiver extends BroadcastReceiver implements
 			NotificationManager manager = (NotificationManager) forecast.getContext().getSystemService(Context.NOTIFICATION_SERVICE) ;
 			List<WeatherWarning> warnings = new ArrayList<>() ;
 			for(ForecastItem i: forecast.items) {
-				if(i instanceof WeatherWarning)
-					warnings.add((WeatherWarning)i) ;
+				if(i instanceof WeatherWarning) {
+                    WeatherWarning w = (WeatherWarning)i ;
+                    //pretend ended notifications are not a warning at all
+                    if(w.getType() != WeatherWarning.Types.ENDED_NOTIFICATION)
+					    warnings.add(w);
+				}
 			}
-            //TODO don't display "ended" notifications
+
             int notificationId = this.getUniqueNotificationId(forecast.getLocation().getUri());
             SharedPreferences prefs = forecast.getContext()
                     .getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
