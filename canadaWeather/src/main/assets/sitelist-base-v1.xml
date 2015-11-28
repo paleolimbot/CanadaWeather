@@ -1,6 +1,5 @@
-<?xml version="1.0" encoding="ISO-8859-1" ?>
+<?xml version="1.0"?>
 <siteList xmlns:fw="http://apps.fishandwhistle.net/schemas/ecweather">
-	<!--TODO update sitelist to include new sites -->
 	<fw:province code="AB">
 		<nameEn>Alberta</nameEn>
 		<nameFr>Alberta</nameFr>
@@ -23,7 +22,7 @@
 	</fw:province>
 	<fw:province code="NS">
 		<nameEn>Nova Scotia</nameEn>
-		<nameFr>Nouvelle-Écosse</nameFr>
+		<nameFr>Nouvelle-&#xC9;cosse</nameFr>
 	</fw:province>
 	<fw:province code="NT">
 		<nameEn>Northwest Territories</nameEn>
@@ -39,11 +38,11 @@
 	</fw:province>
 	<fw:province code="PE">
 		<nameEn>Prince Edward Island</nameEn>
-		<nameFr>Île-du-Prince-Édouard</nameFr>
+		<nameFr>&#xCE;le-du-Prince-&#xC9;douard</nameFr>
 	</fw:province>
 	<fw:province code="QC">
 		<nameEn>Quebec</nameEn>
-		<nameFr>Québec</nameFr>
+		<nameFr>Qu&#xE9;bec</nameFr>
 	</fw:province>
 	<fw:province code="SK">
 		<nameEn>Saskatchewan</nameEn>
@@ -53,8 +52,6 @@
 		<nameEn>Yukon Territory</nameEn>
 		<nameFr>Yukon</nameFr>
 	</fw:province>
-
-
 	<site code="s0000768">
 		<nameEn>Airdrie</nameEn>
 		<nameFr>Airdrie</nameFr>
@@ -1321,7 +1318,7 @@
 	</site>
 	<site code="s0000390">
 		<nameEn>Victoria (University of)</nameEn>
-		<nameFr>Victoria (Université de)</nameFr>
+		<nameFr>Victoria (Universit&#xE9; de)</nameFr>
 		<provinceCode>BC</provinceCode>
 		<fw:webId>bc-66</fw:webId>
 		<fw:lat>48.43</fw:lat>
@@ -2129,7 +2126,7 @@
 	</site>
 	<site code="s0000653">
 		<nameEn>Shediac</nameEn>
-		<nameFr>Shédiac</nameFr>
+		<nameFr>Sh&#xE9;diac</nameFr>
 		<provinceCode>NB</provinceCode>
 		<fw:webId>nb-17</fw:webId>
 		<fw:lat>46.22</fw:lat>
@@ -2648,8 +2645,8 @@
 		<fw:lon>-62.72</fw:lon>
 	</site>
 	<site code="s0000420">
-		<nameEn>Chéticamp</nameEn>
-		<nameFr>Chéticamp</nameFr>
+		<nameEn>Ch&#xE9;ticamp</nameEn>
+		<nameFr>Ch&#xE9;ticamp</nameFr>
 		<provinceCode>NS</provinceCode>
 		<fw:webId>ns-38</fw:webId>
 		<fw:lat>46.63</fw:lat>
@@ -2680,8 +2677,8 @@
 		<fw:lon>-60.23</fw:lon>
 	</site>
 	<site code="s0000405">
-		<nameEn>Grand Étang</nameEn>
-		<nameFr>Grand Étang</nameFr>
+		<nameEn>Grand &#xC9;tang</nameEn>
+		<nameFr>Grand &#xC9;tang</nameFr>
 		<provinceCode>NS</provinceCode>
 		<fw:webId>ns-32</fw:webId>
 		<fw:lat>46.55</fw:lat>
@@ -3953,7 +3950,7 @@
 	</site>
 	<site code="s0000763">
 		<nameEn>Lake Superior (Provincial Park)</nameEn>
-		<nameFr>Lac Supérieur (Parc provincial)</nameFr>
+		<nameFr>Lac Sup&#xE9;rieur (Parc provincial)</nameFr>
 		<provinceCode>ON</provinceCode>
 		<fw:webId>on-45</fw:webId>
 		<fw:lat>47.6</fw:lat>
@@ -4176,8 +4173,8 @@
 		<fw:lon>-78.86</fw:lon>
 	</site>
 	<site code="s0000430">
-		<nameEn>Ottawa (Kanata - Orléans)</nameEn>
-		<nameFr>Ottawa (Kanata - Orléans)</nameFr>
+		<nameEn>Ottawa (Kanata - Orl&#xE9;ans)</nameEn>
+		<nameFr>Ottawa (Kanata - Orl&#xE9;ans)</nameFr>
 		<provinceCode>ON</provinceCode>
 		<fw:webId>on-118</fw:webId>
 		<fw:lat>45.33</fw:lat>
@@ -4872,16 +4869,16 @@
 		<fw:lon>-73.87</fw:lon>
 	</site>
 	<site code="s0000347">
-		<nameEn>Bécancour</nameEn>
-		<nameFr>Bécancour</nameFr>
+		<nameEn>B&#xE9;cancour</nameEn>
+		<nameFr>B&#xE9;cancour</nameFr>
 		<provinceCode>QC</provinceCode>
 		<fw:webId>qc-50</fw:webId>
 		<fw:lat>46.33</fw:lat>
 		<fw:lon>-72.43</fw:lon>
 	</site>
 	<site code="s0000205">
-		<nameEn>Bernières</nameEn>
-		<nameFr>Bernières</nameFr>
+		<nameEn>Berni&#xE8;res</nameEn>
+		<nameFr>Berni&#xE8;res</nameFr>
 		<provinceCode>QC</provinceCode>
 		<fw:webId>qc-51</fw:webId>
 		<fw:lat>46.69</fw:lat>
@@ -5120,16 +5117,16 @@
 		<fw:lon>-64.35</fw:lon>
 	</site>
 	<site code="s0000535">
-		<nameEn>Gaspé</nameEn>
-		<nameFr>Gaspé</nameFr>
+		<nameEn>Gasp&#xE9;</nameEn>
+		<nameFr>Gasp&#xE9;</nameFr>
 		<provinceCode>QC</provinceCode>
 		<fw:webId>qc-101</fw:webId>
 		<fw:lat>48.83</fw:lat>
 		<fw:lon>-64.48</fw:lon>
 	</site>
 	<site code="s0000321">
-		<nameEn>Gaspésie (Parc national)</nameEn>
-		<nameFr>Gaspésie (Parc national)</nameFr>
+		<nameEn>Gasp&#xE9;sie (Parc national)</nameEn>
+		<nameFr>Gasp&#xE9;sie (Parc national)</nameFr>
 		<provinceCode>QC</provinceCode>
 		<fw:webId>qc-94</fw:webId>
 		<fw:lat>48.93</fw:lat>
@@ -5144,8 +5141,8 @@
 		<fw:lon>-75.65</fw:lon>
 	</site>
 	<site code="s0000288">
-		<nameEn>Gouin (Réservoir)</nameEn>
-		<nameFr>Gouin (Réservoir)</nameFr>
+		<nameEn>Gouin (R&#xE9;servoir)</nameEn>
+		<nameFr>Gouin (R&#xE9;servoir)</nameFr>
 		<provinceCode>QC</provinceCode>
 		<fw:webId>qc-a1</fw:webId>
 		<fw:lat>48.63</fw:lat>
@@ -5160,8 +5157,8 @@
 		<fw:lon>-72.73</fw:lon>
 	</site>
 	<site code="s0000319">
-		<nameEn>Grande-Vallée</nameEn>
-		<nameFr>Grande-Vallée</nameFr>
+		<nameEn>Grande-Vall&#xE9;e</nameEn>
+		<nameFr>Grande-Vall&#xE9;e</nameFr>
 		<provinceCode>QC</provinceCode>
 		<fw:webId>qc-169</fw:webId>
 		<fw:lat>49.22</fw:lat>
@@ -5184,8 +5181,8 @@
 		<fw:lon>-74.17</fw:lon>
 	</site>
 	<site code="s0000174">
-		<nameEn>Îles-de-la-Madeleine</nameEn>
-		<nameFr>Îles-de-la-Madeleine</nameFr>
+		<nameEn>&#xCE;les-de-la-Madeleine</nameEn>
+		<nameFr>&#xCE;les-de-la-Madeleine</nameFr>
 		<provinceCode>QC</provinceCode>
 		<fw:webId>qc-103</fw:webId>
 		<fw:lat>47.4</fw:lat>
@@ -5280,8 +5277,8 @@
 		<fw:lon>-70.35</fw:lon>
 	</site>
 	<site code="s0000532">
-		<nameEn>La Grande Rivière</nameEn>
-		<nameFr>La Grande Rivière</nameFr>
+		<nameEn>La Grande Rivi&#xE8;re</nameEn>
+		<nameFr>La Grande Rivi&#xE8;re</nameFr>
 		<provinceCode>QC</provinceCode>
 		<fw:webId>qc-158</fw:webId>
 		<fw:lat>53.63</fw:lat>
@@ -5328,8 +5325,8 @@
 		<fw:lon>-72.78</fw:lon>
 	</site>
 	<site code="s0000245">
-		<nameEn>La Vérendrye (Réserve faunique)</nameEn>
-		<nameFr>La Vérendrye (Réserve faunique)</nameFr>
+		<nameEn>La V&#xE9;rendrye (R&#xE9;serve faunique)</nameEn>
+		<nameFr>La V&#xE9;rendrye (R&#xE9;serve faunique)</nameFr>
 		<provinceCode>QC</provinceCode>
 		<fw:webId>qc-30</fw:webId>
 		<fw:lat>47.33</fw:lat>
@@ -5352,8 +5349,8 @@
 		<fw:lon>-72.23</fw:lon>
 	</site>
 	<site code="s0000186">
-		<nameEn>Lac-Mégantic</nameEn>
-		<nameFr>Lac-Mégantic</nameFr>
+		<nameEn>Lac-M&#xE9;gantic</nameEn>
+		<nameFr>Lac-M&#xE9;gantic</nameFr>
 		<provinceCode>QC</provinceCode>
 		<fw:webId>qc-72</fw:webId>
 		<fw:lat>45.58</fw:lat>
@@ -5368,16 +5365,16 @@
 		<fw:lon>-74.33</fw:lon>
 	</site>
 	<site code="s0000459">
-		<nameEn>Lanaudière</nameEn>
-		<nameFr>Lanaudière</nameFr>
+		<nameEn>Lanaudi&#xE8;re</nameEn>
+		<nameFr>Lanaudi&#xE8;re</nameFr>
 		<provinceCode>QC</provinceCode>
 		<fw:webId>qc-74</fw:webId>
 		<fw:lat>46.3</fw:lat>
 		<fw:lon>-73.2</fw:lon>
 	</site>
 	<site code="s0000284">
-		<nameEn>Laurentides (Réserve faunique)</nameEn>
-		<nameFr>Laurentides (Réserve faunique)</nameFr>
+		<nameEn>Laurentides (R&#xE9;serve faunique)</nameEn>
+		<nameFr>Laurentides (R&#xE9;serve faunique)</nameFr>
 		<provinceCode>QC</provinceCode>
 		<fw:webId>qc-113</fw:webId>
 		<fw:lat>47.75</fw:lat>
@@ -5400,8 +5397,8 @@
 		<fw:lon>-73.47</fw:lon>
 	</site>
 	<site code="s0000416">
-		<nameEn>Lévis</nameEn>
-		<nameFr>Lévis</nameFr>
+		<nameEn>L&#xE9;vis</nameEn>
+		<nameFr>L&#xE9;vis</nameFr>
 		<provinceCode>QC</provinceCode>
 		<fw:webId>qc-78</fw:webId>
 		<fw:lat>46.8</fw:lat>
@@ -5489,7 +5486,7 @@
 	</site>
 	<site code="s0000407">
 		<nameEn>Matapedia</nameEn>
-		<nameFr>Matapédia</nameFr>
+		<nameFr>Matap&#xE9;dia</nameFr>
 		<provinceCode>QC</provinceCode>
 		<fw:webId>qc-151</fw:webId>
 		<fw:lat>47.97</fw:lat>
@@ -5560,8 +5557,8 @@
 		<fw:lon>-70.55</fw:lon>
 	</site>
 	<site code="s0000635">
-		<nameEn>Montréal</nameEn>
-		<nameFr>Montréal</nameFr>
+		<nameEn>Montr&#xE9;al</nameEn>
+		<nameFr>Montr&#xE9;al</nameFr>
 		<provinceCode>QC</provinceCode>
 		<fw:webId>qc-147</fw:webId>
 		<fw:lat>45.52</fw:lat>
@@ -5624,8 +5621,8 @@
 		<fw:lon>-74.62</fw:lon>
 	</site>
 	<site code="s0000314">
-		<nameEn>Percé</nameEn>
-		<nameFr>Percé</nameFr>
+		<nameEn>Perc&#xE9;</nameEn>
+		<nameFr>Perc&#xE9;</nameFr>
 		<provinceCode>QC</provinceCode>
 		<fw:webId>qc-18</fw:webId>
 		<fw:lat>48.53</fw:lat>
@@ -5640,8 +5637,8 @@
 		<fw:lon>-73.98</fw:lon>
 	</site>
 	<site code="s0000810">
-		<nameEn>Pointe-à-la-Croix</nameEn>
-		<nameFr>Pointe-à-la-Croix</nameFr>
+		<nameEn>Pointe-&#xE0;-la-Croix</nameEn>
+		<nameFr>Pointe-&#xE0;-la-Croix</nameFr>
 		<provinceCode>QC</provinceCode>
 		<fw:webId>qc-20</fw:webId>
 		<fw:lat>48.02</fw:lat>
@@ -5672,8 +5669,8 @@
 		<fw:lon>-64.35</fw:lon>
 	</site>
 	<site code="s0000055">
-		<nameEn>Prévost</nameEn>
-		<nameFr>Prévost</nameFr>
+		<nameEn>Pr&#xE9;vost</nameEn>
+		<nameFr>Pr&#xE9;vost</nameFr>
 		<provinceCode>QC</provinceCode>
 		<fw:webId>qc-98</fw:webId>
 		<fw:lat>45.87</fw:lat>
@@ -5696,8 +5693,8 @@
 		<fw:lon>-69.63</fw:lon>
 	</site>
 	<site code="s0000620">
-		<nameEn>Québec</nameEn>
-		<nameFr>Québec</nameFr>
+		<nameEn>Qu&#xE9;bec</nameEn>
+		<nameFr>Qu&#xE9;bec</nameFr>
 		<provinceCode>QC</provinceCode>
 		<fw:webId>qc-133</fw:webId>
 		<fw:lat>46.82</fw:lat>
@@ -5736,8 +5733,8 @@
 		<fw:lon>-68.53</fw:lon>
 	</site>
 	<site code="s0000253">
-		<nameEn>Rivière-du-Loup</nameEn>
-		<nameFr>Rivière-du-Loup</nameFr>
+		<nameEn>Rivi&#xE8;re-du-Loup</nameEn>
+		<nameFr>Rivi&#xE8;re-du-Loup</nameFr>
 		<provinceCode>QC</provinceCode>
 		<fw:webId>qc-108</fw:webId>
 		<fw:lat>47.83</fw:lat>
@@ -5752,8 +5749,8 @@
 		<fw:lon>-72.27</fw:lon>
 	</site>
 	<site code="s0000606">
-		<nameEn>Rosemère</nameEn>
-		<nameFr>Rosemère</nameFr>
+		<nameEn>Rosem&#xE8;re</nameEn>
+		<nameFr>Rosem&#xE8;re</nameFr>
 		<provinceCode>QC</provinceCode>
 		<fw:webId>qc-a3</fw:webId>
 		<fw:lat>45.63</fw:lat>
@@ -5808,8 +5805,8 @@
 		<fw:lon>-73.9</fw:lon>
 	</site>
 	<site code="s0000675">
-		<nameEn>Saint-Félicien</nameEn>
-		<nameFr>Saint-Félicien</nameFr>
+		<nameEn>Saint-F&#xE9;licien</nameEn>
+		<nameFr>Saint-F&#xE9;licien</nameFr>
 		<provinceCode>QC</provinceCode>
 		<fw:webId>qc-b5</fw:webId>
 		<fw:lat>48.65</fw:lat>
@@ -5840,8 +5837,8 @@
 		<fw:lon>-73.27</fw:lon>
 	</site>
 	<site code="s0000601">
-		<nameEn>Saint-Jérôme</nameEn>
-		<nameFr>Saint-Jérôme</nameFr>
+		<nameEn>Saint-J&#xE9;r&#xF4;me</nameEn>
+		<nameFr>Saint-J&#xE9;r&#xF4;me</nameFr>
 		<provinceCode>QC</provinceCode>
 		<fw:webId>qc-13</fw:webId>
 		<fw:lat>45.78</fw:lat>
@@ -5880,16 +5877,16 @@
 		<fw:lon>-73.92</fw:lon>
 	</site>
 	<site code="s0000262">
-		<nameEn>Saint-Nicéphore</nameEn>
-		<nameFr>Saint-Nicéphore</nameFr>
+		<nameEn>Saint-Nic&#xE9;phore</nameEn>
+		<nameFr>Saint-Nic&#xE9;phore</nameFr>
 		<provinceCode>QC</provinceCode>
 		<fw:webId>qc-c1</fw:webId>
 		<fw:lat>45.83</fw:lat>
 		<fw:lon>-72.42</fw:lon>
 	</site>
 	<site code="s0000051">
-		<nameEn>Saint-Rémi</nameEn>
-		<nameFr>Saint-Rémi</nameFr>
+		<nameEn>Saint-R&#xE9;mi</nameEn>
+		<nameFr>Saint-R&#xE9;mi</nameFr>
 		<provinceCode>QC</provinceCode>
 		<fw:webId>qc-c2</fw:webId>
 		<fw:lat>45.27</fw:lat>
@@ -5904,8 +5901,8 @@
 		<fw:lon>-74.17</fw:lon>
 	</site>
 	<site code="s0000742">
-		<nameEn>Saint-Timothée</nameEn>
-		<nameFr>Saint-Timothée</nameFr>
+		<nameEn>Saint-Timoth&#xE9;e</nameEn>
+		<nameFr>Saint-Timoth&#xE9;e</nameFr>
 		<provinceCode>QC</provinceCode>
 		<fw:webId>qc-c4</fw:webId>
 		<fw:lat>45.29</fw:lat>
@@ -5960,8 +5957,8 @@
 		<fw:lon>-73.9</fw:lon>
 	</site>
 	<site code="s0000608">
-		<nameEn>Sainte-Thérèse</nameEn>
-		<nameFr>Sainte-Thérèse</nameFr>
+		<nameEn>Sainte-Th&#xE9;r&#xE8;se</nameEn>
+		<nameFr>Sainte-Th&#xE9;r&#xE8;se</nameFr>
 		<provinceCode>QC</provinceCode>
 		<fw:webId>qc-b3</fw:webId>
 		<fw:lat>45.63</fw:lat>
@@ -5992,8 +5989,8 @@
 		<fw:lon>-66.83</fw:lon>
 	</site>
 	<site code="s0000800">
-		<nameEn>Sept-Îles</nameEn>
-		<nameFr>Sept-Îles</nameFr>
+		<nameEn>Sept-&#xCE;les</nameEn>
+		<nameFr>Sept-&#xCE;les</nameFr>
 		<provinceCode>QC</provinceCode>
 		<fw:webId>qc-141</fw:webId>
 		<fw:lat>50.2</fw:lat>
@@ -6048,8 +6045,8 @@
 		<fw:lon>-69.93</fw:lon>
 	</site>
 	<site code="s0000085">
-		<nameEn>Témiscamingue</nameEn>
-		<nameFr>Témiscamingue</nameFr>
+		<nameEn>T&#xE9;miscamingue</nameEn>
+		<nameFr>T&#xE9;miscamingue</nameFr>
 		<provinceCode>QC</provinceCode>
 		<fw:webId>qc-139</fw:webId>
 		<fw:lat>47.55</fw:lat>
@@ -6057,7 +6054,7 @@
 	</site>
 	<site code="s0000255">
 		<nameEn>Temiscouata</nameEn>
-		<nameFr>Témiscouata</nameFr>
+		<nameFr>T&#xE9;miscouata</nameFr>
 		<provinceCode>QC</provinceCode>
 		<fw:webId>qc-35</fw:webId>
 		<fw:lat>47.68</fw:lat>
@@ -6096,8 +6093,8 @@
 		<fw:lon>-69.18</fw:lon>
 	</site>
 	<site code="s0000346">
-		<nameEn>Trois-Rivières</nameEn>
-		<nameFr>Trois-Rivières</nameFr>
+		<nameEn>Trois-Rivi&#xE8;res</nameEn>
+		<nameFr>Trois-Rivi&#xE8;res</nameFr>
 		<provinceCode>QC</provinceCode>
 		<fw:webId>qc-130</fw:webId>
 		<fw:lat>46.35</fw:lat>
@@ -6128,8 +6125,8 @@
 		<fw:lon>-75.67</fw:lon>
 	</site>
 	<site code="s0000408">
-		<nameEn>Vallée de la Matapédia</nameEn>
-		<nameFr>Vallée de la Matapédia</nameFr>
+		<nameEn>Vall&#xE9;e de la Matap&#xE9;dia</nameEn>
+		<nameFr>Vall&#xE9;e de la Matap&#xE9;dia</nameFr>
 		<provinceCode>QC</provinceCode>
 		<fw:webId>qc-d0</fw:webId>
 		<fw:lat>48.17</fw:lat>
@@ -6758,5 +6755,90 @@
 		<fw:webId>yt-16</fw:webId>
 		<fw:lat>60.7</fw:lat>
 		<fw:lon>-135.08</fw:lon>
+	</site>
+	<site code="s0000861">
+		<nameEn>Eskasoni</nameEn>
+		<nameFr>Eskasoni</nameFr>
+		<provinceCode>NS</provinceCode>
+		<fw:webId>ns-44</fw:webId>
+		<fw:lat>45.94</fw:lat>
+		<fw:lon>-60.62</fw:lon>
+	</site>
+	<site code="s0000846">
+		<nameEn>Coquihalla Highway - Hope to Merritt</nameEn>
+		<nameFr>Route de Coquihalla - de Hope &#xE0; Merritt</nameFr>
+		<provinceCode>HEF</provinceCode>
+		<fw:lat>49.656</fw:lat>
+		<fw:lon>-121.118</fw:lon>
+	</site>
+	<site code="s0000847">
+		<nameEn>Coquihalla Highway - Merritt to Kamloops</nameEn>
+		<nameFr>Route de Coquihalla - de Merritt &#xE0; Kamloops</nameFr>
+		<provinceCode>HEF</provinceCode>
+		<fw:lat>50.297</fw:lat>
+		<fw:lon>-120.576</fw:lon>
+	</site>
+	<site code="s0000848">
+		<nameEn>Highway 16 - Smithers to Terrace</nameEn>
+		<nameFr>Route 16 - de Smithers &#xE0; Terrace</nameFr>
+		<provinceCode>HEF</provinceCode>
+		<fw:lat>55.09559</fw:lat>
+		<fw:lon>-128.07611</fw:lon>
+	</site>
+	<site code="s0000849">
+		<nameEn>Highway 3 - Hope to Princeton via Allison Pass</nameEn>
+		<nameFr>Route 3 - de Hope &#xE0; Princeton via le col Allison</nameFr>
+		<provinceCode>HEF</provinceCode>
+		<fw:lat>49.135</fw:lat>
+		<fw:lon>-120.900</fw:lon>
+	</site>
+	<site code="s0000850">
+		<nameEn>Highway 3 - Paulson Summit to Kootenay Pass</nameEn>
+		<nameFr>Route 3 - du sommet Paulson au col Kootenay</nameFr>
+		<provinceCode>HEF</provinceCode>
+		<fw:lat>49.02338</fw:lat>
+		<fw:lon>-117.15639</fw:lon>
+	</site>
+	<site code="s0000851">
+		<nameEn>Highway 97 - Clinton to 100 Mile House via Begbie Summit</nameEn>
+		<nameFr>Route 97 - de Clinton &#xE0; 100 Mile House via le sommet Begbie</nameFr>
+		<provinceCode>HEF</provinceCode>
+		<fw:lat>51.508</fw:lat>
+		<fw:lon>-121.340</fw:lon>
+	</site>
+	<site code="s0000852">
+		<nameEn>Highway 97 - Pine Pass</nameEn>
+		<nameFr>Route 97 - col Pine</nameFr>
+		<provinceCode>HEF</provinceCode>
+		<fw:lat>55.52176</fw:lat>
+		<fw:lon>-122.72680</fw:lon>
+	</site>
+	<site code="s0000853">
+		<nameEn>Okanagan Connector - Merritt to Kelowna</nameEn>
+		<nameFr>Route de liason - Okanagan - de Merritt &#xE0; Kelowna</nameFr>
+		<provinceCode>HEF</provinceCode>
+		<fw:lat>49.90207</fw:lat>
+		<fw:lon>-120.12613</fw:lon>
+	</site>
+	<site code="s0000854">
+		<nameEn>Sea to Sky - Squamish To Whistler</nameEn>
+		<nameFr>Sea to Sky - de Squamish &#xE0; Whistler</nameFr>
+		<provinceCode>HEF</provinceCode>
+		<fw:lat>49.982</fw:lat>
+		<fw:lon>-123.141</fw:lon>
+	</site>
+	<site code="s0000855">
+		<nameEn>Sea to Sky - West Vancouver Upper Levels to Squamish</nameEn>
+		<nameFr>Sea to Sky - West Vancouver de la route Upper Levels &#xE0; Squamish</nameFr>
+		<provinceCode>HEF</provinceCode>
+		<fw:lat>49.544</fw:lat>
+		<fw:lon>-123.241</fw:lon>
+	</site>
+	<site code="s0000856">
+		<nameEn>Trans Canada Highway - Eagle Pass to Rogers Pass</nameEn>
+		<nameFr>Route Transcanadienne - du col Eagle au col Rogers</nameFr>
+		<provinceCode>HEF</provinceCode>
+		<fw:lat>51.25195</fw:lat>
+		<fw:lon>-117.59584</fw:lon>
 	</site>
 </siteList>
