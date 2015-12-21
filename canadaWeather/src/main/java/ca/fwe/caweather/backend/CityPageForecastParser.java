@@ -178,11 +178,16 @@ public class CityPageForecastParser extends ForecastXMLParser {
 					String tclass = parser.getAttributeValue(null, "class") ;
 					if(tclass != null) {
 						try {
-							if(tclass.equals("low")) {
-								dailyFc.setLow(Double.valueOf(readTag(parser)), Units.Unit.DEG_C) ;
-							} else {
-								dailyFc.setHigh(Double.valueOf(readTag(parser)), Units.Unit.DEG_C) ;
-							}
+                            String val = readTag(parser);
+                            if(val != null) {
+                                if (tclass.equals("low")) {
+                                    dailyFc.setLow(Double.valueOf(val), Units.Unit.DEG_C);
+                                } else {
+                                    dailyFc.setHigh(Double.valueOf(val), Units.Unit.DEG_C);
+                                }
+                            } else {
+                                Log.e(TAG, "null temp, not setting high or low");
+                            }
 						} catch(NumberFormatException e) {
 							Log.e(TAG, "error converting temperature to type double", e) ;
 						}

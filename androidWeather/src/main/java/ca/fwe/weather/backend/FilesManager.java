@@ -108,7 +108,7 @@ public class FilesManager {
 	public boolean cachefileValid(ForecastLocation location, int lang) {
 		return cachefileValid(cachefile(location, lang)) ;
 	}
-
+	//TODO multiple files are being cached, not sure why
 	public File cachefile(ForecastLocation location, int lang) {
 		return new File(this.getCacheDirectory(), location.getCacheFileName(lang)) ;
 	}
