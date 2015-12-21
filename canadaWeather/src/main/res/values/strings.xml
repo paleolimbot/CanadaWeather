@@ -18,7 +18,7 @@
     <string name="main_prefs_label">Preferences</string>
     
     <string name="radar_label">Canada Radar</string>
-    <string name="radar_no_image">No Image</string>
+    <string name="radar_no_image">No image available (radar may be down or no internet connection)</string>
     <string name="radar_description">Latest radar image</string>
     <string name="radar_fetch_list">Fetching radar image list</string>
     <string name="radar_fetch_image">Fetching radar image</string>

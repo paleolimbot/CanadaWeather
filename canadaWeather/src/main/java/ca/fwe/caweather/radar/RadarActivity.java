@@ -64,7 +64,7 @@ public class RadarActivity extends Activity implements OnClickListener {
 		PREF_OVERLAYS_DEFAULT.add("CITIES") ;
 	}
 
-	private static final int FRAME_DELAY = 110 ;
+	private static final int FRAME_DELAY = 180 ;
 	private static final int CYCLE_PAUSE = 500 ;
 
 	public static final DateFormat DEFAULT_TIMEDATE = new SimpleDateFormat("d MMM h:mm a", Locale.CANADA) ;
@@ -85,7 +85,6 @@ public class RadarActivity extends Activity implements OnClickListener {
 
 	private LayerDrawable blankImageList ;
 
-    //TODO make obvious that images that blank are unavailable
     //TODO possibly update to the A11 images?
     // the app is force closing every time when i click on the radar view seemingly because
     // of no link to radar map for (baccaro point ns) and it often force
@@ -592,8 +591,12 @@ public class RadarActivity extends Activity implements OnClickListener {
 				currentIndex = index ;
 				if(updateProgress)
 					animSeek.setProgress(index) ;
-				if(link != null)
-					dateText.setText(generateDateString(link.getImageDate())) ;
+				if(link != null) {
+					dateText.setText(generateDateString(link.getImageDate()));
+				} else {
+                    dateText.setText(R.string.radar_no_image);
+                }
+
 				if(d != null) {
 					setBitmap(d) ;
 				} else {
