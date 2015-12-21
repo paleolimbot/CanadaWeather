@@ -6,6 +6,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLConnection;
 
@@ -81,11 +82,12 @@ public class ForecastDownloader {
 					String xmlurl = l.getXmlUrl(forecast.getLang()) ;
 					log("downloading from " + xmlurl) ;
 					URL url = new URL(xmlurl);
-					URLConnection connection = url.openConnection();
-					connection.connect();
+					HttpURLConnection connection = (HttpURLConnection)url.openConnection();
 
 					// download the file
-					InputStream input = new BufferedInputStream(url.openStream(), 8192);
+					InputStream input = connection.getInputStream();
+                    if(connection.getURL() != url)
+                        throw new IOException("Redirected; throwing IOException");
 					OutputStream output = new FileOutputStream(downloadedFile);
 
 					byte data[] = new byte[1024];
@@ -116,7 +118,7 @@ public class ForecastDownloader {
 					}
 
 					if(downloadedFile != null) {
-						//copy file to cache
+						//copy file to cache TODO ensure that fixing URL connection fixed file cache issue
 						fmanage.copyToCache(downloadedFile, forecast.getLocation(), forecast.getLang()) ;
 						if(!downloadedFile.delete()) Log.i("ForecastDownloader", "downloaded file not deleted: " + downloadedFile);
 						result = ReturnTypes.DOWNLOADED ;
