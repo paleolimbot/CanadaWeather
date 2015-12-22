@@ -1,6 +1,11 @@
 package ca.fwe.weather.util;
 
-import java.io.BufferedInputStream;
+import android.content.Intent;
+import android.os.AsyncTask;
+import android.util.Log;
+
+import org.xmlpull.v1.XmlPullParserException;
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -8,13 +13,7 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.net.URLConnection;
 
-import org.xmlpull.v1.XmlPullParserException;
-
-import android.content.Intent;
-import android.os.AsyncTask;
-import android.util.Log;
 import ca.fwe.weather.backend.FilesManager;
 import ca.fwe.weather.backend.ForecastXMLParser;
 import ca.fwe.weather.core.Forecast;
