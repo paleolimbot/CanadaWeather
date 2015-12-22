@@ -7,6 +7,11 @@
         android:showAsAction="always|withText"
         android:title="@string/menu_refresh"/>
     <item
+        android:id="@+id/menu_24hr"
+        android:icon="@drawable/ic_action_24hr"
+        android:showAsAction="never"
+        android:title="@string/menu_24hr"/>
+    <item
         android:id="@+id/menu_radar"
         android:icon="@drawable/ic_action_radar"
         android:showAsAction="never"

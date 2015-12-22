@@ -15,16 +15,11 @@ import ca.fwe.weather.core.ForecastLocation;
 
 public class MainActivity extends ForecastActivity {
 
-    //TODO hourly forecast link
-    //TODO location auto set to near you
-
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		Log.e("MainActivity", "error log to start logging") ;
 		super.onCreate(savedInstanceState);
 	}
-	
-	
 	
 	@Override
 	protected void launchPreferenceActivity() {
@@ -51,24 +46,40 @@ public class MainActivity extends ForecastActivity {
 		int id = item.getItemId();
 		if (id == R.id.menu_radar) {
 			ForecastLocation l = this.getCurrentLocation() ;
-			Intent i = new Intent(Intent.ACTION_VIEW) ;
-			String lat = String.valueOf(l.getLatLon().getLat()) ;
-			String lon = String.valueOf(l.getLatLon().getLon()) ;
-			String near = l.getName(lang) ;
-			String requestUri = String.format("radar:///ca?lat=%s&lon=%s&near=%s", lat, lon, Uri.encode(near)) ;
-			log("Launching radar with uri " + requestUri) ;
-			i.setData(Uri.parse(requestUri)) ;
-			try {
-				startActivity(i) ;
-			} catch(ActivityNotFoundException e) {
-				//should never happen because it's part of the same app
-				toast(R.string.main_error_noradar) ;
-				log("radar not properly installed!") ;
-			}
+            if(l != null) {
+                Intent i = new Intent(Intent.ACTION_VIEW);
+                String lat = String.valueOf(l.getLatLon().getLat());
+                String lon = String.valueOf(l.getLatLon().getLon());
+                String near = l.getName(lang);
+                String requestUri = String.format("radar:///ca?lat=%s&lon=%s&near=%s", lat, lon, Uri.encode(near));
+                log("Launching radar with uri " + requestUri);
+                i.setData(Uri.parse(requestUri));
+
+                try {
+                    startActivity(i);
+                } catch (ActivityNotFoundException e) {
+                    //should never happen because it's part of the same app
+                    toast(R.string.main_error_noradar);
+                    log("radar not properly installed!");
+                }
+            }
 			return true;
 		} else if(id == R.id.menu_about) {
 			this.showAboutDialog();
 			return true ;
+		} else if(id == R.id.menu_24hr) {
+            ForecastLocation l = this.getCurrentLocation() ;
+            if(l != null) {
+                String mobileUrl = l.getMobileUrl(lang);
+                Uri uri = Uri.parse(mobileUrl.replace("/city/pages/", "/forecast/hourly/"));
+                Intent i = new Intent(Intent.ACTION_VIEW, uri);
+                try {
+                    startActivity(i);
+                } catch(ActivityNotFoundException e) {
+                    toast(R.string.forecast_error_no_browser);
+                }
+            }
+            return true;
 		} else {
 			return super.onOptionsItemSelected(item);
 		}

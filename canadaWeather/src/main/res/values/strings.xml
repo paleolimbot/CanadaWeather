@@ -5,6 +5,7 @@
     <string name="widget_label">Canada Weather Widget</string>
     <string name="widget_na">N/A</string>
 
+    <string name="menu_24hr">24-Hour Forecast</string>
     <string name="menu_radar">Radar</string>
     <string name="menu_about">About</string>
     
@@ -40,5 +41,5 @@
     <string name="notifications_remove_message" formatted="false">You will no longer receive notifications of watches or warnings for %s.</string>
     <string name="notifications_nodata_message">No locations in list</string>
     <string name="notifications_remove">Remove</string>
-    
+
 </resources>
