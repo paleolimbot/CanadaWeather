@@ -379,7 +379,7 @@ public class RadarActivity extends Activity implements OnClickListener {
 	@Override
 	public void onClick(View v) {
 		if (v.getId() == R.id.radar_play_pause) {
-			if(animator.downloader.isDownloading) { //TODO getting null pointer exception on this line
+			if(animator.downloader.isDownloading) {
 				animator.downloader.cancel(false) ;
 			} else if(animator.playing) {
 				animator.pause() ;
@@ -442,7 +442,7 @@ public class RadarActivity extends Activity implements OnClickListener {
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
-		//TODO null pointer exception (adapter may be null?)
+
 		if (item.getItemId() == R.id.menu_refresh) {
 			this.setLocation(adapter.current(), true) ;
 			return true ;
@@ -535,7 +535,7 @@ public class RadarActivity extends Activity implements OnClickListener {
 								timerTask.cancel() ;
 								timerTask = getTask() ;
 								if(playing && timer != null) {
-									timer.scheduleAtFixedRate(timerTask, CYCLE_PAUSE, FRAME_DELAY) ; //TODO null timer here?
+									timer.scheduleAtFixedRate(timerTask, CYCLE_PAUSE, FRAME_DELAY) ;
 									Log.i("Radar", "animation pausing for " + CYCLE_PAUSE) ;
 								}
 							}

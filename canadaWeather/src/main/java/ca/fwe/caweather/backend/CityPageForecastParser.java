@@ -124,7 +124,6 @@ public class CityPageForecastParser extends ForecastXMLParser {
 						readTag(parser);
 						break;
 					case "textSummary":
-						//TODO may have to do some converting of temperatures if units are different
 						dailyFc.setDescription(readTag(parser));
 						break;
 					case "abbreviatedForecast":

@@ -17,7 +17,6 @@ public class MainActivity extends ForecastActivity {
 
     //TODO hourly forecast link
     //TODO location auto set to near you
-	//TODO split action bar to avoid cutting off "Canada Weather", use area for location name
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -51,7 +50,7 @@ public class MainActivity extends ForecastActivity {
 		// as you specify a parent activity in AndroidManifest.xml.
 		int id = item.getItemId();
 		if (id == R.id.menu_radar) {
-			ForecastLocation l = this.getCurrentLocation() ; //TODO current location may be null?
+			ForecastLocation l = this.getCurrentLocation() ;
 			Intent i = new Intent(Intent.ACTION_VIEW) ;
 			String lat = String.valueOf(l.getLatLon().getLat()) ;
 			String lon = String.valueOf(l.getLatLon().getLon()) ;

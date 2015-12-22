@@ -102,7 +102,7 @@ public class CurrentConditions extends ForecastItem {
 					double value = this.getFieldDouble(field, unit) ;
 					if(!Double.isNaN(value)) {
 						String strValue = forecast.getNumberFormat(getPrecision(field)).format(value) ;
-                        strValue = strValue.replaceAll( "^-(?=0(.0*)?$)", ""); // TODO verify negative sign removal
+                        strValue = strValue.replaceAll( "^-(?=0(.0*)?$)", "");
 						String unitLabel = Units.getLabel(unit) ;
 						return strValue + " " + unitLabel ;
 					} else {

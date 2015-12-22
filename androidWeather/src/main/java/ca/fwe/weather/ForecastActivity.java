@@ -242,7 +242,6 @@ public abstract class ForecastActivity extends ListActivity implements ForecastD
 	public void onForecastDownload(Forecast forecast, Modes mode, ReturnTypes result) {
 		log("onForecastDownload returned with result " + result + " from mode " + mode) ;
 		if(!mode.equals(Modes.LOAD_CACHED)) {
-			//TODO crash report says this causes error
 			onDownloadDialog.dismiss();
 		}
 		switch(result) {
