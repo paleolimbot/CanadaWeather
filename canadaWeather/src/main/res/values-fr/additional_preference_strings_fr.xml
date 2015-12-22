@@ -45,6 +45,7 @@
         <item>Noir</item>
         <item>Clair</item>
         <item>Transparent</item>
+        <item>Transparent (avec police blanche)</item>
     </string-array>
     
 </resources>

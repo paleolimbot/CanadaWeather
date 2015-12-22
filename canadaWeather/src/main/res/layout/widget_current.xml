@@ -43,6 +43,7 @@
                 android:gravity="top"
                 android:maxLines="1"
                 android:text="Calgary"
+                android:textColor="#FFF"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:textSize="@dimen/widget_small_font_size" />
 
@@ -52,8 +53,20 @@
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical|top"
                 android:text="-14.3*C"
+                android:textColor="#FFF"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textSize="@dimen/widget_big_font_size" />
+
+            <TextView
+                android:id="@+id/feelsliketext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="top"
+                android:maxLines="1"
+                android:text="Feels like 3"
+                android:textColor="#888"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textSize="@dimen/widget_small_font_size" />
         </LinearLayout>
 
         <TextView
@@ -62,11 +75,11 @@
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|right"
             android:text="11:00 AM"
+            android:textColor="#FFF"
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:textSize="@dimen/widget_small_font_size"
             android:paddingRight="10dp" />
     </FrameLayout>
-
     <LinearLayout
         android:id="@+id/current_today_forecast_wrap"
         android:layout_width="wrap_content"
@@ -88,6 +101,7 @@
                 android:gravity="bottom"
                 android:text="Today"
                 android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="#FFF"
                 android:textSize="@dimen/widget_small_font_size" />
 
             <TextView
@@ -107,6 +121,7 @@
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:textColor="@color/temp_low"
                 android:textSize="@dimen/widget_small_font_size" />
+
         </LinearLayout>
 
         <ImageView

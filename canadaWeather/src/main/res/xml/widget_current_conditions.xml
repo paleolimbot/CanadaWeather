@@ -5,7 +5,7 @@
     android:configure="ca.fwe.caweather.CityPageWeatherWidgetSettings"
     android:minWidth="288dp"
     android:minHeight="60dp"
-    android:minResizeWidth="215dp"
+    android:minResizeWidth="100dp"
     android:minResizeHeight="60dp"
     android:resizeMode="horizontal">
 

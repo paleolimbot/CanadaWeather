@@ -21,11 +21,13 @@
         <item>Dark</item>
         <item>Light</item>
         <item>Transparent</item>
+        <item>Transparent (light text)</item>
     </string-array>
     <string-array name="pref_theme_widget_values">
         <item>DARK</item>
         <item>LIGHT</item>
         <item>TRANSPARENT</item>
+        <item>TRANSPARENT_LIGHTTEXT</item>
     </string-array>
     
     

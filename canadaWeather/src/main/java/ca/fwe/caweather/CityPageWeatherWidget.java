@@ -6,6 +6,7 @@ import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.view.View;
 import android.widget.RemoteViews;
 import ca.fwe.caweather.backend.CityPageLocationDatabase;
@@ -25,8 +26,7 @@ public class CityPageWeatherWidget extends ForecastWidgetProvider {
 	public static final String PREF_WIDGET_THEME = "xml_theme_widget" ;
 
     //TODO widget customization
-    //TODO light/dark text regardless of background
-	
+
 	@Override
 	protected LocationDatabase getLocationDatabase(Context context) {
 		return new CityPageLocationDatabase(context) ;
@@ -40,6 +40,8 @@ public class CityPageWeatherWidget extends ForecastWidgetProvider {
 				return R.layout.widget_current_light;
 			case "TRANSPARENT":
 				return R.layout.widget_current_transparent;
+			case "TRANSPARENT_LIGHTTEXT":
+				return R.layout.widget_current_transparent_whitetext;
 			default:
 				return R.layout.widget_current;
 		}
@@ -48,6 +50,14 @@ public class CityPageWeatherWidget extends ForecastWidgetProvider {
 	@Override
 	protected RemoteViews createWidgetView(Context context, Forecast f, boolean error) {
 		if(!error) {
+            SharedPreferences prefs = WeatherApp.prefs(context) ;
+            String theme = prefs.getString(PREF_WIDGET_THEME, "DARK") ;
+            int textcol = Color.WHITE;
+            if(theme.equals("LIGHT") || theme.equals("TRANSPARENT")) {
+                textcol = Color.BLACK;
+            }
+
+
 			CurrentConditions c = null ;
 			TimePeriodForecast today = null ;
 			WeatherWarning warning = null ;
@@ -73,24 +83,22 @@ public class CityPageWeatherWidget extends ForecastWidgetProvider {
 
 			if(c != null) {
 				RemoteViews views = new RemoteViews(context.getPackageName(), getLayoutId(context)) ;
-				views.setTextViewText(R.id.current_city, f.getLocation().getName(WeatherApp.getLanguage(context))) ;
+				views.setTextViewText(R.id.current_city, f.getLocation().toString(WeatherApp.getLanguage(context))) ;
 
-				String temp = context.getString(R.string.widget_na) ;
-				String suffix = "" ;
-				String wc = c.getFieldSummary(Fields.WINDCHILL) ;
-				String hd = c.getFieldSummary(Fields.HUMIDEX) ;
-				String tmp = c.getFieldSummary(Fields.TEMP) ;
-				if(wc != null) {
-					suffix = "*" ;
-				} else if(hd != null) {
-					suffix = "*" ;
-				}
-				
-				if(tmp != null)
-					temp = tmp ;
-					
+				String temp = c.getFieldSummary(Fields.TEMP) ;
+                if(temp == null) {
+                    temp = context.getString(R.string.widget_na) ;
+                }
+                views.setTextViewText(R.id.current_title, temp) ;
 
-				views.setTextViewText(R.id.current_title, temp + suffix) ;
+                String feelsLike = c.getFieldSummary(Fields.FEELSLIKE);
+                if(feelsLike != null) {
+                    views.setViewVisibility(R.id.feelsliketext, View.VISIBLE);
+                    views.setTextViewText(R.id.feelsliketext,
+                            context.getString(R.string.cc_field_feelslike) + " " + feelsLike);
+                } else {
+                    views.setViewVisibility(R.id.feelsliketext, View.GONE);
+                }
 
 				Date d = c.getObservedDate() ;
 				String dateText = context.getString(R.string.unknown) ;
@@ -98,11 +106,18 @@ public class CityPageWeatherWidget extends ForecastWidgetProvider {
 					dateText = f.getTimeFormat().format(d) ;
 				views.setTextViewText(R.id.current_subtitle, dateText) ;
 
+                String condition = c.getField(Fields.CONDITION);
+                if(condition != null) {
+                    views.setViewVisibility(R.id.current_icon, View.VISIBLE);
+                    views.setImageViewResource(R.id.current_icon, c.getIconId());
+                } else {
+                    views.setViewVisibility(R.id.current_icon, View.GONE);
+                }
 
-				if(warning == null) {
-					views.setImageViewResource(R.id.current_icon, c.getIconId()) ;
-				} else {
-					views.setImageViewResource(R.id.current_icon, warning.getIconId()) ;
+				if(warning != null) {
+                    views.setTextColor(R.id.current_city, Color.RED);
+                } else {
+                    views.setTextColor(R.id.current_city, textcol);
 				}
 				views.setOnClickPendingIntent(R.id.current_root, getOnClickPendingIntent(context, f.getLocation())) ;
 

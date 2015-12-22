@@ -18,7 +18,7 @@ public class Forecast {
 
 	public static final UnitSet DEFAULT_UNITS = UnitSet.METRIC ;
 	public static final DateFormat DEFAULT_TIMEDATE = new SimpleDateFormat("EEE d MMM h:mm a", Locale.CANADA) ;
-	public static final DateFormat DEFAULT_TIME = new SimpleDateFormat("h:mm", Locale.CANADA) ;
+	public static final DateFormat DEFAULT_TIME = new SimpleDateFormat("h:mm a", Locale.CANADA) ;
 	
 	private Context context ;
 	private ForecastLocation location ;

@@ -56,6 +56,17 @@
                 android:textColor="#000"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textSize="@dimen/widget_big_font_size" />
+
+            <TextView
+                android:id="@+id/feelsliketext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="top"
+                android:maxLines="1"
+                android:text="Feels like 3"
+                android:textColor="#888"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textSize="@dimen/widget_small_font_size" />
         </LinearLayout>
 
         <TextView
