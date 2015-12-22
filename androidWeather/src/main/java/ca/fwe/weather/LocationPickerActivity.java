@@ -80,6 +80,9 @@ GPSLocationListener, OnGeocodeListener {
 		locationsAdapter = new LocationsAdapter() ;
 		prefs = WeatherApp.prefs(this) ;
 
+		if(this.getActionBar() != null)
+            this.getActionBar().setDisplayHomeAsUpEnabled(true);
+
 		searchHeader = (TextView)this.getLayoutInflater().inflate(R.layout.location_searchheader, null) ;
 		getListView().addHeaderView(searchHeader);
 		
@@ -180,7 +183,10 @@ GPSLocationListener, OnGeocodeListener {
 			gpsUpdating = true ;
 			onGPSLocationDialog.show();
 			return true ;
-		} else {
+		} else if(id == android.R.id.home) {
+            this.onBackPressed();
+            return true;
+        } else {
 			return super.onOptionsItemSelected(item);
 		}
 	}
