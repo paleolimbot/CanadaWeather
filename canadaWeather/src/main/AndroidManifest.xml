@@ -24,7 +24,7 @@
             android:logo="@drawable/ic_action_homeasuplist">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
+                <category android:name="android.intent.category.DEFAULT"/>
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -43,6 +43,7 @@
 		    android:label="@string/radar_label"
 		    android:taskAffinity="ca.fwe.caweather.radar.RadarTask" >
             <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
             <intent-filter>
