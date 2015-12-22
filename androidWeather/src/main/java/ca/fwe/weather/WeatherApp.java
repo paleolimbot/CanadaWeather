@@ -131,11 +131,11 @@ public abstract class WeatherApp extends Application {
 		String theme = prefs.getString(PREF_KEY_THEME, "LIGHT") ;
 		switch (theme) {
 			case "DARK":
-				return android.R.style.Theme_Holo;
+				return R.style.WeatherTheme;
 			case "LIGHT":
-				return android.R.style.Theme_Holo_Light_DarkActionBar;
+				return R.style.WeatherTheme_Light;
 			default:
-				return android.R.style.Theme_Holo_Light_DarkActionBar;
+				return R.style.WeatherTheme_Light;
 		}
 	}
 

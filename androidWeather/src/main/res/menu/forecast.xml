@@ -5,28 +5,16 @@
         android:id="@+id/menu_refresh"
         android:icon="@drawable/ic_action_refresh"
         android:showAsAction="always|withText"
-        android:title="@string/menu_refresh">
-    </item>
+        android:title="@string/menu_refresh"/>
     <item
         android:id="@+id/menu_view_online"
         android:icon="@drawable/ic_action_online"
-        android:showAsAction="ifRoom"
-        android:title="@string/menu_view_online">
-    </item>
-    <item
-        android:id="@+id/menu_add"
-        android:icon="@drawable/ic_action_add"
-        android:showAsAction="always|withText"
-        android:title="@string/menu_add"></item>
-    <item
-        android:id="@+id/menu_edit"
-        android:icon="@drawable/ic_action_edit"
-        android:showAsAction="always|withText"
-        android:title="@string/menu_edit"></item>
+        android:showAsAction="never"
+        android:title="@string/menu_view_online" />
     <item
         android:id="@+id/menu_prefs"
         android:icon="@drawable/ic_action_prefs"
-        android:showAsAction="withText"
-        android:title="@string/menu_prefs"></item>
+        android:showAsAction="never"
+        android:title="@string/menu_prefs"/>
 
 </menu>

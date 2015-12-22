@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="WeatherTheme" parent="android:Theme.Holo">
+        <item name="ic_action_add_themedep">@drawable/ic_action_add</item>
+        <item name="ic_action_edit_themedep">@drawable/ic_action_edit</item>
+    </style>
+
+    <style name="WeatherTheme.Light" parent="android:Theme.Holo.Light.DarkActionBar">
+        <item name="ic_action_add_themedep">@drawable/ic_action_add_light</item>
+        <item name="ic_action_edit_themedep">@drawable/ic_action_edit_light</item>
+    </style>
+</resources>

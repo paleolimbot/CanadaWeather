@@ -1,7 +1,5 @@
 package ca.fwe.weather;
 
-import java.util.List;
-
 import android.app.AlertDialog;
 import android.app.ListActivity;
 import android.app.ProgressDialog;
@@ -11,20 +9,32 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
+import android.content.pm.PackageManager;
+import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.v4.widget.DrawerLayout;
 import android.text.Html;
 import android.util.Log;
+import android.util.TypedValue;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
-import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
-import android.widget.Spinner;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
+
+import ca.fwe.locations.geometry.LatLon;
+import ca.fwe.weather.backend.ForecastXMLParser;
 import ca.fwe.weather.backend.LocationDatabase;
 import ca.fwe.weather.backend.UserLocationsList;
 import ca.fwe.weather.core.CurrentConditions;
@@ -41,9 +51,9 @@ import ca.fwe.weather.util.ForecastDownloader.ReturnTypes;
 public abstract class ForecastActivity extends ListActivity implements ForecastDownloader.OnForecastDownloadListener,
 																		OnItemClickListener {
 	private static final String TAG = "ForecastActivity" ;
-	
-	private Spinner locationSpinner ;
-	protected LocationsAdapter locationsAdapter ;
+
+    private DrawerLayout drawer ;
+    protected LocationsAdapter locationsAdapter ;
 	protected UserLocationsList userLocations ;
 	protected LocationDatabase locationDatabase ;
 
@@ -69,22 +79,26 @@ public abstract class ForecastActivity extends ListActivity implements ForecastD
 		app = (WeatherApp) this.getApplication() ;
 		prefs = WeatherApp.prefs(this) ;
 		lang = WeatherApp.getLanguage(this) ;
-		locationSpinner = (Spinner)findViewById(R.id.forecast_locations) ;
+        drawer = (DrawerLayout)this.findViewById(R.id.forecast_drawer_layout);
+        ListView locationSpinner = (ListView) findViewById(R.id.forecast_left_drawer);
 		forecastAdapter = new ForecastAdapter(this) ;
 		noDataAdapter = new NoDataAdapter() ;
-		
+
+        if(this.getActionBar() != null)
+            this.getActionBar().setDisplayHomeAsUpEnabled(true);
+
 		onDownloadDialog = new ProgressDialog(this) ;
 		onDownloadDialog.setMessage(getString(R.string.please_wait));
 		onDownloadDialog.setTitle(R.string.forecast_loading_forecast);
 		onDownloadDialog.setIndeterminate(true);
 		onDownloadDialog.setOnCancelListener(new DialogInterface.OnCancelListener() {
-			public void onCancel(DialogInterface dialog) {
-				if(downloader != null) {
-					downloader.cancel();
-				}
-				
-			}
-		});
+            public void onCancel(DialogInterface dialog) {
+                if (downloader != null) {
+                    downloader.cancel();
+                }
+
+            }
+        });
 		
 		fIssuedView = (TextView)this.getLayoutInflater().inflate(R.layout.forecast_headerfooter, null) ;
 		fIssuedView.setText(String.format(getString(R.string.forecast_issuedtext), getString(R.string.unknown)));
@@ -93,34 +107,51 @@ public abstract class ForecastActivity extends ListActivity implements ForecastD
 		TextView footer = (TextView)this.getLayoutInflater().inflate(R.layout.forecast_headerfooter, null) ;
 		footer.setText(R.string.forecast_footertext) ;
 		this.getListView().addFooterView(footer);
-		
-		this.getListView().setOnItemClickListener(this) ;
-		this.locationSpinner.setOnItemSelectedListener(new OnItemSelectedListener() {
+        this.getListView().setOnItemClickListener(this) ;
 
-			@Override
-			public void onItemSelected(AdapterView<?> parent, View view,
-					int position, long id) {
-				ForecastLocation l = locationsAdapter.getItem(position) ;
-				setLocation(l, false) ;
-				Editor e = prefs.edit() ;
-				e.putInt(PREF_KEY_LAST_LOC_POS, position) ;
-				e.apply() ;
-			}
-
-			@Override
-			public void onNothingSelected(AdapterView<?> parent) {
-				setListAdapter(noDataAdapter);
-				fIssuedView.setText(String.format(getString(R.string.forecast_issuedtext), getString(R.string.unknown)));
-				forecastAdapter.clear();
-			}
-			
-		});
 		if(app.upgrade()) {
 			this.onUpgradeTrue();
 		}
+
 		locationDatabase = app.getLocationDatabase(this) ;
 		userLocations = new UserLocationsList(locationDatabase) ;
-		locationsAdapter = new LocationsAdapter(this) ;
+		locationsAdapter = new LocationsAdapter(this) {
+            public void onListItemClick(ForecastLocation l, int position) {
+                setLocationByIndex(position);
+                drawer.closeDrawer(Gravity.START);
+            }
+        } ;
+
+        int addId = getThemeResource(R.attr.ic_action_add_themedep);
+        int editId = getThemeResource(R.attr.ic_action_edit_themedep);
+
+        locationsAdapter.addAction(new ActionForecastLocation(getString(R.string.menu_add),
+                getResources().getDrawable(addId)) {
+            public void doAction() {
+                launchLocationPicker();
+                drawer.closeDrawer(Gravity.START);
+            }
+        });
+        locationsAdapter.addAction(new ActionForecastLocation(getString(R.string.menu_edit),
+                getResources().getDrawable(editId)) {
+            public void doAction() {
+                makeLocationsEditor();
+                drawer.closeDrawer(Gravity.START);
+            }
+        });
+
+        //set background of location drawer to that of windowBackground of theme
+        TypedValue a = new TypedValue();
+        getTheme().resolveAttribute(android.R.attr.windowBackground, a, true);
+        if (a.type >= TypedValue.TYPE_FIRST_COLOR_INT && a.type <= TypedValue.TYPE_LAST_COLOR_INT) {
+            // windowBackground is a color
+            locationSpinner.setBackgroundColor(a.data);
+        } else {
+            // windowBackground is not a color, probably a drawable
+            locationSpinner.setBackground(this.getResources().getDrawable(a.resourceId));
+        }
+
+        locationSpinner.setOnItemClickListener(locationsAdapter);
 		locationsAdapter.refreshLocations();
 			
 		Intent launchIntent = this.getIntent() ;
@@ -129,19 +160,21 @@ public abstract class ForecastActivity extends ListActivity implements ForecastD
 		} else {
 			this.setSpinnerPositionFromPref();
 		}
+
+        locationSpinner.setAdapter(locationsAdapter);
 		
 	}
 
 	protected abstract void onUpgradeTrue() ;
 	
 	private void setSpinnerPositionFromPref() {
-		if(locationsAdapter.getCount() > 0) {
+		if(locationsAdapter.getNumLocations() > 0) {
 			int lastPos = prefs.getInt(PREF_KEY_LAST_LOC_POS, 0) ;
-			if(lastPos >= locationsAdapter.getCount())
-				lastPos = locationsAdapter.getCount() - 1 ;
-			locationSpinner.setSelection(lastPos);
+			if(lastPos >= locationsAdapter.getNumLocations())
+				lastPos = locationsAdapter.getNumLocations() - 1 ;
+			setLocationByIndex(lastPos);
 		} else {
-			this.getListView().setAdapter(noDataAdapter);
+            this.setLocation(null, false);
 			this.launchLocationPicker();
 		}
 	}
@@ -152,31 +185,56 @@ public abstract class ForecastActivity extends ListActivity implements ForecastD
 	}
 	
 	protected abstract void launchPreferenceActivity() ;
-	
+
+    private void setLocationByIndex(int index) {
+        ForecastLocation l = locationsAdapter.getItem(index);
+        locationsAdapter.setSelectedIndex(index);
+        setLocation(l, false);
+        Editor e = prefs.edit();
+        e.putInt(PREF_KEY_LAST_LOC_POS, index);
+        e.apply();
+        locationsAdapter.notifyDataSetChanged();
+    }
+
 	protected void setLocation(ForecastLocation l, boolean forceDownload) {
-		log("setting location to " + l.getUri()) ;
-		if(downloader != null)
-			downloader.cancel();
-		
-		UnitSet unitset = Units.getUnitSet(prefs.getString(WeatherApp.PREF_KEY_UNITS, Units.UNITS_DEFAULT)) ;
-		
-		//load cached version first
-		Forecast cachedF = new Forecast(this, l, lang) ;
-		cachedF.setUnitSet(unitset);
-		ForecastDownloader cachedLoader = new ForecastDownloader(cachedF, this, Modes.LOAD_CACHED) ;
-		log("starting cached forecast loader") ;
-		cachedLoader.download();
-		
-		Forecast forecast = new Forecast(this, l, lang) ;
-		forecast.setUnitSet(unitset);
-		Modes mode = Modes.LOAD_RECENT_CACHE_OR_DOWNLOAD ;
-		if(forceDownload)
-			mode = Modes.FORCE_DOWNLOAD ;
-		
-		downloader = new ForecastDownloader(forecast, this, mode) ;
-		log("starting downloader") ;
-		downloader.download();
-		onDownloadDialog.show();
+        if (l == null) {
+            setListAdapter(noDataAdapter);
+            fIssuedView.setText(String.format(getString(R.string.forecast_issuedtext), getString(R.string.unknown)));
+            forecastAdapter.clear();
+            try {
+                this.setTitle(this.getPackageManager()
+                        .getActivityInfo(this.getComponentName(),
+                                PackageManager.GET_META_DATA).labelRes);
+            } catch (PackageManager.NameNotFoundException e) {
+                this.setTitle("");
+            }
+        } else {
+            log("setting location to " + l.getUri());
+            if (downloader != null)
+                downloader.cancel();
+
+            this.setTitle(l.toString(lang));
+
+            UnitSet unitset = Units.getUnitSet(prefs.getString(WeatherApp.PREF_KEY_UNITS, Units.UNITS_DEFAULT));
+
+            //load cached version first
+            Forecast cachedF = new Forecast(this, l, lang);
+            cachedF.setUnitSet(unitset);
+            ForecastDownloader cachedLoader = new ForecastDownloader(cachedF, this, Modes.LOAD_CACHED);
+            log("starting cached forecast loader");
+            cachedLoader.download();
+
+            Forecast forecast = new Forecast(this, l, lang);
+            forecast.setUnitSet(unitset);
+            Modes mode = Modes.LOAD_RECENT_CACHE_OR_DOWNLOAD;
+            if (forceDownload)
+                mode = Modes.FORCE_DOWNLOAD;
+
+            downloader = new ForecastDownloader(forecast, this, mode);
+            log("starting downloader");
+            downloader.download();
+            onDownloadDialog.show();
+        }
 		
 	}
 
@@ -271,10 +329,14 @@ public abstract class ForecastActivity extends ListActivity implements ForecastD
 		// automatically handle clicks on the Home/Up button, so long
 		// as you specify a parent activity in AndroidManifest.xml.
 		int id = item.getItemId();
-		if (id == R.id.menu_edit) {
-			this.makeLocationsEditor();
-			return true;
-		} else if(id == R.id.menu_prefs) {
+        if(id == android.R.id.home) {
+            if(drawer.isDrawerOpen(Gravity.START)) {
+                drawer.closeDrawer(Gravity.START);
+            } else {
+                drawer.openDrawer(Gravity.START);
+            }
+            return true;
+        } else if(id == R.id.menu_prefs) {
 			this.launchPreferenceActivity();
 			return true ;
 		} else if (id == R.id.menu_refresh) {
@@ -295,15 +357,21 @@ public abstract class ForecastActivity extends ListActivity implements ForecastD
 				log("trying to launch online edition when there is no location!", null) ;
 			}
 			return true ;
-		} else if (id == R.id.menu_add) {
-			this.launchLocationPicker();
-			return true ;
 		} else {
 			return super.onOptionsItemSelected(item);
 		}
 	}
-	
-	protected void launchOnlineEdition(ForecastLocation l) {
+
+    @Override
+    public void onBackPressed() {
+        if(drawer.isDrawerOpen(Gravity.START)) {
+            drawer.closeDrawer(Gravity.START);
+        } else {
+            super.onBackPressed();
+        }
+    }
+
+    protected void launchOnlineEdition(ForecastLocation l) {
 		String mobileUrl = l.getMobileUrl(lang) ;
 		if(mobileUrl != null) {
 			Uri uri = Uri.parse(mobileUrl) ;
@@ -369,42 +437,104 @@ public abstract class ForecastActivity extends ListActivity implements ForecastD
 		AlertDialog.Builder builder = new AlertDialog.Builder(this) ;
 		builder.setTitle(R.string.forecast_editloc_dialog_title) ;
 		builder.setPositiveButton(R.string.forecast_editloc_update, new DialogInterface.OnClickListener() {
-			public void onClick(DialogInterface dialog, int which) {
-				int savedPosition = prefs.getInt(PREF_KEY_LAST_LOC_POS, 0) ;
-				for(int i=count-1; i>=0; i--) {
-					if(!selection[i]) {
-						ForecastLocation deleted = locations.get(i) ;
-						userLocations.removeLocations(deleted);
-						if(i+1<=savedPosition) //i+1 because of MyLocation
-							savedPosition-- ;
-					}
-				}
-				Editor e = prefs.edit() ;
-				e.putInt(PREF_KEY_LAST_LOC_POS, savedPosition) ;
-				e.apply() ;
-				locationsAdapter.refreshLocations();
-				setSpinnerPositionFromPref();
-			}
-		}) ;
+            public void onClick(DialogInterface dialog, int which) {
+                int savedPosition = prefs.getInt(PREF_KEY_LAST_LOC_POS, 0);
+                for (int i = count - 1; i >= 0; i--) {
+                    if (!selection[i]) {
+                        ForecastLocation deleted = locations.get(i);
+                        userLocations.removeLocations(deleted);
+                        if (i + 1 <= savedPosition) //i+1 because of MyLocation
+                            savedPosition--;
+                    }
+                }
+                Editor e = prefs.edit();
+                e.putInt(PREF_KEY_LAST_LOC_POS, savedPosition);
+                e.apply();
+                locationsAdapter.refreshLocations();
+                setSpinnerPositionFromPref();
+            }
+        }) ;
 		builder.setNegativeButton(R.string.cancel, null) ;
 		builder.setMultiChoiceItems(locs, selection, new DialogInterface.OnMultiChoiceClickListener() {
-			public void onClick(DialogInterface dialog, int which, boolean isChecked) {
-				selection[which] = isChecked ;
-			}
-		}) ;
+            public void onClick(DialogInterface dialog, int which, boolean isChecked) {
+                selection[which] = isChecked;
+            }
+        }) ;
 		builder.create().show() ;
 	}
 
-	
-	private class LocationsAdapter extends CustomSpinnerAdapter<ForecastLocation> {
+    private int getThemeResource(int attr){
+        TypedValue typedvalueattr = new TypedValue();
+        getTheme().resolveAttribute(attr, typedvalueattr, true);
+        return typedvalueattr.resourceId;
+    }
+
+    private class LocationsAdapter extends CustomSpinnerAdapter<ForecastLocation> implements OnItemClickListener {
+
+        private int selectedIndex = -1;
+        private int selectedBg ;
+        private Drawable selectedBgDrw;
+
+        private List<ActionForecastLocation> actions ;
 
 		public LocationsAdapter(Context context) {
 			super(context);
+            TypedValue a = new TypedValue();
+            getTheme().resolveAttribute(android.R.attr.colorPressedHighlight, a, true);
+            if (a.type >= TypedValue.TYPE_FIRST_COLOR_INT && a.type <= TypedValue.TYPE_LAST_COLOR_INT) {
+                // activatedBackgroundIndicator is a color
+                selectedBg = a.data;
+            } else {
+                // colorPressedHighlight is not a color, probably a drawable
+                selectedBgDrw = getResources().getDrawable(a.resourceId);
+            }
+
+            actions = new ArrayList<>();
+
 		}
-		
+
+        @Override
+        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+            if(position >= 0 && position < this.getNumLocations()) {
+                this.onListItemClick(this.getItem(position), position);
+            } else {
+                this.actions.get(position - this.getNumLocations()).doAction();
+            }
+        }
+
+        protected void onListItemClick(ForecastLocation l, int position) {
+
+        }
+
 		@Override
 		protected void modifyTextView(ForecastLocation l, TextView v) {
 			v.setText(l.toString(lang)) ;
+            if(l.equals(this.current())) {
+                if (selectedBgDrw != null) {
+                    v.setBackground(selectedBgDrw);
+                } else {
+                    v.setBackgroundColor(selectedBg);
+                }
+            } else {
+                v.setBackgroundColor(Color.TRANSPARENT);
+            }
+
+            boolean isAction = false;
+            for(ActionForecastLocation al: actions) {
+                if(al.equals(l)) {
+                    //apply icon
+                    v.setCompoundDrawables(al.getIcon(), null, null, null);
+                    v.setCompoundDrawablePadding(10);
+                    isAction = true;
+                    break;
+                }
+            }
+            if(!isAction) {
+                //un-apply icon
+                v.setCompoundDrawables(null, null, null, null);
+            }
+
+
 		}
 
 		public void addUri(Uri uri) {
@@ -414,13 +544,13 @@ public abstract class ForecastActivity extends ListActivity implements ForecastD
 				this.refreshLocations();
 				int newIndex = this.getPosition(newLoc) ;
 				if(newIndex != -1) {
-					locationSpinner.setSelection(newIndex);
+					setLocationByIndex(newIndex);
 				} else {
 					toast(R.string.forecast_error_add_location) ;
-					log("added location, but couldn't find it in the list", null) ;
-				}
+					log("added location, but couldn't find it in the list", null);
+                }
 			} else {
-				toast(R.string.forecast_error_add_location) ;
+                toast(R.string.forecast_error_add_location) ;
 				log("error adding location", null) ;
 			}
 		}
@@ -430,25 +560,35 @@ public abstract class ForecastActivity extends ListActivity implements ForecastD
 			this.clear();
 			for(ForecastLocation l: userLocations.getList())
 				this.add(l);
-			locationSpinner.setAdapter(this);
+
+            for(ActionForecastLocation l: actions) {
+                this.add(l);
+            }
 		}
-		
+
+        public void addAction(ActionForecastLocation l) {
+            actions.add(l);
+            this.notifyDataSetChanged();
+        }
+
+        public int getNumLocations() {
+            return this.getCount() - actions.size();
+        }
+
+        private void setSelectedIndex(int index) {
+            this.selectedIndex = index;
+        }
+
 		public ForecastLocation current() {
-			if(locationSpinner != null) {
-				int currentpos = locationSpinner.getSelectedItemPosition() ;
-				if(currentpos > -1 && currentpos < this.getCount()) {
-					return this.getItem(currentpos) ;
-				} else {
-					return null ;
-				}
-			} else {
-				return null ;
-			}
+            if(selectedIndex > -1 && selectedIndex < this.getNumLocations()) {
+                return this.getItem(selectedIndex) ;
+            } else {
+                return null ;
+            }
 		}
 		
 	}
-	
-	
+
 	private class NoDataAdapter extends ArrayAdapter<String> {
 
 		public NoDataAdapter() {
@@ -457,6 +597,52 @@ public abstract class ForecastActivity extends ListActivity implements ForecastD
 		}
 		
 	}
+
+    public abstract class ActionForecastLocation extends ForecastLocation {
+
+        private String text ;
+        private Drawable icon ;
+
+        public ActionForecastLocation(String text, Drawable icon) {
+            this.text = text ;
+            this.icon = icon ;
+            this.icon.setBounds(0,0, icon.getIntrinsicWidth(), icon.getIntrinsicHeight());
+        }
+
+        public abstract void doAction() ;
+
+        public Drawable getIcon() {
+            return icon;
+        }
+
+        public Uri getUri() {
+            return Uri.parse("dummyforecastitem://" + Uri.encode(text));
+        }
+        public LatLon getLatLon() {
+            return null;
+        }
+        public String getName(int lang) {
+            return null;
+        }
+        public String getXmlUrl(int lang) {
+            return null;
+        }
+        public ForecastXMLParser getXMLParser(Forecast forecast, File file) {
+            return null;
+        }
+        public String getMobileUrl(int lang) {
+            return null;
+        }
+        public String getWebUrl(int lang) {
+            return null;
+        }
+        public String getCacheFileName(int lang) {
+            return null;
+        }
+        public String toString(int lang) {
+            return text ;
+        }
+    }
 	
 	private static void log(String message) {
 		Log.i(TAG, message) ;
@@ -469,5 +655,5 @@ public abstract class ForecastActivity extends ListActivity implements ForecastD
 		else
 			Log.e(TAG, message) ;
 	}
-	
+
 }

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="ic_action_add_themedep" format="reference"/>
+    <attr name="ic_action_edit_themedep" format="reference"/>
+</resources>
