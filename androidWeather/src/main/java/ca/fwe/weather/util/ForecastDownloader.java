@@ -79,11 +79,12 @@ public class ForecastDownloader {
 				if(attemptDownload) {
 					log("expired or nonexistent cache file, or force refresh") ;
 					downloadedFile = fmanage.getTempFile() ;
-					String xmlurl = l.getXmlUrl(forecast.getLang()) ;
+					String xmlurl = l.getXmlUrl(forecast.getLang())+ "?token=" + RandomString.generate(16);
 					log("downloading from " + xmlurl) ;
 					URL url = new URL(xmlurl);
 					HttpURLConnection connection = (HttpURLConnection)url.openConnection();
-
+                    connection.setUseCaches(false);
+                    connection.connect();
 					// download the file
 					InputStream input = connection.getInputStream();
                     if(connection.getURL() != url)
@@ -99,6 +100,7 @@ public class ForecastDownloader {
 					output.flush();
 					output.close();
 					input.close();
+                    connection.disconnect();
 					log("download complete") ;
 					parseFile = downloadedFile ;
 				}
@@ -118,7 +120,6 @@ public class ForecastDownloader {
 					}
 
 					if(downloadedFile != null) {
-						//copy file to cache TODO ensure that fixing URL connection fixed file cache issue
 						fmanage.copyToCache(downloadedFile, forecast.getLocation(), forecast.getLang()) ;
 						if(!downloadedFile.delete()) Log.i("ForecastDownloader", "downloaded file not deleted: " + downloadedFile);
 						result = ReturnTypes.DOWNLOADED ;
