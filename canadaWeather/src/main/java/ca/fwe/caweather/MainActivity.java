@@ -85,17 +85,16 @@ public class MainActivity extends ForecastActivity {
 		}
 	}
 
-    //TODO edit new version dialog; french translation
 	private void showAboutDialog() {
 		AlertDialog.Builder topo = new AlertDialog.Builder(this) ;
-		topo.setTitle("New From Fish & Whistle!") ;
-		topo.setMessage("Need Canadian topographic maps? This new app is for you! With all the simplicity of Canada Weather but for Canadian topographic maps! Check it out!") ;
-		topo.setPositiveButton("Download Canada Topo", new DialogInterface.OnClickListener() {
+		topo.setTitle("Work in the oil patch?") ;
+		topo.setMessage("Work in the oil patch and need directions to oilfield sites based on LLD or NTS coordinates? Prairie Coordinates, also by Fish & Whislte, offers a simple, user-friendly interface to search legal land descriptions (LLD) and NTS coordinates and get directions in seconds. Or, buy the app just to donate a few dollars to the Canada Weather cause. Thanks!") ;
+		topo.setPositiveButton("Download Prairie Coordinates", new DialogInterface.OnClickListener() {
 			
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
 				Intent i = new Intent(Intent.ACTION_VIEW) ;
-				i.setData(Uri.parse("http://play.google.com/store/apps/details?id=net.fishandwhistle.ctexplorer")) ;
+				i.setData(Uri.parse("http://play.google.com/store/apps/details?id=ca.fwe.pcoordplus")) ;
 				try {
 					startActivity(i) ;
 				} catch(ActivityNotFoundException e) {
@@ -135,7 +134,7 @@ public class MainActivity extends ForecastActivity {
 			
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
-				if(lang == WeatherApp.LANG_EN)
+				if(lang != WeatherApp.LANG_FR)
 					topoDialog.show();
 			}
 		}) ;
