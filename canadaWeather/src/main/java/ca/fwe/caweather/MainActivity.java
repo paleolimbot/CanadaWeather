@@ -88,7 +88,7 @@ public class MainActivity extends ForecastActivity {
 	private void showAboutDialog() {
 		AlertDialog.Builder topo = new AlertDialog.Builder(this) ;
 		topo.setTitle("Work in the oil patch?") ;
-		topo.setMessage("Work in the oil patch and need directions to oilfield sites based on LLD or NTS coordinates? Prairie Coordinates, also by Fish & Whislte, offers a simple, user-friendly interface to search legal land descriptions (LLD) and NTS coordinates and get directions in seconds. Or, buy the app just to donate a few dollars to the Canada Weather cause. Thanks!") ;
+		topo.setMessage("Work in the oil patch and need directions to oilfield sites based on LLD or NTS coordinates? Prairie Coordinates, also by Fish & Whistle, offers a simple, user-friendly interface to search legal land descriptions (LLD) and NTS coordinates and get directions in seconds. Or, buy the app just to donate a few dollars to the Canada Weather cause. Thanks!") ;
 		topo.setPositiveButton("Download Prairie Coordinates", new DialogInterface.OnClickListener() {
 			
 			@Override
