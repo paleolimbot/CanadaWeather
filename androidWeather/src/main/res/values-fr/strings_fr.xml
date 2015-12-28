@@ -12,7 +12,7 @@
     <string name="cc_field_temp">Température</string>
     <string name="cc_field_windchill">Facteur vent</string>
     <string name="cc_field_humidex">Humidex</string>
-    <string name="cc_field_feelslike">Qui resemble à</string>
+    <string name="cc_field_feelslike">T. Ressentie</string>
     <string name="cc_field_windsummary">Vent</string>
     <string name="cc_field_windspeed">La vitesse du vent</string>
     <string name="cc_field_windgust">La vitesse du rafale</string>
