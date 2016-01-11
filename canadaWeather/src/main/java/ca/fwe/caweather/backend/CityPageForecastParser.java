@@ -234,6 +234,9 @@ public class CityPageForecastParser extends ForecastXMLParser {
 			case "advisory":
 				warning.setType(WeatherWarning.Types.ADVISORY);
 				break;
+            case "":
+                warning.setType(null);
+                break;
 			default:
 				warning.setType(WeatherWarning.Types.WATCH);
 				break;
@@ -255,8 +258,10 @@ public class CityPageForecastParser extends ForecastXMLParser {
 				}
 			}
 		}
-
-		return warning ;
+		if(warning.getType() != null)
+			return warning ;
+		else
+            return null;
 	}
 	
 	private Date parseDateTime(XmlPullParser parser) throws XmlPullParserException, IOException {
