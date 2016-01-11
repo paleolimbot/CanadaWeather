@@ -9,7 +9,7 @@
     <string name="menu_radar">Visionner le radar</string>
     <string name="menu_about">À notre propos</string>
     
-    <string name="main_about_message">Bienvennue à Météo Canada! Pour tous le gens qui m’ont suivie depuis mon début, les dernières années Environment Canada m’a bien traité et j’aie défendue ma Maîtrise en Géologie (M.Sc.) avec succès. Je vous remercie de tous vos courriels qui mon aide a comprendre les problèmes et suggestions que les utilisateur de se programme on conçus. Je crois que beaucoup de vos avis vont se retrouver dans ma nouvelle programmation.\n\nJ’espere que cette nouvelle traduction va vous plaire parce que ma blonde Canadienne Française m’a aidé :) </string>
+    <string name="main_about_message">Bienvennue à Météo Canada! Pour tous les gens qui m’ont suivi depuis mon début. Environnement Canada m’a bien traité ces dernières années et j’ai défendu ma Maîtrise en Géologie (M.Sc.) avec succès. Je vous remercie de tous vos courriels qui m'ont aidé à comprendre les problèmes et à appliquer les suggestions que les utilisateurs de ce programme ont envoyées. Je crois que beaucoup de vos avis vont se retrouver dans cette nouvelle version.\n\nJ’espere que cette nouvelle traduction va vous plaire parce que ma blonde Canadienne Française m’a aidé :) </string>
     <string name="main_about_rate">Évaluez!</string>
     <string name="main_about_donate">Faites un don!</string>
     <string name="main_about_gotit">J’ai compris</string>
@@ -35,7 +35,7 @@
     <string name="radar_prefs_label">Preférénces Radar</string>
     
     <string name="notifications_label">Notifications</string>
-    <string name="notifications_introtext">Utilizer le bouton "+" pour ajouter une localité pour lesquels on reçoit des alertes. Pour enlever une localité, cliquer sur l\'élément dans la liste.</string>
+    <string name="notifications_introtext">Utiliser le bouton "+" pour ajouter une localité aux alertes. Pour enlever une localité, cliquer sur l\'élément dans la liste.</string>
     <string name="notifications_remove_title">Enlever la localité?</string>
     <string name="notifications_remove_message" formatted="false">Enlever la localité %s?</string>
     <string name="notifications_nodata_message">Aucune localité dans la liste</string>
