@@ -22,26 +22,30 @@ public abstract class WeatherWarning extends ForecastItem {
 
 	public void setType(Types type) {
 		this.type = type;
-		int id = 0 ;
-		switch(type) {
-		case WARNING:
-			id = R.drawable.ic_warning ;
-			break ;
-		case ENDED_NOTIFICATION:
-			id = R.drawable.ic_warning_ended ;
-			break ;
-		case ADVISORY:
-			id = R.drawable.ic_advisory ;
-			break;
-		case STATEMENT:
-			id = R.drawable.ic_advisory ;
-			break;
-		case WATCH:
-			id = R.drawable.ic_watch ;
-			break;
-		}
-		
-		this.setIconId(id);
+		if(type != null) {
+			int id = 0;
+			switch (type) {
+				case WARNING:
+					id = R.drawable.ic_warning;
+					break;
+				case ENDED_NOTIFICATION:
+					id = R.drawable.ic_warning_ended;
+					break;
+				case ADVISORY:
+					id = R.drawable.ic_advisory;
+					break;
+				case STATEMENT:
+					id = R.drawable.ic_advisory;
+					break;
+				case WATCH:
+					id = R.drawable.ic_watch;
+					break;
+			}
+
+			this.setIconId(id);
+		} else {
+            this.setIconId(0);
+        }
 	}
 
 	public abstract String getUrl() ;
