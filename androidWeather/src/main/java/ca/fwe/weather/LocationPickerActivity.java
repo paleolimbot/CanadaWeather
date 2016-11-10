@@ -12,8 +12,11 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
+import android.content.pm.PackageManager;
 import android.location.Address;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
@@ -39,13 +42,13 @@ import ca.fwe.weather.core.ForecastRegion;
 import ca.fwe.weather.util.GeocoderAsync;
 import ca.fwe.weather.util.GeocoderAsync.OnGeocodeListener;
 import ca.fwe.weather.util.LocationFetcher;
-import ca.fwe.weather.util.LocationFetcher.GPSLocationListener;
 
 public class LocationPickerActivity extends ListActivity implements OnItemClickListener, TextWatcher,
-GPSLocationListener, OnGeocodeListener {
+        LocationFetcher.GPSLocationListener, OnGeocodeListener, ActivityCompat.OnRequestPermissionsResultCallback {
 
 	private static final String TAG = "LocationPickerActivity" ;
 	private static final String PREF_KEY_SAVED_REGION = "locations_saved_region" ;
+    private static final int REQUEST_LOCATION = 291;
 
 	private LocationDatabase locationDb ;
 	protected WeatherApp app ;
@@ -179,9 +182,13 @@ GPSLocationListener, OnGeocodeListener {
 		// as you specify a parent activity in AndroidManifest.xml.
 		int id = item.getItemId();
 		if (id == R.id.menu_gps) {
-			locationFetcher.enableUpdates();
-			gpsUpdating = true ;
-			onGPSLocationDialog.show();
+            if(checkLocationPermission()) {
+                locationFetcher.enableUpdates();
+                gpsUpdating = true ;
+                onGPSLocationDialog.show();
+            } else {
+                ActivityCompat.requestPermissions(this, new String[] {"android.permission.ACCESS_FINE_LOCATION"}, REQUEST_LOCATION);
+            }
 			return true ;
 		} else if(id == android.R.id.home) {
             this.onBackPressed();
@@ -227,8 +234,9 @@ GPSLocationListener, OnGeocodeListener {
 	@Override
 	public void onResume() {
 		super.onResume();
-		if(locationFetcher != null && gpsUpdating)
-			locationFetcher.enableUpdates();
+		if(locationFetcher != null && gpsUpdating) {
+            locationFetcher.enableUpdates();
+        }
 	}
 
 
@@ -432,8 +440,39 @@ GPSLocationListener, OnGeocodeListener {
 		builder.create().show();
 	}
 
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
+        switch (requestCode) {
+            case REQUEST_LOCATION: {
+                // If request is cancelled, the result arrays are empty.
+                if (grantResults.length > 0
+                        && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    // enable updates
+                    locationFetcher.enableUpdates();
+                    gpsUpdating = true ;
+                    onGPSLocationDialog.show();
+                } else {
+                    // permission denied, boo! Disable the
+                    // functionality that depends on this permission.
+                    Toast.makeText(this, "Cannot perform GPS lookup without GPS permission!",
+                            Toast.LENGTH_SHORT).show();
+                    this.finish();
+                }
+                return;
+            }
+            // other 'case' lines to check for other
+            // permissions this app might request
+        }
+    }
 
-	private void hideKeyboard() {
+    public boolean checkLocationPermission() {
+        String permission = "android.permission.ACCESS_FINE_LOCATION";
+        int res = ContextCompat.checkSelfPermission(this, permission);
+        return (res == PackageManager.PERMISSION_GRANTED);
+    }
+
+
+    private void hideKeyboard() {
 		log("hiding keyboard") ;
 		InputMethodManager imm = (InputMethodManager)getSystemService(
 				Context.INPUT_METHOD_SERVICE);
