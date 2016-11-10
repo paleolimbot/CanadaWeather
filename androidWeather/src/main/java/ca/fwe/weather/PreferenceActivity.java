@@ -32,7 +32,7 @@ public abstract class PreferenceActivity extends AppCompatActivity {
 
         // Display the fragment as the main content.
         getFragmentManager().beginTransaction()
-                .replace(android.R.id.content, new PFrag())
+                .replace(R.id.pref_content, new PFrag())
                 .commit();
 
     }

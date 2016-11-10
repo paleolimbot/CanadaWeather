@@ -25,6 +25,6 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@android:id/content"/>
+        android:id="@+id/pref_content" />
 
 </LinearLayout>
