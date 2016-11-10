@@ -14,6 +14,7 @@ import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.text.Html;
 import android.util.Log;
@@ -63,6 +64,7 @@ public abstract class ForecastActivity extends ListActivity implements ForecastD
 	
 	private ForecastDownloader downloader = null ;
 	private ProgressDialog onDownloadDialog = null ;
+    private boolean onDownloadDialogShowing = false;
 	
 	protected WeatherApp app ;
 	private ForecastAdapter forecastAdapter ;
@@ -99,6 +101,7 @@ public abstract class ForecastActivity extends ListActivity implements ForecastD
 
             }
         });
+        onDownloadDialogShowing = false;
 		
 		fIssuedView = (TextView)this.getLayoutInflater().inflate(R.layout.forecast_headerfooter, null) ;
 		fIssuedView.setText(String.format(getString(R.string.forecast_issuedtext), getString(R.string.unknown)));
@@ -118,7 +121,7 @@ public abstract class ForecastActivity extends ListActivity implements ForecastD
 		locationsAdapter = new LocationsAdapter(this) {
             public void onListItemClick(ForecastLocation l, int position) {
                 setLocationByIndex(position);
-                drawer.closeDrawer(Gravity.START);
+                drawer.closeDrawer(GravityCompat.START);
             }
         } ;
 
@@ -129,14 +132,14 @@ public abstract class ForecastActivity extends ListActivity implements ForecastD
                 getResources().getDrawable(addId)) {
             public void doAction() {
                 launchLocationPicker();
-                drawer.closeDrawer(Gravity.START);
+                drawer.closeDrawer(GravityCompat.START);
             }
         });
         locationsAdapter.addAction(new ActionForecastLocation(getString(R.string.menu_edit),
                 getResources().getDrawable(editId)) {
             public void doAction() {
                 makeLocationsEditor();
-                drawer.closeDrawer(Gravity.START);
+                drawer.closeDrawer(GravityCompat.START);
             }
         });
 
@@ -165,7 +168,23 @@ public abstract class ForecastActivity extends ListActivity implements ForecastD
 		
 	}
 
-	protected abstract void onUpgradeTrue() ;
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if(onDownloadDialogShowing) {
+            onDownloadDialog.show();
+        }
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        if(onDownloadDialogShowing) {
+            onDownloadDialog.dismiss();
+        }
+    }
+
+    protected abstract void onUpgradeTrue() ;
 	
 	private void setSpinnerPositionFromPref() {
 		if(locationsAdapter.getNumLocations() > 0) {
@@ -234,6 +253,7 @@ public abstract class ForecastActivity extends ListActivity implements ForecastD
             log("starting downloader");
             downloader.download();
             onDownloadDialog.show();
+            onDownloadDialogShowing = true;
         }
 		
 	}
@@ -242,6 +262,7 @@ public abstract class ForecastActivity extends ListActivity implements ForecastD
 	public void onForecastDownload(Forecast forecast, Modes mode, ReturnTypes result) {
 		log("onForecastDownload returned with result " + result + " from mode " + mode) ;
 		if(!mode.equals(Modes.LOAD_CACHED)) {
+            onDownloadDialogShowing = false;
 			onDownloadDialog.dismiss();
 		}
 		switch(result) {
@@ -329,10 +350,10 @@ public abstract class ForecastActivity extends ListActivity implements ForecastD
 		// as you specify a parent activity in AndroidManifest.xml.
 		int id = item.getItemId();
         if(id == android.R.id.home) {
-            if(drawer.isDrawerOpen(Gravity.START)) {
-                drawer.closeDrawer(Gravity.START);
+            if(drawer.isDrawerOpen(GravityCompat.START)) {
+                drawer.closeDrawer(GravityCompat.START);
             } else {
-                drawer.openDrawer(Gravity.START);
+                drawer.openDrawer(GravityCompat.START);
             }
             return true;
         } else if(id == R.id.menu_prefs) {
@@ -363,8 +384,8 @@ public abstract class ForecastActivity extends ListActivity implements ForecastD
 
     @Override
     public void onBackPressed() {
-        if(drawer.isDrawerOpen(Gravity.START)) {
-            drawer.closeDrawer(Gravity.START);
+        if(drawer.isDrawerOpen(GravityCompat.START)) {
+            drawer.closeDrawer(GravityCompat.START);
         } else {
             super.onBackPressed();
         }
