@@ -1,7 +1,6 @@
 package ca.fwe.weather;
 
 import android.app.AlertDialog;
-import android.app.ListActivity;
 import android.app.ProgressDialog;
 import android.content.ActivityNotFoundException;
 import android.content.Context;
@@ -16,10 +15,12 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.text.Html;
 import android.util.Log;
 import android.util.TypedValue;
-import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -49,7 +50,7 @@ import ca.fwe.weather.util.ForecastDownloader;
 import ca.fwe.weather.util.ForecastDownloader.Modes;
 import ca.fwe.weather.util.ForecastDownloader.ReturnTypes;
 
-public abstract class ForecastActivity extends ListActivity implements ForecastDownloader.OnForecastDownloadListener,
+public abstract class ForecastActivity extends AppCompatActivity implements ForecastDownloader.OnForecastDownloadListener,
 																		OnItemClickListener {
 	private static final String TAG = "ForecastActivity" ;
 
@@ -72,12 +73,17 @@ public abstract class ForecastActivity extends ListActivity implements ForecastD
 	protected int lang ;
 	private SharedPreferences prefs ;
 	private TextView fIssuedView ;
+    private ListView listView;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		this.setTheme(WeatherApp.getThemeId(this)) ;
 		super.onCreate(savedInstanceState);
 		this.setContentView(R.layout.forecast);
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
 		app = (WeatherApp) this.getApplication() ;
 		prefs = WeatherApp.prefs(this) ;
 		lang = WeatherApp.getLanguage(this) ;
@@ -86,8 +92,10 @@ public abstract class ForecastActivity extends ListActivity implements ForecastD
 		forecastAdapter = new ForecastAdapter(this) ;
 		noDataAdapter = new NoDataAdapter() ;
 
-        if(this.getActionBar() != null)
-            this.getActionBar().setDisplayHomeAsUpEnabled(true);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawer.addDrawerListener(toggle);
+        toggle.syncState();
 
 		onDownloadDialog = new ProgressDialog(this) ;
 		onDownloadDialog.setMessage(getString(R.string.please_wait));
@@ -105,12 +113,14 @@ public abstract class ForecastActivity extends ListActivity implements ForecastD
 		
 		fIssuedView = (TextView)this.getLayoutInflater().inflate(R.layout.forecast_headerfooter, null) ;
 		fIssuedView.setText(String.format(getString(R.string.forecast_issuedtext), getString(R.string.unknown)));
-		this.getListView().addHeaderView(fIssuedView);
+
+        listView = (ListView)findViewById(android.R.id.list);
+		listView.addHeaderView(fIssuedView);
 		
 		TextView footer = (TextView)this.getLayoutInflater().inflate(R.layout.forecast_headerfooter, null) ;
 		footer.setText(R.string.forecast_footertext) ;
-		this.getListView().addFooterView(footer);
-        this.getListView().setOnItemClickListener(this) ;
+		listView.addFooterView(footer);
+        listView.setOnItemClickListener(this) ;
 
 		if(app.upgrade()) {
 			this.onUpgradeTrue();
@@ -217,7 +227,7 @@ public abstract class ForecastActivity extends ListActivity implements ForecastD
 
 	protected void setLocation(ForecastLocation l, boolean forceDownload) {
         if (l == null) {
-            setListAdapter(noDataAdapter);
+            listView.setAdapter(noDataAdapter);
             fIssuedView.setText(String.format(getString(R.string.forecast_issuedtext), getString(R.string.unknown)));
             forecastAdapter.clear();
             try {
@@ -276,14 +286,14 @@ public abstract class ForecastActivity extends ListActivity implements ForecastD
 			toast(R.string.forecast_error_unknown) ;
 			break ;
 		case NO_CACHED_FORECAST_ERROR:
-			this.setListAdapter(noDataAdapter);
+			listView.setAdapter(noDataAdapter);
 			fIssuedView.setText(String.format(getString(R.string.forecast_issuedtext), getString(R.string.unknown)));
 			this.forecastAdapter.clear();
 			return ;
 		default:
 			log("forecast downloaded sucessfully, setting adapter.") ;
 			forecastAdapter.setForecast(forecast);
-			this.setListAdapter(forecastAdapter);
+			listView.setAdapter(forecastAdapter);
 			String dateText ;
 			if(forecast.getIssuedDate() != null)
 				dateText = forecast.getDateFormat().format(forecast.getIssuedDate()) ;

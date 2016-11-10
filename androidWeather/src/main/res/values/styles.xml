@@ -1,12 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="WeatherTheme" parent="android:Theme.Holo">
+
+    <style name="WeatherTheme" parent="Theme.AppCompat.DayNight">
         <item name="ic_action_add_themedep">@drawable/ic_action_add</item>
         <item name="ic_action_edit_themedep">@drawable/ic_action_edit</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
     </style>
 
-    <style name="WeatherTheme.Light" parent="android:Theme.Holo.Light.DarkActionBar">
+    <style name="WeatherTheme.Light" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="ic_action_add_themedep">@drawable/ic_action_add_light</item>
         <item name="ic_action_edit_themedep">@drawable/ic_action_edit_light</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
     </style>
+
+    <style name="WeatherTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="WeatherTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
 </resources>

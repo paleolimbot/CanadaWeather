@@ -17,6 +17,8 @@ import android.location.Address;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
@@ -32,6 +34,7 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -43,7 +46,7 @@ import ca.fwe.weather.util.GeocoderAsync;
 import ca.fwe.weather.util.GeocoderAsync.OnGeocodeListener;
 import ca.fwe.weather.util.LocationFetcher;
 
-public class LocationPickerActivity extends ListActivity implements OnItemClickListener, TextWatcher,
+public class LocationPickerActivity extends AppCompatActivity implements OnItemClickListener, TextWatcher,
         LocationFetcher.GPSLocationListener, OnGeocodeListener, ActivityCompat.OnRequestPermissionsResultCallback {
 
 	private static final String TAG = "LocationPickerActivity" ;
@@ -61,7 +64,8 @@ public class LocationPickerActivity extends ListActivity implements OnItemClickL
 	private LocationFetcher locationFetcher ;
 	private boolean gpsUpdating = false ;
 	private SharedPreferences prefs ;
-	
+	private ListView listView;
+
 	private LatLon latLon ;
 
 	private ProgressDialog geocodingDialog ;
@@ -77,17 +81,19 @@ public class LocationPickerActivity extends ListActivity implements OnItemClickL
 		this.setTheme(WeatherApp.getThemeId(this)) ;
 		super.onCreate(savedInstanceState);
 		this.setContentView(R.layout.location_picker);
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
 		app = (WeatherApp)this.getApplication() ;
 		locationDb = app.getLocationDatabase(this) ;
 		lang = WeatherApp.getLanguage(this) ;
 		locationsAdapter = new LocationsAdapter() ;
 		prefs = WeatherApp.prefs(this) ;
 
-		if(this.getActionBar() != null)
-            this.getActionBar().setDisplayHomeAsUpEnabled(true);
-
 		searchHeader = (TextView)this.getLayoutInflater().inflate(R.layout.location_searchheader, null) ;
-		getListView().addHeaderView(searchHeader);
+        listView = (ListView)findViewById(android.R.id.list);
+		listView.addHeaderView(searchHeader);
 		
 		regionSpinner = (Spinner)findViewById(R.id.locations_region_spinner) ;
 		List<? extends ForecastRegion> regions = locationDb.getRegions() ;
@@ -159,7 +165,7 @@ public class LocationPickerActivity extends ListActivity implements OnItemClickL
 		regionSpinner.setSelection(prefs.getInt(PREF_KEY_SAVED_REGION, 0));
 
 		this.setResult(RESULT_CANCELED);
-		this.getListView().setOnItemClickListener(this);
+		listView.setOnItemClickListener(this);
 		//hack because keyboard was being hidden somehow at the very beginning
 		regionSpinner.postDelayed(new Runnable() {
 			public void run() {
@@ -249,7 +255,7 @@ public class LocationPickerActivity extends ListActivity implements OnItemClickL
 		public void reset(List<? extends ForecastLocation> newList) {
 			this.clear();
 			this.addAll(newList);
-			getListView().setAdapter(this);
+			listView.setAdapter(this);
 		}
 
 		@Override

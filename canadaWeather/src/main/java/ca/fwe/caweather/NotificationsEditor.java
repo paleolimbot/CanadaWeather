@@ -9,6 +9,8 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -17,6 +19,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 import ca.fwe.weather.LocationPickerActivity;
@@ -27,7 +30,7 @@ import ca.fwe.weather.backend.UpdatesManager;
 import ca.fwe.weather.backend.UpdatesReceiver;
 import ca.fwe.weather.core.ForecastLocation;
 
-public class NotificationsEditor extends ListActivity implements OnItemClickListener {
+public class NotificationsEditor extends AppCompatActivity implements OnItemClickListener {
 
 	private static final int REQUEST_LOCATION = 11 ;
 
@@ -36,18 +39,23 @@ public class NotificationsEditor extends ListActivity implements OnItemClickList
 	private UpdatesManager uManager ;
 	private LocationDatabase locDb ;
 	private NoDataAdapter noDataAdapter ;
+    private ListView listView;
 
 	public void onCreate(Bundle savedInstanceState) {
 		this.setTheme(WeatherApp.getThemeId(this)) ;
 		super.onCreate(savedInstanceState);
 		this.setContentView(R.layout.notification_editor);
 
+		Toolbar toolbar = (Toolbar) findViewById(ca.fwe.weather.R.id.toolbar);
+		setSupportActionBar(toolbar);
+
 		lang = WeatherApp.getLanguage(this) ;
 		adapter = new LocationsAdapter() ;
 		uManager = new UpdatesManager(this) ;
 		locDb = ((WeatherApp)this.getApplication()).getLocationDatabase(this) ;
 		noDataAdapter = new NoDataAdapter() ;
-		getListView().setOnItemClickListener(this);
+        listView = (ListView)findViewById(android.R.id.list);
+		listView.setOnItemClickListener(this);
 
 		if(getActionBar() != null) getActionBar().setDisplayHomeAsUpEnabled(true);
 
@@ -68,7 +76,7 @@ public class NotificationsEditor extends ListActivity implements OnItemClickList
 			}
 			adapter.reset(locations);
 		} else {
-			getListView().setAdapter(noDataAdapter);
+			listView.setAdapter(noDataAdapter);
 		}
 	}
 
@@ -157,7 +165,7 @@ public class NotificationsEditor extends ListActivity implements OnItemClickList
 		public void reset(List<? extends ForecastLocation> newList) {
 			this.clear();
 			this.addAll(newList);
-			getListView().setAdapter(this);
+			listView.setAdapter(this);
 		}
 
 		@Override
