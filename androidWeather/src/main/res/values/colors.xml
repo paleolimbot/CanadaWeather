@@ -2,8 +2,9 @@
 <resources>
     <color name="temp_high">#FC4848</color>
     <color name="temp_low">#58A4F0</color>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorPrimary">#cc0000</color>
+    <color name="colorPrimaryDarkTheme">#8b0000</color>
+    <color name="colorPrimaryDark">#7b0000</color>
+    <color name="colorAccent">#4f81ff</color>
     
 </resources>
