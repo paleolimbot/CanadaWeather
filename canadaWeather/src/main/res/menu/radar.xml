@@ -8,10 +8,10 @@
     <item android:id="@+id/menu_view_online"
         android:title="@string/menu_view_online"
         android:icon="@drawable/ic_action_online"
-        app:showAsAction="always"/>
+        app:showAsAction="never"/>
     <item android:id="@+id/menu_prefs"
         android:title="@string/menu_prefs"
         android:icon="@drawable/ic_action_prefs"
-        app:showAsAction="always"/>
+        app:showAsAction="never"/>
     
 </menu>

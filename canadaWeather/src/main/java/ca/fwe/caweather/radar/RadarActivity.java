@@ -30,6 +30,8 @@ import android.graphics.drawable.LayerDrawable;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -52,7 +54,7 @@ import ca.fwe.locations.geometry.LatLon;
 import ca.fwe.weather.WeatherApp;
 import ca.fwe.weather.util.Downloader;
 
-public class RadarActivity extends Activity implements OnClickListener {
+public class RadarActivity extends AppCompatActivity implements OnClickListener {
 	private static final String PREF_ANIMATION_LENGTH = "xml_radar_length" ;
 	private static final String PREF_RADAR_PRECIPTYPE = "xml_radar_preciptype" ;
 	private static final String PREF_SAVED_STATION = "radar_saved_station" ;
@@ -96,6 +98,11 @@ public class RadarActivity extends Activity implements OnClickListener {
 		this.setTheme(WeatherApp.getThemeId(this)) ;
 		super.onCreate(savedInstanceState) ;		
 		this.setContentView(R.layout.radar) ;
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        if(getSupportActionBar() != null)
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 		//set radar overlays pref key if not already set
 		SharedPreferences prefs = WeatherApp.prefs(this) ;
@@ -460,7 +467,10 @@ public class RadarActivity extends Activity implements OnClickListener {
 			Intent i = new Intent(this, RadarPrefs.class) ;
 			startActivity(i) ;
 			return true ;
-		} else {
+		} else if(item.getItemId() == android.R.id.home) {
+            this.onBackPressed();
+            return true;
+        } else {
 			return super.onOptionsItemSelected(item);
 		}
 	}
