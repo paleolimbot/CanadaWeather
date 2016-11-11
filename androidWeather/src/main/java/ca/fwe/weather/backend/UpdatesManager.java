@@ -2,9 +2,11 @@ package ca.fwe.weather.backend;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -17,9 +19,11 @@ public class UpdatesManager {
 	private static final int DB_VERSION = 1 ;
 
 	private UpdatesDb db ;
+    private Context context;
 
 	public UpdatesManager(Context context) {
-		db = new UpdatesDb(context) ;
+		this.context = context;
+        db = new UpdatesDb(context) ;
 	}
 
 	public void addNotification(Uri locationUri) {
@@ -43,6 +47,22 @@ public class UpdatesManager {
 	public void removeNotification(Uri locationUri) {
 		log("removing notification for uri " + locationUri) ;
 		db.removeNotifications(locationUri.toString());
+		//need to remove all keys that look like .*?_cancelled
+        SharedPreferences prefs = context.getSharedPreferences("prefs_NOTIFICATIONS", Context.MODE_PRIVATE);
+        Set<String> names = prefs.getAll().keySet();
+        List<String> offendingStrings = new ArrayList<>();
+        String notificationId = String.valueOf(NotificationsReceiver.getUniqueNotificationId(locationUri));
+        for(String s: names) {
+            if(s.matches("^" + notificationId + "_.*?$")) {
+                offendingStrings.add(s);
+            }
+        }
+        SharedPreferences.Editor editor = prefs.edit();
+        for(String s: offendingStrings) {
+            Log.i("UpdatesManager", "removeNotification: removing irrelevant notifications key " + s);
+            editor.remove(s);
+        }
+        editor.apply();
 	}
 
 	public void removeWidget(int widgetId) {
