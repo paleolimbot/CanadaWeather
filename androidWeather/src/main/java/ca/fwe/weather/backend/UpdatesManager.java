@@ -268,6 +268,7 @@ public class UpdatesManager {
 					c.moveToPosition(i) ;
 					out[i] = c.getInt(0) ;
 				}
+                c.close();
 			} else {
 				//error, keep out as null
 			}
