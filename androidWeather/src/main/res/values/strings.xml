@@ -65,7 +65,7 @@
     <string name="forecast_footertext">Data from Environment Canada</string>
     <string name="forecast_issuedtext" formatted="false">Issued %s</string>
     
-    <string name="notification_howmany" formatted="false">%s warnings</string>
+    <string name="notification_howmany" formatted="false">%d warnings</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
