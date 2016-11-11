@@ -15,6 +15,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -51,7 +52,7 @@ import ca.fwe.weather.util.ForecastDownloader.Modes;
 import ca.fwe.weather.util.ForecastDownloader.ReturnTypes;
 
 public abstract class ForecastActivity extends AppCompatActivity implements ForecastDownloader.OnForecastDownloadListener,
-																		OnItemClickListener {
+																		OnItemClickListener, SwipeRefreshLayout.OnRefreshListener {
 	private static final String TAG = "ForecastActivity" ;
 
     private DrawerLayout drawer ;
@@ -74,6 +75,7 @@ public abstract class ForecastActivity extends AppCompatActivity implements Fore
 	private SharedPreferences prefs ;
 	private TextView fIssuedView ;
     private ListView listView;
+    private SwipeRefreshLayout swipeLayout;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -91,6 +93,9 @@ public abstract class ForecastActivity extends AppCompatActivity implements Fore
         ListView locationSpinner = (ListView) findViewById(R.id.forecast_left_drawer);
 		forecastAdapter = new ForecastAdapter(this) ;
 		noDataAdapter = new NoDataAdapter() ;
+
+        swipeLayout = (SwipeRefreshLayout) findViewById(R.id.forecast_swiperefresh_container);
+        swipeLayout.setOnRefreshListener(this);
 
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -179,6 +184,17 @@ public abstract class ForecastActivity extends AppCompatActivity implements Fore
 	}
 
     @Override
+    public void onRefresh() {
+        ForecastLocation current = this.getCurrentLocation() ;
+        if(current != null) {
+            this.setLocation(current, true);
+        } else {
+            toast(R.string.forecast_error_no_location_selected) ;
+            log("trying to refresh location when there is no location!", null) ;
+        }
+    }
+
+    @Override
     protected void onResume() {
         super.onResume();
         if(onDownloadDialogShowing) {
@@ -264,6 +280,7 @@ public abstract class ForecastActivity extends AppCompatActivity implements Fore
             downloader.download();
             onDownloadDialog.show();
             onDownloadDialogShowing = true;
+            swipeLayout.setRefreshing(true);
         }
 		
 	}
@@ -274,6 +291,7 @@ public abstract class ForecastActivity extends AppCompatActivity implements Fore
 		if(!mode.equals(Modes.LOAD_CACHED)) {
             onDownloadDialogShowing = false;
 			onDownloadDialog.dismiss();
+            swipeLayout.setRefreshing(false);
 		}
 		switch(result) {
 		case IO_ERROR:
