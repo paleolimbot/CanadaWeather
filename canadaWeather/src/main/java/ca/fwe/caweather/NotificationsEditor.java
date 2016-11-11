@@ -48,6 +48,8 @@ public class NotificationsEditor extends AppCompatActivity implements OnItemClic
 
 		Toolbar toolbar = (Toolbar) findViewById(ca.fwe.weather.R.id.toolbar);
 		setSupportActionBar(toolbar);
+        if(getSupportActionBar() != null)
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 		lang = WeatherApp.getLanguage(this) ;
 		adapter = new LocationsAdapter() ;
@@ -56,8 +58,6 @@ public class NotificationsEditor extends AppCompatActivity implements OnItemClic
 		noDataAdapter = new NoDataAdapter() ;
         listView = (ListView)findViewById(android.R.id.list);
 		listView.setOnItemClickListener(this);
-
-		if(getActionBar() != null) getActionBar().setDisplayHomeAsUpEnabled(true);
 
 		this.reloadList();
 	}

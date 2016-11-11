@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android" >
-    <item android:id="@+id/menu_refresh" android:icon="@drawable/ic_action_refresh" android:title="@string/menu_refresh" android:showAsAction="always|withText"></item>
-    <item android:id="@+id/menu_view_online" android:title="@string/menu_view_online" android:icon="@drawable/ic_action_online" android:showAsAction="always"></item>
-    <item android:id="@+id/menu_prefs" android:title="@string/menu_prefs" android:icon="@drawable/ic_action_prefs" android:showAsAction="always"></item>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/menu_refresh"
+        android:icon="@drawable/ic_action_refresh"
+        android:title="@string/menu_refresh"
+        app:showAsAction="always|withText"/>
+    <item android:id="@+id/menu_view_online"
+        android:title="@string/menu_view_online"
+        android:icon="@drawable/ic_action_online"
+        app:showAsAction="always"/>
+    <item android:id="@+id/menu_prefs"
+        android:title="@string/menu_prefs"
+        android:icon="@drawable/ic_action_prefs"
+        app:showAsAction="always"/>
     
 </menu>
