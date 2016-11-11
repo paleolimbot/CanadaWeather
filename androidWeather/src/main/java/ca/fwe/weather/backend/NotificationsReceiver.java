@@ -11,6 +11,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import ca.fwe.weather.R;
 import ca.fwe.weather.WeatherApp;
@@ -28,6 +29,7 @@ public abstract class NotificationsReceiver extends BroadcastReceiver implements
     private static final String ACTION_NOTIFICATION_USER_CANCEL = "ca.fwe.weather.ACTION_NOTIFICATION_USER_CANCEL" ;
 
     private static final String PREF_NAME  = "prefs_NOTIFICATIONS" ;
+    public static final String PREF_VIBRATE = "pref_notification_vibrate";
 
 	@Override
 	public void onReceive(Context context, Intent intent) {
@@ -129,7 +131,8 @@ public abstract class NotificationsReceiver extends BroadcastReceiver implements
                             forecast.getLocation().getUri());
 
                 } else {
-                    if(!title.equals(previousTitle)) {
+                    boolean newNotification = !title.equals(previousTitle);
+                    if(newNotification) {
                         //title has changed, update in prefs
                         log("Updating pref keys: " + typeKey + "=" + title + ", " + cancelledKey + "=false");
                         SharedPreferences.Editor edit = prefs.edit();
@@ -138,7 +141,7 @@ public abstract class NotificationsReceiver extends BroadcastReceiver implements
                         edit.apply();
                     }
                     //user has not cancelled this notification
-                    manager.notify(notificationId, buildNotification(forecast, warnings));
+                    manager.notify(notificationId, buildNotification(forecast, warnings, newNotification));
                 }
 
 			} else {
@@ -160,7 +163,8 @@ public abstract class NotificationsReceiver extends BroadcastReceiver implements
 		}
 	}
 
-	protected Notification buildNotification(Forecast forecast, List<WeatherWarning> warnings) {
+	protected Notification buildNotification(Forecast forecast, List<WeatherWarning> warnings, boolean isNew) {
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(forecast.getContext());
 		Notification.Builder builder = new Notification.Builder(forecast.getContext()) ;
 		String title = warnings.get(0).getTitle() ;
 		String subtitle = forecast.getLocation().toString(forecast.getLang()) ;
@@ -178,9 +182,16 @@ public abstract class NotificationsReceiver extends BroadcastReceiver implements
 		builder.setContentText(subtitle) ;
 		builder.setSmallIcon(R.drawable.ic_stat_warning) ;
 		builder.setOngoing(false) ;
+        if(isNew && prefs.getBoolean(PREF_VIBRATE, false)) {
+            builder.setVibrate(new long[] {750});
+        }
 		builder.setContentIntent(PendingIntent.getActivity(forecast.getContext(), 0, i, PendingIntent.FLAG_UPDATE_CURRENT)) ;
         builder.setDeleteIntent(PendingIntent.getBroadcast(forecast.getContext(), 0, userCancel, PendingIntent.FLAG_UPDATE_CURRENT));
-		return builder.getNotification() ; //apparently .build() requires a higher API level (16)
+		Notification n = builder.getNotification() ; //apparently .build() requires a higher API level (16)
+        if(isNew && prefs.getBoolean(PREF_VIBRATE, false)) {
+            n.defaults |= Notification.DEFAULT_VIBRATE;
+        }
+        return n;
 	}
 
     protected boolean warningTitleIdentical(String currentTitle, String cachedTitle) {

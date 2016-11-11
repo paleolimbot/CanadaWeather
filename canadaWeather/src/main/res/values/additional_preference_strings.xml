@@ -73,7 +73,10 @@
         <item>RIVERS</item>
         <item>ROAD_LABELS</item>
     </string-array>
-    
+
+    <string name="pref_notification_vibrate">Vibrate on warning notification</string>
+    <string name="pref_notification_vibrate_summary">Choose whether or not to vibrate on warning notification</string>
+
     <string name="pref_edit_notifications">Edit Notifications</string>
     <string name="pref_edit_notifications_summary">Receive notifications for weather warnings and watches from Environment Canada.</string>
     

@@ -47,5 +47,8 @@
         <item>Transparent</item>
         <item>Transparent (avec police blanche)</item>
     </string-array>
+
+    <string name="pref_notification_vibrate">Vibrer pour les alertes</string>
+    <string name="pref_notification_vibrate_summary">Vibrer pour les alertes</string>
     
 </resources>
