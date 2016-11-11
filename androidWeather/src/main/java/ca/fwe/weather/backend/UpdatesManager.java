@@ -11,7 +11,10 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.net.Uri;
+import android.text.TextUtils;
 import android.util.Log;
+
+import org.w3c.dom.Text;
 
 public class UpdatesManager {
 
@@ -31,17 +34,13 @@ public class UpdatesManager {
 		db.addNotifications(locationUri.toString());
 	}
 
-	public void addWidget(int widgetId, Uri locationUri) {
+	public void addWidget(int widgetId, Uri locationUri, String jsonOptions) {
 		log("adding widget for uri " + locationUri + " and widget id " + widgetId) ;
-		db.addOrUpdateWidget(widgetId, locationUri.toString()) ;
+		db.addOrUpdateWidget(widgetId, locationUri.toString(), jsonOptions) ;
 	}
 
-	public Uri getForecastLocation(int widgetId) {
-		String uri = db.getUriByWidgetId(widgetId) ;
-		if(uri != null)
-			return Uri.parse(uri) ;
-		else
-			return null ;
+	public WidgetInfo getWidgetInfo(int widgetId) {
+		return db.getInfoByWidgetId(widgetId) ;
 	}
 
 	public void removeNotification(Uri locationUri) {
@@ -67,7 +66,7 @@ public class UpdatesManager {
 
 	public void removeWidget(int widgetId) {
 		log("removing widget with widgetId " + widgetId) ;
-		db.addOrUpdateWidget(widgetId, null) ;
+		db.addOrUpdateWidget(widgetId, null, null) ;
 	}
 
 	public int[] getWidgetIds(Uri locationUri) {
@@ -102,7 +101,7 @@ public class UpdatesManager {
 		
 		public static final String WIDGET_ID = "widget_id" ;
 		public static final String LOC_URI = "loc_uri" ;
-		public static final String ITEM_KEY = "item_key" ;
+		public static final String ITEM_OPTIONS = "item_key" ;
 		public static final String ITEM_VALUE = "item_value" ;
 
 		public UpdatesDb(Context context) {
@@ -168,22 +167,26 @@ public class UpdatesManager {
 			return affected ;
 		}
 
-		public int addOrUpdateWidget(int widgetId, String uri) {
+		public int addOrUpdateWidget(int widgetId, String uri, String jsonOptions) {
 			SQLiteDatabase db = this.getWritableDatabase() ;
-			int out = -1 ;
+			int out;
 			if(uri != null) {
-				String existingUri = this.getUriByWidgetId(db, widgetId) ;
+				WidgetInfo wi = this.getInfoByWidgetId(db, widgetId) ;
+                if(jsonOptions == null) {
+                    jsonOptions = "{}";
+                }
 				ContentValues cv = new ContentValues() ;
 				cv.put(WIDGET_ID, widgetId);
-				cv.put(ITEM_KEY, LOC_URI);
 				cv.put(ITEM_VALUE, uri) ;
-				if(existingUri == null) {
+                cv.put(ITEM_OPTIONS, jsonOptions) ;
+				if(wi == null) {
 					//insert
 					long newId = db.insert("widgets", null, cv) ;
 					if(newId != -1) {
 						out = 0 ;
 					} else {
 						out = -1 ;
+                        log("insert widget info into widgets failed");
 					}
 				} else {
 					//update
@@ -202,20 +205,30 @@ public class UpdatesManager {
 			return out ;
 		}
 
-		public String getUriByWidgetId(int widgetId) {
+		public WidgetInfo getInfoByWidgetId(int widgetId) {
 			SQLiteDatabase db = this.getReadableDatabase() ;
-			String out = this.getUriByWidgetId(db, widgetId) ;
+			WidgetInfo wi = this.getInfoByWidgetId(db, widgetId) ;
 			db.close();
-			return out ;
+			return wi ;
 		}
 
-		private String getUriByWidgetId(SQLiteDatabase db, int widgetId) {
-			Cursor c = db.query("widgets", new String[] {ITEM_VALUE}, "widget_id=? AND item_key='loc_uri'", new String[] {Integer.valueOf(widgetId).toString()}, null, null, null) ;
+		private WidgetInfo getInfoByWidgetId(SQLiteDatabase db, int widgetId) {
+			Cursor c = db.query("widgets", new String[] {ITEM_OPTIONS, ITEM_VALUE}, "widget_id=?", new String[] {Integer.valueOf(widgetId).toString()}, null, null, null) ;
 			if(c != null) {
-				String out = null ;
+				WidgetInfo out = null;
 				if(c.getCount() > 0) {
 					c.moveToFirst() ;
-					out = c.getString(0) ;
+                    String uri = c.getString(1);
+                    if(uri != null) {
+                        out = new WidgetInfo();
+                        out.uri = uri;
+                        out.jsonOptions = c.getString(0);
+                        if(TextUtils.isEmpty(out.jsonOptions)) {
+                            out.jsonOptions = "{}";
+                        }
+                    } else {
+                        log("error fetching URI for widget id " + widgetId);
+                    }
 				}
 				c.close();
 				return out ;
@@ -261,7 +274,7 @@ public class UpdatesManager {
 		private int[] getWidgetIds(String locUri) {
 			SQLiteDatabase db = this.getReadableDatabase() ;
 			int[] out = null ;
-			Cursor c = db.query("widgets", new String[] {WIDGET_ID}, "item_key='loc_uri' AND item_value=?", new String[] {locUri}, null, null, null) ;
+			Cursor c = db.query("widgets", new String[] {WIDGET_ID}, "item_value=?", new String[] {locUri}, null, null, null) ;
 			if(c != null) {
 				out = new int[c.getCount()] ;
 				for(int i=0; i<c.getCount(); i++) {
@@ -287,4 +300,9 @@ public class UpdatesManager {
 	private static void log(String message) {
 		Log.i("UpdatesManager", message) ;
 	}
+
+    public static class WidgetInfo {
+        public String uri;
+        public String jsonOptions;
+    }
 }

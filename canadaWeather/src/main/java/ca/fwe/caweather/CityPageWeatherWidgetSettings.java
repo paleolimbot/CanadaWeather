@@ -23,6 +23,7 @@ public class CityPageWeatherWidgetSettings extends WeatherWidgetSettings {
 		super.setLocation(location);
 		if(location != null) {
 			log("setting location " + location.getUri()) ;
+
 			this.addWidgetInfoToDatabase();
 			this.finish();
 		} else {
@@ -34,9 +35,9 @@ public class CityPageWeatherWidgetSettings extends WeatherWidgetSettings {
 	private void addWidgetInfoToDatabase() {
 		log("adding widget info to database and sending force update broadcast") ;
 		UpdatesManager manager = new UpdatesManager(this) ;
-		manager.addWidget(this.getWidgetId(), this.getLocation().getUri());
+		manager.addWidget(this.getWidgetId(), this.getLocation().getUri(), "{\"testkey\": \"testvalue\"}"); //TODO implement options
 		//add other options here as they are added to updates manager
-		
+
 		//force update all widgets
 		Intent i = new Intent(UpdatesReceiver.ACTION_FORCE_UPDATE_ALL) ;
 		this.sendBroadcast(i) ;

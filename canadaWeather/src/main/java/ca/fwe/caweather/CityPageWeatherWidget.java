@@ -7,8 +7,12 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.util.Log;
 import android.view.View;
 import android.widget.RemoteViews;
+
+import org.json.JSONObject;
+
 import ca.fwe.caweather.backend.CityPageLocationDatabase;
 import ca.fwe.weather.ForecastWidgetProvider;
 import ca.fwe.weather.WeatherApp;
@@ -48,8 +52,10 @@ public class CityPageWeatherWidget extends ForecastWidgetProvider {
 	}
 	
 	@Override
-	protected RemoteViews createWidgetView(Context context, Forecast f, boolean error) {
-		if(!error) {
+	protected RemoteViews createWidgetView(Context context, Forecast f, JSONObject options, boolean error) {
+		//TODO implement json options
+        Log.i("CityPageWeatherWidget", "createWidgetView: json options are: " + options.toString());
+        if(!error) {
             SharedPreferences prefs = WeatherApp.prefs(context) ;
             String theme = prefs.getString(PREF_WIDGET_THEME, "DARK") ;
             int textcol = Color.WHITE;
