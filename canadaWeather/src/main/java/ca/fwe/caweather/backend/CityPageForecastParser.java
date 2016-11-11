@@ -15,11 +15,13 @@ import ca.fwe.caweather.R;
 import ca.fwe.caweather.core.CityPageWeatherWarning;
 import ca.fwe.caweather.core.EnvironmentCanadaIcons;
 import ca.fwe.caweather.core.EnvironmentCanadaIcons.IconSet;
+import ca.fwe.caweather.core.SunriseSunsetItem;
 import ca.fwe.weather.WeatherApp;
 import ca.fwe.weather.backend.ForecastXMLParser;
 import ca.fwe.weather.core.CurrentConditions;
 import ca.fwe.weather.core.CurrentConditions.Fields;
 import ca.fwe.weather.core.Forecast;
+import ca.fwe.weather.core.ForecastItem;
 import ca.fwe.weather.core.TimePeriodForecast;
 import ca.fwe.weather.core.Units;
 import ca.fwe.weather.core.Units.Unit;
@@ -31,10 +33,12 @@ public class CityPageForecastParser extends ForecastXMLParser {
 	private static final String PREF_KEY_ICONSET = "xml_iconset" ;
 	
 	private IconSet iconSet ;
-	
+	private CurrentConditions currentConditions;
+
 	public CityPageForecastParser(Forecast forecast, File file) {
 		super(forecast, file);
 		iconSet = IconSet.AVMAN ;
+        currentConditions = null;
 		try {
 			SharedPreferences p = WeatherApp.prefs(getForecast().getContext()) ;
 			iconSet = IconSet.valueOf(p.getString(PREF_KEY_ICONSET, "AVMAN")) ;
@@ -71,6 +75,7 @@ public class CityPageForecastParser extends ForecastXMLParser {
 					case "currentConditions":
 						CurrentConditions c = this.parseCurrentConditions(parser);
 						if (c != null)
+                            currentConditions = c;
 							getForecast().items.add(c);
 						break;
 					case "forecastGroup":
@@ -81,6 +86,10 @@ public class CityPageForecastParser extends ForecastXMLParser {
 						if (d != null)
 							getForecast().setCreationDate(d);
 						break;
+                    case "riseSet":
+                        SunriseSunsetItem ssi = this.parseRiseSet(parser);
+                        if(ssi != null) getForecast().items.add(ssi);
+                        break;
 					default:
 						skip(parser);
 						break;
@@ -263,10 +272,21 @@ public class CityPageForecastParser extends ForecastXMLParser {
 		else
             return null;
 	}
-	
-	private Date parseDateTime(XmlPullParser parser) throws XmlPullParserException, IOException {
+
+    private static class NamedDate extends Date {
+
+        public String name;
+
+        public NamedDate(String name, long date) {
+            super(date);
+            this.name = name;
+        }
+    }
+
+	private NamedDate parseDateTime(XmlPullParser parser) throws XmlPullParserException, IOException {
 		Date date = null ;
 		String utc = parser.getAttributeValue(null, "UTCOffset") ;
+        String dateName = parser.getAttributeValue(null, "name") ;
 		if(utc != null) {
 			if(utc.equals("0")) {
 				int year = 0 ;
@@ -325,7 +345,11 @@ public class CityPageForecastParser extends ForecastXMLParser {
 		} else {
 			skip(parser) ;
 		}
-		return date ;
+        if(date != null) {
+            return new NamedDate(dateName, date.getTime());
+        } else {
+            return null;
+        }
 	}
 	
 	private CurrentConditions parseCurrentConditions(XmlPullParser parser) throws XmlPullParserException, IOException {
@@ -407,5 +431,44 @@ public class CityPageForecastParser extends ForecastXMLParser {
 			}
 		}
 	}
+
+	private SunriseSunsetItem parseRiseSet(XmlPullParser parser) throws XmlPullParserException, IOException {
+        NamedDate rise = null;
+        NamedDate set = null;
+
+        while (parser.next() != XmlPullParser.END_TAG) {
+            if (parser.getEventType() == XmlPullParser.START_TAG) {
+                String tagName = parser.getName();
+                switch (tagName) {
+                    case "dateTime":
+                        NamedDate d = this.parseDateTime(parser);
+                        if(d != null && d.name != null) {
+                            if(d.name.equals("sunrise")) {
+                                rise = d;
+                            } else if(d.name.equals("sunset")) {
+                                set = d;
+                            }
+                        }
+                        break;
+                    default:
+                        skip(parser);
+                        break;
+                }
+            }
+        }
+
+        if(rise != null && set != null) {
+            String riseS = getForecast().getTimeFormat().format(rise);
+            String setS = getForecast().getTimeFormat().format(set);
+
+            if(currentConditions != null) {
+                currentConditions.setField(Fields.SUNRISE, riseS);
+                currentConditions.setField(Fields.SUNSET, setS);
+            }
+            return new SunriseSunsetItem(getForecast(), riseS, setS);
+        } else {
+            return null;
+        }
+    }
 
 }

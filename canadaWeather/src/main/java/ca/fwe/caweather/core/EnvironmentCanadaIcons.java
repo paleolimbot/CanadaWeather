@@ -27,7 +27,7 @@ public class EnvironmentCanadaIcons {
 		CLEARING, NIGHT_CLEARING, DISTANT_RAIN, FUNNEL, TORNADO,
 		HAIL, INCREASING_CLOUD, NIGHT_INCREASING_CLOUD, FREEZING_RAIN,		
 	}
-	
+
     private Context context ;
 
 	private static Map<Icons, Integer> avmanMap ;

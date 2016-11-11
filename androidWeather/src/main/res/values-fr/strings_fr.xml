@@ -66,4 +66,7 @@
     <string name="forecast_issuedtext" formatted="false">Date d\'émission %s</string>
     
     <string name="notification_howmany" formatted="false">%s avertissements</string>
+
+    <string name="cc_field_sunrise">Lever</string>
+    <string name="cc_field_sunset">Coucher</string>
 </resources>

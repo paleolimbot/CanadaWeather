@@ -16,7 +16,8 @@ public class CurrentConditions extends ForecastItem {
 	
 	public enum Fields {STATION, DATE, CONDITION, TEMP, WINDCHILL, HUMIDEX, FEELSLIKE, 
 						WINDSUMMARY, WINDSPEED, WINDGUST, 
-						WINDDIRECTION, PRESSURE, PRESSURETREND, DEWPOINT, VISIBILITY, RELHUMIDITY}
+						WINDDIRECTION, PRESSURE, PRESSURETREND, DEWPOINT, VISIBILITY, RELHUMIDITY,
+						SUNRISE, SUNSET}
 	
 	private static Map<Fields, Units.Categories> categories = new HashMap<>() ;
 	private static Map<Fields, Integer> labelIds = new HashMap<>() ;
@@ -50,6 +51,8 @@ public class CurrentConditions extends ForecastItem {
 		labelIds.put(Fields.DEWPOINT, R.string.cc_field_dewpoint) ;
 		labelIds.put(Fields.VISIBILITY, R.string.cc_field_visibility) ;
 		labelIds.put(Fields.RELHUMIDITY, R.string.cc_field_relhumidity) ;
+        labelIds.put(Fields.SUNRISE, R.string.cc_field_sunrise);
+        labelIds.put(Fields.SUNSET, R.string.cc_field_sunset);
 	}
 	
 	private Map<Fields, String> values = new HashMap<>() ;

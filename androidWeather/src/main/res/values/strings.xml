@@ -69,5 +69,8 @@
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="cc_field_sunrise">Sunrise</string>
+    <string name="cc_field_sunset">Sunset</string>
     
 </resources>

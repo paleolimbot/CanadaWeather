@@ -40,5 +40,8 @@
     <string name="notifications_remove_message" formatted="false">Enlever la localité %s?</string>
     <string name="notifications_nodata_message">Aucune localité dans la liste</string>
     <string name="notifications_remove">Enlever</string>
+
+    <string name="forecast_sunriseset">Lever/Coucher</string>
+    <string name="forecast_sunriseset_format" formatted="false">Lever à %s, coucher à %s</string>
     
 </resources>

@@ -42,4 +42,7 @@
     <string name="notifications_nodata_message">No locations in list</string>
     <string name="notifications_remove">Remove</string>
 
+    <string name="forecast_sunriseset">Sunrise/Sunset</string>
+    <string name="forecast_sunriseset_format" formatted="false">Sunrise at %s, sunset at %s</string>
+
 </resources>
