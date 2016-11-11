@@ -27,13 +27,7 @@ public class EnvironmentCanadaIcons {
 		CLEARING, NIGHT_CLEARING, DISTANT_RAIN, FUNNEL, TORNADO,
 		HAIL, INCREASING_CLOUD, NIGHT_INCREASING_CLOUD, FREEZING_RAIN,		
 	}
-
-    //TODO something funky with the slightly rainy icon
-    //Shows sunshine for night weather. Or how about snow showers when it is over 20 degrees.
-    // I thought environment Canada was the most accurate. Apparently not.
-
-
-
+	
     private Context context ;
 
 	private static Map<Icons, Integer> avmanMap ;
