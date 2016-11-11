@@ -6,6 +6,7 @@ import java.util.List;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
+import android.content.ActivityNotFoundException;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -27,6 +28,7 @@ public abstract class NotificationsReceiver extends BroadcastReceiver implements
 
 	public static final String ACTION_NOTIFICATION_REMOVED = "ca.fwe.weather.NOTIFICATION_REMOVED" ;
     private static final String ACTION_NOTIFICATION_USER_CANCEL = "ca.fwe.weather.ACTION_NOTIFICATION_USER_CANCEL" ;
+    private static final String ACTION_NOTIFICATION_USER_LAUNCH = "ca.fwe.weather.ACTION_NOTIFICATION_USER_LAUNCH";
 
     private static final String PREF_NAME  = "prefs_NOTIFICATIONS" ;
     public static final String PREF_VIBRATE = "pref_notification_vibrate";
@@ -75,6 +77,34 @@ public abstract class NotificationsReceiver extends BroadcastReceiver implements
                 SharedPreferences.Editor edit = prefs.edit();
                 edit.putBoolean(cancelledKey, true);
                 edit.apply();
+            } else {
+                log("intent has no data!", null) ;
+            }
+        } else if(intent.getAction().equals(ACTION_NOTIFICATION_USER_LAUNCH)) {
+            //user has clicked on notification: launch activity and set cancelled key to true
+            Uri data = intent.getData() ;
+            if(data != null) {
+                Uri locUri = Uri.parse(data.getQueryParameter("weathernotificationsrc"));
+                int notificationId = this.getUniqueNotificationId(locUri);
+                SharedPreferences prefs = context.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
+                String cancelledKey = String.valueOf(notificationId) + "_cancelled";
+                SharedPreferences.Editor edit = prefs.edit();
+                edit.putBoolean(cancelledKey, true);
+                edit.apply();
+
+                //launch activity
+                Intent i = new Intent(Intent.ACTION_VIEW);
+                i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                i.setData(data);
+                try {
+                    context.startActivity(i);
+                } catch(ActivityNotFoundException e) {
+                    Log.e("NotificationReceiver", "onReceive: activity not found", e);
+                }
+
+                //actually remove notification from notificaion bar
+                NotificationManager manager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE) ;
+                manager.cancel(notificationId);
             } else {
                 log("intent has no data!", null) ;
             }
@@ -171,9 +201,11 @@ public abstract class NotificationsReceiver extends BroadcastReceiver implements
 		if(warnings.size() > 1)
 			title = String.format(forecast.getContext().getString(R.string.notification_howmany), warnings.size()) ;
 
-		Intent i = new Intent(Intent.ACTION_VIEW) ;
+		Intent i = new Intent(ACTION_NOTIFICATION_USER_LAUNCH) ;
 		String url = warnings.get(0).getMobileUrl() ;
-		i.setData(Uri.parse(url)) ;
+        Uri uri = Uri.parse(url);
+        uri = uri.buildUpon().appendQueryParameter("weathernotificationsrc", forecast.getLocation().getUri().toString()).build();
+		i.setData(uri) ;
 
         Intent userCancel = new Intent(ACTION_NOTIFICATION_USER_CANCEL);
         userCancel.setData(forecast.getLocation().getUri());
@@ -185,7 +217,7 @@ public abstract class NotificationsReceiver extends BroadcastReceiver implements
         if(isNew && prefs.getBoolean(PREF_VIBRATE, false)) {
             builder.setVibrate(new long[] {750});
         }
-		builder.setContentIntent(PendingIntent.getActivity(forecast.getContext(), 0, i, PendingIntent.FLAG_UPDATE_CURRENT)) ;
+		builder.setContentIntent(PendingIntent.getBroadcast(forecast.getContext(), 0, i, PendingIntent.FLAG_UPDATE_CURRENT)) ;
         builder.setDeleteIntent(PendingIntent.getBroadcast(forecast.getContext(), 0, userCancel, PendingIntent.FLAG_UPDATE_CURRENT));
 		Notification n = builder.getNotification() ; //apparently .build() requires a higher API level (16)
         if(isNew && prefs.getBoolean(PREF_VIBRATE, false)) {
@@ -202,8 +234,9 @@ public abstract class NotificationsReceiver extends BroadcastReceiver implements
         }
     }
 
-	private int getUniqueNotificationId(Uri locationUri) {
-		return locationUri.hashCode() ;
+	public static int getUniqueNotificationId(Uri locationUri) {
+		Uri uri = locationUri.buildUpon().query(null).build();
+        return uri.hashCode() ;
 	}
 
 	private void log(String message) {
