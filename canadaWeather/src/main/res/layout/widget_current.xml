@@ -2,9 +2,10 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/current_root"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:layout_margin="10dp"
-    android:background="@drawable/widget_bg"
+    android:theme="@style/WeatherWidgetStyle.TransparentLight"
+    android:background="?widget_background"
     android:orientation="horizontal"
     android:padding="4dp" >
 
@@ -14,7 +15,8 @@
         android:layout_height="match_parent"
         android:gravity="center"
         android:orientation="vertical"
-        android:paddingRight="10dp" >
+        android:paddingRight="5dp"
+        android:paddingLeft="5dp">
 
         <ImageView
             android:id="@+id/current_icon"
@@ -34,7 +36,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_gravity="top|left" >
+            android:layout_gravity="center_vertical|left" >
 
             <TextView
                 android:id="@+id/current_city"
@@ -43,42 +45,36 @@
                 android:gravity="top"
                 android:maxLines="1"
                 android:text="Calgary"
-                android:textColor="#FFF"
+                android:textColor="?widget_font_color"
                 android:textAppearance="?android:attr/textAppearanceSmall"
-                android:textSize="@dimen/widget_small_font_size" />
+                android:textSize="?widget_small_font_size" />
 
             <TextView
                 android:id="@+id/current_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical|top"
-                android:text="-14.3*C"
-                android:textColor="#FFF"
+                android:text="-14* (12*)"
+                android:textColor="?widget_font_color"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textSize="@dimen/widget_big_font_size" />
+                android:textSize="?widget_big_font_size"
+                android:maxLines="1" />
 
             <TextView
-                android:id="@+id/feelsliketext"
-                android:layout_width="wrap_content"
+                android:id="@+id/current_subtitle"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="top"
-                android:maxLines="1"
-                android:text="Feels like 3"
-                android:textColor="#888"
+                android:layout_gravity="bottom|right"
+                android:gravity="right"
+                android:text="11:00 AM"
+                android:textColor="?widget_font_color"
                 android:textAppearance="?android:attr/textAppearanceSmall"
-                android:textSize="@dimen/widget_small_font_size" />
+                android:textSize="?widget_small_font_size"
+                android:paddingRight="10dp"
+                android:maxLines="1" />
+
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/current_subtitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom|right"
-            android:text="11:00 AM"
-            android:textColor="#FFF"
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            android:textSize="@dimen/widget_small_font_size"
-            android:paddingRight="10dp" />
     </FrameLayout>
     <LinearLayout
         android:id="@+id/current_today_forecast_wrap"
@@ -89,44 +85,151 @@
         android:paddingLeft="2dp" >
 
         <LinearLayout
-            android:id="@+id/todayrwap"
+            android:id="@+id/current_today_wrap"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="left" >
 
             <TextView
-                android:id="@+id/current_next_timeperiod"
+                android:id="@+id/current_today_timeperiod"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="bottom"
                 android:text="Today"
                 android:textAppearance="?android:attr/textAppearanceSmall"
-                android:textColor="#FFF"
-                android:textSize="@dimen/widget_small_font_size" />
+                android:textColor="?widget_font_color"
+                android:textSize="?widget_small_font_size"
+                android:minLines="1" />
 
             <TextView
-                android:id="@+id/forecast_high"
+                android:id="@+id/current_today_forecast_high"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingLeft="5dp"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:textColor="@color/temp_high"
-                android:textSize="@dimen/widget_small_font_size" />
+                android:textSize="?widget_small_font_size" />
 
             <TextView
-                android:id="@+id/forecast_low"
+                android:id="@+id/current_today_forecast_low"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingLeft="5dp"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:textColor="@color/temp_low"
-                android:textSize="@dimen/widget_small_font_size" />
+                android:textSize="?widget_small_font_size" />
 
         </LinearLayout>
 
         <ImageView
-            android:id="@+id/current_today"
-            android:layout_width="match_parent"
+            android:id="@+id/current_today_icon"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:src="@drawable/icon_na" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/current_tonight_forecast_wrap"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="right|top"
+        android:orientation="vertical"
+        android:paddingLeft="2dp" >
+
+        <LinearLayout
+            android:id="@+id/current_tonight_wrap"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left" >
+
+            <TextView
+                android:id="@+id/current_tonight_timeperiod"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="bottom"
+                android:text="Tomorrow"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="?widget_font_color"
+                android:textSize="?widget_small_font_size"
+                android:maxLines="1" />
+
+            <TextView
+                android:id="@+id/current_tonight_forecast_high"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="5dp"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/temp_high"
+                android:textSize="?widget_small_font_size" />
+
+            <TextView
+                android:id="@+id/current_tonight_forecast_low"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="5dp"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/temp_low"
+                android:textSize="?widget_small_font_size" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/current_tonight_icon"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:src="@drawable/icon_na" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/current_tomorrow_forecast_wrap"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="right|top"
+        android:orientation="vertical"
+        android:paddingLeft="2dp" >
+
+        <LinearLayout
+            android:id="@+id/current_tomorrow_wrap"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left" >
+
+            <TextView
+                android:id="@+id/current_tomorrow_timeperiod"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="bottom"
+                android:text="Next Day"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="?widget_font_color"
+                android:textSize="?widget_small_font_size"
+                android:maxLines="1" />
+
+            <TextView
+                android:id="@+id/current_tomorrow_forecast_high"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="5dp"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/temp_high"
+                android:textSize="?widget_small_font_size" />
+
+            <TextView
+                android:id="@+id/current_tomorrow_forecast_low"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="5dp"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/temp_low"
+                android:textSize="?widget_small_font_size" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/current_tomorrow_icon"
+            android:layout_width="50dp"
             android:layout_height="match_parent"
             android:layout_gravity="center"
             android:src="@drawable/icon_na" />

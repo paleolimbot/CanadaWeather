@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <Preference
+        android:key="widget_location"
+        android:title="@string/pref_widget_location"
+        android:summary="@string/pref_widget_location_summary"
+        android:id="@+id/preference" />
+    <ListPreference
+        android:entryValues="@array/pref_theme_widget_values"
+        android:key="xml_theme_widget"
+        android:title="@string/pref_theme_widget"
+        android:entries="@array/pref_theme_widget_choices"
+        android:summary="@string/pref_theme_widget_summary"
+        android:defaultValue="LIGHT"/>
+    <CheckBoxPreference
+        android:defaultValue="true"
+        android:title="@string/pref_widget_day1"
+        android:key="widget_day1" />
+    <CheckBoxPreference
+        android:defaultValue="true"
+        android:title="@string/pref_widget_day2"
+        android:key="widget_day2" />
+    <CheckBoxPreference
+        android:defaultValue="false"
+        android:title="@string/pref_widget_day3"
+        android:key="widget_day3" />
+
+</PreferenceScreen>

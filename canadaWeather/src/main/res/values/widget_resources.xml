@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="widget_small_font_size" format="dimension"/>
+    <attr name="widget_big_font_size" format="dimension"/>
+    <attr name="widget_font_color" format="color"/>
+    <attr name="widget_background" format="reference"/>
+
+    <style name="WeatherWidgetStyle">
+        <item name="widget_font_color">#000</item>
+        <item name="widget_background">@android:color/transparent</item>
+        <item name="widget_small_font_size">12dp</item>
+        <item name="widget_big_font_size">22dp</item>
+    </style>
+
+    <style name="WeatherWidgetStyle.Dark" parent="WeatherWidgetStyle">
+        <item name="widget_font_color">#FFF</item>
+        <item name="widget_background">@drawable/widget_bg</item>
+    </style>
+
+    <style name="WeatherWidgetStyle.Light" parent="WeatherWidgetStyle">
+        <item name="widget_font_color">#000</item>
+        <item name="widget_background">@drawable/widget_bg_light</item>
+    </style>
+
+    <style name="WeatherWidgetStyle.TransparentDark" parent="WeatherWidgetStyle">
+        <item name="widget_font_color">#FFF</item>
+    </style>
+
+    <style name="WeatherWidgetStyle.TransparentLight" parent="WeatherWidgetStyle">
+        <item name="widget_font_color">#000</item>
+    </style>
+
+</resources>
