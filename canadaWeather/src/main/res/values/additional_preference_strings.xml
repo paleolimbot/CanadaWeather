@@ -17,9 +17,9 @@
     <string name="pref_widget_location">Widget Location</string>
     <string name="pref_widget_location_summary">Choose the weather location for the widget.</string>
 
-    <string name="pref_widget_day1">Show today's forecast</string>
-    <string name="pref_widget_day2">Show tonight's forecast</string>
-    <string name="pref_widget_day3">Show tomorrow's forecast</string>
+    <string name="pref_widget_day1">Show today\'s forecast</string>
+    <string name="pref_widget_day2">Show tonight\'s forecast</string>
+    <string name="pref_widget_day3">Show tomorrow\'s forecast</string>
 
     <string name="pref_theme_widget">Background (widget)</string>
     <string name="pref_theme_widget_summary">Choose light or dark background for widgets.</string>
