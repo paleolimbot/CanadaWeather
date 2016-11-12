@@ -4,8 +4,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_margin="10dp"
-    android:theme="@style/WeatherWidgetStyle"
-    android:background="?widget_background"
     android:orientation="vertical" >
 
     <TextView
@@ -13,7 +11,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center|center_vertical"
-        android:textColor="?widget_font_color"
         android:text="@string/widget_label" >
 
     </TextView>
