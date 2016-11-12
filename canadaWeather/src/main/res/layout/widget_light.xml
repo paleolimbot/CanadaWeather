@@ -1,9 +1,237 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:theme="@style/WeatherWidgetStyle.Light">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/current_root"
+    android:layout_width="match_parent"
+    android:layout_height="85dp"
+    android:layout_margin="@dimen/widget_margin"
+    android:background="@drawable/widget_bg_light"
+    android:orientation="horizontal"
+    android:padding="4dp">
 
-    <include layout="@layout/widget_current" />
+    <LinearLayout
+        android:id="@+id/current_conditionwrap"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingRight="5dp"
+        android:paddingLeft="5dp">
 
-</FrameLayout>
+        <ImageView
+            android:id="@+id/current_icon"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/icon_na" />
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/FrameLayout1"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1" >
+
+        <LinearLayout
+            android:id="@+id/citytempWrap"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center_vertical|left" >
+
+            <TextView
+                android:id="@+id/current_city"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="top"
+                android:maxLines="1"
+                android:text="Calgary"
+                android:textColor="#000"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textSize="@dimen/widget_small_font_size" />
+
+            <TextView
+                android:id="@+id/current_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical|top"
+                android:text="-14* (12*)"
+                android:textColor="#000"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="@dimen/widget_big_font_size"
+                android:maxLines="1" />
+
+            <TextView
+                android:id="@+id/current_subtitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|right"
+                android:gravity="right"
+                android:text="11:00 AM"
+                android:textColor="#000"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textSize="@dimen/widget_small_font_size"
+                android:paddingRight="10dp"
+                android:maxLines="1" />
+
+        </LinearLayout>
+
+    </FrameLayout>
+    <LinearLayout
+        android:id="@+id/current_today_forecast_wrap"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="right|top"
+        android:orientation="vertical"
+        android:paddingLeft="2dp" >
+
+        <LinearLayout
+            android:id="@+id/current_today_wrap"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left" >
+
+            <TextView
+                android:id="@+id/current_today_timeperiod"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="bottom"
+                android:text="Today"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="#000"
+                android:textSize="@dimen/widget_small_font_size"
+                android:minLines="1" />
+
+            <TextView
+                android:id="@+id/current_today_forecast_high"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="5dp"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/temp_high"
+                android:textSize="@dimen/widget_small_font_size" />
+
+            <TextView
+                android:id="@+id/current_today_forecast_low"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="5dp"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/temp_low"
+                android:textSize="@dimen/widget_small_font_size" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/current_today_icon"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:src="@drawable/icon_na" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/current_tonight_forecast_wrap"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="right|top"
+        android:orientation="vertical"
+        android:paddingLeft="2dp" >
+
+        <LinearLayout
+            android:id="@+id/current_tonight_wrap"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left" >
+
+            <TextView
+                android:id="@+id/current_tonight_timeperiod"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="bottom"
+                android:text="Tomorrow"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="#000"
+                android:textSize="@dimen/widget_small_font_size"
+                android:maxLines="1" />
+
+            <TextView
+                android:id="@+id/current_tonight_forecast_high"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="5dp"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/temp_high"
+                android:textSize="@dimen/widget_small_font_size" />
+
+            <TextView
+                android:id="@+id/current_tonight_forecast_low"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="5dp"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/temp_low"
+                android:textSize="@dimen/widget_small_font_size" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/current_tonight_icon"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:src="@drawable/icon_na" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/current_tomorrow_forecast_wrap"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="right|top"
+        android:orientation="vertical"
+        android:paddingLeft="2dp" >
+
+        <LinearLayout
+            android:id="@+id/current_tomorrow_wrap"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left" >
+
+            <TextView
+                android:id="@+id/current_tomorrow_timeperiod"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="bottom"
+                android:text="Next Day"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="#000"
+                android:textSize="@dimen/widget_small_font_size"
+                android:maxLines="1" />
+
+            <TextView
+                android:id="@+id/current_tomorrow_forecast_high"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="5dp"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/temp_high"
+                android:textSize="@dimen/widget_small_font_size" />
+
+            <TextView
+                android:id="@+id/current_tomorrow_forecast_low"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="5dp"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/temp_low"
+                android:textSize="@dimen/widget_small_font_size" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/current_tomorrow_icon"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:src="@drawable/icon_na" />
+    </LinearLayout>
+
+</LinearLayout>

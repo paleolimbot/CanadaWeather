@@ -3,11 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/current_root"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_margin="10dp"
-    android:background="?widget_background"
+    android:layout_height="85dp"
+    android:layout_margin="@dimen/widget_margin"
+    android:background="?attr/widget_background"
     android:orientation="horizontal"
     android:padding="4dp"
+    android:theme="@style/WeatherWidgetStyle"
     tools:showIn="@layout/widget_transparent_light">
 
     <LinearLayout
@@ -46,9 +47,9 @@
                 android:gravity="top"
                 android:maxLines="1"
                 android:text="Calgary"
-                android:textColor="?widget_font_color"
+                android:textColor="?attr/widget_font_color"
                 android:textAppearance="?android:attr/textAppearanceSmall"
-                android:textSize="?widget_small_font_size" />
+                android:textSize="?attr/widget_small_font_size" />
 
             <TextView
                 android:id="@+id/current_title"
@@ -56,9 +57,9 @@
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical|top"
                 android:text="-14* (12*)"
-                android:textColor="?widget_font_color"
+                android:textColor="?attr/widget_font_color"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textSize="?widget_big_font_size"
+                android:textSize="?attr/widget_big_font_size"
                 android:maxLines="1" />
 
             <TextView
@@ -68,9 +69,9 @@
                 android:layout_gravity="bottom|right"
                 android:gravity="right"
                 android:text="11:00 AM"
-                android:textColor="?widget_font_color"
+                android:textColor="?attr/widget_font_color"
                 android:textAppearance="?android:attr/textAppearanceSmall"
-                android:textSize="?widget_small_font_size"
+                android:textSize="?attr/widget_small_font_size"
                 android:paddingRight="10dp"
                 android:maxLines="1" />
 
@@ -98,8 +99,8 @@
                 android:gravity="bottom"
                 android:text="Today"
                 android:textAppearance="?android:attr/textAppearanceSmall"
-                android:textColor="?widget_font_color"
-                android:textSize="?widget_small_font_size"
+                android:textColor="?attr/widget_font_color"
+                android:textSize="?attr/widget_small_font_size"
                 android:minLines="1" />
 
             <TextView
@@ -109,7 +110,7 @@
                 android:paddingLeft="5dp"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:textColor="@color/temp_high"
-                android:textSize="?widget_small_font_size" />
+                android:textSize="?attr/widget_small_font_size" />
 
             <TextView
                 android:id="@+id/current_today_forecast_low"
@@ -118,7 +119,7 @@
                 android:paddingLeft="5dp"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:textColor="@color/temp_low"
-                android:textSize="?widget_small_font_size" />
+                android:textSize="?attr/widget_small_font_size" />
 
         </LinearLayout>
 
@@ -151,8 +152,8 @@
                 android:gravity="bottom"
                 android:text="Tomorrow"
                 android:textAppearance="?android:attr/textAppearanceSmall"
-                android:textColor="?widget_font_color"
-                android:textSize="?widget_small_font_size"
+                android:textColor="?attr/widget_font_color"
+                android:textSize="?attr/widget_small_font_size"
                 android:maxLines="1" />
 
             <TextView
@@ -162,7 +163,7 @@
                 android:paddingLeft="5dp"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:textColor="@color/temp_high"
-                android:textSize="?widget_small_font_size" />
+                android:textSize="?attr/widget_small_font_size" />
 
             <TextView
                 android:id="@+id/current_tonight_forecast_low"
@@ -171,7 +172,7 @@
                 android:paddingLeft="5dp"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:textColor="@color/temp_low"
-                android:textSize="?widget_small_font_size" />
+                android:textSize="?attr/widget_small_font_size" />
 
         </LinearLayout>
 
@@ -204,8 +205,8 @@
                 android:gravity="bottom"
                 android:text="Next Day"
                 android:textAppearance="?android:attr/textAppearanceSmall"
-                android:textColor="?widget_font_color"
-                android:textSize="?widget_small_font_size"
+                android:textColor="?attr/widget_font_color"
+                android:textSize="?attr/widget_small_font_size"
                 android:maxLines="1" />
 
             <TextView
@@ -215,7 +216,7 @@
                 android:paddingLeft="5dp"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:textColor="@color/temp_high"
-                android:textSize="?widget_small_font_size" />
+                android:textSize="?attr/widget_small_font_size" />
 
             <TextView
                 android:id="@+id/current_tomorrow_forecast_low"
@@ -224,7 +225,7 @@
                 android:paddingLeft="5dp"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:textColor="@color/temp_low"
-                android:textSize="?widget_small_font_size" />
+                android:textSize="?attr/widget_small_font_size" />
 
         </LinearLayout>
 

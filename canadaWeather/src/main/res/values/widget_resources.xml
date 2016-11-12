@@ -3,7 +3,11 @@
     <attr name="widget_small_font_size" format="dimension"/>
     <attr name="widget_big_font_size" format="dimension"/>
     <attr name="widget_font_color" format="color"/>
-    <attr name="widget_background" format="reference"/>
+    <attr name="widget_background" format="color"/>
+
+    <dimen name="widget_small_font_size">12dp</dimen>
+    <dimen name="widget_big_font_size">22dp</dimen>
+    <dimen name="widget_margin">8dp</dimen>
 
     <style name="WeatherWidgetStyle">
         <item name="widget_font_color">#000</item>
@@ -14,12 +18,12 @@
 
     <style name="WeatherWidgetStyle.Dark" parent="WeatherWidgetStyle">
         <item name="widget_font_color">#FFF</item>
-        <item name="widget_background">@drawable/widget_bg</item>
+        <item name="widget_background">#000</item>
     </style>
 
     <style name="WeatherWidgetStyle.Light" parent="WeatherWidgetStyle">
         <item name="widget_font_color">#000</item>
-        <item name="widget_background">@drawable/widget_bg_light</item>
+        <item name="widget_background">#FFF</item>
     </style>
 
     <style name="WeatherWidgetStyle.TransparentDark" parent="WeatherWidgetStyle">

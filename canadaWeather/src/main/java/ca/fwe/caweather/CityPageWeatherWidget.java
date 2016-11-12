@@ -41,13 +41,13 @@ public class CityPageWeatherWidget extends ForecastWidgetProvider {
 		String theme = prefs.getString(PREF_WIDGET_THEME, "DARK") ;
 		switch (theme) {
 			case "LIGHT":
-				return R.layout.widget_current_light;
+				return R.layout.widget_light;
 			case "TRANSPARENT":
-				return R.layout.widget_current_transparent;
+				return R.layout.widget_transparent_light;
 			case "TRANSPARENT_LIGHTTEXT":
-				return R.layout.widget_current_transparent_whitetext;
+				return R.layout.widget_transparent_dark;
 			default:
-				return R.layout.widget_current;
+				return R.layout.widget_dark;
 		}
 	}
 	
@@ -66,17 +66,27 @@ public class CityPageWeatherWidget extends ForecastWidgetProvider {
 
 			CurrentConditions c = null ;
 			TimePeriodForecast today = null ;
+			TimePeriodForecast tonight = null;
+			TimePeriodForecast tomorrow = null;
 			WeatherWarning warning = null ;
+
 			for(ForecastItem i: f.items) {
 				if(i instanceof CurrentConditions) {
 					c = (CurrentConditions)i ;
 					break ;
 				}
 			}
+
 			for(ForecastItem i: f.items) {
 				if(i instanceof TimePeriodForecast) {
-					today = (TimePeriodForecast)i ;
-					break ;
+					if(today == null) {
+						today = (TimePeriodForecast) i;
+					} else if(tonight == null) {
+						tonight = (TimePeriodForecast) i;
+					} else {
+						tomorrow = (TimePeriodForecast) i;
+						break ;
+					}
 				}
 			}
 			for(ForecastItem i: f.items) {
@@ -88,22 +98,23 @@ public class CityPageWeatherWidget extends ForecastWidgetProvider {
 
 
 			if(c != null) {
-				RemoteViews views = new RemoteViews(context.getPackageName(), getLayoutId(context)) ;
+				RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.widget_dark) ;
+				View v;
+
 				views.setTextViewText(R.id.current_city, f.getLocation().toString(WeatherApp.getLanguage(context))) ;
 
 				String temp = c.getFieldSummary(Fields.TEMP) ;
                 if(temp == null) {
                     temp = context.getString(R.string.widget_na) ;
-                }
+                } else {
+					temp = temp.replace(" ", "").replace("C", "");
+				}
                 views.setTextViewText(R.id.current_title, temp) ;
 
                 String feelsLike = c.getFieldSummary(Fields.FEELSLIKE);
                 if(feelsLike != null) {
-                    views.setViewVisibility(R.id.feelsliketext, View.VISIBLE);
-                    views.setTextViewText(R.id.feelsliketext,
-                            context.getString(R.string.cc_field_feelslike) + " " + feelsLike);
-                } else {
-                    views.setViewVisibility(R.id.feelsliketext, View.GONE);
+					feelsLike = feelsLike.replace(" ", "").replace("C", "");
+                    views.setTextViewText(R.id.current_title, String.format("%s (%s)", temp, feelsLike));
                 }
 
 				Date d = c.getObservedDate() ;
@@ -135,7 +146,7 @@ public class CityPageWeatherWidget extends ForecastWidgetProvider {
 					if(words.length > 2)
 						todayTitle = words[0] + " " + words[1] ;
 
-					views.setTextViewText(R.id.current_next_timeperiod, todayTitle) ;
+					views.setTextViewText(R.id.current_today_timeperiod, todayTitle) ;
 					if(today.getHigh() != null) {
 						views.setViewVisibility(R.id.forecast_high, View.VISIBLE) ;
 						views.setTextViewText(R.id.forecast_high, today.getHigh()) ;
@@ -150,7 +161,7 @@ public class CityPageWeatherWidget extends ForecastWidgetProvider {
 						views.setViewVisibility(R.id.forecast_low, View.GONE) ;
 					}
 
-					views.setImageViewResource(R.id.current_today, today.getIconId()) ;
+					views.setImageViewResource(R.id.current_today_icon, today.getIconId()) ;
 				} else {
 					views.setViewVisibility(R.id.current_today_forecast_wrap, View.GONE) ;
 				}
