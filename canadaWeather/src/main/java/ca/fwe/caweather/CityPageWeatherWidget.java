@@ -109,13 +109,14 @@ public class CityPageWeatherWidget extends ForecastWidgetProvider {
                 } else {
 					temp = temp.replace(" ", "").replace("C", "");
 				}
-                views.setTextViewText(R.id.current_title, temp) ;
 
                 String feelsLike = c.getFieldSummary(Fields.FEELSLIKE);
                 if(feelsLike != null) {
 					feelsLike = feelsLike.replace(" ", "").replace("C", "");
                     views.setTextViewText(R.id.current_title, String.format("%s (%s)", temp, feelsLike));
-                }
+                } else {
+					views.setTextViewText(R.id.current_title, temp) ;
+				}
 
 				Date d = c.getObservedDate() ;
 				String dateText = context.getString(R.string.unknown) ;
