@@ -167,6 +167,62 @@ public class CityPageWeatherWidget extends ForecastWidgetProvider {
 					views.setViewVisibility(R.id.current_today_forecast_wrap, View.GONE) ;
 				}
 
+				if(tonight != null) {
+					views.setViewVisibility(R.id.current_tonight_forecast_wrap, View.VISIBLE) ;
+
+					String tonightTitle = tonight.getTitle() ;
+					String[] words = tonightTitle.split(" ") ;
+					if(words.length > 2)
+						tonightTitle = words[0] + " " + words[1] ;
+
+					views.setTextViewText(R.id.current_tonight_timeperiod, tonightTitle) ;
+					if(tonight.getHigh() != null) {
+						views.setViewVisibility(R.id.forecast_high, View.VISIBLE) ;
+						views.setTextViewText(R.id.forecast_high, tonight.getHigh()) ;
+					} else {
+						views.setViewVisibility(R.id.forecast_high, View.GONE) ;
+					}
+
+					if(tonight.getLow() != null) {
+						views.setViewVisibility(R.id.forecast_low, View.VISIBLE) ;
+						views.setTextViewText(R.id.forecast_low, tonight.getLow()) ;
+					} else {
+						views.setViewVisibility(R.id.forecast_low, View.GONE) ;
+					}
+
+					views.setImageViewResource(R.id.current_tonight_icon, tonight.getIconId()) ;
+				} else {
+					views.setViewVisibility(R.id.current_tonight_forecast_wrap, View.GONE) ;
+				}
+
+				if(tomorrow != null) {
+					views.setViewVisibility(R.id.current_tomorrow_forecast_wrap, View.VISIBLE) ;
+
+					String tomorrowTitle = tomorrow.getTitle() ;
+					String[] words = tomorrowTitle.split(" ") ;
+					if(words.length > 2)
+						tomorrowTitle = words[0] + " " + words[1] ;
+
+					views.setTextViewText(R.id.current_tomorrow_timeperiod, tomorrowTitle) ;
+					if(tomorrow.getHigh() != null) {
+						views.setViewVisibility(R.id.forecast_high, View.VISIBLE) ;
+						views.setTextViewText(R.id.forecast_high, tomorrow.getHigh()) ;
+					} else {
+						views.setViewVisibility(R.id.forecast_high, View.GONE) ;
+					}
+
+					if(tomorrow.getLow() != null) {
+						views.setViewVisibility(R.id.forecast_low, View.VISIBLE) ;
+						views.setTextViewText(R.id.forecast_low, tomorrow.getLow()) ;
+					} else {
+						views.setViewVisibility(R.id.forecast_low, View.GONE) ;
+					}
+
+					views.setImageViewResource(R.id.current_tomorrow_icon, tomorrow.getIconId()) ;
+				} else {
+					views.setViewVisibility(R.id.current_tomorrow_forecast_wrap, View.GONE) ;
+				}
+
 				return views ;
 			} else {
 				//don't update
