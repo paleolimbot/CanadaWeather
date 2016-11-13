@@ -24,66 +24,59 @@
             android:src="@drawable/icon_na" />
     </LinearLayout>
 
-    <FrameLayout
-        android:id="@+id/FrameLayout1"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent" >
+    <LinearLayout
+        android:id="@+id/citytempWrap"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:layout_gravity="center_vertical|left" >
 
-        <LinearLayout
-            android:id="@+id/citytempWrap"
+        <TextView
+            android:id="@+id/current_city"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:layout_gravity="center_vertical|left" >
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:gravity="top|left"
+            android:maxLines="1"
+            android:text="Calgary"
+            android:textColor="#FFF"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textSize="@dimen/widget_small_font_size" />
 
-            <TextView
-                android:id="@+id/current_city"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="0"
-                android:gravity="top|left"
-                android:maxLines="1"
-                android:text="Calgary"
-                android:textColor="#FFF"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:textSize="@dimen/widget_small_font_size" />
+        <TextView
+            android:id="@+id/current_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:text="-14* (12*)"
+            android:textColor="#FFF"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="@dimen/widget_big_font_size"
+            android:maxLines="1" />
 
-            <TextView
-                android:id="@+id/current_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_weight="1"
-                android:gravity="center_vertical"
-                android:text="-14* (12*)"
-                android:textColor="#FFF"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textSize="@dimen/widget_big_font_size"
-                android:maxLines="1" />
+        <TextView
+            android:id="@+id/current_subtitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:gravity="bottom|right"
+            android:text="11:00 AM"
+            android:textColor="#FFF"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textSize="8dp"
+            android:paddingRight="10dp"
+            android:maxLines="1" />
 
-            <TextView
-                android:id="@+id/current_subtitle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="0"
-                android:gravity="bottom|right"
-                android:text="11:00 AM"
-                android:textColor="#FFF"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:textSize="8dp"
-                android:paddingRight="10dp"
-                android:maxLines="1" />
-
-        </LinearLayout>
-
-    </FrameLayout>
+    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/current_today_forecast_wrap"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:layout_weight="1">
+        android:orientation="vertical">
 
         <TextView
             android:id="@+id/current_today_timeperiod"
@@ -98,10 +91,9 @@
 
         <ImageView
             android:id="@+id/current_today_icon"
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
             android:layout_gravity="center"
-            android:layout_weight="1"
             android:src="@drawable/icon_na" />
 
         <LinearLayout
@@ -134,7 +126,7 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:layout_weight="1">
+        android:paddingLeft="5dp">
 
         <TextView
             android:id="@+id/current_tonight_timeperiod"
@@ -149,10 +141,9 @@
 
         <ImageView
             android:id="@+id/current_tonight_icon"
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
             android:layout_gravity="center"
-            android:layout_weight="1"
             android:src="@drawable/icon_na" />
 
         <LinearLayout
@@ -185,7 +176,7 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:layout_weight="1">
+        android:paddingLeft="5dp">
 
         <TextView
             android:id="@+id/current_tomorrow_timeperiod"
@@ -200,10 +191,9 @@
 
         <ImageView
             android:id="@+id/current_tomorrow_icon"
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
             android:layout_gravity="center"
-            android:layout_weight="1"
             android:src="@drawable/icon_na" />
 
         <LinearLayout
