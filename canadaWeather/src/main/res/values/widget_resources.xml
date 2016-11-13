@@ -6,14 +6,14 @@
     <attr name="widget_background" format="color"/>
 
     <dimen name="widget_small_font_size">12dp</dimen>
-    <dimen name="widget_big_font_size">22dp</dimen>
+    <dimen name="widget_big_font_size">24dp</dimen>
     <dimen name="widget_margin">8dp</dimen>
 
     <style name="WeatherWidgetStyle">
         <item name="widget_font_color">#000</item>
         <item name="widget_background">@android:color/transparent</item>
         <item name="widget_small_font_size">12dp</item>
-        <item name="widget_big_font_size">22dp</item>
+        <item name="widget_big_font_size">24dp</item>
     </style>
 
     <style name="WeatherWidgetStyle.Dark" parent="WeatherWidgetStyle">
