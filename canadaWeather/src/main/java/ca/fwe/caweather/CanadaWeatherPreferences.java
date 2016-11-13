@@ -5,8 +5,11 @@ import android.os.Bundle;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceClickListener;
 import android.preference.PreferenceFragment;
+import android.widget.Toast;
 
 import ca.fwe.weather.PreferenceActivity;
+import ca.fwe.weather.WeatherApp;
+import ca.fwe.weather.backend.UpdatesReceiver;
 
 public class CanadaWeatherPreferences extends PreferenceActivity {
 
@@ -28,6 +31,20 @@ public class CanadaWeatherPreferences extends PreferenceActivity {
 			}
 
 		});
+	}
+
+	@Override
+	public void onPause() {
+		if(this.isFinishing()) {
+			Toast.makeText(this, R.string.pref_restart_app, Toast.LENGTH_SHORT).show() ;
+			WeatherApp app = (WeatherApp)this.getApplication() ;
+			app.setLocale() ;
+
+			//send intent to update all widgets/notifications
+			Intent i = new Intent(UpdatesReceiver.ACTION_FORCE_UPDATE_ALL) ;
+			this.sendBroadcast(i) ;
+		}
+		super.onPause();
 	}
 
 }

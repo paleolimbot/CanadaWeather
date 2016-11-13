@@ -39,20 +39,6 @@ public abstract class PreferenceActivity extends AppCompatActivity {
 
     }
 
-    @Override
-    public void onPause() {
-        if(this.isFinishing()) {
-            Toast.makeText(this, R.string.pref_restart_app, Toast.LENGTH_SHORT).show() ;
-            WeatherApp app = (WeatherApp)this.getApplication() ;
-            app.setLocale() ;
-
-            //send intent to update all widgets/notifications
-            Intent i = new Intent(UpdatesReceiver.ACTION_FORCE_UPDATE_ALL) ;
-            this.sendBroadcast(i) ;
-        }
-        super.onPause();
-    }
-
     public static class PFrag extends PreferenceFragment {
 
         public void onCreate(Bundle savedInstanceState) {
