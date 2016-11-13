@@ -33,21 +33,6 @@ public class CityPageWeatherWidget extends ForecastWidgetProvider {
 	protected LocationDatabase getLocationDatabase(Context context) {
 		return new CityPageLocationDatabase(context) ;
 	}
-
-	private int getLayoutId(Context context) {
-		SharedPreferences prefs = WeatherApp.prefs(context) ;
-		String theme = prefs.getString(PREF_WIDGET_THEME, "DARK") ;
-		switch (theme) {
-			case "LIGHT":
-				return R.layout.widget_light;
-			case "TRANSPARENT":
-				return R.layout.widget_transparent_light;
-			case "TRANSPARENT_LIGHTTEXT":
-				return R.layout.widget_transparent_dark;
-			default:
-				return R.layout.widget_dark;
-		}
-	}
 	
 	@Override
 	protected RemoteViews createWidgetView(Context context, Forecast f, SharedPreferences prefs, boolean error) {
@@ -122,7 +107,7 @@ public class CityPageWeatherWidget extends ForecastWidgetProvider {
                 String feelsLike = c.getFieldSummary(Fields.FEELSLIKE);
                 if(feelsLike != null) {
 					feelsLike = feelsLike.replace(" ", "").replace("C", "");
-                    views.setTextViewText(R.id.current_title, String.format("%s (%s)", temp, feelsLike));
+                    views.setTextViewText(R.id.current_title, String.format("%s/%s", temp, feelsLike));
                 } else {
 					views.setTextViewText(R.id.current_title, temp) ;
 				}
