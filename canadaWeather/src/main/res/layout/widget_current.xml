@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/current_root"
     android:layout_width="match_parent"
     android:layout_height="85dp"
@@ -8,8 +7,7 @@
     android:background="?attr/widget_background"
     android:orientation="horizontal"
     android:padding="4dp"
-    android:theme="@style/WeatherWidgetStyle"
-    tools:showIn="@layout/widget_transparent_light">
+    android:theme="@style/WeatherWidgetStyle">
 
     <LinearLayout
         android:id="@+id/current_conditionwrap"
@@ -29,9 +27,8 @@
 
     <FrameLayout
         android:id="@+id/FrameLayout1"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="1" >
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent" >
 
         <LinearLayout
             android:id="@+id/citytempWrap"
@@ -78,6 +75,10 @@
         </LinearLayout>
 
     </FrameLayout>
+    <FrameLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"/>
     <LinearLayout
         android:id="@+id/current_today_forecast_wrap"
         android:layout_width="wrap_content"
