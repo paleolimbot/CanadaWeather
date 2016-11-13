@@ -122,7 +122,11 @@ public class MainActivity extends ForecastActivity {
 		builder.setNegativeButton(R.string.main_about_donate, new DialogInterface.OnClickListener() {
 			public void onClick(DialogInterface dialog, int which) {
 				Intent i = new Intent(Intent.ACTION_VIEW) ;
-				i.setData(Uri.parse("http://apps.fishandwhistle.net/donate")) ;
+				if(lang == WeatherApp.LANG_FR) {
+                    i.setData(Uri.parse("http://apps.fishandwhistle.net/faites-un-don"));
+                } else {
+                    i.setData(Uri.parse("http://apps.fishandwhistle.net/donate"));
+                }
 				try {
 					startActivity(i) ;
 				} catch(ActivityNotFoundException e) {
