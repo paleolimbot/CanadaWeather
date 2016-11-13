@@ -149,17 +149,17 @@ public class CityPageWeatherWidget extends ForecastWidgetProvider {
 
 					views.setTextViewText(R.id.current_today_timeperiod, todayTitle) ;
 					if(today.getHigh() != null) {
-						views.setViewVisibility(R.id.forecast_high, View.VISIBLE) ;
-						views.setTextViewText(R.id.forecast_high, today.getHigh()) ;
+						views.setViewVisibility(R.id.current_today_forecast_high, View.VISIBLE) ;
+						views.setTextViewText(R.id.current_today_forecast_high, today.getHigh()) ;
 					} else {
 						views.setViewVisibility(R.id.forecast_high, View.GONE) ;
 					}
 
 					if(today.getLow() != null) {
-						views.setViewVisibility(R.id.forecast_low, View.VISIBLE) ;
-						views.setTextViewText(R.id.forecast_low, today.getLow()) ;
+						views.setViewVisibility(R.id.current_today_forecast_low, View.VISIBLE) ;
+						views.setTextViewText(R.id.current_today_forecast_low, today.getLow()) ;
 					} else {
-						views.setViewVisibility(R.id.forecast_low, View.GONE) ;
+						views.setViewVisibility(R.id.current_today_forecast_low, View.GONE) ;
 					}
 
 					views.setImageViewResource(R.id.current_today_icon, today.getIconId()) ;
@@ -177,17 +177,17 @@ public class CityPageWeatherWidget extends ForecastWidgetProvider {
 
 					views.setTextViewText(R.id.current_tonight_timeperiod, tonightTitle) ;
 					if(tonight.getHigh() != null) {
-						views.setViewVisibility(R.id.forecast_high, View.VISIBLE) ;
-						views.setTextViewText(R.id.forecast_high, tonight.getHigh()) ;
+						views.setViewVisibility(R.id.current_tonight_forecast_high, View.VISIBLE) ;
+						views.setTextViewText(R.id.current_tonight_forecast_high, tonight.getHigh()) ;
 					} else {
-						views.setViewVisibility(R.id.forecast_high, View.GONE) ;
+						views.setViewVisibility(R.id.current_tonight_forecast_high, View.GONE) ;
 					}
 
 					if(tonight.getLow() != null) {
-						views.setViewVisibility(R.id.forecast_low, View.VISIBLE) ;
-						views.setTextViewText(R.id.forecast_low, tonight.getLow()) ;
+						views.setViewVisibility(R.id.current_tonight_forecast_low, View.VISIBLE) ;
+						views.setTextViewText(R.id.current_tonight_forecast_low, tonight.getLow()) ;
 					} else {
-						views.setViewVisibility(R.id.forecast_low, View.GONE) ;
+						views.setViewVisibility(R.id.current_tonight_forecast_low, View.GONE) ;
 					}
 
 					views.setImageViewResource(R.id.current_tonight_icon, tonight.getIconId()) ;
@@ -205,17 +205,17 @@ public class CityPageWeatherWidget extends ForecastWidgetProvider {
 
 					views.setTextViewText(R.id.current_tomorrow_timeperiod, tomorrowTitle) ;
 					if(tomorrow.getHigh() != null) {
-						views.setViewVisibility(R.id.forecast_high, View.VISIBLE) ;
-						views.setTextViewText(R.id.forecast_high, tomorrow.getHigh()) ;
+						views.setViewVisibility(R.id.current_tomorrow_forecast_high, View.VISIBLE) ;
+						views.setTextViewText(R.id.current_tomorrow_forecast_high, tomorrow.getHigh()) ;
 					} else {
-						views.setViewVisibility(R.id.forecast_high, View.GONE) ;
+						views.setViewVisibility(R.id.current_tomorrow_forecast_high, View.GONE) ;
 					}
 
 					if(tomorrow.getLow() != null) {
-						views.setViewVisibility(R.id.forecast_low, View.VISIBLE) ;
-						views.setTextViewText(R.id.forecast_low, tomorrow.getLow()) ;
+						views.setViewVisibility(R.id.current_tomorrow_forecast_low, View.VISIBLE) ;
+						views.setTextViewText(R.id.current_tomorrow_forecast_low, tomorrow.getLow()) ;
 					} else {
-						views.setViewVisibility(R.id.forecast_low, View.GONE) ;
+						views.setViewVisibility(R.id.current_tomorrow_forecast_low, View.GONE) ;
 					}
 
 					views.setImageViewResource(R.id.current_tomorrow_icon, tomorrow.getIconId()) ;
