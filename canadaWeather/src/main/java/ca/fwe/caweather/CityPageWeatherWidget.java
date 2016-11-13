@@ -29,8 +29,6 @@ public class CityPageWeatherWidget extends ForecastWidgetProvider {
 
 	public static final String PREF_WIDGET_THEME = "xml_theme_widget" ;
 
-    //TODO widget customization
-
 	@Override
 	protected LocationDatabase getLocationDatabase(Context context) {
 		return new CityPageLocationDatabase(context) ;
@@ -152,7 +150,7 @@ public class CityPageWeatherWidget extends ForecastWidgetProvider {
 						views.setViewVisibility(R.id.current_today_forecast_high, View.VISIBLE) ;
 						views.setTextViewText(R.id.current_today_forecast_high, today.getHigh()) ;
 					} else {
-						views.setViewVisibility(R.id.forecast_high, View.GONE) ;
+						views.setViewVisibility(R.id.current_today_forecast_high, View.GONE) ;
 					}
 
 					if(today.getLow() != null) {
