@@ -37,7 +37,7 @@ public class CityPageWeatherWidget extends ForecastWidgetProvider {
 	@Override
 	protected RemoteViews createWidgetView(Context context, Forecast f, SharedPreferences prefs, boolean error) {
         if(!error) {
-            String theme = prefs.getString(PREF_WIDGET_THEME, "DARK") ;
+            String theme = prefs.getString(PREF_WIDGET_THEME, "LIGHT") ;
             int textcol = Color.WHITE;
             if(theme.equals("LIGHT") || theme.equals("TRANSPARENT")) {
                 textcol = Color.BLACK;
@@ -45,8 +45,8 @@ public class CityPageWeatherWidget extends ForecastWidgetProvider {
 
 			int layoutId;
 			switch (theme) {
-				case "LIGHT":
-					layoutId = R.layout.widget_light;
+				case "DARK":
+					layoutId = R.layout.widget_dark;
 					break;
 				case "TRANSPARENT":
 					layoutId = R.layout.widget_transparent_light;
@@ -55,7 +55,7 @@ public class CityPageWeatherWidget extends ForecastWidgetProvider {
 					layoutId = R.layout.widget_transparent_dark;
 					break;
 				default:
-					layoutId = R.layout.widget_dark;
+					layoutId = R.layout.widget_light;
 					break;
 			}
 
