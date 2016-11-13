@@ -37,6 +37,7 @@
     <string name="menu_add">Ajouter une localité</string>
     
     <string name="menu_gps">Prés de moi</string>
+    <string name="menu_ok">D\'Accord</string>
 
     <string name="location_label">Choisir la localité</string>
     <string name="location_geocoding">Géocodage l\'endroit</string>

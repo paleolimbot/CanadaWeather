@@ -41,6 +41,7 @@
     <string name="pref_widget_location">Location Widget</string>
     <string name="pref_widget_location_summary">Choisir la location pour le widget.</string>
 
+    <string name="pref_widget_showcc_icon">Voir icon des conditions actuelles</string>
     <string name="pref_widget_day1">Voir les prévisions d\'aujourd\'hui</string>
     <string name="pref_widget_day2">Voir les prévisions de ce soir</string>
     <string name="pref_widget_day3">Voir les prévisions de demain</string>

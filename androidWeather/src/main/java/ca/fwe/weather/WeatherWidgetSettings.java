@@ -1,15 +1,17 @@
 package ca.fwe.weather;
 
-import android.app.Activity;
 import android.appwidget.AppWidgetManager;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
+
 import ca.fwe.weather.backend.LocationDatabase;
 import ca.fwe.weather.core.ForecastLocation;
 
-public abstract class WeatherWidgetSettings extends Activity {
+public abstract class WeatherWidgetSettings extends PreferenceActivity {
 
 	protected static final int REQUEST_LOCATION = 11 ;
 	
@@ -19,8 +21,8 @@ public abstract class WeatherWidgetSettings extends Activity {
 	protected ForecastLocation location ;
 	protected int lang ;
 	private int widgetId ;
-	
-	@Override
+
+    @Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		
@@ -35,8 +37,36 @@ public abstract class WeatherWidgetSettings extends Activity {
 			this.finish();
 		}
 	}
-	
-	protected int getWidgetId() {
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.widget_settings, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if(item.getItemId() == R.id.menu_ok) {
+            userOK();
+            return true;
+        } else {
+            return super.onOptionsItemSelected(item);
+        }
+    }
+
+    @Override
+    public void onBackPressed() {
+        if(this.getLocation() == null) {
+            this.setResult(RESULT_CANCELED);
+            super.onBackPressed();
+        } else {
+            userOK();
+        }
+    }
+
+    protected abstract void userOK();
+
+    protected int getWidgetId() {
 		return widgetId ;
 	}
 	
