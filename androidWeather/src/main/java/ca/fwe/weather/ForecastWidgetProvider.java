@@ -4,6 +4,7 @@ import android.appwidget.AppWidgetManager;
 import android.appwidget.AppWidgetProvider;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.util.Log;
 import android.widget.RemoteViews;
@@ -21,6 +22,7 @@ import ca.fwe.weather.core.Units.UnitSet;
 import ca.fwe.weather.util.ForecastDownloader;
 import ca.fwe.weather.util.ForecastDownloader.Modes;
 import ca.fwe.weather.util.ForecastDownloader.ReturnTypes;
+import ca.fwe.weather.util.JSONSharedPreferences;
 
 public abstract class ForecastWidgetProvider extends AppWidgetProvider {
 
@@ -101,14 +103,14 @@ public abstract class ForecastWidgetProvider extends AppWidgetProvider {
 							error = false ;
 							break;
 						}
-                        JSONObject options;
+                        SharedPreferences prefs;
                         try {
-                            options = new JSONObject(wi.jsonOptions);
-                        } catch(JSONException e) {
+                            prefs = new JSONSharedPreferences(wi.jsonOptions);
+                        } catch(IllegalArgumentException e) {
                             Log.e("ForecastWidgetProvider", "updateWidget: json exception while parsing data", e);
-                            options = new JSONObject();
+                            prefs = new JSONSharedPreferences("{}");
                         }
-						putForecast(context, manager, widgetId, forecast, options, error) ;
+						putForecast(context, manager, widgetId, forecast, new JSONSharedPreferences(wi.jsonOptions), error) ;
 					}
 				}, downloadMode) ;
 				downloader.download();
@@ -120,14 +122,14 @@ public abstract class ForecastWidgetProvider extends AppWidgetProvider {
 		}
 	}
 
-	private void putForecast(Context context, AppWidgetManager manager, int widgetId, Forecast forecast, JSONObject options, boolean error) {
-		RemoteViews view = this.createWidgetView(context, forecast, options, error) ;
+	private void putForecast(Context context, AppWidgetManager manager, int widgetId, Forecast forecast, SharedPreferences prefs, boolean error) {
+		RemoteViews view = this.createWidgetView(context, forecast, prefs, error) ;
 		if(view != null)
 			manager.updateAppWidget(widgetId, view);
 	}
 
 	protected abstract LocationDatabase getLocationDatabase(Context context) ;
-	protected abstract RemoteViews createWidgetView(Context context, Forecast forecast, JSONObject options, boolean error) ;
+	protected abstract RemoteViews createWidgetView(Context context, Forecast forecast, SharedPreferences prefs, boolean error) ;
 
 	private static void log(String message) {
 		Log.i("ForecastWidgetProvider", message) ;

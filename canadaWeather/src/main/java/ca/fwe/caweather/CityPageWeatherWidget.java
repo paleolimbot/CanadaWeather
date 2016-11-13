@@ -50,17 +50,29 @@ public class CityPageWeatherWidget extends ForecastWidgetProvider {
 	}
 	
 	@Override
-	protected RemoteViews createWidgetView(Context context, Forecast f, JSONObject options, boolean error) {
-		//TODO implement json options
-        Log.i("CityPageWeatherWidget", "createWidgetView: json options are: " + options.toString());
+	protected RemoteViews createWidgetView(Context context, Forecast f, SharedPreferences prefs, boolean error) {
         if(!error) {
-            SharedPreferences prefs = WeatherApp.prefs(context) ;
             String theme = prefs.getString(PREF_WIDGET_THEME, "DARK") ;
             int textcol = Color.WHITE;
             if(theme.equals("LIGHT") || theme.equals("TRANSPARENT")) {
                 textcol = Color.BLACK;
             }
 
+			int layoutId;
+			switch (theme) {
+				case "LIGHT":
+					layoutId = R.layout.widget_light;
+					break;
+				case "TRANSPARENT":
+					layoutId = R.layout.widget_transparent_light;
+					break;
+				case "TRANSPARENT_LIGHTTEXT":
+					layoutId = R.layout.widget_transparent_dark;
+					break;
+				default:
+					layoutId = R.layout.widget_dark;
+					break;
+			}
 
 			CurrentConditions c = null ;
 			TimePeriodForecast today = null ;
@@ -96,8 +108,7 @@ public class CityPageWeatherWidget extends ForecastWidgetProvider {
 
 
 			if(c != null) {
-				RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.widget_dark) ;
-				View v;
+				RemoteViews views = new RemoteViews(context.getPackageName(), layoutId) ;
 
 				views.setTextViewText(R.id.current_city, f.getLocation().toString(WeatherApp.getLanguage(context))) ;
 
@@ -123,7 +134,7 @@ public class CityPageWeatherWidget extends ForecastWidgetProvider {
 				views.setTextViewText(R.id.current_subtitle, dateText) ;
 
                 String condition = c.getField(Fields.CONDITION);
-                if(condition != null) {
+                if(prefs.getBoolean("widget_showcc_icon", true)) {
                     views.setViewVisibility(R.id.current_icon, View.VISIBLE);
                     views.setImageViewResource(R.id.current_icon, c.getIconId());
                 } else {
@@ -137,7 +148,7 @@ public class CityPageWeatherWidget extends ForecastWidgetProvider {
 				}
 				views.setOnClickPendingIntent(R.id.current_root, getOnClickPendingIntent(context, f.getLocation())) ;
 
-				if(today != null) {
+				if(today != null && prefs.getBoolean("widget_day1", true)) {
 					views.setViewVisibility(R.id.current_today_forecast_wrap, View.VISIBLE) ;
 
 					String todayTitle = today.getTitle() ;
@@ -165,7 +176,7 @@ public class CityPageWeatherWidget extends ForecastWidgetProvider {
 					views.setViewVisibility(R.id.current_today_forecast_wrap, View.GONE) ;
 				}
 
-				if(tonight != null) {
+				if(tonight != null && prefs.getBoolean("widget_day2", false)) {
 					views.setViewVisibility(R.id.current_tonight_forecast_wrap, View.VISIBLE) ;
 
 					String tonightTitle = tonight.getTitle() ;
@@ -193,7 +204,7 @@ public class CityPageWeatherWidget extends ForecastWidgetProvider {
 					views.setViewVisibility(R.id.current_tonight_forecast_wrap, View.GONE) ;
 				}
 
-				if(tomorrow != null) {
+				if(tomorrow != null && prefs.getBoolean("widget_day3", false)) {
 					views.setViewVisibility(R.id.current_tomorrow_forecast_wrap, View.VISIBLE) ;
 
 					String tomorrowTitle = tomorrow.getTitle() ;
