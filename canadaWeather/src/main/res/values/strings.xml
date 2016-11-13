@@ -36,7 +36,6 @@
     
     <string name="notifications_label">Notifications</string>
     <string name="notifications_introtext">You\'ll be notified when locations in this list have weather warnings/watches issued by Environment Canada. Click the plus sign to add a location, click the city name to remove!</string>
-    <string name="notifications_shpeel">Click the plus sign to add a location to the notifications list. When Environment Canada issues a weather watch, advisory, or warning, for any of the locations on this list, this app will put a notification in your status bar for as long as the watch/warning is in effect. Still in the process of trying this out, so bear with me and give feedback if things don\'t work properly!</string>
     <string name="notifications_remove_title">Remove Location?</string>
     <string name="notifications_remove_message" formatted="false">You will no longer receive notifications of watches or warnings for %s.</string>
     <string name="notifications_nodata_message">No locations in list</string>
