@@ -110,7 +110,7 @@ public abstract class ForecastWidgetProvider extends AppWidgetProvider {
                             Log.e("ForecastWidgetProvider", "updateWidget: json exception while parsing data", e);
                             prefs = new JSONSharedPreferences("{}");
                         }
-						putForecast(context, manager, widgetId, forecast, new JSONSharedPreferences(wi.jsonOptions), error) ;
+						putForecast(context, manager, widgetId, forecast, prefs, error) ;
 					}
 				}, downloadMode) ;
 				downloader.download();
