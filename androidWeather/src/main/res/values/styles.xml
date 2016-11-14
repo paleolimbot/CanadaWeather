@@ -6,8 +6,6 @@
     <style name="WeatherTheme" parent="Theme.AppCompat.NoActionBar">
         <item name="ic_action_add_themedep">@drawable/ic_action_add</item>
         <item name="ic_action_edit_themedep">@drawable/ic_action_edit</item>
-        <item name="colorPrimary">@color/colorPrimaryDarkTheme</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="textColorBlack">#FFFFFF</item>
         <item name="windowActionBar">false</item>
