@@ -7,6 +7,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.RemoteViews;
@@ -37,7 +38,8 @@ public class CityPageWeatherWidget extends ForecastWidgetProvider {
 	@Override
 	protected RemoteViews createWidgetView(Context context, Forecast f, SharedPreferences prefs, boolean error) {
         if(!error) {
-            String theme = prefs.getString(PREF_WIDGET_THEME, "LIGHT") ;
+			SharedPreferences defaultPrefs = PreferenceManager.getDefaultSharedPreferences(context);
+            String theme = prefs.getString(PREF_WIDGET_THEME, defaultPrefs.getString(PREF_WIDGET_THEME, "LIGHT")) ;
             int textcol = Color.WHITE;
             if(theme.equals("LIGHT") || theme.equals("TRANSPARENT")) {
                 textcol = Color.BLACK;
