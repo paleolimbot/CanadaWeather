@@ -70,4 +70,6 @@
 
     <string name="cc_field_sunrise">Lever</string>
     <string name="cc_field_sunset">Coucher</string>
+
+    <string name="widget_settings_label">Ajouter un widget</string>
 </resources>

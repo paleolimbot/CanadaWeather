@@ -73,5 +73,6 @@
 
     <string name="cc_field_sunrise">Sunrise</string>
     <string name="cc_field_sunset">Sunset</string>
-    
+
+    <string name="widget_settings_label">Add Widget</string>
 </resources>

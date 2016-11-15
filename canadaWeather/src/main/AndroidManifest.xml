@@ -61,7 +61,8 @@
 		    android:label="@string/radar_prefs_label"
 		    android:taskAffinity="ca.fwe.caweather.radar.RadarTask" />
 		
-        <activity android:name=".CityPageWeatherWidgetSettings">
+        <activity android:name=".CityPageWeatherWidgetSettings"
+            android:label="@string/widget_settings_label">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />
             </intent-filter>
