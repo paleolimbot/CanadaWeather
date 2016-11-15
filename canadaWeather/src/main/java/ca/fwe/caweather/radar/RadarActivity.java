@@ -75,6 +75,7 @@ public class RadarActivity extends AppCompatActivity implements OnClickListener 
 	private LatLon latLon ;
 	private ImageView image ;
 	private RadarLocationAdapter adapter ;
+    private ArrayAdapter<String> errorAdapter;
 	private TextView dateText ;
 
 	private RadarCacheManager cache ;
@@ -86,12 +87,6 @@ public class RadarActivity extends AppCompatActivity implements OnClickListener 
 	private Bitmap[] imageOverlays ;
 
 	private LayerDrawable blankImageList ;
-
-    //TODO possibly update to the A11 images?
-    //TODO animator thread is not killed on exit!
-    // the app is force closing every time when i click on the radar view seemingly because
-    // of no link to radar map for (baccaro point ns) and it often force
-    // closes when I rotate the screen. Thl t11 android 4.2.2
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -130,6 +125,10 @@ public class RadarActivity extends AppCompatActivity implements OnClickListener 
 		playPause.setOnClickListener(this) ;
 
 		animSeek.setOnSeekBarChangeListener(animator) ;
+
+        errorAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item,
+                new String[] {getString(R.string.radar_error_no_stations)});
+        adapter = new RadarLocationAdapter(new RadarLocation[] {});
 
 		locationsSpinner.setOnItemSelectedListener(new OnItemSelectedListener() {
 			public void onItemSelected(AdapterView<?> arg0, View arg1, int position, long arg3) {
@@ -359,7 +358,7 @@ public class RadarActivity extends AppCompatActivity implements OnClickListener 
 			}
 		} else {
 			locationsSpinner.setOnItemSelectedListener(null) ;
-			locationsSpinner.setAdapter( new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, new String[] {getString(R.string.radar_error_no_stations)})) ;
+			locationsSpinner.setAdapter(errorAdapter) ;
 		}
 	}
 
@@ -386,13 +385,15 @@ public class RadarActivity extends AppCompatActivity implements OnClickListener 
 	@Override
 	public void onClick(View v) {
 		if (v.getId() == R.id.radar_play_pause) {
-			if(animator.downloader.isDownloading) {
-				animator.downloader.cancel(false) ;
-			} else if(animator.playing) {
-				animator.pause() ;
-			} else {
-				animator.play() ;
-			}
+            if(adapter.current() != null) {
+                if (animator.downloader.isDownloading) {
+                    animator.downloader.cancel(false);
+                } else if (animator.playing) {
+                    animator.pause();
+                } else {
+                    animator.play();
+                }
+            }
 		}
 
 	}
@@ -442,26 +443,35 @@ public class RadarActivity extends AppCompatActivity implements OnClickListener 
 		}
 
 		public RadarLocation current() {
-			return this.getItem(locationsSpinner.getSelectedItemPosition()) ;
+            int ind = locationsSpinner.getSelectedItemPosition();
+            if(ind >= 0 && ind < this.getCount()) {
+                return this.getItem(ind);
+            } else {
+                return null;
+            }
 		}
 
 	}
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
-
+        RadarLocation loc = adapter.current();
 		if (item.getItemId() == R.id.menu_refresh) {
-			this.setLocation(adapter.current(), true) ;
+            if(loc != null) {
+                this.setLocation(loc, true);
+            }
 			return true ;
 		} else if (item.getItemId() == R.id.menu_view_online) {
-			Intent i = new Intent(Intent.ACTION_VIEW) ;
-			String url = adapter.current().getMobileURL(WeatherApp.getLanguage(this)) ;
-			i.setData(Uri.parse(url)) ;
-			try {
-				this.startActivity(i) ;
-			} catch(ActivityNotFoundException e) {
-				this.setToast(R.string.forecast_error_no_browser) ;
-			}
+            if(loc != null) {
+                Intent i = new Intent(Intent.ACTION_VIEW);
+                String url = loc.getMobileURL(WeatherApp.getLanguage(this));
+                i.setData(Uri.parse(url));
+                try {
+                    this.startActivity(i);
+                } catch (ActivityNotFoundException e) {
+                    this.setToast(R.string.forecast_error_no_browser);
+                }
+            }
 			return true ;
 		} else if (item.getItemId() == R.id.menu_prefs) {
 			Intent i = new Intent(this, RadarPrefs.class) ;
