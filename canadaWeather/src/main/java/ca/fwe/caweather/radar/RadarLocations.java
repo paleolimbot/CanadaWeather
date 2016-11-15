@@ -1,6 +1,8 @@
 package ca.fwe.caweather.radar;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 import ca.fwe.locations.geometry.LatLon;
 import ca.fwe.weather.WeatherApp;
@@ -28,11 +30,10 @@ public class RadarLocations {
 		}
 	}
 
-	public static RadarLocation[] filter(LatLon point, int numEntries, int lang) {
+	public static RadarLocation[] filter(final LatLon point, int numEntries, int lang) {
 		double radius = 500 ; //km to search
 		ArrayList<RadarLocation> list = new ArrayList<>() ;
-		ArrayList<Long> distanceList = new ArrayList<>() ;
-		
+
 		RadarLocation[] all = ALL_EN ;
 		if(lang == WeatherApp.LANG_FR)
 			all = ALL_FR ;
@@ -42,27 +43,30 @@ public class RadarLocations {
 			if(loc != null) {
 				double distance = loc.distanceTo(point) ;
 				if(distance <= radius) {
-					distanceList.add(Math.round(distance)) ;
 					list.add(rl) ;
 				}
 			}
 		}
 
-		RadarLocation[] out = new RadarLocation[Math.min(numEntries, list.size())] ;
+        Collections.sort(list, new Comparator<RadarLocation>() {
+            @Override
+            public int compare(RadarLocation o1, RadarLocation o2) {
+                double d1 = o1.getLocation().distanceTo(point) ;
+                double d2 = o2.getLocation().distanceTo(point) ;
+                if(d1 == d2) {
+                    return 0;
+                } else if(d1 > d2) {
+                    return 1;
+                } else {
+                    return -1;
+                }
+            }
+        });
+
+        RadarLocation[] out = new RadarLocation[Math.min(numEntries, list.size())] ;
 		
 		for(int i=0; i<out.length; i++) {
-			int lowestDistIndex = -1 ;
-			long lowestDist = 500 ;
-			for(int j=0; j<list.size(); j++) {
-				if(distanceList.get(j) < lowestDist) {
-					lowestDistIndex = j ;
-					lowestDist = distanceList.get(j) ;
-				}
-			}
-			RadarLocation l = list.get(lowestDistIndex) ;
-			out[i] = l ;
-			list.remove(lowestDistIndex) ;
-			distanceList.remove(lowestDistIndex) ;
+			out[i] = list.get(i);
 		}
 
 		return out ;
