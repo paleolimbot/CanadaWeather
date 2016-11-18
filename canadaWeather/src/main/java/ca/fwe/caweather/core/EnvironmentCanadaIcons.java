@@ -103,7 +103,7 @@ public class EnvironmentCanadaIcons {
 		intMap.put(9, Icons.SUN_STORM);
 		intMap.put(10, Icons.CLOUDY);
 		intMap.put(11, Icons.DISTANT_RAIN);
-		intMap.put(12, Icons.LIGHT_RAIN);
+		intMap.put(12, Icons.RAIN); // was LIGHT_RAIN
 		intMap.put(13, Icons.HEAVY_RAIN);
 		intMap.put(14, Icons.FREEZING_RAIN);
 		intMap.put(15, Icons.SNOW_RAIN);
@@ -119,7 +119,7 @@ public class EnvironmentCanadaIcons {
 		intMap.put(25, Icons.WINDY_SNOW);
 		intMap.put(26, Icons.ICE_CRYSTALS);
 		intMap.put(27, Icons.HAIL);
-		intMap.put(28, Icons.LIGHT_RAIN);
+		intMap.put(28, Icons.RAIN); //was LIGHT_RAIN
 		intMap.put(29, Icons.NA);
 		intMap.put(30, Icons.NIGHT_CLEAR);
 		intMap.put(31, Icons.NIGHT_PARTIALLY_CLOUDY);
