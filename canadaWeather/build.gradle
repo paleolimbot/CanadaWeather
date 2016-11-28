@@ -8,8 +8,8 @@ android {
         applicationId "ca.fwe.caweather"
         minSdkVersion 16
         targetSdkVersion 24
-        versionCode 35
-        versionName "2.0.2"
+        versionCode 36
+        versionName "2.0.3"
     }
 
     buildTypes {
