@@ -95,7 +95,10 @@ public abstract class NotificationsReceiver extends BroadcastReceiver implements
                 //launch activity
                 Intent i = new Intent(Intent.ACTION_VIEW);
                 i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                i.setData(data);
+				//strip location URI out of URL
+                String warningUri = data.toString();
+                String warningpart = "weathernotificationsrc=" + Uri.encode(locUri.toString());
+                i.setData(Uri.parse(warningUri.replace("&" + warningpart, "").replace(warningpart, "")));
                 try {
                     context.startActivity(i);
                 } catch(ActivityNotFoundException e) {
