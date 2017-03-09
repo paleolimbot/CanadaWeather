@@ -1,6 +1,8 @@
 package ca.fwe.weather.core;
 
+import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
+import android.util.Log;
 
 public class ForecastItem {
 	
@@ -21,6 +23,7 @@ public class ForecastItem {
 		this.title = title;
 		this.description = description;
 		this.icon = icon;
+        this.iconId = ICON_NONE;
 	}
 	public String getTitle() {
 		return title;
@@ -30,8 +33,12 @@ public class ForecastItem {
 	}
 	
 	public Drawable getIcon() {
-		if(iconId != ICON_NONE && icon == null)
-			icon = forecast.getContext().getResources().getDrawable(this.getIconId()) ;
+        try {
+            if (iconId != ICON_NONE && icon == null)
+                icon = forecast.getContext().getResources().getDrawable(this.getIconId());
+        } catch (Resources.NotFoundException e) {
+            Log.e("ForecastItem", "Tried to access illegal resource with ID " + iconId);
+        }
 		return icon;
 	}
 	public int getIconId() {

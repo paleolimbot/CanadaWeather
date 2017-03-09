@@ -124,6 +124,8 @@ public class CityPageForecastParser extends ForecastXMLParser {
 	
 	private TimePeriodForecast parseForecast(XmlPullParser parser) throws XmlPullParserException, IOException {
 		TimePeriodForecast dailyFc = new TimePeriodForecast(getForecast()) ;
+		dailyFc.setIconId(EnvironmentCanadaIcons.getIconId(iconSet, "29")); // set to unknown by default
+
 		while (parser.next() != XmlPullParser.END_TAG) {
 			if (parser.getEventType() == XmlPullParser.START_TAG) {
 				String tagName = parser.getName();
@@ -354,6 +356,8 @@ public class CityPageForecastParser extends ForecastXMLParser {
 	
 	private CurrentConditions parseCurrentConditions(XmlPullParser parser) throws XmlPullParserException, IOException {
 		CurrentConditions c = new CurrentConditions(getForecast()) ;
+		c.setIconId(EnvironmentCanadaIcons.getIconId(iconSet, "29")); // set to unknown by default
+
 		while (parser.next() != XmlPullParser.END_TAG) {
 
 			if (parser.getEventType() == XmlPullParser.START_TAG) {
