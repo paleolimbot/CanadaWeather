@@ -17,7 +17,6 @@ import java.util.Set;
 import java.util.Timer;
 import java.util.TimerTask;
 
-import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
@@ -257,13 +256,15 @@ public class RadarActivity extends AppCompatActivity implements OnClickListener 
 		}
 	}
 
-	private int getAnimationLength() {
+	private int getAnimationLength(RadarLocation l) {
+		// value here is number of 10-minute frames
+		// need to scale based on location.getUpdateFrequency()
 		SharedPreferences prefs = WeatherApp.prefs(this) ;
 		String length = prefs.getString(PREF_ANIMATION_LENGTH, "7") ;
 		try {
-			return Integer.valueOf(length) ;
+			return Integer.valueOf(length) * 10 / l.getUpdateFrequency() ;
 		} catch(NumberFormatException e) {
-			return 7 ;
+			return 7 * 10 / l.getUpdateFrequency() ;
 		}
 	}
 
@@ -366,7 +367,7 @@ public class RadarActivity extends AppCompatActivity implements OnClickListener 
 		animator.pause();
 		animator.setImages(null) ;
 		imageOverlays = this.loadOverlays(l) ;
-		RadarImageList list = RadarImageList.getMostRecent(l, this.getImageType(), this.getAnimationLength());
+		RadarImageList list = RadarImageList.getMostRecent(l, this.getImageType(), this.getAnimationLength(l));
 		animator.setImages(list);
 	}
 

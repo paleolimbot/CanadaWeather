@@ -31,21 +31,21 @@ public class RadarImageList {
 		//there's a problem with timezones here. (UTC shouldn't matter beause the date is
 		//passed to the radarImage as a Date instance.
 		Calendar date = Calendar.getInstance(TimeZone.getTimeZone("UTC")) ;		
-		//typical radar image is about 8 minutes behind the last 10-minute interval
+		//typical radar image is about 8 minutes behind the last n-minute interval
 		date.set(Calendar.SECOND, 0) ;
 		date.set(Calendar.MILLISECOND, 0) ;
 		date.add(Calendar.MINUTE, -8);
 		
 		//set to nearest ten minute interval before date
 		int minutes = date.get(Calendar.MINUTE) ;
-		int previousTen = minutes / 10 * 10 ;
+		int previousTen = minutes / l.getUpdateFrequency() * l.getUpdateFrequency() ;
 		date.set(Calendar.MINUTE, previousTen) ;
 		
 		Log.d("RadarImageList", "creating image list starting with date" + date.getTime()) ;
 		RadarImageList out = new RadarImageList() ;
 		for(int i=0; i<animationLength; i++) {
 			out.add(new RadarImage(l, type, date.getTime())) ;			
-			date.add(Calendar.MINUTE, -10) ;
+			date.add(Calendar.MINUTE, -l.getUpdateFrequency()) ;
 		}
 		out.sort();
 		return out ;

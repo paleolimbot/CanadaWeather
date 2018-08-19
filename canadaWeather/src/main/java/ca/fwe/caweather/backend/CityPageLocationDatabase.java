@@ -27,7 +27,7 @@ public class CityPageLocationDatabase extends LocationDatabase {
 	private static final String TAG = "CityPageLocationDatabas" ;
 	
 	private static final String DB_NAME = "citypage_locations" ;
-	private static final int DB_VERSION = 2 ;
+	private static final int DB_VERSION = 3 ;
 	
 	private LocDbHelper db ;
 	private int lang ;
@@ -194,15 +194,15 @@ public class CityPageLocationDatabase extends LocationDatabase {
                     + "name_fr TEXT, "
                     + "lat NUMERIC, "
                     + "lon NUMERIC, web_id TEXT)");
-			//Populate tables with locations from the sitelist-base-v2.xml asset.
+			//Populate tables with locations from the sitelist-base-v3.xml asset.
 			try {
-				InputStream s = context.getAssets().open("sitelist-base-v2.xml") ;
+				InputStream s = context.getAssets().open("sitelist-base-v3.xml") ;
 				mergeInputStream(s, db) ;
 				s.close() ;
 			} catch (IOException e) {
-				Log.e(TAG, "unable to open asset sitelist-base-v2.xml while creating database", e) ;
+				Log.e(TAG, "unable to open asset sitelist-base-v3.xml while creating database", e) ;
 			} catch (SAXException e) {
-				Log.e(TAG, "parse error while parsing sitelist-base-v2.xml from assets while creating database", e) ;
+				Log.e(TAG, "parse error while parsing sitelist-base-v3.xml from assets while creating database", e) ;
 			}
 			
 		}
@@ -211,15 +211,15 @@ public class CityPageLocationDatabase extends LocationDatabase {
 		public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
             Log.i(TAG, "ugrading database from " + oldVersion + " to " + newVersion);
             try {
-                if (newVersion == 2 && oldVersion == 1) { //currently the only version is 1
-                    InputStream s = context.getAssets().open("sitelist-base-v2.xml");
+                if (newVersion == 3 && oldVersion < 3) {
+                    InputStream s = context.getAssets().open("sitelist-base-v3.xml");
                     mergeInputStream(s, db);
                     s.close();
                 }
             } catch (IOException e) {
-                Log.e(TAG, "unable to open asset sitelist-base-v2.xml while upgrading database", e) ;
+                Log.e(TAG, "unable to open asset sitelist-base-v3.xml while upgrading database", e) ;
             } catch (SAXException e) {
-                Log.e(TAG, "parse error while parsing sitelist-base-v2.xml from assets while upgrading database", e) ;
+                Log.e(TAG, "parse error while parsing sitelist-base-v3.xml from assets while upgrading database", e) ;
             }
 		}
 		

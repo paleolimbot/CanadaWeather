@@ -1,11 +1,10 @@
-#r script to write sitelist-base-v2.xml
+#r script to write sitelist-base-v3.xml
 
 library(XML)
 
-load("sitelist-base-v2.RData")
+finallist <- readRDS("sitelist-base-v3.rds")
 
-root <- newXMLNode("siteList", 
-                   namespaceDefinitions = c(fw="http://apps.fishandwhistle.net/schemas/ecweather"))
+root <- newXMLNode("siteList", namespaceDefinitions = c(fw="http://apps.fishandwhistle.net/schemas/ecweather"))
 
 plyr::a_ply(finallist, .margins=1, .fun=function(row) {
   if(row$.id == "province") {
@@ -33,4 +32,4 @@ plyr::a_ply(finallist, .margins=1, .fun=function(row) {
   addChildren(root, node)
 })
 
-saveXML(newXMLDoc(node=root), file="siteList-base-v2.xml")
+saveXML(newXMLDoc(node=root), file="sitelist-base-v3.xml")

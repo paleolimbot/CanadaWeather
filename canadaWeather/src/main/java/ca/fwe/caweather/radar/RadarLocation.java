@@ -46,26 +46,28 @@ public class RadarLocation {
 //	public static final String OVERLAY_RIVERS = "http://www.weatheroffice.gc.ca/radar/images/layers/rivers/%id_lc%_rivers.gif" ;
 //	public static final String OVERLAY_RADAR_CIRCLE = "http://www.weatheroffice.gc.ca/radar/images/layers/radar_circle/radar_circle.gif" ;
 	
-	// overlays: server http://www.weatheroffice.gc.ca
-	// ["/radar/images/layers/additional_cities/wtp_towns.gif"]
-	// ["/radar/images/layers/default_cities/wtp_towns.gif"]
-	// ["/radar/images/layers/radar_circle/radar_circle.gif"]
-	// ["/radar/images/layers/rivers/wtp_rivers.gif"]
-	// ["/radar/images/layers/road_labels/wtp_labs.gif"]
-	// ["/radar/images/layers/roads/WTP_roads.gif"]
+	// overlays: server https://www.weather.gc.ca
+	// ["/cacheable/radar/images/layers/additional_cities/wtp_towns.gif"]
+	// ["/cacheable/radar/images/layers/default_cities/wtp_towns.gif"]
+	// ["/cacheable/radar/images/layers/radar_circle/radar_circle.gif"]
+	// ["/cacheable/radar/images/layers/rivers/wtp_rivers.gif"]
+	// ["/cacheable/radar/images/layers/road_labels/wtp_labs.gif"]
+	// ["/cacheable/radar/images/layers/roads/WTP_roads.gif"]
 
 	private String name ;
 	private String alias ;
 	private String siteId ;
 	private String region ;
 	private LatLon location ;
+	private int updateFrequency ;
 	
-	public RadarLocation(String name, String alias, String siteId, String region, LatLon location) {
+	public RadarLocation(String name, String alias, String siteId, String region, LatLon location, int updateFrequency) {
 		this.name = name;
 		this.alias = alias;
 		this.siteId = siteId;
 		this.region = region;
 		this.location = location;
+		this.updateFrequency = updateFrequency;
 	}
 
 	public Uri getUri() {
@@ -95,6 +97,10 @@ public class RadarLocation {
 	public String toString() {
 		return this.getAlias() + " (" + this.getName() + ")" ;
 	}
+
+	public int getUpdateFrequency() {
+	    return this.updateFrequency;
+    }
 	
 	public String getImageListURL(String product) {
 		//addition on the end ensures most recent radar images are listed first
@@ -118,18 +124,19 @@ public class RadarLocation {
 	}
 	
 	public String getOverlayAssetName(Overlays which) {
-		switch(which) {
-		case ROADS:
-			return this.getSiteId() + "_roads.png" ;
-		case CITIES:
-			return this.getSiteId() + "_cities.png" ;
-		case MORE_CITIES:
-			return this.getSiteId() + "_more_cities.png" ;
-		case RIVERS:
-			return this.getSiteId() + "_rivers.png" ;
-		case ROAD_LABELS:
-			return this.getSiteId() + "_road_labels.png" ;
-		default: return null ;
+		switch (which) {
+			case ROADS:
+				return this.getSiteId() + "_roads.png";
+			case CITIES:
+				return this.getSiteId() + "_cities.png";
+			case MORE_CITIES:
+				return this.getSiteId() + "_more_cities.png";
+			case RIVERS:
+				return this.getSiteId() + "_rivers.png";
+			case ROAD_LABELS:
+				return this.getSiteId() + "_road_labels.png";
+			default:
+				return null;
 		}
 	}
 	

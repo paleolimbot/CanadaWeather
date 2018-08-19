@@ -9,7 +9,7 @@
     <string name="menu_radar">Radar</string>
     <string name="menu_about">About</string>
     
-    <string name="main_about_message">This update is a fix to the issue that caused the app to crash when viewing specific forecast locations! So very sorry, I spend most of my time writing papers as a Ph.D. student and haven\'t been properly paying attention to the crash reports. Thanks for all your kind emails and bug reports and feature requests. As always, keep it coming to apps@fishandwhistle.net.</string>
+    <string name="main_about_message">This update is a fix to the Radisson, SK radar location! So very sorry, I spend most of my time writing papers as a Ph.D. student. I know about the widget update problems on new versions of Android, which can partially be fixed by allowing Canada Weather extra permissions in the settings dialog. The update to fix that for good will come a bit later. Thanks for all your kind emails and bug reports and feature requests. As always, keep it coming to apps@fishandwhistle.net.</string>
     <string name="main_about_rate">Rate this app!</string>
     <string name="main_about_donate">Donate!</string>
     <string name="main_about_gotit">Got it!</string>
