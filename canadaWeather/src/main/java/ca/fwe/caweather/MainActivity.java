@@ -88,13 +88,13 @@ public class MainActivity extends ForecastActivity {
 	private void showAboutDialog() {
 		AlertDialog.Builder topo = new AlertDialog.Builder(this) ;
 		topo.setTitle("Work in the oil patch?") ;
-		topo.setMessage("Work in the oil patch and need directions to oilfield sites based on LLD or NTS coordinates? Prairie Coordinates, also by Fish & Whistle, offers a simple, user-friendly interface to search legal land descriptions (LLD) and NTS coordinates and get directions in seconds. Or, buy the app just to donate a few dollars to the Canada Weather cause. Thanks!") ;
+		topo.setMessage("Work in the oil patch and need directions to oilfield sites based on LLD or NTS coordinates? Prairie Coordinates, also by Dewey Dunnington, offers a simple, user-friendly interface to search legal land descriptions (LLD) and NTS coordinates and get directions in seconds. Or, buy the app just to donate a few dollars to the Canada Weather cause. Thanks!") ;
 		topo.setPositiveButton("Download Prairie Coordinates", new DialogInterface.OnClickListener() {
 			
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
 				Intent i = new Intent(Intent.ACTION_VIEW) ;
-				i.setData(Uri.parse("http://play.google.com/store/apps/details?id=ca.fwe.pcoordplus")) ;
+				i.setData(Uri.parse("https://play.google.com/store/apps/details?id=ca.fwe.pcoordplus")) ;
 				try {
 					startActivity(i) ;
 				} catch(ActivityNotFoundException e) {
@@ -111,7 +111,7 @@ public class MainActivity extends ForecastActivity {
 		builder.setPositiveButton(R.string.main_about_rate, new DialogInterface.OnClickListener() {
 			public void onClick(DialogInterface dialog, int which) {
 				Intent i = new Intent(Intent.ACTION_VIEW) ;
-				i.setData(Uri.parse("http://play.google.com/store/apps/details?id=ca.fwe.caweather")) ;
+				i.setData(Uri.parse("https://play.google.com/store/apps/details?id=ca.fwe.caweather")) ;
 				try {
 					startActivity(i) ;
 				} catch(ActivityNotFoundException e) {
@@ -119,13 +119,13 @@ public class MainActivity extends ForecastActivity {
 				}
 			}
 		}) ;
-		builder.setNegativeButton(R.string.main_about_donate, new DialogInterface.OnClickListener() {
+		builder.setNegativeButton(R.string.main_about_site, new DialogInterface.OnClickListener() {
 			public void onClick(DialogInterface dialog, int which) {
 				Intent i = new Intent(Intent.ACTION_VIEW) ;
 				if(lang == WeatherApp.LANG_FR) {
-                    i.setData(Uri.parse("http://apps.fishandwhistle.net/faites-un-don"));
+                    i.setData(Uri.parse("https://apps.fishandwhistle.net/"));
                 } else {
-                    i.setData(Uri.parse("http://apps.fishandwhistle.net/donate"));
+                    i.setData(Uri.parse("https://apps.fishandwhistle.net/"));
                 }
 				try {
 					startActivity(i) ;

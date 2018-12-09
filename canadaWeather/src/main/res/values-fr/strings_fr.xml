@@ -11,7 +11,7 @@
     
     <string name="main_about_message">Bienvenue à Météo Canada! Je vous remercie de tous vos courriels qui m\'ont aidé à comprendre les problèmes et à appliquer les suggestions que les utilisateurs de ce programme ont envoyées. Je crois que beaucoup de vos avis vont se retrouver dans cette nouvelle version.</string>
     <string name="main_about_rate">Évaluez!</string>
-    <string name="main_about_donate">Faites un don!</string>
+    <string name="main_about_site">Le site</string>
     <string name="main_about_gotit">J’ai compris</string>
     <string name="main_about_title">À notre propos</string>
     <string name="main_error_noradar">Il n\'y a pas d\'application radar!</string>
