@@ -5,12 +5,12 @@
         android:title="@string/pref_widget_location"
         android:summary="@string/pref_widget_location_summary" />
     <ListPreference
+        android:defaultValue="TRANSPARENT"
+        android:entries="@array/pref_theme_widget_choices"
         android:entryValues="@array/pref_theme_widget_values"
         android:key="xml_theme_widget"
-        android:title="@string/pref_theme_widget"
-        android:entries="@array/pref_theme_widget_choices"
         android:summary="@string/pref_theme_widget_summary"
-        android:defaultValue="LIGHT"/>
+        android:title="@string/pref_theme_widget" />
     <CheckBoxPreference
         android:defaultValue="true"
         android:title="@string/pref_widget_showcc_icon"
