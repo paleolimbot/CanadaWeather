@@ -36,80 +36,104 @@ public abstract class NotificationsReceiver extends BroadcastReceiver implements
 	@Override
 	public void onReceive(Context context, Intent intent) {
 		log("Receiving broadcast with action " + intent.getAction()) ;
-		if(intent.getAction().equals(ForecastDownloader.ACTION_FORECAST_DOWNLOADED)) {
-			Uri data = intent.getData() ;
-			if(data != null) {
-				UpdatesManager manager = new UpdatesManager(context) ;
-				if(manager.notificationsEnabled(data)) {
-					//parse forecast
-					LocationDatabase db = this.getLocationDatabase(context) ;
-					ForecastLocation l = db.getLocation(data) ;
-					int lang = WeatherApp.getLanguage(context) ;
-					if(l != null) {
-						Forecast forecast = new Forecast(context, l, lang) ;
-						//not setting unit set because it is irrelevant here
-						ForecastDownloader d = new ForecastDownloader(forecast, this, Modes.LOAD_CACHED) ;
-						d.download();
-					} else {
-						log("forecast location not found in database! " + data, null) ;
-					}
-				} else {
-					log("notifications not enabled for location " + data) ;
-				}
-			} else {
-				log("intent has no data!", null) ;
-			}
-		} else if(intent.getAction().equals(ACTION_NOTIFICATION_REMOVED)) {
-			Uri data = intent.getData() ;
-			if(data != null) {
-				NotificationManager manager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE) ;
-				manager.cancel(this.getUniqueNotificationId(data));
-			} else {
-				log("intent has no data!", null) ;
-			}
-		} else if(intent.getAction().equals(ACTION_NOTIFICATION_USER_CANCEL)) {
-            //user has cancelled notification: set cancelled key to true
-            Uri data = intent.getData() ;
-            if(data != null) {
-                int notificationId = this.getUniqueNotificationId(data);
-                SharedPreferences prefs = context.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
-                String cancelledKey = String.valueOf(notificationId) + "_cancelled";
-                SharedPreferences.Editor edit = prefs.edit();
-                edit.putBoolean(cancelledKey, true);
-                edit.apply();
-            } else {
-                log("intent has no data!", null) ;
-            }
-        } else if(intent.getAction().equals(ACTION_NOTIFICATION_USER_LAUNCH)) {
-            //user has clicked on notification: launch activity and set cancelled key to true
-            Uri data = intent.getData() ;
-            if(data != null) {
-                Uri locUri = Uri.parse(data.getQueryParameter("weathernotificationsrc"));
-                int notificationId = this.getUniqueNotificationId(locUri);
-                SharedPreferences prefs = context.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
-                String cancelledKey = String.valueOf(notificationId) + "_cancelled";
-                SharedPreferences.Editor edit = prefs.edit();
-                edit.putBoolean(cancelledKey, true);
-                edit.apply();
+		if(intent.getAction() == null) {
+		    log("NULL action!");
+		    return;
+        }
 
-                //launch activity
-                Intent i = new Intent(Intent.ACTION_VIEW);
-                i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-				//strip location URI out of URL
-                String warningUri = data.toString();
-                String warningpart = "weathernotificationsrc=" + Uri.encode(locUri.toString());
-                i.setData(Uri.parse(warningUri.replace("&" + warningpart, "").replace(warningpart, "")));
-                try {
-                    context.startActivity(i);
-                } catch(ActivityNotFoundException e) {
-                    Log.e("NotificationReceiver", "onReceive: activity not found", e);
+        switch (intent.getAction()) {
+            case ForecastDownloader.ACTION_FORECAST_DOWNLOADED: {
+                Uri data = intent.getData();
+                if (data != null) {
+                    UpdatesManager manager = new UpdatesManager(context);
+                    if (manager.notificationsEnabled(data)) {
+                        //parse forecast
+                        LocationDatabase db = this.getLocationDatabase(context);
+                        ForecastLocation l = db.getLocation(data);
+                        int lang = WeatherApp.getLanguage(context);
+                        if (l != null) {
+                            Forecast forecast = new Forecast(context, l, lang);
+                            //not setting unit set because it is irrelevant here
+                            ForecastDownloader d = new ForecastDownloader(forecast, this, Modes.LOAD_CACHED, false);
+                            d.download();
+                        } else {
+                            log("forecast location not found in database! " + data, null);
+                        }
+                    } else {
+                        log("notifications not enabled for location " + data);
+                    }
+                } else {
+                    log("intent has no data!", null);
                 }
+                break;
+            }
+            case ACTION_NOTIFICATION_REMOVED: {
+                Uri data = intent.getData();
+                if (data != null) {
+                    NotificationManager manager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
+                    if(manager == null) {
+                        // notifications not a thing
+                        log("There is no notification manager!");
+                        return;
+                    }
+                    manager.cancel(NotificationsReceiver.getUniqueNotificationId(data));
+                } else {
+                    log("intent has no data!", null);
+                }
+                break;
+            }
+            case ACTION_NOTIFICATION_USER_CANCEL: {
+                //user has cancelled notification: set cancelled key to true
+                Uri data = intent.getData();
+                if (data != null) {
+                    int notificationId = NotificationsReceiver.getUniqueNotificationId(data);
+                    SharedPreferences prefs = context.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
+                    String cancelledKey = String.valueOf(notificationId) + "_cancelled";
+                    SharedPreferences.Editor edit = prefs.edit();
+                    edit.putBoolean(cancelledKey, true);
+                    edit.apply();
+                } else {
+                    log("intent has no data!", null);
+                }
+                break;
+            }
+            case ACTION_NOTIFICATION_USER_LAUNCH: {
+                //user has clicked on notification: launch activity and set cancelled key to true
+                Uri data = intent.getData();
+                if (data != null) {
+                    Uri locUri = Uri.parse(data.getQueryParameter("weathernotificationsrc"));
+                    int notificationId = NotificationsReceiver.getUniqueNotificationId(locUri);
+                    SharedPreferences prefs = context.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
+                    String cancelledKey = String.valueOf(notificationId) + "_cancelled";
+                    SharedPreferences.Editor edit = prefs.edit();
+                    edit.putBoolean(cancelledKey, true);
+                    edit.apply();
 
-                //actually remove notification from notificaion bar
-                NotificationManager manager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE) ;
-                manager.cancel(notificationId);
-            } else {
-                log("intent has no data!", null) ;
+                    //launch activity
+                    Intent i = new Intent(Intent.ACTION_VIEW);
+                    i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    //strip location URI out of URL
+                    String warningUri = data.toString();
+                    String warningpart = "weathernotificationsrc=" + Uri.encode(locUri.toString());
+                    i.setData(Uri.parse(warningUri.replace("&" + warningpart, "").replace(warningpart, "")));
+                    try {
+                        context.startActivity(i);
+                    } catch (ActivityNotFoundException e) {
+                        Log.e("NotificationReceiver", "onReceive: activity not found", e);
+                    }
+
+                    //actually remove notification from notificaion bar
+                    NotificationManager manager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
+                    if (manager == null) {
+                        // notifications not a thing
+                        log("There is no notification manager!");
+                        return;
+                    }
+                    manager.cancel(notificationId);
+                } else {
+                    log("intent has no data!", null);
+                }
+                break;
             }
         }
 	}
@@ -139,6 +163,12 @@ public abstract class NotificationsReceiver extends BroadcastReceiver implements
 		}
 		if(!error) {
 			NotificationManager manager = (NotificationManager) forecast.getContext().getSystemService(Context.NOTIFICATION_SERVICE) ;
+			if(manager == null) {
+			    // notifications not a thing
+                log("There is no notification manager!");
+                return;
+            }
+
 			List<WeatherWarning> warnings = new ArrayList<>() ;
 			for(ForecastItem i: forecast.items) {
 				if(i instanceof WeatherWarning) {
@@ -149,7 +179,7 @@ public abstract class NotificationsReceiver extends BroadcastReceiver implements
 				}
 			}
 
-            int notificationId = this.getUniqueNotificationId(forecast.getLocation().getUri());
+            int notificationId = NotificationsReceiver.getUniqueNotificationId(forecast.getLocation().getUri());
             SharedPreferences prefs = forecast.getContext()
                     .getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
             String typeKey = String.valueOf(notificationId) + "_type";
@@ -222,7 +252,7 @@ public abstract class NotificationsReceiver extends BroadcastReceiver implements
         }
 		builder.setContentIntent(PendingIntent.getBroadcast(forecast.getContext(), 0, i, PendingIntent.FLAG_UPDATE_CURRENT)) ;
         builder.setDeleteIntent(PendingIntent.getBroadcast(forecast.getContext(), 0, userCancel, PendingIntent.FLAG_UPDATE_CURRENT));
-		Notification n = builder.getNotification() ; //apparently .build() requires a higher API level (16)
+		Notification n = builder.build() ; //apparently .build() requires a higher API level (16)
         if(isNew && prefs.getBoolean(PREF_VIBRATE, false)) {
             n.defaults |= Notification.DEFAULT_VIBRATE;
         }

@@ -4,10 +4,13 @@ import java.io.File;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
+import android.support.v4.content.LocalBroadcastManager;
 import android.util.Log;
 import ca.fwe.caweather.backend.CityPageLocationDatabase;
+import ca.fwe.caweather.backend.CityPageUpdatesReceiver;
 import ca.fwe.caweather.radar.RadarCacheManager;
 import ca.fwe.weather.WeatherApp;
 import ca.fwe.weather.backend.FilesManager;
@@ -15,6 +18,7 @@ import ca.fwe.weather.backend.LocationDatabase;
 import ca.fwe.weather.backend.UpdatesReceiver;
 import ca.fwe.weather.backend.UserLocationsList;
 import ca.fwe.weather.core.ForecastLocation;
+import ca.fwe.weather.util.ForecastDownloader;
 
 public class CanadaWeatherApp extends WeatherApp {
 
@@ -29,10 +33,10 @@ public class CanadaWeatherApp extends WeatherApp {
 		RadarCacheManager rcm = new RadarCacheManager(this) ;
 		fm.deleteOldCacheFiles();
 		rcm.cleanCache();
-		
-		//ensure things are up-to-date
-		Intent i = new Intent(UpdatesReceiver.ACTION_ENSURE_UPDATED) ;
-		sendBroadcast(i) ;
+
+		// make sure alarms are in alarm manager
+        Intent i = new Intent(UpdatesReceiver.ACTION_FORCE_UPDATE_ALL);
+		this.broadcastManager(this).sendBroadcast(i);
 	}
 
 	@Override
@@ -104,4 +108,23 @@ public class CanadaWeatherApp extends WeatherApp {
 		return new CityPageLocationDatabase(context) ;
 	}
 
+	@Override
+	public void registerReceivers(LocalBroadcastManager lbm, Context context) {
+
+	    // important to ensure the receivers are only registered once!
+        // unregistering them here doesn't work :(
+        Log.i("CanadaWeatherApp", "registerReceivers()");
+
+	    CityPageUpdatesReceiver cityPage = new CityPageUpdatesReceiver();
+
+		IntentFilter intentFilter = new IntentFilter(CityPageUpdatesReceiver.ACTION_ENSURE_UPDATED);
+		intentFilter.addAction(CityPageUpdatesReceiver.ACTION_FORCE_UPDATE_ALL);
+		lbm.registerReceiver(cityPage, intentFilter);
+
+		CityPageWeatherWidget widget = new CityPageWeatherWidget();
+
+		IntentFilter widgets = new IntentFilter(ForecastDownloader.ACTION_FORECAST_DOWNLOADED);
+		widgets.addDataScheme("citypage");
+		lbm.registerReceiver(widget, widgets);
+	}
 }

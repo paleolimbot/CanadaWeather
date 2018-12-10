@@ -29,16 +29,25 @@ public abstract class UpdatesReceiver extends BroadcastReceiver {
 	@Override
 	public void onReceive(Context context, Intent intent) {
 		log("receiving intent with action " + intent.getAction()) ;
-		if(intent.getAction().equals(ACTION_BOOT_COMPLETE) ||
-				intent.getAction().equals(ACTION_FORCE_UPDATE_ALL)) {
-			this.startForecastDownloader(context, Modes.FORCE_DOWNLOAD, true);
-			//and set alarm, which will also send ACTION_ENSURE_UPDATED broadcast
-			this.setOrCancelUpdatePendingIntent(context);
-		} else if(intent.getAction().equals(ACTION_ENSURE_UPDATED)) {
-			this.startForecastDownloader(context, Modes.LOAD_RECENT_CACHE_OR_DOWNLOAD, true);
-		} else if(intent.getAction().equals(ACTION_NETWORK_CONNECTED)) {
-			this.setOrCancelUpdatePendingIntent(context);
-		}
+		if(intent.getAction() == null) {
+		    log("NULL action in onRecieve()");
+		    return;
+        }
+
+        switch (intent.getAction()) {
+            case ACTION_BOOT_COMPLETE:
+            case ACTION_FORCE_UPDATE_ALL:
+                // set alarm, which will also send ACTION_ENSURE_UPDATED broadcast
+                this.setOrCancelUpdatePendingIntent(context);
+                this.startForecastDownloader(context, Modes.LOAD_RECENT_CACHE_OR_DOWNLOAD, true);
+                break;
+            case ACTION_ENSURE_UPDATED:
+                this.startForecastDownloader(context, Modes.LOAD_RECENT_CACHE_OR_DOWNLOAD, true);
+                break;
+            case ACTION_NETWORK_CONNECTED:
+                this.setOrCancelUpdatePendingIntent(context);
+                break;
+        }
 	}
 
 	public void startForecastDownloader(Context context, Modes downloadMode, boolean forceBroadcast) {
@@ -52,8 +61,7 @@ public abstract class UpdatesReceiver extends BroadcastReceiver {
 			ForecastLocation l = locDb.getLocation(uri) ;
 			Forecast f = new Forecast(context, l, WeatherApp.getLanguage(context)) ;
 			f.setUnitSet(unitset);
-			ForecastDownloader d = new ForecastDownloader(f, null, downloadMode) ; //null listener to skip parsing
-			d.setBroadcastOnLoad(forceBroadcast);
+			ForecastDownloader d = new ForecastDownloader(f, null, downloadMode, forceBroadcast) ; //null listener to skip parsing
 			d.download();
 		}
 	}
@@ -62,13 +70,21 @@ public abstract class UpdatesReceiver extends BroadcastReceiver {
 		log("setting or cancelling update pending intent") ;
 		UpdatesManager manager = new UpdatesManager(context) ;
 		AlarmManager am = (AlarmManager)context.getSystemService(Context.ALARM_SERVICE) ;
+		if(am == null) {
+			log("alarm service was NULL in setOrCancelUpdatePendingIntent()");
+			return;
+		}
 		List<Uri> list = manager.getAllUpdateUris() ;
 		
 		FilesManager fm = new FilesManager(context) ;
 		int updateFrequency = (int)fm.getForecastValidAge() ;
 		
 		ConnectivityManager cm = (ConnectivityManager)context.getSystemService(Context.CONNECTIVITY_SERVICE) ;
-		NetworkInfo ni= cm.getActiveNetworkInfo() ;
+		if(cm == null) {
+			log("connectivity manager was NULL in setOrCancelUpdatePendingIntent()");
+			return;
+		}
+		NetworkInfo ni = cm.getActiveNetworkInfo() ;
 		if(ni!=null && ni.getState()==NetworkInfo.State.CONNECTED && list.size() > 0) {
 			log("Network " + ni.getTypeName() + " connected, setting alarm.");
 			am.setInexactRepeating(AlarmManager.RTC_WAKEUP, 0, updateFrequency,

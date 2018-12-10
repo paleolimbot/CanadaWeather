@@ -4,11 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 import android.app.AlertDialog;
-import android.app.ListActivity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -46,7 +47,7 @@ public class NotificationsEditor extends AppCompatActivity implements OnItemClic
 		super.onCreate(savedInstanceState);
 		this.setContentView(R.layout.notification_editor);
 
-		Toolbar toolbar = (Toolbar) findViewById(ca.fwe.weather.R.id.toolbar);
+		Toolbar toolbar = findViewById(ca.fwe.weather.R.id.toolbar);
 		setSupportActionBar(toolbar);
         if(getSupportActionBar() != null)
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -56,7 +57,7 @@ public class NotificationsEditor extends AppCompatActivity implements OnItemClic
 		uManager = new UpdatesManager(this) ;
 		locDb = ((WeatherApp)this.getApplication()).getLocationDatabase(this) ;
 		noDataAdapter = new NoDataAdapter() ;
-        listView = (ListView)findViewById(android.R.id.list);
+        listView = findViewById(android.R.id.list);
 		listView.setOnItemClickListener(this);
 
 		this.reloadList();
@@ -81,7 +82,15 @@ public class NotificationsEditor extends AppCompatActivity implements OnItemClic
 	}
 
 	private void confirmRemove(final ForecastLocation l) {
+	    if(l == null) {
+	        log("NULL forecast location in confirmRemove()");
+	        toast(R.string.notifications_nodata_message);
+	        return;
+        }
+
 		AlertDialog.Builder builder = new AlertDialog.Builder(this) ;
+		WeatherApp app = (WeatherApp)this.getApplication();
+		final LocalBroadcastManager lbm = app.broadcastManager(this);
 		builder.setTitle(R.string.notifications_remove_title) ;
 		builder.setMessage(String.format(getString(R.string.notifications_remove_message), l.getName(lang))) ;
 		builder.setNegativeButton(R.string.cancel, null) ;
@@ -90,7 +99,7 @@ public class NotificationsEditor extends AppCompatActivity implements OnItemClic
 				uManager.removeNotification(l.getUri());
 				Intent i = new Intent(NotificationsReceiver.ACTION_NOTIFICATION_REMOVED) ;
 				i.setData(l.getUri()) ;
-				sendBroadcast(i) ;
+				lbm.sendBroadcast(i) ;
 				reloadList() ;
 			}
 		}) ;
@@ -132,7 +141,8 @@ public class NotificationsEditor extends AppCompatActivity implements OnItemClic
 						uManager.addNotification(uri);
 						reloadList() ;
 						Intent bIntent = new Intent(UpdatesReceiver.ACTION_ENSURE_UPDATED) ;
-						sendBroadcast(bIntent) ;
+						WeatherApp app = (WeatherApp)this.getApplication();
+						app.broadcastManager(this).sendBroadcast(bIntent) ;
 					} else {
 						toast(R.string.forecast_error_location_request) ;
 						log("result back from location browser with no uri") ;
@@ -158,24 +168,25 @@ public class NotificationsEditor extends AppCompatActivity implements OnItemClic
 
 	private class LocationsAdapter extends ArrayAdapter<ForecastLocation> {
 
-		public LocationsAdapter() {
+		LocationsAdapter() {
 			super(NotificationsEditor.this, android.R.layout.simple_list_item_1) ;
 		}
 
-		public void reset(List<? extends ForecastLocation> newList) {
+		void reset(List<? extends ForecastLocation> newList) {
 			this.clear();
 			this.addAll(newList);
 			listView.setAdapter(this);
 		}
 
-		@Override
-		public View getView(int position, View convertView, ViewGroup parent) {
+		@NonNull
+        @Override
+		public View getView(int position, View convertView, @NonNull ViewGroup parent) {
 			TextView v = (TextView) super.getView(position, convertView, parent);
 			this.modifyTextView(this.getItem(position), v);
 			return v ;
 		}
 
-		protected void modifyTextView(ForecastLocation object, TextView v) {
+		void modifyTextView(ForecastLocation object, TextView v) {
 			v.setText(object.toString(lang));
 		}
 
@@ -183,7 +194,7 @@ public class NotificationsEditor extends AppCompatActivity implements OnItemClic
 
 	private class NoDataAdapter extends ArrayAdapter<String> {
 
-		public NoDataAdapter() {
+		NoDataAdapter() {
 			super(NotificationsEditor.this, android.R.layout.simple_list_item_1);
 			this.add(getString(R.string.notifications_nodata_message));
 		}

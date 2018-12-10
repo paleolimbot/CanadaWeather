@@ -47,7 +47,7 @@
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <data android:scheme="radar" android:pathPrefix="/ca"
-                    tools:ignore="AppIndexingApiError" />
+                    tools:ignore="AppLinkUrlError" />
             </intent-filter>
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />

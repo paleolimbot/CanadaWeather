@@ -14,6 +14,7 @@ import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
+import ca.fwe.weather.WeatherApp;
 import ca.fwe.weather.backend.FilesManager;
 import ca.fwe.weather.backend.ForecastXMLParser;
 import ca.fwe.weather.core.Forecast;
@@ -35,20 +36,20 @@ public class ForecastDownloader {
 	private Modes downloadMode ;
 	private boolean broadcastOnLoad ;
 
-	public ForecastDownloader(Forecast forecast, OnForecastDownloadListener listener, Modes downloadMode) {
+	public ForecastDownloader(Forecast forecast, OnForecastDownloadListener listener, Modes downloadMode, boolean broadcastOnLoad) {
 		this.forecast = forecast ;
 		this.listener = listener ;
 		fmanage = new FilesManager(forecast.getContext()) ;
 		this.downloadMode = downloadMode ;
-		this.setBroadcastOnLoad(false) ;
-		task = new DlTask() ;
+		this.broadcastOnLoad = broadcastOnLoad;
+		task = new DlTask(this) ;
 	}
 
 	public Forecast getForecast() {
 		return forecast ;
 	}
 
-	public Modes getDownloadMode() {
+	private Modes getDownloadMode() {
 		return downloadMode ;
 	}
 
@@ -57,12 +58,21 @@ public class ForecastDownloader {
 	}
 
 	public void cancel() {
-		task.cancel(false) ;
+	    if(task != null) {
+            task.cancel(false);
+        }
+
+        task = null;
 	}
 
-	private class DlTask extends AsyncTask<Forecast, Integer, ReturnTypes> {
+	private static class DlTask extends AsyncTask<Forecast, Integer, ReturnTypes> {
 
 		private File downloadedFile = null ;
+		private ForecastDownloader downloader ;
+
+		DlTask(ForecastDownloader downloader) {
+		    this.downloader = downloader;
+        }
 
 		@Override
 		protected ReturnTypes doInBackground(Forecast... params) {
@@ -70,16 +80,16 @@ public class ForecastDownloader {
 			ForecastLocation  l = forecast.getLocation() ;
 			ReturnTypes result;
 			try {
-				File parseFile = fmanage.cachefile(l, forecast.getLang()) ;
-				boolean validCacheFile = fmanage.cachefileValid(parseFile) ;
-				boolean attemptDownload = getDownloadMode().equals(Modes.FORCE_DOWNLOAD) || 
-						(getDownloadMode().equals(Modes.LOAD_RECENT_CACHE_OR_DOWNLOAD) && !validCacheFile) ;
+				File parseFile = downloader.fmanage.cachefile(l, forecast.getLang()) ;
+				boolean validCacheFile = downloader.fmanage.cachefileValid(parseFile) ;
+				boolean attemptDownload = downloader.getDownloadMode().equals(Modes.FORCE_DOWNLOAD) ||
+						(downloader.getDownloadMode().equals(Modes.LOAD_RECENT_CACHE_OR_DOWNLOAD) && !validCacheFile) ;
 
 				if(attemptDownload) {
-					log("expired or nonexistent cache file, or force refresh") ;
-					downloadedFile = fmanage.getTempFile() ;
+					downloader.log("expired or nonexistent cache file, or force refresh") ;
+					downloadedFile = downloader.fmanage.getTempFile() ;
 					String xmlurl = l.getXmlUrl(forecast.getLang())+ "?token=" + RandomString.generate(16);
-					log("downloading from " + xmlurl) ;
+					downloader.log("downloading from " + xmlurl) ;
 					URL url = new URL(xmlurl);
 					HttpURLConnection connection = (HttpURLConnection)url.openConnection();
                     connection.setUseCaches(false);
@@ -100,26 +110,26 @@ public class ForecastDownloader {
 					output.close();
 					input.close();
                     connection.disconnect();
-					log("download complete") ;
+					downloader.log("download complete") ;
 					parseFile = downloadedFile ;
 				}
 
-				if(!parseFile.exists() && getDownloadMode().equals(Modes.LOAD_CACHED)) {
+				if(!parseFile.exists() && downloader.getDownloadMode().equals(Modes.LOAD_CACHED)) {
 					result = ReturnTypes.NO_CACHED_FORECAST_ERROR ;
 				} else {
 
-					if(listener != null) {
+					if(downloader.listener != null) {
 						FilesManager.registerFileLock(parseFile) ;
 						ForecastXMLParser parser = l.getXMLParser(forecast, parseFile) ;
 						parser.parse() ;
 						FilesManager.unregisterFileLock(parseFile) ;
-						log("done parsing") ;
+                        downloader.log("done parsing") ;
 					} else {
-						log("no listener registered, not parsing") ;
+                        downloader.log("no listener registered, skipping parsing") ;
 					}
 
 					if(downloadedFile != null) {
-						fmanage.copyToCache(downloadedFile, forecast.getLocation(), forecast.getLang()) ;
+                        downloader.fmanage.copyToCache(downloadedFile, forecast.getLocation(), forecast.getLang()) ;
 						if(!downloadedFile.delete()) Log.i("ForecastDownloader", "downloaded file not deleted: " + downloadedFile);
 						result = ReturnTypes.DOWNLOADED ;
 					} else {
@@ -127,12 +137,15 @@ public class ForecastDownloader {
 					}
 				}
 
-				if(downloadedFile != null || broadcastOnLoad) {
-					//send broadcast to anything that wants to register that a new forecast has been downloaded
-					Intent i = new Intent(ACTION_FORECAST_DOWNLOADED) ;
-					i.setData(forecast.getLocation().getUri()) ;
-					forecast.getContext().sendBroadcast(i);
-				}
+                if(downloadedFile != null || downloader.broadcastOnLoad) {
+                    //send broadcast to anything that wants to register that a new forecast has been downloaded
+                    downloader.log("Sending ACTION_FORECAST_DOWNLOADED intent from downloader");
+                    Intent i = new Intent(ACTION_FORECAST_DOWNLOADED) ;
+                    i.setData(downloader.forecast.getLocation().getUri()) ;
+                    WeatherApp app = (WeatherApp)downloader.forecast.getContext().getApplicationContext();
+                    app.broadcastManager(downloader.forecast.getContext()).sendBroadcast(i);
+                }
+
 			} catch(IOException e) {
 				result = ReturnTypes.IO_ERROR ;
 			} catch (XmlPullParserException e) {
@@ -143,8 +156,8 @@ public class ForecastDownloader {
 
 		@Override
 		protected void onPostExecute(ReturnTypes result) {
-			if(listener != null) {
-				listener.onForecastDownload(forecast, getDownloadMode(), result);
+			if(downloader.listener != null) {
+                downloader.listener.onForecastDownload(downloader.forecast, downloader.getDownloadMode(), result);
 			}
 		}
 	}
@@ -155,10 +168,6 @@ public class ForecastDownloader {
 
 	private void log(String message) {
 		Log.v("ForecastDownloader", message) ;
-	}
-
-	public void setBroadcastOnLoad(boolean broadcastOnLoad) {
-		this.broadcastOnLoad = broadcastOnLoad;
 	}
 
 }

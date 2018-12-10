@@ -6,11 +6,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
+import android.support.v4.content.LocalBroadcastManager;
 import android.util.Log;
 import android.widget.RemoteViews;
-
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import ca.fwe.weather.backend.LocationDatabase;
 import ca.fwe.weather.backend.UpdatesManager;
@@ -29,6 +27,11 @@ public abstract class ForecastWidgetProvider extends AppWidgetProvider {
 	@Override
 	public void onReceive(Context context, Intent intent) {
 		log("receving intent with action " + intent.getAction()) ;
+		if(intent.getAction() == null) {
+		    log("intent action is NULL");
+		    return;
+        }
+
 		if(intent.getAction().equals(ForecastDownloader.ACTION_FORECAST_DOWNLOADED)) {
 			Uri data = intent.getData() ;
 			log("received broadcast forecast downloaded intent with data " + data) ;
@@ -57,8 +60,8 @@ public abstract class ForecastWidgetProvider extends AppWidgetProvider {
 		//is installed, when device turns on, etc.
 		log("onUpdate received, sending ACTION_ENSURE_UPDATED") ;
 		Intent i = new Intent(UpdatesReceiver.ACTION_ENSURE_UPDATED) ;
-		context.sendBroadcast(i) ;
-	}
+        this.broadcastManager(context).sendBroadcast(i);
+    }
 
 	@Override
 	public void onDeleted(Context context, int[] appWidgetIds) {
@@ -67,8 +70,13 @@ public abstract class ForecastWidgetProvider extends AppWidgetProvider {
 			manager.removeWidget(widgetId);
 		}
 		Intent i = new Intent(UpdatesReceiver.ACTION_FORCE_UPDATE_ALL) ;
-		context.sendBroadcast(i) ;
+        this.broadcastManager(context).sendBroadcast(i);
 	}
+
+	protected LocalBroadcastManager broadcastManager(Context context) {
+	    WeatherApp app = (WeatherApp)context.getApplicationContext();
+	    return app.broadcastManager(context);
+    }
 
 	private void updateWidget(final Context context, UpdatesManager updatesManager, LocationDatabase locDb,
 			final AppWidgetManager manager, final int widgetId, Modes downloadMode) {
@@ -112,7 +120,7 @@ public abstract class ForecastWidgetProvider extends AppWidgetProvider {
                         }
 						putForecast(context, manager, widgetId, forecast, prefs, error) ;
 					}
-				}, downloadMode) ;
+				}, downloadMode, false) ;
 				downloader.download();
 			} else {
 				log("no location found for uri " + uri + " and widget " + widgetId) ;

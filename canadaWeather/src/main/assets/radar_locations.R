@@ -7,54 +7,27 @@ loc_java <- "/Users/dewey/d/android/CanadaWeather/canadaWeather/src/main/java/ca
 loc_assets <- "/Users/dewey/d/android/CanadaWeather/canadaWeather/src/main/assets"
 
 text_java <- read_lines(loc_java)
-all_en <- str_which(text_java, "ALL_EN =")
-all_fr <- str_which(text_java, "ALL_FR =")
 locs <- tibble(
   line_number = str_which(text_java, "new RadarLocation\\("),
-  line = text_java[line_number],
-  lang = if_else(line_number < all_fr, "EN", "FR")
+  line = text_java[line_number]
 ) %>%
   separate(
     line,
-    c("name", "alias", "id", "region", "lat", "lon", "updates"), 
+    c("name_en", "name_fr", "alias_en", "alias_fr", "region_en", "region_fr", "id", "web_id", "lat", "lon", "updates"), 
     sep = ",",
     extra = "merge"
   ) %>%
   mutate_if(is.character, str_remove_all, '"|\\(|\\)|new LatLon|new RadarLocation|(,\\s*$)') %>%
-  mutate_if(is.character, str_trim)
+  mutate_if(is.character, str_trim) %>%
+  mutate_at(vars(lat, lon, updates), as.numeric)
 
-# isolate FR translations
-names <- locs %>%
-  select(lang, id, name) %>%
-  spread(lang, name) %>%
-  distinct(EN, FR) %>%
-  rename(name_en = EN, name_fr = FR)
-regions <- locs %>%
-  select(lang, id, region) %>%
-  spread(lang, region) %>%
-  distinct(EN, FR) %>%
-  rename(region_en = EN, region_fr = FR)
-aliases <- locs %>%
-  select(lang, id, alias) %>%
-  spread(lang, alias) %>%
-  distinct(EN, FR) %>%
-  rename(alias_en = EN, alias_fr = FR)
+# write the Java representation of the RadarLocation array, useful if it needs automatic updating from here
+# pattern <- 'new RadarLocation("{name_en}", "{name_fr}", "{alias_en}", "{alias_fr}", "{region_en}", "{region_fr}", "{id}", "{web_id}", new LatLon({lat}, {lon}), {updates}),'
+# for(line in locs %>% transpose()) {
+#   print(glue::glue_data(line, pattern))
+# }
 
-locs_en <- locs %>% 
-  filter(lang == "EN") %>%
-  select(-lang) %>%
-  rename(name_en = name, region_en = region, alias_en = alias) %>%
-  mutate(web_id = coalesce(c("CASBV" = "WMN", "CASRA" = "XRA", "CASFW" = "XFW", "CASRF" = "XTI")[id], id)) %>%
-  arrange(as.numeric(lon))
-
-
-# write a better representation of the RadarLocation array
-# new RadarLocation("Britt", "Georgian Bay", "WBI", "Ontario", new LatLon(45.79317,-80.53385),10),
-pattern <- 'new RadarLocation("{name_en}", "{name_fr}", "{alias_en}", "{alias_fr}", "{region_en}", "{region_fr}", "{id}", "{web_id}", new LatLon({lat}, {lon}), {updates})'
-
-
-
-
+# this updates the resources based on webscraping the weather.gc.ca site
 find_assets <- function(site_id = "XTI") {
   url <- glue::glue("https://weather.gc.ca/radar/index_e.html?id={site_id}")
   nodes <- read_html(url) %>% html_nodes("#animation-frame img")
@@ -88,5 +61,3 @@ assets_dl <- assets %>%
   )
 
 unlink(tmpdir, recursive = TRUE)
-
-

@@ -42,7 +42,7 @@ public class CanadaWeatherPreferences extends PreferenceActivity {
 
 			//send intent to update all widgets/notifications
 			Intent i = new Intent(UpdatesReceiver.ACTION_FORCE_UPDATE_ALL) ;
-			this.sendBroadcast(i) ;
+			app.broadcastManager(this).sendBroadcast(i);
 		}
 		super.onPause();
 	}

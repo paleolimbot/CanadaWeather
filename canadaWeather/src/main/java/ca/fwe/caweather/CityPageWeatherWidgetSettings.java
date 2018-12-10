@@ -7,12 +7,14 @@ import android.os.Bundle;
 import android.preference.Preference;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceManager;
+import android.support.v4.content.LocalBroadcastManager;
 import android.util.Log;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import ca.fwe.weather.PreferenceActivity;
+import ca.fwe.weather.WeatherApp;
 import ca.fwe.weather.WeatherWidgetSettings;
 import ca.fwe.weather.backend.UpdatesManager;
 import ca.fwe.weather.backend.UpdatesReceiver;
@@ -88,8 +90,9 @@ public class CityPageWeatherWidgetSettings extends WeatherWidgetSettings {
 
 		//force update all widgets
 		Intent i = new Intent(UpdatesReceiver.ACTION_FORCE_UPDATE_ALL) ;
-		this.sendBroadcast(i) ;
-		
+		WeatherApp app = (WeatherApp)this.getApplication();
+		app.broadcastManager(this).sendBroadcast(i);
+
 		//close
 		Intent resultValue = new Intent();
 		resultValue.putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, this.getWidgetId());

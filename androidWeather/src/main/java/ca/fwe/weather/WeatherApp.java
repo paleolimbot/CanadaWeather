@@ -9,6 +9,8 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.res.Configuration;
 import android.preference.PreferenceManager;
+import android.support.v4.content.LocalBroadcastManager;
+
 import ca.fwe.weather.backend.LocationDatabase;
 
 public abstract class WeatherApp extends Application {
@@ -25,11 +27,14 @@ public abstract class WeatherApp extends Application {
 	
 	private static int lang = -1 ;
 	private static Locale locale = Locale.CANADA;
+
+	private LocalBroadcastManager lbm;
 	
 	@Override
 	public void onCreate() {
 		super.onCreate();
 		this.setLocale();
+		lbm = null;
 	}
 	
 	public static SharedPreferences prefs(Context context) {
@@ -139,7 +144,15 @@ public abstract class WeatherApp extends Application {
 		}
 	}
 
+	public LocalBroadcastManager broadcastManager(Context context) {
+		if(lbm == null) {
+			lbm = LocalBroadcastManager.getInstance(context);
+			this.registerReceivers(lbm, context);
+		}
+		return lbm;
+	}
+
 	public abstract void onUpgrade(int version1, int version2) ;
 	public abstract LocationDatabase getLocationDatabase(Context context) ;
-	
+	public abstract void registerReceivers(LocalBroadcastManager lbm, Context context);
 }

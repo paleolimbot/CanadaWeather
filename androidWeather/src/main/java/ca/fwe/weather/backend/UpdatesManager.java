@@ -14,8 +14,6 @@ import android.net.Uri;
 import android.text.TextUtils;
 import android.util.Log;
 
-import org.w3c.dom.Text;
-
 public class UpdatesManager {
 
 	private static final String DB_NAME = "androidweather_updates" ;
@@ -73,25 +71,19 @@ public class UpdatesManager {
 		return db.getWidgetIds(locationUri.toString()) ;
 	}
 
-	public boolean notificationsEnabled(Uri locationUri) {
+	boolean notificationsEnabled(Uri locationUri) {
 		int result = db.notificationsEnabled(locationUri.toString()) ;
 		return result > 0 ;
 	}
-
-	public List<Uri> getWidgetUpdateUris() {
-		List<Uri> list = new ArrayList<Uri>() ;
-		db.getWidgetUris(list);
-		return list ;
-	}
 	
 	public List<Uri> getNotificationUpdateUris() {
-		List<Uri> list = new ArrayList<Uri>() ;
+		List<Uri> list = new ArrayList<>() ;
 		db.getNotificationUris(list);
 		return list ;
 	}
 	
-	public List<Uri> getAllUpdateUris() {
-		List<Uri> list = new ArrayList<Uri>() ;
+	List<Uri> getAllUpdateUris() {
+		List<Uri> list = new ArrayList<>() ;
 		db.getWidgetUris(list);
 		db.getNotificationUris(list);
 		return list ;
@@ -99,12 +91,12 @@ public class UpdatesManager {
 
 	private static class UpdatesDb extends SQLiteOpenHelper {
 		
-		public static final String WIDGET_ID = "widget_id" ;
-		public static final String LOC_URI = "loc_uri" ;
-		public static final String ITEM_OPTIONS = "item_key" ;
-		public static final String ITEM_VALUE = "item_value" ;
+		static final String WIDGET_ID = "widget_id" ;
+		static final String LOC_URI = "loc_uri" ;
+		static final String ITEM_OPTIONS = "item_key" ;
+		static final String ITEM_VALUE = "item_value" ;
 
-		public UpdatesDb(Context context) {
+		UpdatesDb(Context context) {
 			super(context, DB_NAME, null, DB_VERSION);
 		}
 
@@ -117,7 +109,7 @@ public class UpdatesManager {
 			db.execSQL(notifications);
 		}
 
-		public int addNotifications(String uri) {
+		int addNotifications(String uri) {
 			SQLiteDatabase db = this.getWritableDatabase() ;
 			if(this.notificationsEnabled(db, uri) <= 0) {
 				ContentValues cv = new ContentValues() ;
@@ -137,7 +129,7 @@ public class UpdatesManager {
 
 		}
 
-		public int notificationsEnabled(String uri) {
+		int notificationsEnabled(String uri) {
 			SQLiteDatabase db = this.getReadableDatabase() ;
 			int result = this.notificationsEnabled(db, uri) ;
 			db.close();
@@ -160,14 +152,14 @@ public class UpdatesManager {
 			return out ;
 		}
 
-		public int removeNotifications(String uri) {
+		int removeNotifications(String uri) {
 			SQLiteDatabase db = this.getWritableDatabase() ;
 			int affected = db.delete("notifications", "loc_uri=?", new String[]{uri}) ;
 			db.close();
 			return affected ;
 		}
 
-		public int addOrUpdateWidget(int widgetId, String uri, String jsonOptions) {
+		int addOrUpdateWidget(int widgetId, String uri, String jsonOptions) {
 			SQLiteDatabase db = this.getWritableDatabase() ;
 			int out;
 			if(uri != null) {
@@ -205,7 +197,7 @@ public class UpdatesManager {
 			return out ;
 		}
 
-		public WidgetInfo getInfoByWidgetId(int widgetId) {
+		WidgetInfo getInfoByWidgetId(int widgetId) {
 			SQLiteDatabase db = this.getReadableDatabase() ;
 			WidgetInfo wi = this.getInfoByWidgetId(db, widgetId) ;
 			db.close();
@@ -284,6 +276,7 @@ public class UpdatesManager {
                 c.close();
 			} else {
 				//error, keep out as null
+				Log.i("UpdatesDb", "getWidgetIds: NULL cursor");
 			}
 
 			db.close() ;
