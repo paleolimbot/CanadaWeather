@@ -29,6 +29,7 @@ import android.graphics.drawable.LayerDrawable;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -110,17 +111,17 @@ public class RadarActivity extends AppCompatActivity implements OnClickListener 
 
 		blankImageList = (LayerDrawable)this.getResources().getDrawable(R.drawable.radar_overlay_template) ;
 
-		locationsSpinner = (Spinner)findViewById(R.id.radar_locations) ;
-		image = (ImageView)findViewById(R.id.radar_image) ;
+		locationsSpinner = findViewById(R.id.radar_locations) ;
+		image = findViewById(R.id.radar_image) ;
 		image.setImageDrawable(blankImageList) ;
 
-		dateText = (TextView)findViewById(R.id.radar_date) ;
+		dateText = findViewById(R.id.radar_date) ;
 
 		animator = new RadarAnimator() ;
 
-		animSeek = (SeekBar)findViewById(R.id.radar_seek) ;
-		animLoading = (ProgressBar)findViewById(R.id.radar_loading) ;
-		playPause = (ImageView)findViewById(R.id.radar_play_pause) ;
+		animSeek = findViewById(R.id.radar_seek) ;
+		animLoading = findViewById(R.id.radar_loading) ;
+		playPause = findViewById(R.id.radar_play_pause) ;
 		playPause.setOnClickListener(this) ;
 
 		animSeek.setOnSeekBarChangeListener(animator) ;
@@ -180,7 +181,7 @@ public class RadarActivity extends AppCompatActivity implements OnClickListener 
 	private void readData() {
 
 		Uri data = this.getIntent().getData() ;
-		if(data != null) {
+		if(data != null && data.getScheme() != null) {
 			String lat = data.getQueryParameter("lat") ;
 			String lon = data.getQueryParameter("lon") ;
 			String near = data.getQueryParameter("near") ;
@@ -197,13 +198,9 @@ public class RadarActivity extends AppCompatActivity implements OnClickListener 
 				//set by specific radar code
 				List<String> pathParts = data.getPathSegments() ;
 				if(pathParts != null && pathParts.size() == 2 && pathParts.get(0).equals("ca")) {
-					int lang = WeatherApp.getLanguage(this) ;
-					RadarLocation l = RadarLocations.get(pathParts.get(1), WeatherApp.getLanguage(this)) ;
+					RadarLocation l = RadarLocations.get(pathParts.get(1)) ;
 					if(l != null) {
-						RadarLocation[] list = RadarLocations.ALL_EN ;
-						if(lang == WeatherApp.LANG_FR) {
-							list = RadarLocations.ALL_FR ;
-						} 
+						RadarLocation[] list = RadarLocations.ALL ;
 						adapter = new RadarLocationAdapter(list) ;
 						locationsSpinner.setAdapter(adapter);
 
@@ -237,17 +234,13 @@ public class RadarActivity extends AppCompatActivity implements OnClickListener 
 	}
 
 	private void loadAllRadarLocations() {
-		int lang = WeatherApp.getLanguage(this) ;
-		RadarLocation[] list = RadarLocations.ALL_EN ;
-		if(lang == WeatherApp.LANG_FR) {
-			list = RadarLocations.ALL_FR ;
-		} 
+		RadarLocation[] list = RadarLocations.ALL ;
 		adapter = new RadarLocationAdapter(list) ;
 		locationsSpinner.setAdapter(adapter);
 		SharedPreferences prefs = this.getPreferences(MODE_PRIVATE) ;
 		if(prefs.contains(PREF_SAVED_STATION)) {
 			String savedCode = prefs.getString(PREF_SAVED_STATION, null) ;
-			RadarLocation l = RadarLocations.get(savedCode, lang) ;
+			RadarLocation l = RadarLocations.get(savedCode) ;
 			if(l != null) {
 				int position = adapter.getPosition(l) ;
 				if(position >= 0)
@@ -324,7 +317,6 @@ public class RadarActivity extends AppCompatActivity implements OnClickListener 
 	}
 
 	private LayerDrawable buildLayerDrawable(Bitmap image, Bitmap[] overlays) {
-		int rightOffset = 100 ; //apparently display density no longer matters?
 		BitmapDrawable[] drawables = new BitmapDrawable[overlays.length + 1] ;
 		drawables[0] = new BitmapDrawable(this.getResources(), image) ;
 		for(int i=0; i<overlays.length; i++) {
@@ -333,7 +325,7 @@ public class RadarActivity extends AppCompatActivity implements OnClickListener 
 		}
 		LayerDrawable ld = new LayerDrawable(drawables) ;
 		for(int i=1; i<drawables.length; i++) {
-			ld.setLayerInset(i, 0, 0, rightOffset, 0) ;
+			ld.setLayerInset(i, 0, 0, 0, 0) ;
 		}
 		return ld ;
 	}
@@ -343,14 +335,14 @@ public class RadarActivity extends AppCompatActivity implements OnClickListener 
 		if(near == null)
 			near = "location" ;
 		this.setTitle(getString(R.string.radar_title) + " " + near) ;
-		RadarLocation[] list = RadarLocations.filter(ll, 3, WeatherApp.getLanguage(this)) ;
+		RadarLocation[] list = RadarLocations.filter(ll, 3) ;
 		if(list.length > 0) {
 			adapter = new RadarLocationAdapter(list) ;
 			locationsSpinner.setAdapter(adapter) ;
 			SharedPreferences prefs = this.getPreferences(MODE_PRIVATE) ;
 			if(prefs.contains(PREF_SAVED_STATION)) {
 				String savedCode = prefs.getString(PREF_SAVED_STATION, null) ;
-				RadarLocation l = RadarLocations.get(savedCode, WeatherApp.getLanguage(this)) ;
+				RadarLocation l = RadarLocations.get(savedCode) ;
 				if(l != null) {
 					int position = adapter.getPosition(l) ;
 					if(position >= 0)
@@ -365,10 +357,10 @@ public class RadarActivity extends AppCompatActivity implements OnClickListener 
 
 	private void setLocation(final RadarLocation l, boolean refresh) {
 		animator.pause();
-		animator.setImages(null) ;
+		animator.setImages(null, false) ;
 		imageOverlays = this.loadOverlays(l) ;
 		RadarImageList list = RadarImageList.getMostRecent(l, this.getImageType(), this.getAnimationLength(l));
-		animator.setImages(list);
+		animator.setImages(list, refresh);
 	}
 
 	private String generateDateString(Date d) {
@@ -403,47 +395,176 @@ public class RadarActivity extends AppCompatActivity implements OnClickListener 
 		Toast.makeText(this, id, Toast.LENGTH_LONG).show() ;
 	}
 
-	private class RadarLocationAdapter extends ArrayAdapter<RadarLocation> {
+    private static class RadarListDownloader extends AsyncTask<ArrayList<RadarImage>, Integer, Boolean> {
 
-		public RadarLocationAdapter(RadarLocation[] objects) {
+        Downloader d ;
+        boolean playWhenFinished = true ;
+        boolean isDownloading = false ;
+        boolean latestImageSet = false ;
+        boolean refresh;
+
+        RadarAnimator animator;
+        // this is possibly causing crashes, but is a battle for another day
+        // currently this field is set to null on cancel (which in turn
+        // is called from onPause() and onDestroy() which should prevent
+        // the memory leak issue, but I don't know enough about the workings of
+        // android to say for sure
+        RadarActivity activity;
+
+        RadarListDownloader(RadarAnimator animator, RadarActivity activity, boolean refresh) {
+            this.animator = animator;
+            this.activity = activity;
+            this.refresh = refresh;
+        }
+
+        @Override
+        protected void onProgressUpdate(Integer... values) {
+            int val = values[0] ;
+            if(val == -1) {
+                animator.setTo(animator.size - 1, false, true) ;
+                latestImageSet = true ;
+            } else {
+                activity.animSeek.setSecondaryProgress(val) ;
+                if(val == 0 && !latestImageSet) animator.setTo(val, false, true) ;
+            }
+        }
+
+        @Override
+        protected void onCancelled() {
+            if(d != null)  d.cancel() ;
+            if(activity != null) {
+                activity.animLoading.setVisibility(View.GONE);
+                activity.playPause.setImageResource(R.drawable.ic_play);
+            }
+            // release references to activity and animator on cancel
+            activity = null;
+            animator = null;
+            isDownloading = false ;
+        }
+
+
+
+        @Override
+        protected void onPreExecute() {
+            activity.setToast(R.string.radar_loading_images) ;
+            activity.playPause.setImageResource(R.drawable.ic_stop) ;
+            activity.animLoading.setVisibility(View.VISIBLE) ;
+        }
+
+        @Override
+        @SafeVarargs
+        protected final Boolean doInBackground(ArrayList<RadarImage>... arg0) {
+            isDownloading = true ;
+            List<RadarImage> list = arg0[0] ;
+
+            RadarImage mostRecent = list.get(list.size() - 1) ;
+            if(download(mostRecent))
+                this.publishProgress(-1) ;
+
+            for(int i=0; i<list.size(); i++) {
+                if(this.isCancelled())
+                    break ;
+
+                RadarImage link = list.get(i) ;
+                download(link) ;
+                publishProgress(i) ;
+            }
+            isDownloading = false ;
+            return true ;
+        }
+
+        private boolean download(RadarImage link) {
+            if(activity == null || animator == null) return false;
+
+            File tmpFile = activity.cache.getRadarCacheFile(link.getFilename()) ;
+            if(!tmpFile.exists() || refresh) {
+                d = new Downloader(link.getLink(), tmpFile) ;
+
+                try {
+                    d.download() ;
+                } catch (IOException e) {
+                    if(!tmpFile.delete()) Log.i("Radar", "Could not delete file " + tmpFile);
+                    Log.e("Radar", "Error downloading image " + link.getFilename()) ;
+                }
+            }
+
+            if(tmpFile.exists()) {
+                Bitmap b = BitmapFactory.decodeFile(tmpFile.getPath()) ;
+                animator.setDrawable(link, b) ;
+                return true ;
+            } else {
+                //error
+                Log.e("Radar", "error, tmp file doesn't exist or IO exception occurred") ;
+                return false ;
+            }
+        }
+
+        @Override
+        protected void onPostExecute(Boolean result) {
+            if(activity != null && animator != null) {
+                activity.animLoading.setVisibility(View.GONE);
+                activity.playPause.setImageResource(R.drawable.ic_play);
+                if(playWhenFinished) animator.play() ;
+            }
+            activity = null;
+            animator = null;
+        }
+    }
+
+    private class RadarLocationAdapter extends ArrayAdapter<RadarLocation> {
+
+		RadarLocationAdapter(RadarLocation[] objects) {
 			super(RadarActivity.this, android.R.layout.simple_spinner_item, objects);
 			this.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item) ;
 		}
 
-		@Override
-		public View getView(int position, View convertView, ViewGroup parent) {
+		@NonNull
+        @Override
+		public View getView(int position, View convertView, @NonNull ViewGroup parent) {
 			TextView v = (TextView)super.getView(position, convertView, parent);
 			RadarLocation l = this.getItem(position) ;
+			int lang = WeatherApp.getLanguage(RadarActivity.this);
+			if(l == null) {
+			    return v;
+            }
+
 			if(latLon != null) {
-				double distance = latLon.distanceTo(l.getLocation()) ;
-				String distString = l.toString() + " - " +
-                        Long.valueOf(Math.round(distance)).toString() + "km" ;
+                double distance = latLon.distanceTo(l.getLocation()) ;
+				String distString = l.getAlias(lang) + " (" + l.getName(lang) + ")" +
+                        " - " + Long.valueOf(Math.round(distance)).toString() + "km" ;
 				v.setText(distString) ;
 			} else {
-				v.setText(l.toString()) ;
+				String text = l.getAlias(lang) + " (" + l.getName(lang) + ")" ;
+				v.setText(text) ;
 			}
 			return v ;
 		}
 
 		@Override
 		public View getDropDownView(int position, View convertView,
-				ViewGroup parent) {
+                                    @NonNull ViewGroup parent) {
 
 			TextView v = (TextView)super.getDropDownView(position, convertView, parent);
 			RadarLocation l = this.getItem(position) ;
+            int lang = WeatherApp.getLanguage(RadarActivity.this);
+            if(l == null) {
+                return v;
+            }
+
 			if(latLon != null) {
 				double distance = latLon.distanceTo(l.getLocation()) ;
-				String distString = l.toString() + " - " +
-                        Long.valueOf(Math.round(distance)).toString() + "km" ;
+                String distString = l.getAlias(lang) + " (" + l.getName(lang) + ")" +
+                        " - " + Long.valueOf(Math.round(distance)).toString() + "km" ;
 				v.setText(distString) ;
 			} else {
-				v.setText(l.toString()) ;
+				String text = l.getAlias(lang) + " (" + l.getName(lang) + ")" ;
+				v.setText(text) ;
 			}
 			return v ;
 
 		}
 
-		public RadarLocation current() {
+		RadarLocation current() {
             int ind = locationsSpinner.getSelectedItemPosition();
             if(ind >= 0 && ind < this.getCount()) {
                 return this.getItem(ind);
@@ -504,13 +625,13 @@ public class RadarActivity extends AppCompatActivity implements OnClickListener 
 		ArrayList<RadarImage> currentList ;
 		Drawable[] drawables ;
 
-		ListDownloader downloader ;
+		RadarListDownloader downloader ;
 
 		boolean pausedForRepeat = false ;
 
 		boolean playing = false ;
 
-		public void play() {
+		void play() {
 			if(!playing) {
 				if(timer == null)
 					timer = new Timer() ;
@@ -521,7 +642,7 @@ public class RadarActivity extends AppCompatActivity implements OnClickListener 
 			}
 		}
 
-		public void onActivityPause() {
+		void onActivityPause() {
 			if(playing) {
 				if(timerTask != null)
 					timerTask.cancel() ;
@@ -533,7 +654,7 @@ public class RadarActivity extends AppCompatActivity implements OnClickListener 
 			}
 		}
 
-		public void onActivityResume() {
+		void onActivityResume() {
 			if(playing) {
 				if(timer == null)
 					timer = new Timer() ;
@@ -566,7 +687,7 @@ public class RadarActivity extends AppCompatActivity implements OnClickListener 
 			} ;
 		}
 
-		public void pause() {
+		void pause() {
 			if(timerTask != null)
 				timerTask.cancel() ;
 			if(timer != null)
@@ -575,7 +696,7 @@ public class RadarActivity extends AppCompatActivity implements OnClickListener 
 			playPause.setImageResource(R.drawable.ic_play) ;
 		}
 
-		public void forward(boolean fromUI) {
+		void forward(boolean fromUI) {
 			if(isLast())
 				currentIndex = 0 ;
 			else
@@ -591,15 +712,15 @@ public class RadarActivity extends AppCompatActivity implements OnClickListener 
 			setTo(currentIndex, true, true) ;
 		}
 
-		public boolean isFirst() {
+		boolean isFirst() {
             return currentIndex == 0;
 		}
 
-		public boolean isLast() {
+		boolean isLast() {
             return currentIndex == (size - 1);
 		}
 
-		public void setTo(int index, boolean fromUI, boolean updateProgress) {
+		void setTo(int index, boolean fromUI, boolean updateProgress) {
 			if(fromUI) {
 				pause() ;
 				if(downloader != null)
@@ -630,7 +751,7 @@ public class RadarActivity extends AppCompatActivity implements OnClickListener 
 			}
 		}
 
-		public void setImages(RadarImageList list) {
+		void setImages(RadarImageList list, boolean refresh) {
 			if(downloader != null)
 				downloader.cancel(false) ;
 			pause() ;
@@ -652,7 +773,7 @@ public class RadarActivity extends AppCompatActivity implements OnClickListener 
 					currentList.add(list.get(i)) ;
 				}
 
-				downloader = new ListDownloader() ;
+				downloader = new RadarListDownloader(this, RadarActivity.this, refresh) ;
 				downloader.execute(currentList) ;
 			} else {
 				setBitmap(null) ;
@@ -682,101 +803,5 @@ public class RadarActivity extends AppCompatActivity implements OnClickListener 
 		public void onStartTrackingTouch(SeekBar seekBar) {}
 		public void onStopTrackingTouch(SeekBar seekBar) {}
 
-		private class ListDownloader extends AsyncTask<ArrayList<RadarImage>, Integer, Boolean> {
-
-			Downloader d ;
-			boolean playWhenFinished = true ;
-			boolean isDownloading = false ;
-			boolean latestImageSet = false ;
-
-			@Override
-			protected void onProgressUpdate(Integer... values) {
-				int val = values[0] ;
-				if(val == -1) {
-					setTo(size - 1, false, true) ;
-					latestImageSet = true ;
-				} else {
-					animSeek.setSecondaryProgress(val) ;
-					if(val == 0 && !latestImageSet)
-						setTo(val, false, true) ;
-				}
-			}
-
-			@Override
-			protected void onCancelled() {
-				if(d != null)
-					d.cancel() ;
-				animLoading.setVisibility(View.GONE) ;
-				playPause.setImageResource(R.drawable.ic_play) ;
-				isDownloading = false ;
-			}
-
-
-
-			@Override
-			protected void onPreExecute() {
-				setToast(R.string.radar_loading_images) ;
-				playPause.setImageResource(R.drawable.ic_stop) ;
-				animLoading.setVisibility(View.VISIBLE) ;
-			}
-
-			@Override
-			protected Boolean doInBackground(ArrayList<RadarImage>... arg0) {
-				isDownloading = true ;
-				List<RadarImage> list = arg0[0] ;
-
-				RadarImage mostRecent = list.get(list.size() - 1) ;
-				if(download(mostRecent))
-				    this.publishProgress(-1) ;
-
-				for(int i=0; i<list.size(); i++) {
-					if(this.isCancelled())
-						break ;
-
-					RadarImage link = list.get(i) ;
-					download(link) ;
-					publishProgress(i) ;
-				}
-				isDownloading = false ;
-				return true ;
-			}
-
-			private boolean download(RadarImage link) {
-				File tmpFile = cache.getRadarCacheFile(link.getFilename()) ;
-				if(!tmpFile.exists()) {
-					d = new Downloader(link.getLink(), tmpFile) ;
-
-					try {
-						d.download() ;
-					} catch (IOException e) {
-						if(!tmpFile.delete()) Log.i("Radar", "Could not delete file " + tmpFile);
-						Log.e("Radar", "Error downloading image " + link.getFilename()) ;
-					}
-				}
-
-				if(tmpFile.exists()) {
-					Bitmap b = BitmapFactory.decodeFile(tmpFile.getPath()) ;
-					setDrawable(link, b) ;
-					return true ;
-				} else {
-					//error
-					Log.e("Radar", "error, tmp file doesn't exist or IO exception occurred") ;
-					return false ;
-				}
-			}
-
-			@Override
-			protected void onPostExecute(Boolean result) {
-				animLoading.setVisibility(View.GONE) ;
-				playPause.setImageResource(R.drawable.ic_play) ;
-				if(playWhenFinished)
-					play() ;
-			}
-
-
-
-		}
-
-	}
-
+    }
 }

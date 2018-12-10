@@ -33,6 +33,7 @@
         <item>Villes additionnelles</item>
         <item>Rivières</item>
         <item>Numéros de route</item>
+        <item>Cercles de Radar</item>
     </string-array>
     
     <string name="pref_edit_notifications">Éditez les alertes</string>

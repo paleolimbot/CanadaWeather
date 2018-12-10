@@ -1,6 +1,8 @@
 package ca.fwe.caweather.radar;
 
 import android.net.Uri;
+import android.support.annotation.NonNull;
+
 import ca.fwe.locations.geometry.LatLon;
 import ca.fwe.weather.WeatherApp;
 
@@ -12,60 +14,59 @@ public class RadarLocation {
 		
 	private static final String LANG_EXT_ENG = "_e" ;
 	private static final String LANG_EXT_FR = "_f" ;
-	
+
+	// https is not configured properly yet
 	private static final String SERVER = "http://dd.weatheroffice.ec.gc.ca/radar/%product%/GIF/" ;
-	private static final String SERVER_WEB = "http://weather.gc.ca/radar/index%lang_ext%.html?id=%site_id%" ;
+	private static final String SERVER_WEB = "https://weather.gc.ca/radar/index%lang_ext%.html?id=%site_id%" ;
 	
 	private static final String URI_PATTERN = "radar:///ca/%s" ;
 	
-	public enum Overlays {RIVERS, ROADS, ROAD_LABELS, CITIES, MORE_CITIES}
+	public enum Overlays {RIVERS, ROADS, ROAD_LABELS, CITIES, MORE_CITIES, RADAR_CIRCLES}
 	//this is the preferred order, so have a method for determining this
+	// have to keep ROAD_LABELS for legacy preferences, new terminology on the EC site is
+	// ROAD_NUMBERS
 	public static int getOverlayPosition(Overlays overlay) {
 		switch(overlay) {
 		case CITIES:
-			return 3 ;
-		case MORE_CITIES:
 			return 4 ;
+		case MORE_CITIES:
+			return 5 ;
 		case RIVERS:
 			return 0 ;
 		case ROADS:
 			return 1 ;
 		case ROAD_LABELS:
 			return 2 ;
+		case RADAR_CIRCLES:
+			return 3;
 		default:
 			return -1 ;
 		
 		}
 	}
-	
-	
-//	public static final String OVERLAY_CITIES = "http://www.weatheroffice.gc.ca/radar/images/layers/default_cities/%id_lc%_towns.gif" ;
-//	public static final String OVERLAY_MORE_CITIES = "http://www.weatheroffice.gc.ca/radar/images/layers/additional_cities/%id_lc%_towns.gif" ;
-//	public static final String OVERLAY_ROADS = "http://www.weatheroffice.gc.ca/radar/images/layers/roads/%id_uc%_roads.gif" ;
-//	public static final String OVERLAY_ROAD_LABELS = "http://www.weatheroffice.gc.ca/radar/images/layers/road_labels/%id_lc%_labs.gif" ;
-//	public static final String OVERLAY_RIVERS = "http://www.weatheroffice.gc.ca/radar/images/layers/rivers/%id_lc%_rivers.gif" ;
-//	public static final String OVERLAY_RADAR_CIRCLE = "http://www.weatheroffice.gc.ca/radar/images/layers/radar_circle/radar_circle.gif" ;
-	
-	// overlays: server https://www.weather.gc.ca
-	// ["/cacheable/radar/images/layers/additional_cities/wtp_towns.gif"]
-	// ["/cacheable/radar/images/layers/default_cities/wtp_towns.gif"]
-	// ["/cacheable/radar/images/layers/radar_circle/radar_circle.gif"]
-	// ["/cacheable/radar/images/layers/rivers/wtp_rivers.gif"]
-	// ["/cacheable/radar/images/layers/road_labels/wtp_labs.gif"]
-	// ["/cacheable/radar/images/layers/roads/WTP_roads.gif"]
 
-	private String name ;
-	private String alias ;
+	private String nameEn ;
+	private String nameFr;
+	private String aliasEn ;
+	private String aliasFr;
+	private String regionEn ;
+	private String regionFr;
 	private String siteId ;
-	private String region ;
+	private String webId;
 	private LatLon location ;
 	private int updateFrequency ;
 	
-	public RadarLocation(String name, String alias, String siteId, String region, LatLon location, int updateFrequency) {
-		this.name = name;
-		this.alias = alias;
+	public RadarLocation(@NonNull String nameEn, @NonNull String nameFr, @NonNull String aliasEn, @NonNull String aliasFr,
+                         @NonNull String regionEn, @NonNull String regionFr, @NonNull String siteId, @NonNull String webId,
+                         @NonNull LatLon location, int updateFrequency) {
+		this.nameEn = nameEn;
+		this.nameFr = nameFr;
+		this.aliasEn = aliasEn;
+		this.aliasFr = aliasFr;
+		this.regionEn = regionEn;
+		this.regionFr = regionFr;
 		this.siteId = siteId;
-		this.region = region;
+		this.webId = webId;
 		this.location = location;
 		this.updateFrequency = updateFrequency;
 	}
@@ -74,20 +75,36 @@ public class RadarLocation {
 		return Uri.parse(String.format(URI_PATTERN, this.getSiteId())) ;
 	}
 	
-	public String getName() {
-		return name;
+	public String getName(int lang) {
+		if(lang == WeatherApp.LANG_FR) {
+			return this.nameFr;
+		} else {
+			return this.nameEn;
+		}
 	}
 
-	public String getAlias() {
-		return alias;
+	public String getAlias(int lang) {
+		if(lang == WeatherApp.LANG_FR) {
+			return this.aliasFr;
+		} else {
+			return this.aliasEn;
+		}
 	}
 
 	public String getSiteId() {
 		return siteId;
 	}
 
-	public String getRegion() {
-		return region;
+	public String getWebId() {
+		return webId;
+	}
+
+	public String getRegion(int lang) {
+		if(lang == WeatherApp.LANG_FR) {
+			return this.regionFr;
+		} else {
+			return this.regionEn;
+		}
 	}
 
 	public LatLon getLocation() {
@@ -95,7 +112,7 @@ public class RadarLocation {
 	}
 	
 	public String toString() {
-		return this.getAlias() + " (" + this.getName() + ")" ;
+		return this.getAlias(WeatherApp.LANG_EN) + " (" + this.getName(WeatherApp.LANG_EN) + ")" ;
 	}
 
 	public int getUpdateFrequency() {
@@ -120,7 +137,7 @@ public class RadarLocation {
 		if(lang == WeatherApp.LANG_FR) {
 			langExt = LANG_EXT_FR ;
 		}
-		return SERVER_WEB.replace("%lang_ext%", langExt).replace("%site_id%", this.getSiteId()) ;
+		return SERVER_WEB.replace("%lang_ext%", langExt).replace("%site_id%", this.getWebId()) ;
 	}
 	
 	public String getOverlayAssetName(Overlays which) {
@@ -134,7 +151,9 @@ public class RadarLocation {
 			case RIVERS:
 				return this.getSiteId() + "_rivers.png";
 			case ROAD_LABELS:
-				return this.getSiteId() + "_road_labels.png";
+				return this.getSiteId() + "_road_numbers.png";
+			case RADAR_CIRCLES:
+				return this.getSiteId() + "_radar_circles.png";
 			default:
 				return null;
 		}

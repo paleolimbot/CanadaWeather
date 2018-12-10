@@ -72,6 +72,7 @@
         <item>More Cities</item>
         <item>Rivers</item>
         <item>Road Labels</item>
+        <item>Radar Circles</item>
     </string-array>
     
     <string-array name="pref_radar_overlays_values">
@@ -80,6 +81,7 @@
         <item>MORE_CITIES</item>
         <item>RIVERS</item>
         <item>ROAD_LABELS</item>
+        <item>RADAR_CIRCLES</item>
     </string-array>
 
     <string name="pref_notification_vibrate">Vibrate on warning notification</string>

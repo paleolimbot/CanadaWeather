@@ -83,7 +83,7 @@ public class RadarImage implements Comparable<RadarImage> {
             String[] filenameSplit = filename.split("_");
             if (filenameSplit.length >= 4) {
                 Date d = parseDate(filenameSplit[0]);
-                RadarLocation l = RadarLocations.get(filenameSplit[1], WeatherApp.LANG_EN);
+                RadarLocation l = RadarLocations.get(filenameSplit[1]);
                 RadarImageType type = RadarImageType.from(filename);
 
                 if (d != null && l != null && type != null) {

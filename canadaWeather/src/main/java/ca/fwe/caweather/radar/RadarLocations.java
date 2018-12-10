@@ -9,20 +9,16 @@ import ca.fwe.weather.WeatherApp;
 
 public class RadarLocations {
 
-	public static RadarLocation get(String id, int lang) {
-		RadarLocation[] all = ALL_EN ;
-		if(lang == WeatherApp.LANG_FR)
-			all = ALL_FR ;
-		
-		for(RadarLocation l: all) {
+	public static RadarLocation get(String id) {
+		for(RadarLocation l: ALL) {
 			if(l.getSiteId().equals(id))
 				return l ;
 		}
 		return null ;
 	}
 	
-	public static RadarLocation get(LatLon point, int lang) {
-		RadarLocation[] locs = filter(point, 1, lang) ;
+	public static RadarLocation get(LatLon point) {
+		RadarLocation[] locs = filter(point, 1) ;
 		if(locs.length > 0) {
 			return locs[0];
 		} else {
@@ -30,15 +26,11 @@ public class RadarLocations {
 		}
 	}
 
-	public static RadarLocation[] filter(final LatLon point, int numEntries, int lang) {
+	public static RadarLocation[] filter(final LatLon point, int numEntries) {
 		double radius = 500 ; //km to search
 		ArrayList<RadarLocation> list = new ArrayList<>() ;
-
-		RadarLocation[] all = ALL_EN ;
-		if(lang == WeatherApp.LANG_FR)
-			all = ALL_FR ;
 		
-		for(RadarLocation rl: all) {
+		for(RadarLocation rl: ALL) {
 			LatLon loc = rl.getLocation() ;
 			if(loc != null) {
 				double distance = loc.distanceTo(point) ;
@@ -72,71 +64,37 @@ public class RadarLocations {
 		return out ;
 	}
 
-	public static RadarLocation[] ALL_EN = {
-		new RadarLocation("Britt", "Georgian Bay", "WBI", "Ontario", new LatLon(45.79317,-80.53385),10),
-		new RadarLocation("Montreal River Harbour", "Sault Ste Marie", "WGJ", "Ontario", new LatLon(47.24778,-84.59583), 10),
-		new RadarLocation("Carvel", "Edmonton", "WHK", "Alberta", new LatLon(53.56056,-114.14495), 10),
-		new RadarLocation("Jimmy Lake", "NW Saskatchewan/NE Alberta", "WHN", "Saskatchewan", new LatLon(54.91333,-109.95528), 10),
-		new RadarLocation("King City", "Southern Ontario", "WKR", "Ontario", new LatLon(43.96393,-79.57388), 10),
-		new RadarLocation("Lac Castor", "Saguenay River", "WMB", "Quebec", new LatLon(48.57581,-70.66784),10),
-		new RadarLocation("McGill", "Montreal", "WMN", "Quebec", new LatLon(45.42416,-73.93735),10),
-		new RadarLocation("Exeter", "Southwestern Ontario", "WSO", "Ontario", new LatLon(43.37028,-81.38417),10),
-		new RadarLocation("Holyrood", "Eastern Newfoundland", "WTP", "Newfoundland and Labrador", new LatLon(47.32556,-53.17861),10),
-		new RadarLocation("Aldergrove", "Vancouver", "WUJ", "British Columbia", new LatLon(49.01662,-122.48698),10),
-		new RadarLocation("Villeroy", "Southwest of Quebec City", "WVY", "Quebec", new LatLon(46.45,-71.91528),10),
-		new RadarLocation("Spirit River", "Grande Prairie", "WWW", "Alberta", new LatLon(55.6925,-119.23),10),
-		new RadarLocation("Val d'Irène", "Lower St. Lawrence", "XAM", "Quebec", new LatLon(48.48028,-67.60111),10),
-		new RadarLocation("Bethune", "Regina", "XBE", "Saskatchewan", new LatLon(50.57108,-105.18268),10),
-		new RadarLocation("Schuler", "Medicine Hat", "XBU", "Alberta", new LatLon(50.3125,-110.19556),10),
-		new RadarLocation("Dryden", "Western Ontario", "XDR", "Ontario", new LatLon(49.85823,-92.79698),10),
-		new RadarLocation("Franktown", "Eastern Ontario", "XFT", "Ontario", new LatLon(45.04101,-76.11617),10),
-		new RadarLocation("Foxwarren", "Eastern Saskatchewan/Western Manitoba", "XFW", "Manitoba", new LatLon(50.54887,-101.0857),10),
-		new RadarLocation("Gore", "Central Hants County", "XGO", "Nova Scotia", new LatLon(45.0985,-63.70433),10),
-		new RadarLocation("Landrienne", "Amos", "XLA", "Quebec", new LatLon(48.55152,-77.80815),10),
-		new RadarLocation("Marion Bridge", "Southeastern Cape Breton County", "XMB", "Nova Scotia", new LatLon(45.94947,-60.20578),10),
-		new RadarLocation("Marble Mountain", "Western Newfoundland", "XME", "Newfoundland and Labrador", new LatLon(48.93028,-57.83417),10),
-		new RadarLocation("Chipman", "Central New Brunswick", "XNC", "New Brunswick", new LatLon(46.22222,-65.69861),10),
-		new RadarLocation("Lasseter Lake", "Superior West", "XNI", "Ontario", new LatLon(48.85352,-89.1215),10),
-		new RadarLocation("Prince George", "Northern B.C.", "XPG", "British Columbia", new LatLon(53.61308,-122.95441),10),
-		new RadarLocation("Radisson", "Saskatoon", "CASRA", "Saskatchewan", new LatLon(52.52056,-107.44361),6),
-		new RadarLocation("Mount Sicker", "Victoria", "XSI", "British Columbia", new LatLon(48.86099,-123.75654),10),
-		new RadarLocation("Strathmore", "Calgary", "XSM", "Alberta", new LatLon(51.20628,-113.39906),10),
-		new RadarLocation("Mount Silver Star", "Vernon", "XSS", "British Columbia", new LatLon(50.3695,-119.06436),10),
-		new RadarLocation("Timmins", "Northeastern Ontario", "XTI", "Ontario", new LatLon(49.28146,-81.79406),10),
-		new RadarLocation("Woodlands", "Winnipeg", "XWL", "Manitoba", new LatLon(50.15389,-97.77833),10)
+	public static RadarLocation[] ALL = {
+			new RadarLocation("Mount Sicker", "Mt. Sicker", "Victoria", "Victoria", "British Columbia", "Colombie-Britannique", "XSI", "XSI", new LatLon(48.86099, -123.75654), 10),
+			new RadarLocation("Prince George", "Prince George", "Northern B.C.", "Colombie-Britannique nord", "British Columbia", "Colombie-Britannique", "XPG", "XPG", new LatLon(53.61308, -122.95441), 10),
+			new RadarLocation("Aldergrove", "Aldergrove", "Vancouver", "Vancouver", "British Columbia", "Colombie-Britannique", "WUJ", "WUJ", new LatLon(49.01662, -122.48698), 10),
+			new RadarLocation("Spirit River", "Spirit River", "Grande Prairie", "Grande Prairie", "Alberta", "Alberta", "WWW", "WWW", new LatLon(55.6925, -119.23), 10),
+			new RadarLocation("Mount Silver Star", "Mt. Silver Star", "Vernon", "Vernon", "British Columbia", "Colombie-Britannique", "XSS", "XSS", new LatLon(50.3695, -119.06436), 10),
+			new RadarLocation("Carvel", "Carvel", "Edmonton", "Edmonton", "Alberta", "Alberta", "WHK", "WHK", new LatLon(53.56056, -114.14495), 10),
+			new RadarLocation("Strathmore", "Strathmore", "Calgary", "Calgary", "Alberta", "Alberta", "XSM", "XSM", new LatLon(51.20628, -113.39906), 10),
+			new RadarLocation("Schuler", "Schuler", "Medicine Hat", "Medicine Hat", "Alberta", "Alberta", "XBU", "XBU", new LatLon(50.3125, -110.19556), 10),
+			new RadarLocation("Jimmy Lake", "Jimmy Lake", "NW Saskatchewan/NE Alberta", "Saskatchewan NO/Alberta NE", "Saskatchewan", "Saskatchewan", "WHN", "WHN", new LatLon(54.91333, -109.95528), 10),
+			new RadarLocation("Radisson", "Radisson", "Saskatoon", "Saskatoon", "Saskatchewan", "Saskatchewan", "CASRA", "XRA", new LatLon(52.52056, -107.44361), 6),
+			new RadarLocation("Bethune", "Bethune", "Regina", "Régina", "Saskatchewan", "Saskatchewan", "XBE", "XBE", new LatLon(50.57108, -105.18268), 10),
+			new RadarLocation("Foxwarren", "Foxwarren", "Eastern Saskatchewan/Western Manitoba", "Saskatchawan est/Manitoba ouest", "Manitoba", "Manitoba", "CASFW", "XFW", new LatLon(50.54887, -101.0857), 6),
+			new RadarLocation("Woodlands", "Woodlands", "Winnipeg", "Winnipeg", "Manitoba", "Manitoba", "XWL", "XWL", new LatLon(50.15389, -97.77833), 10),
+			new RadarLocation("Dryden", "Dryden", "Western Ontario", "Ontario ouest", "Ontario", "Ontario", "XDR", "XDR", new LatLon(49.85823, -92.79698), 10),
+			new RadarLocation("Lasseter Lake", "Lasseter Lake Nipigon", "Superior West", "Lac Supérieur ouest", "Ontario", "Ontario", "XNI", "XNI", new LatLon(48.85352, -89.1215), 10),
+			new RadarLocation("Montreal River Harbour", "Montreal River Harbour", "Sault Ste Marie", "Sault-Sainte-Marie", "Ontario", "Ontario", "WGJ", "WGJ", new LatLon(47.24778, -84.59583), 10),
+			new RadarLocation("Smooth Rock Falls", "Smooth Rock Falls", "Northeastern Ontario", "Ontario nord-est", "Ontario", "Ontario", "CASRF", "XTI", new LatLon(49.28146, -81.79406), 6),
+			new RadarLocation("Exeter", "Exeter", "Southwestern Ontario", "Ontario sud-ouest", "Ontario", "Ontario", "WSO", "WSO", new LatLon(43.37028, -81.38417), 10),
+			new RadarLocation("Britt", "Britt", "Georgian Bay", "Baie Georgienne", "Ontario", "Ontario", "WBI", "WBI", new LatLon(45.79317, -80.53385), 10),
+			new RadarLocation("King City", "King City", "Southern Ontario", "Nord de Toronto", "Ontario", "Ontario", "WKR", "WKR", new LatLon(43.96393, -79.57388), 10),
+			new RadarLocation("Landrienne", "Landrienne", "Amos", "Landrienne", "Quebec", "Québec", "XLA", "XLA", new LatLon(48.55152, -77.80815), 10),
+			new RadarLocation("Franktown", "Franktown", "Eastern Ontario", "Ontario est", "Ontario", "Ontario", "XFT", "XFT", new LatLon(45.04101, -76.11617), 10),
+			new RadarLocation("Blainville", "Blainville", "Montreal", "Montréal", "Quebec", "Québec", "CASBV", "WMN", new LatLon(45.70634, -73.85852), 6),
+			new RadarLocation("Villeroy", "Villeroy", "Southwest of Quebec City", "Sud-ouest de la ville de Québec", "Quebec", "Québec", "WVY", "WVY", new LatLon(46.45, -71.91528), 10),
+			new RadarLocation("Lac Castor", "Lac Castor", "Saguenay River", "Parc national des Monts-Valin", "Quebec", "Québec", "WMB", "WMB", new LatLon(48.57581, -70.66784), 10),
+			new RadarLocation("Val d'Irène", "Val d'Irène", "Lower St. Lawrence", "Bas-Saint-Laurent", "Quebec", "Québec", "XAM", "XAM", new LatLon(48.48028, -67.60111), 10),
+			new RadarLocation("Chipman", "Chipman", "Central New Brunswick", "Frédéricton", "New Brunswick", "Nouveau-Brunswick", "XNC", "XNC", new LatLon(46.22222, -65.69861), 10),
+			new RadarLocation("Gore", "Gore", "Central Hants County", "Comté de Hants", "Nova Scotia", "Nouvelle-Écosse", "XGO", "XGO", new LatLon(45.0985, -63.70433), 10),
+			new RadarLocation("Marion Bridge", "Marion Bridge", "Southeastern Cape Breton County", "Île du Cap-Breton", "Nova Scotia", "Nouvelle-Écosse", "XMB", "XMB", new LatLon(45.94947, -60.20578), 10),
+			new RadarLocation("Marble Mountain", "Marble Mountain", "Western Newfoundland", "Terre-Neuve ouest", "Newfoundland and Labrador", "Terre-Neuve et Labrador", "XME", "XME", new LatLon(48.93028, -57.83417), 10),
+			new RadarLocation("Holyrood", "Holyrood", "Eastern Newfoundland", "Terre-Neuve est", "Newfoundland and Labrador", "Terre-Neuve et Labrador", "WTP", "WTP", new LatLon(47.32556, -53.17861), 10)
 	} ;
-	
-	public static RadarLocation[] ALL_FR = {
-		new RadarLocation("Aldergrove", "Vancouver", "WUJ", "Colombie-Britannique", new LatLon(49.017, -122.487), 10),
-		new RadarLocation("Bethune", "Régina", "XBU", "Saskatchewan", new LatLon(50.312, -110.196), 10),
-		new RadarLocation("Britt", "Baie Georgienne", "WBI", "Ontario", new LatLon(45.793, -80.534), 10),
-		new RadarLocation("Carvel", "Edmonton", "WHK", "Alberta", new LatLon(53.561, -114.145), 10),
-		new RadarLocation("Chipman", "Frédéricton", "XNC", "Nouveau-Brunswick", new LatLon(46.222, -65.699), 10),
-		new RadarLocation("Dryden", "Ontario ouest", "XDR", "Ontario", new LatLon(49.858, -92.797), 10),
-		new RadarLocation("Exeter", "Ontario sud-ouest", "WSO", "Ontario", new LatLon(43.370, -81.384), 10),
-		new RadarLocation("Foxwarren", "Saskatchawan est/Manitoba ouest", "XFW", "Manitoba", new LatLon(50.549, -101.086), 10),
-		new RadarLocation("Franktown", "Ontario est", "XFT", "Ontario", new LatLon(45.041, -76.116), 10),
-		new RadarLocation("Gore", "Comté de Hants", "XGO", "Nouvelle-Écosse", new LatLon(45.098, -63.704), 10),
-		new RadarLocation("Holyrood", "Terre-Neuve est", "WTP", "Terre-Neuve et Labrador", new LatLon(47.326, -53.179), 10),
-		new RadarLocation("Jimmy Lake", "Saskatchewan NO/Alberta NE", "WHN", "Saskatchewan", new LatLon(54.913, -109.955), 10),
-		new RadarLocation("King City", "Nord de Toronto", "WKR", "Ontario", new LatLon(43.964, -79.574), 10),
-		new RadarLocation("Lac Castor", "Parc national des Monts-Valin", "WMB", "Québec", new LatLon(48.576, -70.668), 10),
-		new RadarLocation("Landrienne", "Landrienne", "XLA", "Québec", new LatLon(48.552, -77.808), 10),
-		new RadarLocation("Lasseter Lake (Nipigon)", "Lac Supérieur ouest", "XNI", "Ontario", new LatLon(48.854, -89.122), 10),
-		new RadarLocation("Marble Mountain", "Terre-Neuve ouest", "XME", "Terre-Neuve et Labrador", new LatLon(48.930, -57.834), 10),
-		new RadarLocation("Marion Bridge", "Île du Cap-Breton", "XMB", "Nouvelle-Écosse", new LatLon(45.949, -60.206), 10),
-		new RadarLocation("McGill", "Montréal", "WMN", "Québec", new LatLon(45.424, -73.937), 10),
-		new RadarLocation("Montreal River Harbour", "Sault-Sainte-Marie", "WGJ", "Ontario", new LatLon(47.248, -84.596), 10),
-		new RadarLocation("Mt. Sicker", "Victoria", "XSI", "Colombie-Britannique", new LatLon(48.861, -123.757), 10),
-		new RadarLocation("Mt. Silver Star", "Vernon", "XSS", "Colombie-Britannique", new LatLon(50.370, -119.064), 10),
-		new RadarLocation("Radisson", "Saskatoon", "CASRA", "Saskatchewan", new LatLon(52.521, -107.444), 6),
-		new RadarLocation("Schuler", "Medicine Hat", "XBU", "Alberta", new LatLon(50.312, -110.196), 10),
-		new RadarLocation("Spirit River", "Grande Prairie", "WWW", "Alberta", new LatLon(55.692, -119.230), 10),
-		new RadarLocation("Strathmore", "Calgary", "XSM", "Alberta", new LatLon(51.206, -113.399), 10),
-		new RadarLocation("Timmins", "Ontario nord-est", "XTI", "Ontario", new LatLon(49.281, -81.794), 10),
-		new RadarLocation("Val d'Irène", "Bas-Saint-Laurent", "XAM", "Québec", new LatLon(48.480, -67.601), 10),
-		new RadarLocation("Villeroy", "Sud-ouest de la ville de Québec", "WVY", "Québec", new LatLon(46.450, -71.915), 10),
-		new RadarLocation("Woodlands", "Winnipeg", "XWL", "Manitoba", new LatLon(50.154, -97.778), 10)
-	} ;
-
 }
