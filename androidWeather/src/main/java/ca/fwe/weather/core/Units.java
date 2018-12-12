@@ -6,9 +6,9 @@ import java.util.Map;
 public class Units {
 	
 	public enum Unit {DEG_F, DEG_C, DEG_K, MILES_PER_HOUR, KILOMETRES_PER_HOUR, METRES_PER_SECOND, KNOTS, METRES, MILES, KILOMETRES, NAUTICAL_MILES,
-						PASCALS, MILLIBARS, IN_HG, MM_HG, KILOPASCALS}
+						PASCALS, MILLIBARS, IN_HG, MM_HG, PERCENT, UNITLESS, KILOPASCALS}
 	
-	public enum Categories {WIND_SPEED, VISIBILITY, TEMPERATURE, PRESSURE}
+	public enum Categories {WIND_SPEED, VISIBILITY, TEMPERATURE, PROBABILITY, PRESSURE}
 	
 	public static final String UNITS_METRIC = "metric" ;
 	public static final String UNITS_IMPERIAL = "imperial" ;
@@ -33,6 +33,8 @@ public class Units {
 		values.put(Unit.KILOPASCALS, 1000.0) ;
 		values.put(Unit.IN_HG, 3386.0) ;
 		values.put(Unit.MM_HG, 133.322368) ;
+		values.put(Unit.PERCENT, 100.0);
+		values.put(Unit.UNITLESS, 1.0);
 	}
 	
 	static {
@@ -52,6 +54,8 @@ public class Units {
 		labels.put(Unit.IN_HG, "in Hg") ;
 		labels.put(Unit.MM_HG, "mm Hg") ;
 		labels.put(Unit.KILOPASCALS, "kPa") ;
+		labels.put(Unit.PERCENT, "%");
+		labels.put(Unit.UNITLESS, "");
 	}
 	
 	public static double toSI(double value, Unit unit) {
@@ -90,6 +94,7 @@ public class Units {
 			SI.setUnit(Categories.TEMPERATURE, Unit.DEG_K);
 			SI.setUnit(Categories.VISIBILITY, Unit.METRES) ;
 			SI.setUnit(Categories.WIND_SPEED, Unit.METRES_PER_SECOND);
+			SI.setUnit(Categories.PROBABILITY, Unit.UNITLESS);
 		}
 		
 		public static UnitSet METRIC = new UnitSet() ;
@@ -98,6 +103,7 @@ public class Units {
 			METRIC.setUnit(Categories.TEMPERATURE, Unit.DEG_C);
 			METRIC.setUnit(Categories.VISIBILITY, Unit.KILOMETRES);
 			METRIC.setUnit(Categories.WIND_SPEED, Unit.KILOMETRES_PER_HOUR) ;
+			METRIC.setUnit(Categories.PROBABILITY, Unit.PERCENT);
 		}
 		
 		public static UnitSet IMPERIAL = new UnitSet() ;
@@ -106,6 +112,7 @@ public class Units {
 			IMPERIAL.setUnit(Categories.TEMPERATURE, Unit.DEG_F);
 			IMPERIAL.setUnit(Categories.VISIBILITY, Unit.MILES);
 			IMPERIAL.setUnit(Categories.WIND_SPEED, Unit.MILES_PER_HOUR);
+			IMPERIAL.setUnit(Categories.PROBABILITY, Unit.PERCENT);
 		}
 		
 		public static UnitSet NAUTICAL = new UnitSet() ;
@@ -114,6 +121,7 @@ public class Units {
 			NAUTICAL.setUnit(Categories.TEMPERATURE, Unit.DEG_F);
 			NAUTICAL.setUnit(Categories.VISIBILITY, Unit.NAUTICAL_MILES);
 			NAUTICAL.setUnit(Categories.WIND_SPEED, Unit.KNOTS);
+			NAUTICAL.setUnit(Categories.PROBABILITY, Unit.PERCENT);
 		}
 		
 		private Map<Categories, Unit> units = new HashMap<>() ;

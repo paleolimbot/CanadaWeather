@@ -2,5 +2,6 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
     <ListPreference android:entryValues="@array/pref_theme_values" android:key="xml_theme" android:title="@string/pref_theme" android:entries="@array/pref_theme_choices" android:summary="@string/pref_theme_summary" android:defaultValue="LIGHT"/>
     <ListPreference android:entries="@array/pref_lang_choices" android:entryValues="@array/pref_lang_values" android:summary="@string/pref_lang_summary" android:title="@string/pref_lang" android:key="pref_lang" android:defaultValue="-1"/>
-    
+    <ListPreference android:entries="@array/pref_timezone_handling_choices" android:entryValues="@array/pref_timezone_handling_values" android:summary="@string/pref_timezone_handling_summary" android:title="@string/pref_timezone_handling" android:key="TIMEZONE_HANDLING" android:defaultValue="TZ_DEFAULT"/>
+
 </PreferenceScreen>

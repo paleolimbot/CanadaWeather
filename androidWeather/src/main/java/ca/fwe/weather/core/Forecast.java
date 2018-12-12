@@ -9,25 +9,27 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
+import java.util.TimeZone;
 
 import android.content.Context;
+import android.content.SharedPreferences;
+
 import ca.fwe.weather.WeatherApp;
 import ca.fwe.weather.core.Units.UnitSet;
 
 public class Forecast {
 
+    public static final String PREF_TIMEZONE_HANDLING = "TIMEZONE_HANDLING";
 	public static final UnitSet DEFAULT_UNITS = UnitSet.METRIC ;
-	public static final DateFormat DEFAULT_TIMEDATE = new SimpleDateFormat("EEE d MMM h:mm a zzz", Locale.CANADA) ;
-	public static final DateFormat DEFAULT_TIME = new SimpleDateFormat("h:mm a", Locale.CANADA) ;
 	
 	private Context context ;
 	private ForecastLocation location ;
 	private Units.UnitSet unitSet = DEFAULT_UNITS ;
-	private DateFormat dateFormat = DEFAULT_TIMEDATE ;
-	private DateFormat timeFormat = DEFAULT_TIME ;
+
 	private int lang ;
 	public List<ForecastItem> items ;
-	private String timeZone ;
+	private TimeZone timeZone ;
+	private String timeZoneId;
 	private Date creationDate ;
 	private Date issuedDate ;
 	
@@ -77,11 +79,33 @@ public class Forecast {
 		return WeatherApp.getLocale() ;
 	}
 
-	public String getTimeZone() {
-		return timeZone;
+	private TimeZone getTimeZone() {
+	    String tzPref = getTzPref();
+	    switch (tzPref) {
+            case "UTC_ALWAYS":
+                return TimeZone.getTimeZone("UTC");
+            case "TZ_DEFAULT":
+                return TimeZone.getDefault();
+            case "FORECAST_LOCAL":
+                if(timeZone != null) {
+                    return timeZone;
+                } else {
+                    return TimeZone.getDefault();
+                }
+            default:
+                return TimeZone.getDefault();
+        }
 	}
 
-	public void setTimeZone(String timeZone) {
+	public String getTimeZoneId() {
+	    return timeZoneId;
+    }
+
+    public void setTimeZoneId(String timeZoneId) {
+	    this.timeZoneId = timeZoneId;
+    }
+
+	public void setTimeZone(TimeZone timeZone) {
 		this.timeZone = timeZone;
 	}
 
@@ -101,19 +125,49 @@ public class Forecast {
 		this.issuedDate = issuedDate;
 	}
 
-	public DateFormat getDateFormat() {
-		return dateFormat;
+	private String getTzPref() {
+        SharedPreferences preferences = WeatherApp.prefs(context);
+        return preferences.getString(PREF_TIMEZONE_HANDLING, "TZ_DEFAULT");
+    }
+
+	private DateFormat getDateFormat() {
+        DateFormat df;
+        if(lang == WeatherApp.LANG_FR) {
+            df = new SimpleDateFormat("EEE d MMM h:mm a", Locale.CANADA_FRENCH);
+        } else {
+            df = new SimpleDateFormat("EEE d MMM h:mm a", Locale.CANADA);
+        }
+        df.setTimeZone(getTimeZone());
+        return df;
 	}
 
-	public void setDateFormat(DateFormat dateFormat) {
-		this.dateFormat = dateFormat;
+	private DateFormat getTimeFormat() {
+
+	    DateFormat df;
+	    if(lang == WeatherApp.LANG_FR) {
+            df = new SimpleDateFormat("HH:mm", Locale.CANADA_FRENCH);
+	    } else {
+            df = new SimpleDateFormat("h:mm a", Locale.CANADA);
+        }
+	    df.setTimeZone(getTimeZone());
+	    return df;
 	}
 
-	public DateFormat getTimeFormat() {
-		return timeFormat;
-	}
+	public String formatTime(Date datetime) {
+        return getTimeFormat().format(datetime);
+    }
 
-	public void setTimeFormat(DateFormat timeFormat) {
-		this.timeFormat = timeFormat;
-	}
+    public String formatDate(Date datetime) {
+        DateFormat df = getDateFormat();
+        String tzid;
+	    if(timeZoneId != null && getTzPref().equals("FORECAST_LOCAL")) {
+	        tzid = timeZoneId;
+        } else {
+	        DateFormat tzDf = new SimpleDateFormat("zzz", getLocale());
+	        tzDf.setTimeZone(df.getTimeZone());
+	        tzid = tzDf.format(datetime);
+        }
+
+        return df.format(datetime) + " " + tzid;
+    }
 }

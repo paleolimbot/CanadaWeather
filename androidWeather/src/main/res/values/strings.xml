@@ -22,10 +22,11 @@
     <string name="cc_field_dewpoint">Dewpoint</string>
     <string name="cc_field_visibility">Visibility</string>
     <string name="cc_field_relhumidity">Relative Humidity</string>
-    
-    <string name="cc_summary" formatted="false">Currently %s</string>
-    <string name="cc_summary_feelslike" formatted="false">Currently %s (feels like %s)</string>
-    <string name="cc_summary_unknown">Currently unknown</string>
+    <string name="cc_field_lop">Likelihood of Precipitation</string>
+
+    <string name="cc_currently">Currently</string>
+    <string name="cc_summary" formatted="false">%s: %s</string>
+    <string name="cc_summary_unknown">%s unknown</string>
     <string name="cc_description_format" formatted="false">%s (click for more details)</string>
     
     <string name="menu_refresh">Refresh</string>
@@ -63,8 +64,6 @@
     <string name="forecast_editloc_update">Update</string>
     <string name="forecast_error_add_location">Error adding location</string>
     <string name="forecast_no_data">No data to display</string>
-    <string name="forecast_footertext">Data from Environment Canada</string>
-    <string name="forecast_issuedtext" formatted="false">Issued %s</string>
     
     <string name="notification_howmany" formatted="false">%d warnings</string>
 

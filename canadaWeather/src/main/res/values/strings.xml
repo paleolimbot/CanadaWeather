@@ -9,7 +9,7 @@
     <string name="menu_radar">Radar</string>
     <string name="menu_about">About</string>
     
-    <string name="main_about_message">This update is a fix to the new radar locations and removed the \'Donate\' feature, as it violated the Google Play Terms of Service. Thanks for all your kind emails and bug reports and feature requests. As always, keep it coming to apps@fishandwhistle.net.</string>
+    <string name="main_about_message">This update is a fix to the new radar locations and removed the \'Donate\' feature, as it violated the Google Play Terms of Service. Also, the 24-hour forecast! Thanks for all your kind emails and bug reports and feature requests. As always, keep it coming to apps@fishandwhistle.net.</string>
     <string name="main_about_rate">Rate this app!</string>
     <string name="main_about_site">Website</string>
     <string name="main_about_gotit">Got it!</string>
@@ -41,7 +41,16 @@
     <string name="notifications_nodata_message">No locations in list</string>
     <string name="notifications_remove">Remove</string>
 
+    <string name="forecast_footertext">Data from Environment Canada</string>
+    <string name="forecast_issuedtext_daily" formatted="false">Forecast (%s)</string>
+    <string name="forecast_issuedtext_hourly">Hourly Forecast</string>
+    <string name="forecast_current_conditions">Current Conditions</string>
+    <string name="forecast_warnings">Warnings</string>
+    <string name="forecast_almanac">Almanac</string>
+
     <string name="forecast_sunriseset">Sunrise/Sunset</string>
     <string name="forecast_sunriseset_format" formatted="false">Sunrise at %s, sunset at %s</string>
+
+
 
 </resources>

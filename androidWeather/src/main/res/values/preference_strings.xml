@@ -6,6 +6,20 @@
     <string name="pref_iconset_widget_summary">Weather icons to be used for widgets.</string>
     <string name="pref_iconset_widget">Icon Set (Widget)</string>
 
+    <string name="pref_timezone_handling">Timezones</string>
+    <string name="pref_timezone_handling_summary">Choose timezone handling.</string>
+    <string-array name="pref_timezone_handling_choices">
+        <item>Device local</item>
+        <item>Forecast local</item>
+        <item>UTC always</item>
+    </string-array>
+
+    <string-array name="pref_timezone_handling_values">
+        <item>TZ_DEFAULT</item>
+        <item>FORECAST_LOCAL</item>
+        <item>UTC_ALWAYS</item>
+    </string-array>
+
     <string-array name="pref_iconset_choices">
         <item>AVMan</item>
         <item>Environment Canada (old)</item>

@@ -43,5 +43,11 @@
 
     <string name="forecast_sunriseset">Lever/Coucher</string>
     <string name="forecast_sunriseset_format" formatted="false">Lever à %s, coucher à %s</string>
+    <string name="forecast_footertext">Données fournies par Environnement Canada</string>
+    <string name="forecast_issuedtext_daily" formatted="false">Prévisions (%s)</string>
+    <string name="forecast_issuedtext_hourly">Prévision horaire</string>
+    <string name="forecast_current_conditions">Conditions actuelles</string>
+    <string name="forecast_warnings">Alertes/avertissements</string>
+    <string name="forecast_almanac">L\'almanach</string>
     
 </resources>

@@ -5,24 +5,18 @@ import java.util.Date;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
-import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.preference.PreferenceManager;
-import android.support.v4.content.LocalBroadcastManager;
-import android.util.Log;
 import android.view.View;
 import android.widget.RemoteViews;
 
-import org.json.JSONObject;
-
 import ca.fwe.caweather.backend.CityPageLocationDatabase;
-import ca.fwe.caweather.backend.CityPageUpdatesReceiver;
 import ca.fwe.weather.ForecastWidgetProvider;
 import ca.fwe.weather.WeatherApp;
 import ca.fwe.weather.backend.LocationDatabase;
-import ca.fwe.weather.core.CurrentConditions;
-import ca.fwe.weather.core.CurrentConditions.Fields;
+import ca.fwe.weather.core.PointInTimeForecast;
+import ca.fwe.weather.core.PointInTimeForecast.Fields;
 import ca.fwe.weather.core.Forecast;
 import ca.fwe.weather.core.ForecastItem;
 import ca.fwe.weather.core.ForecastLocation;
@@ -64,15 +58,15 @@ public class CityPageWeatherWidget extends ForecastWidgetProvider {
 					break;
 			}
 
-			CurrentConditions c = null ;
+			PointInTimeForecast c = null ;
 			TimePeriodForecast today = null ;
 			TimePeriodForecast tonight = null;
 			TimePeriodForecast tomorrow = null;
 			WeatherWarning warning = null ;
 
 			for(ForecastItem i: f.items) {
-				if(i instanceof CurrentConditions) {
-					c = (CurrentConditions)i ;
+				if(i instanceof PointInTimeForecast) {
+					c = (PointInTimeForecast)i ;
 					break ;
 				}
 			}
@@ -121,7 +115,7 @@ public class CityPageWeatherWidget extends ForecastWidgetProvider {
 				Date d = c.getObservedDate() ;
 				String dateText = context.getString(R.string.unknown) ;
 				if(d != null)
-					dateText = f.getTimeFormat().format(d) ;
+					dateText = f.formatTime(d) ;
 				views.setTextViewText(R.id.current_subtitle, dateText) ;
 
                 String condition = c.getField(Fields.CONDITION);

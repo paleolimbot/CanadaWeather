@@ -41,6 +41,7 @@ import ca.fwe.weather.backend.ForecastXMLParser;
 import ca.fwe.weather.backend.LocationDatabase;
 import ca.fwe.weather.backend.UserLocationsList;
 import ca.fwe.weather.core.CurrentConditions;
+import ca.fwe.weather.core.PointInTimeForecast;
 import ca.fwe.weather.core.Forecast;
 import ca.fwe.weather.core.ForecastItem;
 import ca.fwe.weather.core.ForecastLocation;
@@ -73,7 +74,6 @@ public abstract class ForecastActivity extends AppCompatActivity implements Fore
 	private NoDataAdapter noDataAdapter ;
 	protected int lang ;
 	private SharedPreferences prefs ;
-	private TextView fIssuedView ;
     private ListView listView;
     private SwipeRefreshLayout swipeLayout;
 	
@@ -115,16 +115,8 @@ public abstract class ForecastActivity extends AppCompatActivity implements Fore
             }
         });
         onDownloadDialogShowing = false;
-		
-		fIssuedView = (TextView)this.getLayoutInflater().inflate(R.layout.forecast_headerfooter, null) ;
-		fIssuedView.setText(String.format(getString(R.string.forecast_issuedtext), getString(R.string.unknown)));
 
         listView = findViewById(android.R.id.list);
-		listView.addHeaderView(fIssuedView);
-		
-		TextView footer = (TextView)this.getLayoutInflater().inflate(R.layout.forecast_headerfooter, null) ;
-		footer.setText(R.string.forecast_footertext) ;
-		listView.addFooterView(footer);
         listView.setOnItemClickListener(this) ;
 
 		if(app.upgrade()) {
@@ -244,7 +236,6 @@ public abstract class ForecastActivity extends AppCompatActivity implements Fore
 	protected void setLocation(ForecastLocation l, boolean forceDownload) {
         if (l == null) {
             listView.setAdapter(noDataAdapter);
-            fIssuedView.setText(String.format(getString(R.string.forecast_issuedtext), getString(R.string.unknown)));
             forecastAdapter.clear();
             try {
                 this.setTitle(this.getPackageManager()
@@ -305,20 +296,12 @@ public abstract class ForecastActivity extends AppCompatActivity implements Fore
 			break ;
 		case NO_CACHED_FORECAST_ERROR:
 			listView.setAdapter(noDataAdapter);
-			fIssuedView.setText(String.format(getString(R.string.forecast_issuedtext), getString(R.string.unknown)));
 			this.forecastAdapter.clear();
 			return ;
 		default:
 			log("forecast downloaded sucessfully, setting adapter.") ;
 			forecastAdapter.setForecast(forecast);
 			listView.setAdapter(forecastAdapter);
-			String dateText ;
-			if(forecast.getIssuedDate() != null)
-				dateText = forecast.getDateFormat().format(forecast.getIssuedDate()) ;
-			else
-				dateText = getString(R.string.unknown) ;
-			this.fIssuedView.setText(
-					String.format(getString(R.string.forecast_issuedtext), dateText));
 		}
 	}
 	
@@ -350,10 +333,8 @@ public abstract class ForecastActivity extends AppCompatActivity implements Fore
 	public void onItemClick(AdapterView<?> parent, View view, int position,
 			long id) {
 		log("processing click on item " + position) ;
-		if(forecastAdapter.getCount() > (position-1) && position >= 1) {
-			this.onItemClick(forecastAdapter.getItem(position-1)) ;
-		} else if(position == 0 || position == forecastAdapter.getCount()) {
-			log("first or last item click (ignoring)");
+		if(forecastAdapter.getCount() > position && position >= 0) {
+			this.onItemClick(forecastAdapter.getItem(position));
 		} else {
 			log("non-forecast adapter") ;
 		}

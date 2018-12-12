@@ -45,6 +45,18 @@ public class ForecastItem {
 		return iconId ;
 	}
 
+	public String getHigh() {
+	    return null;
+    }
+
+    public String getLow() {
+	    return null;
+    }
+
+    public String getPop() {
+	    return null;
+    }
+
 	public void setTitle(String title) {
 		this.title = title;
 	}

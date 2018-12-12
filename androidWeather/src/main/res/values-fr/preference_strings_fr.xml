@@ -6,12 +6,26 @@
     <string name="pref_theme_widget">Arrière-plan (widget)</string>
     <string name="pref_theme_widget_summary">Choisir un arrière-plan clair ou foncé pour les widgets</string>
 
+    <string name="pref_iconset_summary">Icons to be used pour les prévisions.</string>
+    <string name="pref_iconset">Icon Set</string>
+    <string name="pref_iconset_widget_summary">Icons pour les widgets.</string>
+    <string name="pref_iconset_widget">Icon Set (les widgets)</string>
+
     <string-array name="pref_theme_choices">
         <item>Noir</item>
         <item>Clair</item>
     </string-array>
 
-	<string name="pref_lang">Langue</string>
+    <string name="pref_timezone_handling">Les fuseaux horaires</string>
+    <string name="pref_timezone_handling_summary">Choisir les fuseaux horaires</string>
+    <string-array name="pref_timezone_handling_choices">
+        <item>Le device</item>
+        <item>Prévision</item>
+        <item>UTC</item>
+    </string-array>
+
+
+    <string name="pref_lang">Langue</string>
     <string name="pref_lang_summary">Langue des prévisions</string>
 
         <string-array name="pref_lang_choices">

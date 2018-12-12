@@ -22,10 +22,11 @@
     <string name="cc_field_dewpoint">Point de rosée</string>
     <string name="cc_field_visibility">Visibilité</string>
     <string name="cc_field_relhumidity">Humidité</string>
-    
-    <string name="cc_summary" formatted="false">Actuellement %s</string>
-    <string name="cc_summary_feelslike" formatted="false">Actuellement %s (ressenti %s)</string>
-    <string name="cc_summary_unknown">Actuellement inconnue</string>
+    <string name="cc_field_lop">Éventualité de précip</string>
+
+    <string name="cc_currently">Actuellement</string>
+    <string name="cc_summary" formatted="false">%s: %s</string>
+    <string name="cc_summary_unknown">%s inconnue</string>
     <string name="cc_description_format" formatted="false">%s (cliquer pour plus de détails)</string>
     
     <string name="menu_refresh">Rafraîchir</string>
@@ -63,8 +64,9 @@
     <string name="forecast_editloc_update">Mettre à jour</string>
     <string name="forecast_error_add_location">Ne pouvait pas ajouter la localité</string>
     <string name="forecast_no_data">Pas de données à afficher</string>
-    <string name="forecast_footertext">Données fournies par Environnement Canada</string>
-    <string name="forecast_issuedtext" formatted="false">Date d\'émission %s</string>
+
+    <string name="navigation_drawer_open">Ouvrir le tiroir de navigation</string>
+    <string name="navigation_drawer_close">Fermer le tiroir de navigation</string>
     
     <string name="notification_howmany" formatted="false">%d avertissements</string>
 
