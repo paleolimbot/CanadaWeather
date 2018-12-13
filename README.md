@@ -4,4 +4,4 @@ What’s it like in Canada? Cold. Need to know more? That’s where we come in. 
 
 [Get it on Google Play](https://play.google.com/store/apps/details?id=ca.fwe.caweather)
 
-![](screenshots/s1.png) ![](screenshots/s2.png) ![](screenshots/s3.png) ![](screenshots/s4.png) ![](screenshots/s5.png) ![](screenshots/s6.png) ![](screenshots/s7.png) ![](screenshots/s8.png)
+![](screenshots/s1.png) ![](screenshots/s2.png) ![](screenshots/s3.png) ![](screenshots/s4.png) ![](screenshots/s5.png) ![](screenshots/s6.png) ![](screenshots/s7.png) ![](screenshots/s8.png)  ![](screenshots/s9.png)  ![](screenshots/s10.png) ![](screenshots/s11.png)
