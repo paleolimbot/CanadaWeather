@@ -16,7 +16,7 @@ public class RadarLocation {
 	private static final String LANG_EXT_FR = "_f" ;
 
 	// https is not configured properly yet
-	private static final String SERVER = "http://dd.weatheroffice.ec.gc.ca/radar/%product%/GIF/" ;
+	private static final String SERVER = "https://dd.weather.gc.ca/radar/%product%/GIF/" ;
 	private static final String SERVER_WEB = "https://weather.gc.ca/radar/index%lang_ext%.html?id=%site_id%" ;
 	
 	private static final String URI_PATTERN = "radar:///ca/%s" ;

@@ -15,8 +15,8 @@ public class CityPageLocation extends ForecastLocation {
 
 	public static final String URI_PATTERN = "citypage:///%s/%s" ;
 	
-	public static final String URL_XML_PATTERN = "http://dd.weatheroffice.gc.ca/citypage_weather/xml/%s/%s_%s.xml" ;
-	public static final String URL_WEB_PATTERN = "http://weather.gc.ca/city/pages/%s_metric_%s.html" ;
+	public static final String URL_XML_PATTERN = "https://dd.weather.gc.ca/citypage_weather/xml/%s/%s_%s.xml" ;
+	public static final String URL_WEB_PATTERN = "https://weather.gc.ca/city/pages/%s_metric_%s.html" ;
 	
 	private String sitecode ;
 	private String provinceCode ;
