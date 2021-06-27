@@ -119,21 +119,21 @@ public class MainActivity extends ForecastActivity {
 				}
 			}
 		}) ;
-		builder.setNegativeButton(R.string.main_about_site, new DialogInterface.OnClickListener() {
-			public void onClick(DialogInterface dialog, int which) {
-				Intent i = new Intent(Intent.ACTION_VIEW) ;
-				if(lang == WeatherApp.LANG_FR) {
-                    i.setData(Uri.parse("https://apps.fishandwhistle.net/"));
-                } else {
-                    i.setData(Uri.parse("https://apps.fishandwhistle.net/"));
-                }
-				try {
-					startActivity(i) ;
-				} catch(ActivityNotFoundException e) {
-					toast(R.string.forecast_error_no_browser) ;
-				}
-			}
-		}) ;
+//		builder.setNegativeButton(R.string.main_about_site, new DialogInterface.OnClickListener() {
+//			public void onClick(DialogInterface dialog, int which) {
+//				Intent i = new Intent(Intent.ACTION_VIEW) ;
+//				if(lang == WeatherApp.LANG_FR) {
+//                    i.setData(Uri.parse("https://apps.fishandwhistle.net/"));
+//                } else {
+//                    i.setData(Uri.parse("https://apps.fishandwhistle.net/"));
+//                }
+//				try {
+//					startActivity(i) ;
+//				} catch(ActivityNotFoundException e) {
+//					toast(R.string.forecast_error_no_browser) ;
+//				}
+//			}
+//		}) ;
 		builder.setNeutralButton(R.string.main_about_gotit, new DialogInterface.OnClickListener() {
 			
 			@Override

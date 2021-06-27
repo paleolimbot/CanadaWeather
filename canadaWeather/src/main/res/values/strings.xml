@@ -9,7 +9,7 @@
     <string name="menu_radar">Radar</string>
     <string name="menu_about">About</string>
     
-    <string name="main_about_message">This update is a fix to the new radar locations and the new web address of Environment Canada\'s servers. You will see that Environment Canada has their own app now that I\'d encourage you to use. That said, when I try to download it, it tells me that it is not available in my country (I\'ve lived in Canada for 12 years). Thanks for all your kind emails and bug reports and feature requests. As always, keep it coming to apps@fishandwhistle.net.</string>
+    <string name="main_about_message">This update is a fix to the new radar locations and the new web address of Environment Canada\'s servers. Thanks for all your kind emails and bug reports and feature requests. As always, keep it coming to apps@fishandwhistle.net.</string>
     <string name="main_about_rate">Rate this app!</string>
     <string name="main_about_site">Website</string>
     <string name="main_about_gotit">Got it!</string>
