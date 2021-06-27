@@ -4,3 +4,4 @@ CanadaWeather.iws
 build/
 .DS_Store
 .Rhistory
+local.properties
