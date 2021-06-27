@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 
-import ca.fwe.locations.geometry.LatLon;
+import ca.fwe.weather.util.LatLon;
 import ca.fwe.weather.WeatherApp;
 
 public class RadarLocations {

@@ -36,7 +36,7 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
-import ca.fwe.locations.geometry.LatLon;
+import ca.fwe.weather.util.LatLon;
 import ca.fwe.weather.backend.ForecastXMLParser;
 import ca.fwe.weather.backend.LocationDatabase;
 import ca.fwe.weather.backend.UserLocationsList;

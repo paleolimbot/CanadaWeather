@@ -5,7 +5,7 @@ import java.util.Locale;
 
 import android.net.Uri;
 import ca.fwe.caweather.backend.CityPageForecastParser;
-import ca.fwe.locations.geometry.LatLon;
+import ca.fwe.weather.util.LatLon;
 import ca.fwe.weather.WeatherApp;
 import ca.fwe.weather.backend.ForecastXMLParser;
 import ca.fwe.weather.core.Forecast;

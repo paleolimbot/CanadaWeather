@@ -37,7 +37,7 @@ import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
-import ca.fwe.locations.geometry.LatLon;
+import ca.fwe.weather.util.LatLon;
 import ca.fwe.weather.backend.LocationDatabase;
 import ca.fwe.weather.core.ForecastLocation;
 import ca.fwe.weather.core.ForecastRegion;

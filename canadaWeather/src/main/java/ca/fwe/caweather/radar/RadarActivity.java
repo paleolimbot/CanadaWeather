@@ -50,7 +50,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 import ca.fwe.caweather.R;
 import ca.fwe.caweather.radar.RadarLocation.Overlays;
-import ca.fwe.locations.geometry.LatLon;
+import ca.fwe.weather.util.LatLon;
 import ca.fwe.weather.WeatherApp;
 import ca.fwe.weather.util.Downloader;
 

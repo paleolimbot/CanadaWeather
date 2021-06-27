@@ -3,7 +3,7 @@ package ca.fwe.caweather.radar;
 import android.net.Uri;
 import android.support.annotation.NonNull;
 
-import ca.fwe.locations.geometry.LatLon;
+import ca.fwe.weather.util.LatLon;
 import ca.fwe.weather.WeatherApp;
 
 public class RadarLocation {

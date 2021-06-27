@@ -16,7 +16,7 @@ import android.net.Uri;
 import android.util.Log;
 import ca.fwe.caweather.core.CityPageLocation;
 import ca.fwe.caweather.core.Province;
-import ca.fwe.locations.geometry.LatLon;
+import ca.fwe.weather.util.LatLon;
 import ca.fwe.weather.WeatherApp;
 import ca.fwe.weather.backend.LocationDatabase;
 import ca.fwe.weather.core.ForecastLocation;

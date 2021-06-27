@@ -3,7 +3,7 @@ package ca.fwe.weather.core;
 import java.io.File;
 
 import android.net.Uri;
-import ca.fwe.locations.geometry.LatLon;
+import ca.fwe.weather.util.LatLon;
 import ca.fwe.weather.backend.ForecastXMLParser;
 
 public abstract class ForecastLocation {

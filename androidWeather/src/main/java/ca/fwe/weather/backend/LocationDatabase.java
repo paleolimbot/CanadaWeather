@@ -4,7 +4,7 @@ import java.util.List;
 
 import android.content.Context;
 import android.net.Uri;
-import ca.fwe.locations.geometry.LatLon;
+import ca.fwe.weather.util.LatLon;
 import ca.fwe.weather.core.ForecastLocation;
 import ca.fwe.weather.core.ForecastRegion;
 

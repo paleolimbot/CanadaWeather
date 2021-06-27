@@ -20,7 +20,6 @@ android {
 }
 
 dependencies {
-    api files('libs/JavaGeo-2014-03-21.jar')
     api 'com.android.support:support-v4:28.0.0'
     api 'com.android.support:design:28.0.0'
 }

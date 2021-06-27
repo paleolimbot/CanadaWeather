@@ -16,7 +16,7 @@ import org.xml.sax.helpers.DefaultHandler;
 
 import ca.fwe.caweather.core.CityPageLocation;
 import ca.fwe.caweather.core.Province;
-import ca.fwe.locations.geometry.LatLon;
+import ca.fwe.weather.util.LatLon;
 
 public class LocationListParser {
 	
