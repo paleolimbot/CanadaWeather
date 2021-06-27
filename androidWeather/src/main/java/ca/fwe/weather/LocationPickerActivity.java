@@ -2,6 +2,8 @@ package ca.fwe.weather;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 import android.app.AlertDialog;
@@ -255,7 +257,7 @@ public class LocationPickerActivity extends AppCompatActivity implements OnItemC
 
 		public void reset(List<? extends ForecastLocation> newList) {
 			this.clear();
-			this.addAll(newList);
+			this.addAll(latLon == null ? newList : sort(newList));
 			listView.setAdapter(this);
 		}
 
@@ -277,6 +279,16 @@ public class LocationPickerActivity extends AppCompatActivity implements OnItemC
 			v.setText(text);
 		}
 
+		private List<? extends ForecastLocation> sort(List<? extends ForecastLocation> list) {
+			final List<? extends ForecastLocation> listCopy = new ArrayList<>(list);
+			Collections.sort(listCopy, new Comparator<ForecastLocation>() {
+				public int compare(final ForecastLocation o1, final ForecastLocation o2) {
+					return Double.compare(latLon.distanceTo(o1.getLatLon()),
+										  latLon.distanceTo(o2.getLatLon()));
+				}
+			});
+			return listCopy;
+		}
 	}
 
 	private class RegionAdapter extends CustomSpinnerAdapter<ForecastRegion> {
