@@ -1,0 +1,3 @@
+Canada Weather is a small, free weather app for Android that uses weather data from Environment Canada for your mobile weather-ing pleasure. Get animated radar imagery, current conditions, and the latest forecast in seconds for as many locations as you choose. Lookup locations by name, by proximity to any city, by GPS location, or by Province. Links directly to the Environment Canada mobile site, caches weather information, and stores your favourite locations for a quick and easy user experience. Now available in French thanks to the assistance of former translator O. Kuzin ( http://translatorsmusings.blogspot.ca/ ).
+
+The application is constantly improving, so please send any issues to apps@fishandwhistle.net
