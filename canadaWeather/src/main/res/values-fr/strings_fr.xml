@@ -49,5 +49,6 @@
     <string name="forecast_current_conditions">Conditions actuelles</string>
     <string name="forecast_warnings">Alertes/avertissements</string>
     <string name="forecast_almanac">L\'almanach</string>
-    
+
+    <string name="radar_error_url">https://www.canada.ca/fr/environnement-changement-climatique/services/conditions-meteorologiques-ressources-outils-generaux/apercu-radars/interruption-maintenance-service.html</string>
 </resources>

@@ -17,8 +17,10 @@ import java.util.Set;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.ActivityNotFoundException;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
@@ -77,6 +79,8 @@ public class RadarActivity extends AppCompatActivity implements OnClickListener 
 	private RadarLocationAdapter adapter ;
     private ArrayAdapter<String> errorAdapter;
 	private TextView dateText ;
+
+	private static AlertDialog errorDialog;
 
 	private RadarCacheManager cache ;
 
@@ -146,6 +150,22 @@ public class RadarActivity extends AppCompatActivity implements OnClickListener 
 		progress.setCancelable(true) ;
 		progress.setTitle(getString(R.string.radar_fetch_list)) ;
 
+		final AlertDialog.Builder builder = new AlertDialog.Builder(this) ;
+		builder.setTitle(R.string.radar_error) ;
+		builder.setMessage(R.string.radar_error_details) ;
+		builder.setPositiveButton(R.string.radar_error_visit, new DialogInterface.OnClickListener() {
+			public void onClick(DialogInterface dialog, int which) {
+				Intent i = new Intent(Intent.ACTION_VIEW) ;
+				i.setData(Uri.parse(getString(R.string.radar_error_url))) ;
+				try {
+					startActivity(i) ;
+				} catch(ActivityNotFoundException e) {
+					Toast.makeText(RadarActivity.this, R.string.forecast_error_no_browser, Toast.LENGTH_LONG).show();
+				}
+			}
+		});
+		builder.setNeutralButton(R.string.main_about_gotit, null);
+		errorDialog = builder.create();
 		this.readData() ;
 	}
 
@@ -455,9 +475,10 @@ public class RadarActivity extends AppCompatActivity implements OnClickListener 
         @SafeVarargs
         protected final Boolean doInBackground(ArrayList<RadarImage>... arg0) {
             isDownloading = true ;
-            List<RadarImage> list = arg0[0] ;
+            final List<RadarImage> list = arg0[0];
+            boolean status = true;
 
-            RadarImage mostRecent = list.get(list.size() - 1) ;
+            final RadarImage mostRecent = list.get(list.size() - 1);
             if(download(mostRecent))
                 this.publishProgress(-1) ;
 
@@ -466,11 +487,11 @@ public class RadarActivity extends AppCompatActivity implements OnClickListener 
                     break ;
 
                 RadarImage link = list.get(i) ;
-                download(link) ;
+                status = (download(link) && status) ? true : false;
                 publishProgress(i) ;
             }
             isDownloading = false ;
-            return true ;
+            return status;
         }
 
         private boolean download(RadarImage link) {
@@ -504,7 +525,8 @@ public class RadarActivity extends AppCompatActivity implements OnClickListener 
             if(activity != null && animator != null) {
                 activity.animLoading.setVisibility(View.GONE);
                 activity.playPause.setImageResource(R.drawable.ic_play);
-                if(playWhenFinished) animator.play() ;
+				if (!result) errorDialog.show();
+				if (result && playWhenFinished) animator.play() ;
             }
             activity = null;
             animator = null;

@@ -51,6 +51,9 @@
     <string name="forecast_sunriseset">Sunrise/Sunset</string>
     <string name="forecast_sunriseset_format" formatted="false">Sunrise at %s, sunset at %s</string>
 
-
+    <string name="radar_error">Some radar images are unavailable</string>
+    <string name="radar_error_details">The radar is likely offline. Please visit Environment Canada\'s website to see if the radar is in maintenance.</string>
+    <string name="radar_error_visit">Check status</string>
+    <string name="radar_error_url">https://www.canada.ca/en/environment-climate-change/services/weather-general-tools-resources/radar-overview/outages-maintenance.html</string>
 
 </resources>
