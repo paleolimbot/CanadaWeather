@@ -7,18 +7,13 @@ import ca.fwe.weather.util.LatLon;
 import ca.fwe.weather.WeatherApp;
 
 public class RadarLocation {
-	
-	public static final String PRODUCT_PRECIP = RadarImageType.PRODUCT_PRECIP ;
-	public static final String PRODUCT_24_HR_ACCUM = RadarImageType.PRODUCT_24_HR_ACCUM ;
-	public static final String PRODUCT_CAPPI = RadarImageType.PRODUCT_CAPPI ;
-		
 	private static final String LANG_EXT_ENG = "_e" ;
 	private static final String LANG_EXT_FR = "_f" ;
 
 	// https is not configured properly yet
 	private static final String SERVER = "https://dd.weather.gc.ca/radar/%product%/GIF/" ;
-	private static final String SERVER_WEB = "https://weather.gc.ca/radar/index%lang_ext%.html?id=%site_id%" ;
-	
+	private static final String SERVER_WEB = "https://weather.gc.ca/map%lang_ext%.html?layers=radar&zoom=-1&center=%lat%,%lon%" ;
+
 	private static final String URI_PATTERN = "radar:///ca/%s" ;
 	
 	public enum Overlays {RIVERS, ROADS, ROAD_LABELS, CITIES, MORE_CITIES, RADAR_CIRCLES}
@@ -133,11 +128,10 @@ public class RadarLocation {
 	}
 	
 	public String getWebURL(int lang) {
-		String langExt = LANG_EXT_ENG ;
-		if(lang == WeatherApp.LANG_FR) {
-			langExt = LANG_EXT_FR ;
-		}
-		return SERVER_WEB.replace("%lang_ext%", langExt).replace("%site_id%", this.getWebId()) ;
+		return SERVER_WEB
+				.replace("%lang_ext%", lang == WeatherApp.LANG_FR ? LANG_EXT_FR : LANG_EXT_ENG)
+				.replace("%lat%", String.valueOf(this.getLocation().getLat()))
+				.replace("%lon%", String.valueOf(this.getLocation().getLon())) ;
 	}
 	
 	public String getOverlayAssetName(Overlays which) {
