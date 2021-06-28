@@ -47,13 +47,12 @@ public class RadarLocation {
 	private String regionEn ;
 	private String regionFr;
 	private String siteId ;
-	private String webId;
 	private LatLon location ;
 	private int updateFrequency ;
 	
 	public RadarLocation(@NonNull String nameEn, @NonNull String nameFr, @NonNull String aliasEn, @NonNull String aliasFr,
-                         @NonNull String regionEn, @NonNull String regionFr, @NonNull String siteId, @NonNull String webId,
-                         @NonNull LatLon location, int updateFrequency) {
+                         @NonNull String regionEn, @NonNull String regionFr, @NonNull String siteId, @NonNull LatLon location,
+						 int updateFrequency) {
 		this.nameEn = nameEn;
 		this.nameFr = nameFr;
 		this.aliasEn = aliasEn;
@@ -61,7 +60,6 @@ public class RadarLocation {
 		this.regionEn = regionEn;
 		this.regionFr = regionFr;
 		this.siteId = siteId;
-		this.webId = webId;
 		this.location = location;
 		this.updateFrequency = updateFrequency;
 	}
@@ -88,10 +86,6 @@ public class RadarLocation {
 
 	public String getSiteId() {
 		return siteId;
-	}
-
-	public String getWebId() {
-		return webId;
 	}
 
 	public String getRegion(int lang) {
